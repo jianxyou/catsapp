@@ -1,0 +1,3 @@
+You should know that before modifying code, you should have Node.js, a JS runtime enviroment, and CocoaPods, a package manager for IOS dependencies. The files package.json and package-lock.json contain all necessary information about the apps dependencies and modifying them can very easily make your app unable to be built. 
+
+It also requires React Native and many other minor dependencies, but these can installed by typing in 'npm install' into the command line inside of this folder. Then in the IOS folder use the command 'pod install'. The dependancies are not stored on github due to their large size. 
