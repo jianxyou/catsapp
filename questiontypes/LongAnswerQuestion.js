@@ -6,6 +6,12 @@ import longanswerstyle from '../styles/question styles/longanswerstyle';
 
 const styles = longanswerstyle;
 
+// A question that takes a large text input
+
+// @params q is the plain text containing the question
+// @params num is the number of the question. be sure to pass in an integer, NOT a string
+// @params callback is a callback function that lets the survey and this question communicate
+
 export default LongAnswerQuestion = ({q, num, callback}) => {
 
     const [text, changeText] = useState(null);

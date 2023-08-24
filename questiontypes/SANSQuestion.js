@@ -5,13 +5,21 @@ import SANSStyle from '../styles/question styles/SANSStyle';
 import InternalRadioWrapper from '../input wrappers/InternalRadioWrapper';
 import hasslesRadioStyle from '../styles/input styles/hasslesRadioStyles';
 
+// Question used in SANS, required special formatting
+
+// @params q is the plain text containing the question
+// @params subq is the smaller text in italics underneath the main question
+// @params scale is the array of values next to the buttons
+// @params values is the array of values that will be saved and send to db
+// @params num is the number of the question. be sure to pass in an integer, NOT a string
+// @params callback is a callback function that lets the survey and this question communicate
+
 const SANSQuestion = ({q, subq, scale, values, num, callback}) => {
 
     const styles = SANSStyle;
 
     const [isLiked, setIsLiked] = useState(scale.map(        
         (val, index) => ( { key: index, id: index, value: values[index], name: val, selected: false } )
-        
     ));
 
     const onRadioBtnClick = (item) => {
@@ -20,7 +28,6 @@ const SANSQuestion = ({q, subq, scale, values, num, callback}) => {
             isLikedItem.id === item.id
             ? { ...isLikedItem, selected: !(isLikedItem.selected) }
             : { ...isLikedItem, selected: false }
-
         );
 
         setIsLiked(updatedState);
@@ -66,9 +73,8 @@ const SANSQuestion = ({q, subq, scale, values, num, callback}) => {
         <View style={styles.singlequestion}>
             {question}
             <View style={styles.alloptions}>
-            <InternalRadioWrapper isLiked={isLiked} onRadioBtnClick={onRadioBtnClick} styles={hasslesRadioStyle}/>
+                <InternalRadioWrapper isLiked={isLiked} onRadioBtnClick={onRadioBtnClick} styles={hasslesRadioStyle}/>
             </View>
-            
         </View> 
     );
 }

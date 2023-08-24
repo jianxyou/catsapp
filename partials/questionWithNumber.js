@@ -1,5 +1,12 @@
 import { View, Text } from 'react-native';
 
+// generates the plain text in a question based on certain params
+
+// @params num is the final number of the question
+// @params q is the question text
+// @params seperator is the string that seperates the number and the text
+// @params styles contains css that styles the JSX
+
 const questionWithNumber = (num, q, seperator, styles) => {
     return (  
             <View style={styles.questionlabelcontainer}>

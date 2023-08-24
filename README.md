@@ -1,3 +1,5 @@
-You should know that before modifying code, you should have Node.js, a JS runtime enviroment, and CocoaPods, a package manager for IOS dependencies. The files package.json and package-lock.json contain all necessary information about the apps dependencies and modifying them can very easily make your app unable to be built. 
+This is an app for IOS devices, aimed specifically at the iPad Air (5th generation). 
 
-It also requires React Native and many other minor dependencies, but these can installed by typing in 'npm install' into the command line inside of this folder. Then in the IOS folder use the command 'pod install'. The dependancies are not stored on github due to their large size. 
+I developped it using Typescript, Javascript and React Native. 
+
+Its purpose was to digitally collect data for studies by a lab at Mcgill Univeristy. The research deals with psychiatric diagnostic tools, such as Beck Anxiety Indicator, Fagerstorm Test for Nicotine Dependence and many others. While these tools are copyrighted, this app uses them for non-commercial means and me nor the lab that employed me will never profit from it, making it legal in the eyes of copyright law. Further, this app is not available on a public marketplace, so it does not negatively effect the copyright holders. 

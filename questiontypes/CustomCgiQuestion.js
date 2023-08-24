@@ -7,6 +7,11 @@ import cgiRadioStyles from "../styles/input styles/cgiRadioStyles";
 import textstyles from "../styles/textstyles";
 import cgiCustomStyle from "../styles/question styles/cgiCustomStyle";
 
+// the last question in Clinical Global Impression (CGI)
+// has extra labels which necessitated individual formatting
+
+// @params callback is a callback function that lets the survey and this question communicate
+
 const CustomCgiQuestion = ({callback}) => {
 
     const styles = cgiCustomStyle;

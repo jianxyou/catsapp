@@ -46,9 +46,6 @@ const resetStyles = () => {
   styles = noPressStyles;
 }
 
-
-
-
 const Draw = () => {
 
   const [paths, setPaths] = useState<IPath[]>([]);

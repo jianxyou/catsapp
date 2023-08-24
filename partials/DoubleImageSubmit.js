@@ -11,6 +11,9 @@ import buttonStyle from '../styles/partials styles/buttonStyle';
 
 const styles = buttonStyle;
 
+// originally made because the images were not saving long surveys
+// this is no longer used since that problem has been fixed
+
 const DoubleImageSubmit = ({data, goHome, capture1, capture2, title}) => {
 
     const {val, setVal} = useContext(ParticipantContext);

@@ -2,14 +2,15 @@ import Draw from "../inputs/Draw";
 
 import { View, Text, Pressable} from 'react-native'
 
+// a question that lets you draw a signature with your finger
+// it was never used but it works, although it is a bit buggy
+
 const Signature = ({callback}) => {
 
     const myCanvas = <Draw />
 
     return ( 
-
         <View style={{height: 200, width: 400}}>
-
 
             {myCanvas}
 

@@ -2,7 +2,6 @@ import { View, Text } from 'react-native';
 
 import FinalWrapper from '../partials/FinalWrapper';
 import textstyles from '../styles/textstyles';
-import genqs from '../partials/genqs';
 
 const FormattedRosenberg = ({title, listofqs, data, goHome, desc, styles, labels, speciallabel}) => {
 

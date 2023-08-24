@@ -6,6 +6,12 @@ import shortStyle from '../styles/question styles/shortStyle';
 
 const styles = shortStyle;
 
+// A question with a small text input
+
+// @params q is the plain text containing the question
+// @params num is the number of the question. be sure to pass in an integer, NOT a string
+// @params callback is a callback function that lets the survey and this question communicate
+
 export default ShortAnswerQuestion = ({q, num, callback}) => {
 
     const [text, changeText] = useState(null);

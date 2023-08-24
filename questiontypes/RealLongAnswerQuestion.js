@@ -6,6 +6,8 @@ import longanswerstyle from '../styles/question styles/longanswerstyle';
 
 const styles = longanswerstyle;
 
+//like LongAnswerQuestion
+
 export default RealLongAnswerQuestion = ({q, num, callback}) => {
 
     const [text, changeText] = useState(null);

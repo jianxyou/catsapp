@@ -4,6 +4,13 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 
 import shortStyle from '../styles/question styles/shortStyle';
 
+// a question that lets you pick a date from a dropdown
+// this question was never used, but is completely functional
+
+// @params q is the plain text containing the question
+// @params num is the number of the question. be sure to pass in an integer, NOT a string
+// @params callback is a callback function that lets the survey and this question communicate
+
 const DateQuestion = ({num, q, callback}) => {
 
     const styles = shortStyle;

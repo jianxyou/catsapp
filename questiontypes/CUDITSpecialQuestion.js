@@ -3,6 +3,16 @@ import { View, Text } from 'react-native'
 
 import RadioWrapper from '../input wrappers/RadioWrapper';
 
+// the first question in CUDIT, which required special formatting
+
+// @params q is the plain text containing the question
+// @params scale is the array of values next to the buttons
+// @params values is the array of values that will be saved and send to db
+// @params num is the number of the question. be sure to pass in an integer, NOT a string
+// @params callback is a callback function that lets the survey and this question communicate
+// @params questionstyles is a file containing css for CUDITSpecialQuestion
+// @params buttonstyles is a file containing ccss for RadioWrapper
+
 const CUDITSpecialQuestion = ({q, scale, values, num, callback, questionstyle, buttonstyle}) => {
 
     const styles = questionstyle

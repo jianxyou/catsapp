@@ -5,6 +5,14 @@ import { View, Text } from 'react-native';
 import MCQStyle from '../styles/question styles/MCQStyle';
 import hasslesRadioStyle from '../styles/input styles/hasslesRadioStyles';
 
+// Question used for 12-Item Marijuana Craving Questionnaire, required special formatting
+
+// @params q is the plain text containing the question
+// @params scale is the array of values next to the buttons
+// @params values is the array of values that will be saved and send to db
+// @params num is the number of the question. be sure to pass in an integer, NOT a string
+// @params callback is a callback function that lets the survey and this question communicate
+
 const MCQQuestion = ({q, scale, values, num, callback}) => {
 
   const styles = MCQStyle;
