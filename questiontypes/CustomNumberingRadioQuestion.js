@@ -38,7 +38,7 @@ const CustomNumberingRadioQuestion = ({q, scale, values, num, artnum, callback, 
         else callback (num, null);
     };
 
-    const question = questionWithNumber(num+1, q, '.', styles);
+    const question = questionWithNumber(artnum, q, '.', styles);
   
     return (
         <View style={styles.singlequestion}>

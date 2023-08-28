@@ -26,17 +26,11 @@ const FinalWrapper = (title, arr, data, goHome, styles) => {
     const ref1 = useRef();
     const ref2 = useRef();
 
-    let longenough = false;
+    const longenough = false;
 
     const qlist = arr[1];
-    const half = Math.ceil(qlist.length / 2);
 
-    const first = qlist.splice(0, half);
-    const last = qlist.splice(half);
-
-    const updatebool = () => {
-        if (qlist.length > 30) { longenough = true; }
-    }
+    const copy = arr.map(val => val);
 
     // function that saves the image
 
@@ -63,35 +57,18 @@ const FinalWrapper = (title, arr, data, goHome, styles) => {
     // in partice shortresult will always return since bug was fixed
 
     const button = <SubmitButton data={data} capture={() => capture(ref1)} goHome={goHome} title={title}/>
-    arr.push(button);
+    copy.push(button);
 
     const shortresult = (
         <View style={styles.page}>
             <ScrollView ref={ref1} >
-                {arr.map((val, index) => <View key={index}>{val}</View>)}
+                {copy.map((val, index) => <View key={index}>{val}</View>)}
             </ScrollView>
         </View>
     );
 
-    first.unshift(arr[0]);
-
-    const doublebutton = <DoubleImageSubmit data={data} goHome={goHome} capture1={() => capture(ref1)} capture2={() => capture(ref2)} title={title} />
-    last.push(doublebutton);
-
-    const longresult = (
-        <View style={styles.page}>
-
-            <ScrollView ref={ref1} >
-                {first.map((val, index) => <View key={index}>{val}</View>)}
-            </ScrollView>
-
-            <ScrollView ref={ref2} >
-                {last.map((val, index) => <View key={index}>{val}</View>)}
-            </ScrollView>
-        </View>
-    );
-
-    return longenough ? longresult : shortresult;
+     
+    return shortresult;
 }
  
 export default FinalWrapper;
