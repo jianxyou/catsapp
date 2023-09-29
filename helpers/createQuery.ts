@@ -23,11 +23,9 @@ function createQuery (questionnaireNumber : number, data : Array<any>, val : str
             myarray2[i-55] = data[i];
         } 
 
-        query = query + "\nstrSQL='" + "INSERT INTO " + tableName1 + " VALUES (" + myarray1.toString() + ")'";
-        query = query + "\nCurrentdb.Execute strSQL";
+        query = query + "\nUPDATE " + tableName1 + " SET " + queryZipper(questionnaireNumber, myarray1) + " WHERE ((PatientID=" + val + ") AND (visit=1002));\n"
 
-        query = query + "\nstrSQL='" + "INSERT INTO " + tableName2 + " VALUES (" + myarray2.toString() + ")'";
-        query = query + "\nCurrentdb.Execute strSQL";
+        query = query + "\nUPDATE " + tableName2 + " SET " + queryZipper(questionnaireNumber, myarray2) + " WHERE ((PatientID=" + val + ") AND (visit=1002));\n"
 
         return query;
     } else {

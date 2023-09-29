@@ -32,7 +32,9 @@ const SubmitButton = ({data, goHome, capture, questionnaireNumber}) => {
 
     async function copyImage(uri1) {
 
-        const uri2 = FileSystem.documentDirectory+'cats-data/'+val+(returnInternalName(questionnaireNumber))+'image'+'.png';
+        const name = returnInternalName(questionnaireNumber);
+        const myname = name.replace(/\s/g,'');
+        const uri2 = FileSystem.documentDirectory+'cats-data/'+val+myname+'image'+'.png';
 
         //this function creates the file, confusing since there is no createFile function
         await FileSystem.writeAsStringAsync(uri2, '')
