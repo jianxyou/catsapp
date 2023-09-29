@@ -3,7 +3,9 @@ import { View, Text } from 'react-native';
 import FinalWrapper from '../partials/FinalWrapper';
 import textstyles from '../styles/textstyles';
 
-const FormattedRosenberg = ({title, listofqs, data, goHome, desc, styles, labels, speciallabel}) => {
+import returnDisplayName from '../helpers/returnDisplayName';
+
+const FormattedRosenberg = ({questionnaireNumber, listofqs, data, goHome, desc, styles, labels, speciallabel}) => {
 
     const generatelabels = labels => {
         return (
@@ -31,7 +33,7 @@ const FormattedRosenberg = ({title, listofqs, data, goHome, desc, styles, labels
         <View>
             <View style={styles.titlecontainer}>
                 <Text style={styles.titletext}>
-                    {title}
+                    {returnDisplayName(questionnaireNumber)}
                 </Text>
             </View>
 
@@ -44,7 +46,7 @@ const FormattedRosenberg = ({title, listofqs, data, goHome, desc, styles, labels
         </View>
     );
 
-    return FinalWrapper(title, [mydesc, listofqs], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles);
 }
  
 export default FormattedRosenberg;

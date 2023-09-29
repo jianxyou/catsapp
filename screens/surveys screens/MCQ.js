@@ -6,7 +6,7 @@ const MCQScreen = ({navigation}) => {
     return ( 
         
         <MCQQuestionList 
-            title="12-Item Marijuana Craving Questionnaire"
+            questionnaireNumber={4}
             desc=""
             scale={[1,2,3,4,5,6,7]}
             values={[1,2,3,4,5,6,7]}

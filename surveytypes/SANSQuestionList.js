@@ -9,7 +9,7 @@ import SANSQuestion from '../questiontypes/SANSQuestion';
 import FormattedSANS from '../SurveyWrappers/FormattedSANS';
 import CompoundSANSStyle from '../styles/compound survey styles/CompoundSANSStyle';
 
-const SANSQuestionList = ({listoflistofqs, listoflistofsubqs, scale, values, title, minidescs, desc, goHome}) => {
+const SANSQuestionList = ({listoflistofqs, listoflistofsubqs, scale, values, questionnaireNumber, minidescs, desc, goHome}) => {
 
     const [data, changeData] = useState(allNull(totalLength(listoflistofqs)));
 
@@ -43,7 +43,7 @@ const SANSQuestionList = ({listoflistofqs, listoflistofsubqs, scale, values, tit
 
     return ( 
         <FormattedSANS
-            title={title} 
+            questionnaireNumber={questionnaireNumber} 
             qs={(packager(returnJSXqs(listoflistofqs), minidescs, CompoundSANSStyle))} 
             data={data} 
             goHome={goHome} 

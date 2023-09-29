@@ -7,7 +7,7 @@ import packager from '../helpers/packager';
 import FormattedPANSS from '../SurveyWrappers/FomattedPANSS';
 import CustomNumberingRadioQuestion from '../questiontypes/CustomNumberingRadioQuestion';
 
-const CustomNumberingQuestionList = ({title, scale, values, labels, artnums, listoflistofqs, minidescs, desc, goHome, liststyle, finalstyle, buttonstyles, questionstyles}) => {
+const CustomNumberingQuestionList = ({questionnaireNumber, scale, values, labels, artnums, listoflistofqs, minidescs, desc, goHome, liststyle, finalstyle, buttonstyles, questionstyles}) => {
     
     const [data, changeData] = useState(allNull(totalLength(listoflistofqs)));
 
@@ -44,7 +44,7 @@ const CustomNumberingQuestionList = ({title, scale, values, labels, artnums, lis
     
     return (
         <FormattedPANSS
-           title={title} 
+           questionnaireNumber={questionnaireNumber} 
             qs={(packager(returnJSXqs(listoflistofqs), minidescs, liststyle))} 
             data={data} 
             goHome={goHome} 

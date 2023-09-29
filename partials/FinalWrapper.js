@@ -3,7 +3,8 @@ import { useRef } from 'react';
 import { captureRef } from 'react-native-view-shot';
 
 import SubmitButton from "./SubmitButton";
-import DoubleImageSubmit from './DoubleImageSubmit';
+
+import returnInternalName from '../helpers/returnInternalName';
 
 // the final step in formatting all surveys
 // adds the button and combines the desc, questions and button
@@ -20,7 +21,7 @@ import DoubleImageSubmit from './DoubleImageSubmit';
 // orginially ref2, longenough, half, qlist, first, last, doublebuttons were parameters exclusively for that, but they are no longer necessary
 // i suggest ingnoring those variables 
 
-const FinalWrapper = (title, arr, data, goHome, styles) => {
+const FinalWrapper = (questionnaireNumber, arr, data, goHome, styles) => {
 
     // creates a refernece to a JSX element, essentially a variable name
     const ref1 = useRef();
@@ -44,7 +45,7 @@ const FinalWrapper = (title, arr, data, goHome, styles) => {
             format: 'png',
             quality: 1.0,
             result: 'tmpfile',
-            fileName: title+'image',
+            fileName: returnInternalName(questionnaireNumber)+'image',
             snapshotContentContainer: true,
             useRenderInContext: true,
         })
@@ -56,7 +57,7 @@ const FinalWrapper = (title, arr, data, goHome, styles) => {
 
     // in partice shortresult will always return since bug was fixed
 
-    const button = <SubmitButton data={data} capture={() => capture(ref1)} goHome={goHome} title={title}/>
+    const button = <SubmitButton data={data} capture={() => capture(ref1)} goHome={goHome} questionnaireNumber={questionnaireNumber}/>
     copy.push(button);
 
     const shortresult = (

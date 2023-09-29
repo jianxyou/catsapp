@@ -4,7 +4,7 @@ import allNull from '../helpers/allNull';
 import FormattedRosenberg from '../SurveyWrappers/FormattedRosenberg';
 import NoNumberRadioQuestion from '../questiontypes/NoNumberRadioQuestion';
 
-const NoNumberQuestionList = ({title, scale, values, qs, desc, goHome, labels, questionstyles, buttonstyles, finalstyles}) => {
+const NoNumberQuestionList = ({questionnaireNumber, scale, values, qs, desc, goHome, labels, questionstyles, buttonstyles, finalstyles}) => {
 
     const [data, changeData] = useState(allNull(qs.length));
 
@@ -20,14 +20,14 @@ const NoNumberQuestionList = ({title, scale, values, qs, desc, goHome, labels, q
     let listofqs = qs.map(
         (val, index) => 
         <NoNumberRadioQuestion
-            key={index} name={title} q={val} scale={scale} values={values} num={index} callback={respond} buttonstyles={buttonstyles} questionstyles={questionstyles}/>
+            key={index} name={questionnaireNumber} q={val} scale={scale} values={values} num={index} callback={respond} buttonstyles={buttonstyles} questionstyles={questionstyles}/>
     );
 
     
     return (
         <FormattedRosenberg
             desc={desc}
-            title={title}
+            questionnaireNumber={questionnaireNumber}
             data={data} 
             listofqs={listofqs} 
             goHome={goHome}

@@ -11,7 +11,7 @@ export default BeckScreen = ({navigation, route}) => {
 
     return (
         <NoNumberQuestionList
-        title="Beck Anxiety Inventory" 
+        questionnaireNumber={0}
         scale={[0, 1, 2, 3]} 
         values={[0, 1, 2, 3]} 
         labels={["Not at all", "Mildly, but it didn’t bother me much", "Moderately – it wasn’t pleasant at times", "Severely – it bothered me a lot"]}

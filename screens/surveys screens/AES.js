@@ -3,7 +3,7 @@ import AESQuestionList from "../../surveytypes/AESQuestionList";
 const AESScreen = ({navigation}) => {
     return (
         <AESQuestionList 
-            title="Apathy Evaluation Scale (Self-rated)"
+            questionnaireNumber={6}
             desc="For each statement, circle the answer that best describes the subject’s thoughts, feelings, and activity in the past 4 weeks"
             scale={[
                 "NOT AT ALL",

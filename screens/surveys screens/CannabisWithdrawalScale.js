@@ -26,7 +26,7 @@ const CannabisWithdrawalScreen = ({navigation}) => {
 
     return (
         <CannabisQuestionList
-            title="The Cannabis Withdrawal Scale"
+            questionnaireNumber={18}
             desc={desc}
             scale={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
             values={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}

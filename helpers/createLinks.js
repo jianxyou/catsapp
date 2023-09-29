@@ -4,7 +4,7 @@ import { ParticipantContext } from '../context and async storage/ParticipantCont
 
 import textstyles from '../styles/textstyles';
 
-const createLinks = ({names, pages, navigation, filled}) => {
+const createLinks = ({displayNames, internalNames, navigation, filled}) => {
 
     const {val, setVal} = useContext(ParticipantContext);
 
@@ -19,7 +19,7 @@ const createLinks = ({names, pages, navigation, filled}) => {
     );
 
     const buttons = (
-        pages.map((page, index) =>
+        internalNames.map((internalName, index) =>
             
         <View style={{
             width: 300,
@@ -27,10 +27,10 @@ const createLinks = ({names, pages, navigation, filled}) => {
             display: 'flex',
             flexDirection: 'row',
         }} key={index}>
-            <Pressable onPress={ () => navigation.navigate(page)} style={{padding: 10, borderRaduis: 10}}>
+            <Pressable onPress={ () => navigation.navigate(internalName)} style={{padding: 10, borderRaduis: 10}}>
                 <View style={{display: 'flex', flexDirection: 'row', width: 220}}>
                 {filled[index] ? filledicon : unfilledicon}
-                <Text style={textstyles.desctext}>{names[index]}</Text>
+                <Text style={textstyles.desctext}>{displayNames[index]}</Text>
                 </View>
             </Pressable>
         </View>

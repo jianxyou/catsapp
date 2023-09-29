@@ -1,18 +1,19 @@
 import { View, Text } from 'react-native';
 
 import questionListStyle from '../styles/question list styles/questionListStyle';
-import { FlatList } from 'react-native';
 import FinalWrapper from '../partials/FinalWrapper';
+
+import returnDisplayName from '../helpers/returnDisplayName';
 
 const styles = questionListStyle;
 
-const FormattedHasslesSurvey = ({title, listofqs, data, goHome}) => {
+const FormattedHasslesSurvey = ({questionnaireNumber, listofqs, data, goHome}) => {
 
     const desc=(
         <View>
         <View style={styles.titlecontainer}>
                 <Text style={styles.titletext}>
-                    Hassles and Uplifts Scale
+                    {returnDisplayName(questionnaireNumber)}
                 </Text>
         </View>
     
@@ -85,7 +86,7 @@ const FormattedHasslesSurvey = ({title, listofqs, data, goHome}) => {
        
     );
 
-    return FinalWrapper(title, [desc, listofqs], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [desc, listofqs], data, goHome, styles);
 }
 
  

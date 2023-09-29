@@ -8,7 +8,7 @@ import questionListStyle from "../styles/question list styles/questionListStyle"
 const TecScreen = ({navigation}) => {
     return ( 
         <TecQuestionList
-        title="T.E.C." 
+        questionnaireNumber={17}
         qs={[
             "Having to look after your parents and/or brothers and sisters when you were a child.",
             "Family problems (e.g., parent with alcohol or psychiatric problems, poverty).",

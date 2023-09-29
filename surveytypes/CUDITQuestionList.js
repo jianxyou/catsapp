@@ -11,7 +11,7 @@ import cuditBStyles from "../styles/question styles/cuditBStyles";
 import specialCuditStyle from '../styles/question styles/specialCuditStyle';
 import radioStyles from '../styles/input styles/radioStyles';
 
-const CUDITQuestionList = ({title, scales, values, qs, goHome, finalstyle, buttonstyle}) => {
+const CUDITQuestionList = ({questionnaireNumber, scales, values, qs, goHome, finalstyle, buttonstyle}) => {
 
     const [data, changeData] = useState(allNull(qs.length+1));
 
@@ -33,13 +33,13 @@ const CUDITQuestionList = ({title, scales, values, qs, goHome, finalstyle, butto
     let listofqs = qs.map(
         (val, index) => 
         <RadioQuestion
-            key={index} name={title} q={val} scale={scales[index]} values={values[index]} num={index} callback={respond} buttonstyle={buttonstyle} questionstyle={stylespicker(index)}/>
+            key={index} name={questionnaireNumber} q={val} scale={scales[index]} values={values[index]} num={index} callback={respond} buttonstyle={buttonstyle} questionstyle={stylespicker(index)}/>
     );
 
     listofqs.unshift(
         <CUDITSpecialQuestion 
             key={-1} 
-            name={title}
+            name={questionnaireNumber}
             q="Have you used any cannabis over the past 6 months?"
             scale={["YES", "NO"]}
             values={["YES", "NO"]}
@@ -52,7 +52,7 @@ const CUDITQuestionList = ({title, scales, values, qs, goHome, finalstyle, butto
 
     return (   
         <FormattedMCQ
-            title={title}
+            questionnaireNumber={questionnaireNumber}
             listofqs={listofqs} 
             data={data} 
             goHome={goHome} 

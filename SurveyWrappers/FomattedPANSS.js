@@ -1,8 +1,10 @@
 import { View, Text } from 'react-native';
 
+import returnDisplayName from '../helpers/returnDisplayName';
+
 import FinalWrapper from '../partials/FinalWrapper';
 
-const FormattedPANSS = ({title, qs, data, goHome, desc, labels, styles}) => {
+const FormattedPANSS = ({questionnaireNumber, qs, data, goHome, desc, labels, styles}) => {
 
     const generatelabels = labels => {
         return (
@@ -29,7 +31,7 @@ const FormattedPANSS = ({title, qs, data, goHome, desc, labels, styles}) => {
             <View style={styles.titlecontainer}>
                 <Text style={styles.titletext}>
                     <Text style={styles.underline}>
-                        {title}
+                        {returnDisplayName(questionnaireNumber)}
                     </Text>
                 </Text>
             </View>
@@ -44,7 +46,7 @@ const FormattedPANSS = ({title, qs, data, goHome, desc, labels, styles}) => {
     );
 
 
-    return FinalWrapper(title, [mydesc, qs], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [mydesc, qs], data, goHome, styles);
 }
  
 export default FormattedPANSS;

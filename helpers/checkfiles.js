@@ -2,14 +2,12 @@
 // more precisely it looks for files containing the data that should have been outputted
 
 import * as FileSystem from 'expo-file-system';
-
 //@params val is the current participant id
+import { displayNamesSelf } from '../schemaconstants';
 
 async function checkFiles (val) {
-
-    const files = ['BeckAnxietyInventory', 'CannabisUseDisorderIdentificationTest-Revised(CUDIT-R)',  "FagerstormTestForNicotineDependence(FTND)", "HasslesandUpliftsScale", "12-ItemMarijuanaCravingQuestionnaire", "SAFE", "ApathyEvaluationScale(Self-rated)", "Drug History Questionnaire", 'SANS', "SIAS", "SAS", "RosenbergScale", "RecentLifeEvents", 'PANSSRatingForm', 'SDS', 'DAST', 'Surveyofrecentlifeevents', 'AUDIT', 'ClinicalGlobalImpression(CGI)', 'SHAPS', 'T.E.C.', 'MacCAT', 'GlobalAssessmentofFunctioning(GAF)Scale', 'TheCannabisWithdrawalScale', 'TheBarratSimplifiedMeasureofSocialStatus(BSMSS)'];
     
-    const myarr = await getValues(files, val);
+    const myarr = await getValues(displayNamesSelf, val);
 
     return myarr;
 }

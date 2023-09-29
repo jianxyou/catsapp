@@ -5,7 +5,7 @@ import RadioQuestion from '../questiontypes/RadioQuesiton';
 import CustomCgiQuestion from '../questiontypes/CustomCgiQuestion';
 import FormattedFTND from '../SurveyWrappers/FormattedFTND';
 
-const CGIQuestionList = ({title, scales, values, qs, goHome, liststyle, questionstyles, buttonstyles}) => {
+const CGIQuestionList = ({questionnaireNumber, scales, values, qs, goHome, liststyle, questionstyles, buttonstyles}) => {
 
     const [data, changeData] = useState(allNull(qs.length));
 
@@ -35,7 +35,7 @@ const CGIQuestionList = ({title, scales, values, qs, goHome, liststyle, question
 
     return ( 
         <FormattedFTND
-        title={title} 
+        questionnaireNumber={questionnaireNumber} 
         listofqs={listofqs} 
         data={data} 
         goHome={goHome}

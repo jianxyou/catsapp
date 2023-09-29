@@ -1,10 +1,13 @@
 import { Text, View, Pressable, TextInput, Alert } from "react-native";
 import { useEffect, useState, useContext } from "react";
-import * as LocalAuthentication from 'expo-local-authentication'
+import * as LocalAuthentication from 'expo-local-authentication';
+import * as FileSystem from 'expo-file-system';;
 
 import { ParticipantContext } from "../../context and async storage/ParticipantContext";
 import { setAsyncData } from "../../context and async storage/asyncData";
 import clearData from "../../helpers/clearData";
+import newDir from "../../helpers/newDir";
+import createInsertInto from "../../helpers/createInsertInto";
 
 import AdminStyle from "../../styles/AdminStyle";
 import textstyles from "../../styles/textstyles";
@@ -19,10 +22,17 @@ const AdminScreen = ({navigation}) => {
 
     const [text, changeText] = useState(val);
 
-    const newId = () => {
+    const newId = async () => {
         setVal(text);
         setAsyncData(text);
+
+        await newDir(FileSystem.documentDirectory+'cats-data/');
         alert('Participant id changed to ' + text);
+
+        await FileSystem.writeAsStringAsync(FileSystem.documentDirectory+'cats-data/'+text+'data.txt', createInsertInto(text))
+        .then(res => {})
+        .catch(e => console.log(e));
+    
     }
 
     const modify = val => { 

@@ -14,7 +14,7 @@ import CompoundStyle from '../styles/compound survey styles/CompoundStyle';
 
 import FormattedCompound from '../SurveyWrappers/FormattedCompund';
 
-const CompoundSurvey = ({listoflistofqs, qtypes, scales, values, title, minidescs, desc, goHome}) => {
+const CompoundSurvey = ({listoflistofqs, qtypes, scales, values, questionnaireNumber, minidescs, desc, goHome}) => {
 
     const [data, changeData] = useState(allNull(totalLength(listoflistofqs)));
 
@@ -157,7 +157,7 @@ const CompoundSurvey = ({listoflistofqs, qtypes, scales, values, title, minidesc
     return (
         <FormattedCompound 
             qs={(packager(returnJSXqs(listoflistofqs), minidescs, CompoundStyle))}
-            title={title}
+            questionnaireNumber={questionnaireNumber}
             desc={desc}
             data={data}
             goHome={goHome}

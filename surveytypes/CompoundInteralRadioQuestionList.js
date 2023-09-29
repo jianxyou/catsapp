@@ -7,7 +7,7 @@ import packagerwithlabels from '../helpers/packagerwithlabels';
 import NoNumberMultiselectRadioQuestion from '../questiontypes/NoNumberMultiselectRadioQuestion';
 import FormattedCompound from '../SurveyWrappers/FormattedCompund';
 
-const CompoundInternalRadioQuestionList = ({listoflistofqs, scales, values, title, minidescs, desc, goHome, labels, buttonstyles, questionstyles, liststyles, finalstyles}) => {
+const CompoundInternalRadioQuestionList = ({listoflistofqs, scales, values, questionnaireNumber, minidescs, desc, goHome, labels, buttonstyles, questionstyles, liststyles, finalstyles}) => {
 
     const [data, changeData] = useState(allNull(totalLength(listoflistofqs)));
 
@@ -44,7 +44,7 @@ const CompoundInternalRadioQuestionList = ({listoflistofqs, scales, values, titl
     return (
         <FormattedCompound 
             qs={(packagerwithlabels(returnJSXqs(listoflistofqs), minidescs, labels, liststyles))}
-            title={title}
+            questionnaireNumber={questionnaireNumber}
             desc={desc}
             data={data}
             goHome={goHome}

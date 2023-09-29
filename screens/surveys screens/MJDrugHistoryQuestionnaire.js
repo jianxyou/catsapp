@@ -225,7 +225,7 @@ const MJDrugHistoryQuestionnaireScreen = ({navigation}) => {
                 ],
             ]} 
 
-            title="Drug History Questionnaire"
+            questionnaireNumber={7}
 
             desc={
                 <Text style={textstyles.desctext}>

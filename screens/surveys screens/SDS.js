@@ -79,7 +79,7 @@ const SDSScreen = ({navigation}) => {
                 [0,1,2,3],
             ],
         ]} 
-        title="SDS" 
+        questionnaireNumber={12}
 
         minidescs={[
             "Over the last 3 months...",

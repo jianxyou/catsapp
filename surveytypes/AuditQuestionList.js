@@ -7,7 +7,7 @@ import rosenbergQuestionListStyle from '../styles/question list styles/rosenberg
 
 import FormattedRosenberg from '../SurveyWrappers/FormattedRosenberg';
 
-const AuditQuestionList = ({title, scales, values, qs, visible, desc, goHome, buttonstyles, questionstyles, liststyles}) => {
+const AuditQuestionList = ({questionnaireNumber, scales, values, qs, visible, desc, goHome, buttonstyles, questionstyles, liststyles}) => {
 
     const [data, changeData] = useState(allNull(qs.length));
 
@@ -24,7 +24,7 @@ const AuditQuestionList = ({title, scales, values, qs, visible, desc, goHome, bu
         (val, index) => 
         <AuditStyleQuestion 
             key={val} 
-            name={title} 
+            name={questionnaireNumber} 
             q={val} 
             scale={scales[index]} 
             visible={visible[index]}
@@ -38,7 +38,7 @@ const AuditQuestionList = ({title, scales, values, qs, visible, desc, goHome, bu
 
     return (
         <FormattedRosenberg
-            title={title} 
+            questionnaireNumber={questionnaireNumber}
             listofqs={listofqs}
             data={data} 
             goHome={goHome} 

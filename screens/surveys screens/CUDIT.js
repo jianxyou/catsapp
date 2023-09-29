@@ -9,7 +9,7 @@ const CUDITScreen = ({navigation}) => {
 
     const survey = 
         <CUDITQuestionList
-            title="Cannabis Use Disorder Identification Test - Revised (CUDIT-R)"
+            questionnaireNumber={1}
             finalstyle={cuditQuestionListStyle}
             buttonstyle={cuditRadioStyles}
             scales={[

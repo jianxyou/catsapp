@@ -23,7 +23,7 @@ import CompoundDisorderStyle from '../styles/compound survey styles/CompoundDiso
 import scid13AStyles from '../styles/question styles/scid styles/scid13AStyles';
 import scid13BStyles from '../styles/question styles/scid styles/scid13BStyles';
 
-const SCIDQuestionList = ({title, disorders, minidescs, listoflistofqs, qtypes, options, values, artnums1, artnums2, sectionlabels, goHome, compoundstyles, liststyles}) => {
+const SCIDQuestionList = ({questionnaireNumber, disorders, minidescs, listoflistofqs, qtypes, options, values, artnums1, artnums2, sectionlabels, goHome, compoundstyles, liststyles}) => {
 
     console.log('start');
     let questionstyles = SCIDStyle;
@@ -233,7 +233,7 @@ const SCIDQuestionList = ({title, disorders, minidescs, listoflistofqs, qtypes, 
     return (  
         <FormattedCompound 
         qs={(higherPackager(returnJSXqs(listoflistofqs)))}
-        title={title}
+        questionnaireNumber={questionnaireNumber}
         desc=""
         data={data}
         goHome={goHome}

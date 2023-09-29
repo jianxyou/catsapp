@@ -22,7 +22,7 @@ const SHAPSScreen = ({navigation}) => {
 
     return ( 
         <SIASQuestionList
-            title="SHAPS" 
+            questionnaireNumber={16}
             scale={["", "",]} 
             values={["True", "False"]} 
             goHome={() => navigation.navigate('Home')}

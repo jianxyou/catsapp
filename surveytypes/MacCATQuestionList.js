@@ -8,7 +8,7 @@ import RadioQuestion from '../questiontypes/RadioQuesiton';
 import CustomNumberingRadioQuestion from '../questiontypes/CustomNumberingRadioQuestion';
 import FormattedFTND from '../SurveyWrappers/FormattedFTND';
 
-const MacCATQuestionList = ({listoflistofqs, scales, values, title, minidescs, desc, goHome, buttonstyles, questionstyles, liststyles, finalstyles}) => {
+const MacCATQuestionList = ({listoflistofqs, scales, values, questionnaireNumber, minidescs, desc, goHome, buttonstyles, questionstyles, liststyles, finalstyles}) => {
     
     const [data, changeData] = useState(allNull(totalLength(listoflistofqs)));
 
@@ -44,7 +44,7 @@ const MacCATQuestionList = ({listoflistofqs, scales, values, title, minidescs, d
 
     return (
         <FormattedFTND
-            title={title}
+            questionnaireNumber={questionnaireNumber}
             listofqs={packager(returnJSXqs(listoflistofqs), minidescs, liststyles)}
             data={data} 
             goHome={goHome} 

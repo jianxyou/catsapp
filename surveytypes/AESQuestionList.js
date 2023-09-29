@@ -4,7 +4,7 @@ import AESQuestion from '../questiontypes/AESStyleQuestion';
 import allNull from '../helpers/allNull';
 import FormattedFTND from '../SurveyWrappers/FormattedFTND';
 
-const AESQuestionList = ({title, scale, values, qs, desc, goHome}) => {
+const AESQuestionList = ({questionnaireNumber, scale, values, qs, desc, goHome}) => {
 
     const [data, changeData] = useState(allNull(qs.length));
 
@@ -19,14 +19,14 @@ const AESQuestionList = ({title, scale, values, qs, desc, goHome}) => {
 
     let listofqs = qs.map(
         (val, index) => 
-        <AESQuestion key={val} name={title} q={val} scale={scale} num={index} values={values} callback={respond}/>
+        <AESQuestion key={val} name={questionnaireNumber} q={val} scale={scale} num={index} values={values} callback={respond}/>
     );
 
     return (
         <FormattedFTND
         data={data} 
         listofqs={listofqs} 
-        title={title} 
+        questionnaireNumber={questionnaireNumber} 
         goHome={goHome}
         desc={desc}
     />

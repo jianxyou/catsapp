@@ -1,9 +1,10 @@
 import { View, Text } from 'react-native';
-import { FlatList } from 'react-native';
 
 import FinalWrapper from '../partials/FinalWrapper';
 
-const FormattedSIAS = ({title, listofqs, data, goHome, desc, values, styles}) => {
+import returnDisplayName from '../helpers/returnDisplayName';
+
+const FormattedSIAS = ({questionnaireNumber, listofqs, data, goHome, desc, values, styles}) => {
 
     const generatelabels = scale => {
         return (
@@ -25,7 +26,7 @@ const FormattedSIAS = ({title, listofqs, data, goHome, desc, values, styles}) =>
             <View style={styles.titlecontainer}>
                 <Text style={styles.titletext}>
                     <Text style={styles.underline}>
-                        {title}
+                        {returnDisplayName(questionnaireNumber)}
                     </Text>
                 </Text>
             </View>
@@ -37,7 +38,7 @@ const FormattedSIAS = ({title, listofqs, data, goHome, desc, values, styles}) =>
         </View>
     );
 
-    return FinalWrapper(title, [mydesc, listofqs], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles);
 
 }
  

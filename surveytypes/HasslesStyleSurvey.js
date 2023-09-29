@@ -4,7 +4,7 @@ import HasslesAndUpliftsQuestion from '../questiontypes/HasslesAndUpliftsQuestio
 import allNull from '../helpers/allNull';
 import FormattedHasslesSurvey from '../SurveyWrappers/FormattedHasslesSurvey';
 
-const HasslesStyleSurvey = ({title, scales, values, qs, goHome}) => {
+const HasslesStyleSurvey = ({questionnaireNumber, scales, values, qs, goHome}) => {
 
     const [data, changeData] = useState(allNull(qs.length*2));
 
@@ -29,12 +29,12 @@ const HasslesStyleSurvey = ({title, scales, values, qs, goHome}) => {
 
     let listofqs = qs.map(
         (val, index) => 
-        <HasslesAndUpliftsQuestion key={val + index} name={title} q={val} scale={scales[index]} num={index} values={values[index]} callback1={respond1} callback2={respond2}/>
+        <HasslesAndUpliftsQuestion key={val + index} name={questionnaireNumber} q={val} scale={scales[index]} num={index} values={values[index]} callback1={respond1} callback2={respond2}/>
     );
 
     return ( 
         <FormattedHasslesSurvey
-            title={title}
+            questionnaireNumber={questionnaireNumber}
             data={data} 
             listofqs={listofqs} 
             goHome={goHome}

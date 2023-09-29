@@ -6,7 +6,7 @@ import RLEStyle from "../../styles/question styles/RLEStyle";
 const RLEScreen = ({navigation}) => {
     return (  
         <CheckboxSurvey 
-        title="Recent Life Events"
+        questionnaireNumber={11}
 
         qs={[
             "Have you had a serious illness or been seriously injured?",

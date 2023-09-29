@@ -19,7 +19,7 @@ const SIASScreen = ({navigation}) => {
     );
     return (  
         <SIASQuestionList
-            title="SIAS" 
+            questionnaireNumber={8}
             scale={["", "", "", "", ""]} 
             values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
             goHome={() => navigation.navigate('Home')}

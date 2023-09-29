@@ -2,7 +2,9 @@ import { View, Text } from 'react-native';
 
 import FinalWrapper from '../partials/FinalWrapper';
 
-export default FormattedRLE = ({title, listofqs, data, goHome, desc, values, styles}) => {
+import returnDisplayName from '../helpers/returnDisplayName';
+
+export default FormattedRLE = ({questionnaireNumber, listofqs, data, goHome, desc, values, styles}) => {
 
     const generatelabels = labels => {
         return (
@@ -73,5 +75,5 @@ export default FormattedRLE = ({title, listofqs, data, goHome, desc, values, sty
             </Text>
     )
 
-    return FinalWrapper(title, [mydesc, listofqs, finalcomment], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [mydesc, listofqs, finalcomment], data, goHome, styles);
 }

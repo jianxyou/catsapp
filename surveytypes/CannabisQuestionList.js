@@ -4,7 +4,7 @@ import allNull from '../helpers/allNull';
 import FormattedRosenberg from '../SurveyWrappers/FormattedRosenberg';
 import InternalRadioQuestion from '../questiontypes/InternalRadioQuestion';
 
-const CannabisQuestionList = ({title, scale, values, qs, desc, goHome, liststyle, buttonstyle, questionstyle}) => {
+const CannabisQuestionList = ({questionnaireNumber, scale, values, qs, desc, goHome, liststyle, buttonstyle, questionstyle}) => {
 
     const [data, changeData] = useState(allNull(qs.length));
 
@@ -20,13 +20,13 @@ const CannabisQuestionList = ({title, scale, values, qs, desc, goHome, liststyle
     let listofqs = qs.map(
         (val, index) => 
         <InternalRadioQuestion
-            key={index} name={title} q={val} scale={scale} values={values} num={index} callback={respond} buttonstyles={buttonstyle} questionstyles={questionstyle}/>
+            key={index} name={questionnaireNumber} q={val} scale={scale} values={values} num={index} callback={respond} buttonstyles={buttonstyle} questionstyles={questionstyle}/>
     );
 
     
     return (
         <FormattedRosenberg
-        title={title} 
+        questionnaireNumber={questionnaireNumber}
         listofqs={listofqs} 
         data={data} 
         goHome={goHome} 

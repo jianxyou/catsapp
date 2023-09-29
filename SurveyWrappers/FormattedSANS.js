@@ -4,8 +4,9 @@ import FinalWrapper from '../partials/FinalWrapper';
 
 import SANSquestionliststyle from '../styles/question list styles/SANSquestionliststyle';
 
+import returnDisplayName from '../helpers/returnDisplayName';
 
-const FormattedSANS = ({title, qs, data, goHome, desc}) => {
+const FormattedSANS = ({questionnaireNumber, qs, data, goHome, desc}) => {
 
     const styles = SANSquestionliststyle;
 
@@ -14,7 +15,7 @@ const FormattedSANS = ({title, qs, data, goHome, desc}) => {
             <View style={styles.titlecontainer}>
                 <Text style={styles.titletext}>
                     <Text style={styles.makebold}><Text style={styles.underline}>
-                        {title}
+                        {returnDisplayName(questionnaireNumber)}
                     </Text></Text>
                 </Text>
             </View>
@@ -27,7 +28,7 @@ const FormattedSANS = ({title, qs, data, goHome, desc}) => {
     );
 
 
-    return FinalWrapper(title, [mydesc, qs], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [mydesc, qs], data, goHome, styles);
 }
  
 export default FormattedSANS;

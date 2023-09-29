@@ -7,23 +7,15 @@ import * as FileSystem from 'expo-file-system';
 import { ParticipantContext } from '../../context and async storage/ParticipantContext';
 import checkFiles from '../../helpers/checkfiles';
 
+import { displayNamesSelf, internalNamesSelf } from '../../schemaconstants';
+
 import createLinks from '../../helpers/createLinks';
 
 function HomeScreen({ navigation }) {
 
-  FileSystem.writeAsStringAsync(FileSystem.documentDirectory+'cats-data/'+'burner.txt')
-    .then(res => {})
-    .catch(e => {});
-
-  FileSystem.deleteAsync(FileSystem.documentDirectory+'cats-data/'+'burner.txt')
-    .then(res => {})
-    .catch(e => {});
-
   const {val, setVal} = useContext(ParticipantContext);
 
-  const names = ['Beck Anxiety', 'CUDIT-R',  "FTND", "Hassles and Uplifts", "MCQ", "SAFE", "AES", "MJ Drug History Questionnaire", 'SANS', "SIAS", "SAS", "Rosenberg", "RLE", 'PANSS', 'SDS', 'DAST', 'SoRLE', 'Audit', 'Cgi', 'Shaps', 'Tec', 'Maccat', 'GAF', 'Cannabis', 'Barratt'];
-
-  const [filled, setFilled] = useState(names.map(val => false))
+  const [filled, setFilled] = useState(displayNamesSelf.map(val => false))
 
   const isFocused = useIsFocused()
 
@@ -42,8 +34,8 @@ function HomeScreen({ navigation }) {
   }, [isFocused])
   
   const buttons = createLinks({
-    names: names,
-    pages: names,
+    displayNames: displayNamesSelf,
+    internalNames: internalNamesSelf,
     navigation: navigation,
     filled: filled
   });

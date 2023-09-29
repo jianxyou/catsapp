@@ -5,7 +5,7 @@ const FagerstrormScreen = ({navigation}) => {
 
     const survey = 
         <FTNDStyleSurvey 
-            title="Fagerstorm Test For Nicotine Dependence (FTND)"
+            questionnaireNumber={2}
 
             scales={[
                 [

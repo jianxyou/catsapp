@@ -5,7 +5,7 @@ const HasslesScreen = ({navigation}) => {
     const survey = 
         <HasslesStyleSurvey 
 
-            title="Hassles and Uplifts Scale"
+            questionnaireNumber={3}
 
             goHome={() => navigation.navigate('Home')}
 

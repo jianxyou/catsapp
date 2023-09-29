@@ -10,7 +10,7 @@ import textstyles from '../../styles/textstyles';
 const RosenbergScreen = ({navigation}) => {
     return (  
         <NoNumberQuestionList
-            title="Rosenberg Scale"
+            questionnaireNumber={10}
             desc={
                     <Text style={textstyles.desctext}>
                         Please mark the appropriate answer for each of the statements below:

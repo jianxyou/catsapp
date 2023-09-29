@@ -7,7 +7,7 @@ import packager from '../helpers/packager';
 import RadioQuestion from '../questiontypes/RadioQuesiton';
 import FormattedCompound from '../SurveyWrappers/FormattedCompund';
 
-const CompoundRadioQuestionList = ({listoflistofqs, scales, values, title, minidescs, desc, goHome, buttonstyles, questionstyles, liststyles, finalstyles}) => {
+const CompoundRadioQuestionList = ({listoflistofqs, scales, values, questionnaireNumber, minidescs, desc, goHome, buttonstyles, questionstyles, liststyles, finalstyles}) => {
     
 
     const [data, changeData] = useState(allNull(totalLength(listoflistofqs)));
@@ -45,7 +45,7 @@ const CompoundRadioQuestionList = ({listoflistofqs, scales, values, title, minid
     return (
         <FormattedCompound 
             qs={(packager(returnJSXqs(listoflistofqs), minidescs, liststyles))}
-            title={title}
+            questionnaireNumber={questionnaireNumber}
             desc={desc}
             data={data}
             goHome={goHome}

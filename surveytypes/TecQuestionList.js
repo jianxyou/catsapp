@@ -7,7 +7,7 @@ import TecQuestion from '../questiontypes/TecQuestion';
 import TecSpecialQuestion from '../questiontypes/TecSpecialQuestion';
 import RealLongAnswerQuestion from '../questiontypes/RealLongAnswerQuestion';
 
-const TecQuestionList = ({title, qs, desc, goHome, finalstyles}) => {
+const TecQuestionList = ({questionnaireNumber, qs, desc, goHome, finalstyles}) => {
 
     const [data, changeData] = useState(allNull(qs.length));
 
@@ -65,7 +65,7 @@ const TecQuestionList = ({title, qs, desc, goHome, finalstyles}) => {
     return (
         <FormattedMCQ
             desc={desc}
-            title={title}
+            questionnaireNumber={questionnaireNumber}
             data={data} 
             listofqs={listofqs} 
             goHome={goHome}

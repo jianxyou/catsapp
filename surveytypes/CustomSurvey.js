@@ -8,7 +8,7 @@ import LongAnswerQuestion from '../questiontypes/LongAnswerQuestion';
 import CheckboxQuestion from '../questiontypes/CheckboxQuestion';
 import FormattedSurvey from '../SurveyWrappers/FormattedSurvey';
 
-const CustomSurvey = ({title, types, scales, values, qs, desc, goHome}) => {
+const CustomSurvey = ({questionnaireNumber, types, scales, values, qs, desc, goHome}) => {
 
     const [data, changeData] = useState(allNull(qs.length));
 
@@ -131,6 +131,7 @@ const CustomSurvey = ({title, types, scales, values, qs, desc, goHome}) => {
 
     return (  
         <FormattedSurvey 
+        questionnaireNumber={questionnaireNumber}
         data={data} 
         listofqs={listofqs} 
         desc={desc} 

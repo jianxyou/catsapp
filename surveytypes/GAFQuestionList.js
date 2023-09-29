@@ -4,7 +4,7 @@ import { TextInput, View, Text } from 'react-native';
 import FormattedFTND from '../SurveyWrappers/FormattedFTND';
 import textstyles from '../styles/textstyles';
 
-const GAFQuestionList = ({title, desc, goHome}) => {
+const GAFQuestionList = ({questionnaireNumber, desc, goHome}) => {
 
     const [text, changeText] = useState([null]);
 
@@ -38,7 +38,7 @@ const GAFQuestionList = ({title, desc, goHome}) => {
     ></TextInput>
     
     </View>]} 
-        title={title} 
+        questionnaireNumber={questionnaireNumber} 
         goHome={goHome}
         desc={desc}
     />

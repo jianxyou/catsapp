@@ -19,7 +19,7 @@ const SASSCreen = ({navigation}) => {
 
     return (
         <SIASQuestionList
-            title="SAS"
+            questionnaireNumber={9}
             desc={desc}
             scale={["", "", "", ""]}
             values={["None OR little of the time", "Some of the time", "Good part of the time", "Most OR all of the time"]}

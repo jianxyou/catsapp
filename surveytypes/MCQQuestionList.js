@@ -4,7 +4,7 @@ import MCQQuestion from '../questiontypes/MCQQuestion';
 import allNull from '../helpers/allNull';
 import FormattedMCQ from '../SurveyWrappers/FormattedMCQ';
 
-const MCQQuestionList = ({title, scale, values, qs, goHome, desc, finalstyles}) => {
+const MCQQuestionList = ({questionnaireNumber, scale, values, qs, goHome, desc, finalstyles}) => {
 
     const [data, changeData] = useState(allNull(qs.length));
 
@@ -19,7 +19,7 @@ const MCQQuestionList = ({title, scale, values, qs, goHome, desc, finalstyles}) 
 
     let listofqs = qs.map(
         (val, index) => 
-        <MCQQuestion key={val + index} name={title} q={val} scale={scale} num={index} values={values} callback={respond}/>
+        <MCQQuestion key={val + index} name={questionnaireNumber} q={val} scale={scale} num={index} values={values} callback={respond}/>
     );
 
     return (
@@ -28,7 +28,7 @@ const MCQQuestionList = ({title, scale, values, qs, goHome, desc, finalstyles}) 
             desc={desc}
             data={data}
             listofqs={listofqs}
-            title={title}
+            questionnaireNumber={questionnaireNumber}
             styles={finalstyles}
 
         />

@@ -4,9 +4,11 @@ import questionListStyle from '../styles/question list styles/questionListStyle'
 
 import FinalWrapper from '../partials/FinalWrapper';
 
+import returnDisplayName from '../helpers/returnDisplayName';
+
 const styles = questionListStyle;
 
-const FormattedSurvey = ({listofqs, data, desc, goHome}) => {
+const FormattedSurvey = ({questionnaireNumber, listofqs, data, desc, goHome}) => {
 
     const mydesc = (
         <View style={styles.desc} >
@@ -14,7 +16,7 @@ const FormattedSurvey = ({listofqs, data, desc, goHome}) => {
         </View>
       );
 
-      return FinalWrapper(title, [mydesc, listofqs], data, goHome, styles);
+      return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles);
 }
 
 export default FormattedSurvey;

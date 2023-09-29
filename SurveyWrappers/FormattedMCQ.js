@@ -2,15 +2,15 @@ import { View, Text } from 'react-native';
 
 import FinalWrapper from '../partials/FinalWrapper';
 
-import { FlatList } from 'react-native';
+import returnDisplayName from '../helpers/returnDisplayName';
 
-const FormattedMCQ = ({listofqs, data, goHome, title, desc, styles}) => {
+const FormattedMCQ = ({listofqs, data, goHome, questionnaireNumber, desc, styles}) => {
 
     const mydesc = (
         <View>
         <View style={styles.titlecontainer}>
                 <Text style={styles.titletext}>
-                    {title}
+                    {returnDisplayName(questionnaireNumber)}
                 </Text>
         </View>
     
@@ -24,7 +24,7 @@ const FormattedMCQ = ({listofqs, data, goHome, title, desc, styles}) => {
         </View>
     );
 
-    return FinalWrapper(title, [mydesc, listofqs], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles);
 }
  
 export default FormattedMCQ;

@@ -2,12 +2,13 @@ import { View, Text } from 'react-native';
 
 import questionListStyle from '../styles/question list styles/questionListStyle';
 import SubmitButton from '../partials/SubmitButton';
-import { FlatList } from 'react-native';
 
 import FinalWrapper from '../partials/FinalWrapper';
 const styles = questionListStyle;
 
-const FormattedCompound = ({title, qs, data, goHome, desc}) => {
+import returnDisplayName from '../helpers/returnDisplayName';
+
+const FormattedCompound = ({questionnaireNumber, qs, data, goHome, desc}) => {
 
     const button = <SubmitButton data={data} goHome={goHome} />
 
@@ -15,7 +16,7 @@ const FormattedCompound = ({title, qs, data, goHome, desc}) => {
         <View>
             <View style={styles.titlecontainer}>
                 <Text style={styles.titletext}>
-                    {title}
+                    {returnDisplayName(questionnaireNumber)}
                 </Text>
             </View>
 
@@ -26,8 +27,7 @@ const FormattedCompound = ({title, qs, data, goHome, desc}) => {
 
     );
 
-
-    return FinalWrapper(title, [mydesc, qs], data, goHome, styles)
+    return FinalWrapper(questionnaireNumber, [mydesc, qs], data, goHome, styles)
 }
  
 export default FormattedCompound;

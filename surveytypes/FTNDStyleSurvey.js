@@ -6,7 +6,7 @@ import FormattedFTND from '../SurveyWrappers/FormattedFTND';
 import radioStyles from '../styles/input styles/radioStyles';
 import FTNDStyle from '../styles/question styles/FTNDStyle';
 
-const FTNDStyleSurvey = ({title, scales, values, qs, desc, goHome}) => {
+const FTNDStyleSurvey = ({questionnaireNumber, scales, values, qs, desc, goHome}) => {
 
     const [data, changeData] = useState(allNull(qs.length));
 
@@ -21,14 +21,14 @@ const FTNDStyleSurvey = ({title, scales, values, qs, desc, goHome}) => {
 
     let listofqs = qs.map(
         (val, index) => 
-        <RadioQuestion key={val} name={title} q={val} scale={scales[index]} num={index} values={values[index]} callback={respond} questionstyle={FTNDStyle} buttonstyle={radioStyles}/>
+        <RadioQuestion key={val} name={questionnaireNumber} q={val} scale={scales[index]} num={index} values={values[index]} callback={respond} questionstyle={FTNDStyle} buttonstyle={radioStyles}/>
     );
 
     return (
         <FormattedFTND
         data={data} 
         listofqs={listofqs} 
-        title={title} 
+        questionnaireNumber={questionnaireNumber} 
         goHome={goHome}
         desc=""
     />

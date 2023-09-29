@@ -5,7 +5,7 @@ import allNull from '../helpers/allNull';
 import CheckboxQuestion from '../questiontypes/CheckboxQuestion'
 import FormattedRLE from '../SurveyWrappers/FormattedRLE';
 
-const CheckboxSurvey = ({title, qs, options, values, desc, goHome, labels, buttonstyles, questionstyles, finalstyles}) => {
+const CheckboxSurvey = ({questionnaireNumber, qs, options, values, desc, goHome, labels, buttonstyles, questionstyles, finalstyles}) => {
     
     const [data, changeData] = useState(values.map(
         (val, index) => (val.map(val => false))
@@ -20,7 +20,7 @@ const CheckboxSurvey = ({title, qs, options, values, desc, goHome, labels, butto
     const listofqs = qs.map(
         (q, index) => 
             <CheckboxQuestion 
-                title={title} 
+                title={questionnaireNumber} 
                 q={q}
                 options={options[index]}
                 values={values[index]}
@@ -33,7 +33,7 @@ const CheckboxSurvey = ({title, qs, options, values, desc, goHome, labels, butto
     
     return ( 
         <FormattedRLE
-            title={title} 
+            questionnaireNumber={questionnaireNumber} 
             listofqs={listofqs} 
             data={data} 
             goHome={goHome} 

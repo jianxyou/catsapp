@@ -7,7 +7,7 @@ import SoRLEButtonStyle from "../../styles/input styles/SoRLEButtonStyle";
 const SoRLEScreen = ({navigation}) => {
     return ( 
         <SoRLEQuestionList 
-            title="Survey of recent life events"
+            questionnaireNumber={14}
             desc="Instructions:
 
             Following is a list of experiences which many people have some time or other. Please indicate 

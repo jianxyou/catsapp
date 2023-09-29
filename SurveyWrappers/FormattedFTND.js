@@ -1,18 +1,19 @@
 import { View, Text } from 'react-native';
 
 import questionListStyle from '../styles/question list styles/questionListStyle';
-import { FlatList } from 'react-native';
 import FinalWrapper from '../partials/FinalWrapper';
+
+import returnDisplayName from '../helpers/returnDisplayName';
 
 const styles = questionListStyle;
 
-const FormattedFTND = ({title, listofqs, data, goHome, desc}) => {
+const FormattedFTND = ({questionnaireNumber, listofqs, data, goHome, desc}) => {
 
     const mydesc = (
         <View>
             <View style={styles.titlecontainer }key={0}>
                 <Text style={styles.titletext}>
-                    {title}
+                    {returnDisplayName(questionnaireNumber)}
                 </Text>
             </View>
 
@@ -23,7 +24,7 @@ const FormattedFTND = ({title, listofqs, data, goHome, desc}) => {
 
     );
 
-    return FinalWrapper(title, [mydesc, listofqs], data, goHome, styles); 
+    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles); 
     
 }
  
