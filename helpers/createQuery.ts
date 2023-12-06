@@ -1,12 +1,21 @@
 import { useContext } from "react";
 import { ParticipantContext } from "../context and async storage/ParticipantContext";
 import queryZipper from "./queryZipper";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { sqlCreateTablesSelf, tableNamesSelf } from "../schemaconstants";
 
-function createQuery (questionnaireNumber : number, data : Array<any>, val : string) : string {
+async function createQuery (questionnaireNumber : number, data : Array<any>, val : string) {
 
     let query : string = "";
+
+    const stringValue = await AsyncStorage.getItem('clientId');
+    const storedClientId = stringValue ? JSON.parse(stringValue) : null;
+    
+
+    const stringValue2 = await AsyncStorage.getItem('visitId');
+    const storedVisitId = stringValue2 ? JSON.parse(stringValue2) : null;
+
 
     if (questionnaireNumber == 3) {
         const myarr = tableNamesSelf[3];
@@ -23,21 +32,21 @@ function createQuery (questionnaireNumber : number, data : Array<any>, val : str
             myarray2[i-55] = data[i];
         } 
 
-        query = query + "\nUPDATE " + tableName1 + " SET " + queryZipper(questionnaireNumber, myarray1) + " WHERE ((PatientID=" + val + ") AND (visit=1002));\n"
+        query = query + "UPDATE " + tableName1 + " SET " + queryZipper(questionnaireNumber, myarray1) + " WHERE ((PatientID=" + val + ") AND (visit=102));\n"
 
-        query = query + "\nUPDATE " + tableName2 + " SET " + queryZipper(questionnaireNumber, myarray2) + " WHERE ((PatientID=" + val + ") AND (visit=1002));\n"
+        query = query + "UPDATE " + tableName2 + " SET " + queryZipper(questionnaireNumber, myarray2) + " WHERE ((PatientID=" + val + ") AND (visit=102));\n"
 
         return query;
     } else {
 
         const tablename = tableNamesSelf[questionnaireNumber];
-
-        query = query + "\nUPDATE " + tablename + " SET " + queryZipper(questionnaireNumber, data) + " WHERE ((PatientID=" + val + ") AND (visit=1002));\n"
-
+        query = query + "UPDATE " + tablename + " SET " + queryZipper(questionnaireNumber, data) + " WHERE ((PatientID=" +storedClientId + ") AND (visit=" + storedVisitId +"));\n"
+        console.log("wocaole");
         console.log(query);
         return query;
     }
-
+    
+    
 }
 
 export default createQuery;

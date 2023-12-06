@@ -1,17 +1,41 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native'
 
 import CUDITQuestionList from '../../surveytypes/CUDITQuestionList';
 import cuditQuestionListStyle from '../../styles/question list styles/cuditQuestionListStyle';
 import cuditRadioStyles from '../../styles/input styles/cuditRadioStyles';
 
+import SIASQuestionList from '../../surveytypes/SIASQuestionList';
+import SIASRadioStyles from '../../styles/input styles/SIASRadioStyles';
+import SIASquestionliststyle from '../../styles/question list styles/SIASquestionliststyle';
+import SIASStyle from '../../styles/question styles/SIASStyle';
+
 const CUDITScreen = ({navigation}) => {
 
-    const survey = 
+
+
+    const styles = SIASquestionliststyle;
+
+    const desc = (
+        <View style={styles.desc}>
+            <Text style={styles.desctext}>
+            Following is a list of experiences which many people have some time or other. Please indicate 
+            for each experience how much it has been a part of your life over the past month. Put a '1' in 
+            the box provided next to an experience if it was not at all part of your life over the past month; 
+            '2' for an experience that was only slightly part of your life over that time; '3' for an 
+            experience that was distinctly part of your life; and '4' for an experience that was very much 
+            part of your life over the past month.</Text>
+        </View>
+    );
+    
+    return (
         <CUDITQuestionList
+
+            desc = {desc}
             questionnaireNumber={1}
             finalstyle={cuditQuestionListStyle}
             buttonstyle={cuditRadioStyles}
+            goHome={() => navigation.navigate('Home')}
             scales={[
                 ["Never","Monthly or less","2-4 times a month","2-3 times a week", "4 or more times a week"],
                 ["Less than 1", "1 or 2", "3 or 4", "5 or 6", "7 or more"],
@@ -42,19 +66,8 @@ const CUDITScreen = ({navigation}) => {
                 "How often do you use cannabis in situations that could be physically hazardous, such as driving, operating machinery, or caring for children?",
                 "Have you ever thought about cutting down, or stopping, your use of cannabis?"
             ]}
-
-            desc="Please answer the following questions about your cannabis use. Select the response that is most correct for you in relation to your cannabis use over the last six months. This questionnaire was designed for self-administration and is scored by adding each of the 8 items. Questions 1-7 are scored on a 0-4 scale. Question 8 is scored 0, 2 or 4."
             
-            goHome={() => navigation.navigate('Home')}
         />
-
-    return (         
-    
-        <View> 
-        
-        {survey}
-
-        </View>
     );
 }
 

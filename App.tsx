@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react'
 import { useColorScheme } from 'react-native';
 
@@ -9,6 +9,11 @@ import { ParticipantContext } from './context and async storage/ParticipantConte
 import { getAsyncData } from './context and async storage/asyncData';
 
 import HomeScreen from './screens/special screens/Home';
+import IDScreen from './screens/special screens/ID';
+import PdfScreen from './screens/special screens/Pdf';
+import DataScreen from './screens/special screens/Data';
+import MainScreen from './screens/special screens/Main';
+// import WorkerScreen from './screens/special screens/Worker';
 import BeckScreen  from "./screens/surveys screens/BAI"
 import CUDITScreen from './screens/surveys screens/CUDIT';
 import AdminScreen from './screens/special screens/Admin';
@@ -37,6 +42,9 @@ import GAFScreen from './screens/surveys screens/GAF';
 import CannabisWithdrawalScreen from './screens/surveys screens/CannabisWithdrawalScale';
 import BarrattScreen from './screens/surveys screens/BSMSS';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { View, Text } from 'react-native';
+
 const Stack = createNativeStackNavigator();
 
 function App(): JSX.Element {
@@ -44,13 +52,30 @@ function App(): JSX.Element {
 
   const [val, setVal] = useState(getAsyncData());
 
+  useEffect(() => {
+    const clearStorage = async () => {
+        try {
+            await AsyncStorage.clear();
+            await AsyncStorage.removeItem('id');
+            console.log('Storage successfully cleared!');
+        } catch (e) {
+            console.error('Failed to clear the async storage.', e);
+        }
+    };
+    clearStorage();
+}, []);
+
   return (
     <NavigationContainer>
       <ParticipantContext.Provider value={{val, setVal}}>
       <Stack.Navigator>
-         
+      <Stack.Screen name="Main" component={MainScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
-
+      {/* <Stack.Screen name="Worker" component={WorkerScreen} /> */}
+      <Stack.Screen name="Pdf" component={PdfScreen} />
+      <Stack.Screen name="Data" component={DataScreen} />
+      <Stack.Screen name="Admin" component={AdminScreen} />
+      <Stack.Screen name="ID" component={IDScreen} />
       <Stack.Screen name="Beck Anxiety" component={BeckScreen} />
       <Stack.Screen name="CUDIT-R" component={CUDITScreen} />
       <Stack.Screen name="FTND" component={FagerstrormScreen}/>
@@ -77,8 +102,7 @@ function App(): JSX.Element {
       <Stack.Screen name="GAF" component={GAFScreen} />
       <Stack.Screen name='Cannabis' component={CannabisWithdrawalScreen} />
       <Stack.Screen name='Barratt'component={BarrattScreen} />
-
-      <Stack.Screen name="Admin" component={AdminScreen} />
+      
 
       </Stack.Navigator>
       </ParticipantContext.Provider>

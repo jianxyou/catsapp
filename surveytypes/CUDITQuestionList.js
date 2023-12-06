@@ -8,10 +8,12 @@ import allNull from '../helpers/allNull';
 
 import cuditAStyles from "../styles/question styles/cuditAStyles";
 import cuditBStyles from "../styles/question styles/cuditBStyles";
-import specialCuditStyle from '../styles/question styles/specialCuditStyle';
-import radioStyles from '../styles/input styles/radioStyles';
 
-const CUDITQuestionList = ({questionnaireNumber, scales, values, qs, goHome, finalstyle, buttonstyle}) => {
+import FormattedSIAS from '../SurveyWrappers/FormattedSIAS';
+import InternalRadioQuestion from '../questiontypes/InternalRadioQuestion';
+
+
+const CUDITQuestionList = ({questionnaireNumber, scales, values, qs, desc, goHome, finalstyle, buttonstyle}) => {
 
     const [data, changeData] = useState(allNull(qs.length+1));
 
@@ -36,18 +38,18 @@ const CUDITQuestionList = ({questionnaireNumber, scales, values, qs, goHome, fin
             key={index} name={questionnaireNumber} q={val} scale={scales[index]} values={values[index]} num={index} callback={respond} buttonstyle={buttonstyle} questionstyle={stylespicker(index)}/>
     );
 
-    listofqs.unshift(
-        <CUDITSpecialQuestion 
-            key={-1} 
-            name={questionnaireNumber}
-            q="Have you used any cannabis over the past 6 months?"
-            scale={["YES", "NO"]}
-            values={["YES", "NO"]}
-            num={-1}
-            callback={respond}
-            buttonstyle={radioStyles}
-            questionstyle={specialCuditStyle}
-        />);
+    // listofqs.unshift(
+    //     <CUDITSpecialQuestion 
+    //         key={-1} 
+    //         name={questionnaireNumber}
+    //         q="Have you used any cannabis over the past 6 months?"
+    //         scale={["YES", "NO"]}
+    //         values={["YES", "NO"]}
+    //         num={-1}
+    //         callback={respond}
+    //         buttonstyle={radioStyles}
+    //         questionstyle={specialCuditStyle}
+    //     />);
 
 
     return (   
@@ -57,10 +59,13 @@ const CUDITQuestionList = ({questionnaireNumber, scales, values, qs, goHome, fin
             data={data} 
             goHome={goHome} 
             styles={finalstyle}
-            desc=""
+            
 
         />
       );
+
+
+
 }
  
 export default CUDITQuestionList;

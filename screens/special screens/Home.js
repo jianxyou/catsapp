@@ -42,7 +42,8 @@ function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Button title="Admin Page" onPress={ () => navigation.navigate('Admin') }/>
+    
+      <Button title="Admin Page" onPress={() => navigation.navigate('Admin')} />
       {buttons}
     </View>
   );
@@ -56,3 +57,5 @@ const styles = StyleSheet.create({
 })
 
 export default HomeScreen;
+
+

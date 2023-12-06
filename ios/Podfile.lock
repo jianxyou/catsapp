@@ -2,25 +2,25 @@ PODS:
   - boost (1.76.0)
   - CocoaAsyncSocket (7.6.5)
   - DoubleConversion (1.1.6)
-  - EXApplication (5.3.0):
+  - EXApplication (5.3.1):
     - ExpoModulesCore
   - EXConstants (14.4.2):
     - ExpoModulesCore
-  - EXFileSystem (15.4.2):
+  - EXFileSystem (15.4.4):
     - ExpoModulesCore
   - EXFont (11.4.0):
     - ExpoModulesCore
-  - EXMediaLibrary (15.4.0):
+  - EXMediaLibrary (15.4.1):
     - ExpoModulesCore
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
-  - Expo (49.0.0-beta.5):
+  - Expo (49.0.16):
     - ExpoModulesCore
   - ExpoKeepAwake (12.3.0):
     - ExpoModulesCore
   - ExpoLocalAuthentication (13.4.1):
     - ExpoModulesCore
-  - ExpoModulesCore (1.5.4):
+  - ExpoModulesCore (1.5.11):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
     - React-NativeModulesApple
@@ -398,13 +398,13 @@ PODS:
   - React-jsinspector (0.72.0)
   - React-logger (0.72.0):
     - glog
-  - react-native-safe-area-context (4.6.3):
-    - RCT-Folly
-    - RCTRequired
-    - RCTTypeSafety
+  - react-native-cameraroll (4.1.2):
     - React-Core
-    - ReactCommon/turbomodule/core
-  - react-native-skia (0.1.196):
+  - react-native-html-to-pdf (0.12.0):
+    - React-Core
+  - react-native-safe-area-context (4.7.4):
+    - React-Core
+  - react-native-skia (0.1.216):
     - React
     - React-callinvoker
     - React-Core
@@ -520,15 +520,18 @@ PODS:
     - React-jsi (= 0.72.0)
     - React-logger (= 0.72.0)
     - React-perflogger (= 0.72.0)
-  - RNCAsyncStorage (1.19.2):
+  - RNCAsyncStorage (1.19.8):
     - React-Core
   - RNCMaskedView (0.1.11):
     - React
-  - RNDateTimePicker (7.2.0):
+  - RNDateTimePicker (7.6.1):
     - React-Core
-  - RNGestureHandler (2.12.0):
+  - RNFS (2.20.0):
     - React-Core
-  - RNReanimated (3.3.0):
+  - RNGestureHandler (2.13.4):
+    - RCT-Folly (= 2021.07.22.00)
+    - React-Core
+  - RNReanimated (3.5.4):
     - DoubleConversion
     - FBLazyVector
     - glog
@@ -557,9 +560,9 @@ PODS:
     - React-RCTText
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.22.0):
+  - RNScreens (3.27.0):
+    - RCT-Folly (= 2021.07.22.00)
     - React-Core
-    - React-RCTImage
   - SocketRocket (0.6.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -620,6 +623,8 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - "react-native-cameraroll (from `../node_modules/@react-native-community/cameraroll`)"
+  - react-native-html-to-pdf (from `../node_modules/react-native-html-to-pdf`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-skia (from `../node_modules/@shopify/react-native-skia`)"
   - react-native-view-shot (from `../node_modules/react-native-view-shot`)
@@ -643,6 +648,7 @@ DEPENDENCIES:
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNDateTimePicker (from `../node_modules/@react-native-community/datetimepicker`)"
+  - RNFS (from `../node_modules/react-native-fs`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -727,6 +733,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-cameraroll:
+    :path: "../node_modules/@react-native-community/cameraroll"
+  react-native-html-to-pdf:
+    :path: "../node_modules/react-native-html-to-pdf"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-skia:
@@ -773,6 +783,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/masked-view"
   RNDateTimePicker:
     :path: "../node_modules/@react-native-community/datetimepicker"
+  RNFS:
+    :path: "../node_modules/react-native-fs"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
@@ -786,15 +798,15 @@ SPEC CHECKSUMS:
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
-  EXApplication: 02655a251434d564bb0e73291f5a490c74b5b76f
-  EXConstants: ce5bbea779da8031ac818c36bea41b10e14d04e1
-  EXFileSystem: d7f59869885cfeab3ac771e2a8d0f5ed98cd3fdb
-  EXFont: 738c44c390953ebcbab075a4848bfbef025fd9ee
-  EXMediaLibrary: dd08edb824ee92519a989211720956cfd381f212
-  Expo: 7a7c1c30048752bfa8e74732fc9471226598bbbd
-  ExpoKeepAwake: be4cbd52d9b177cde0fd66daa1913afa3161fc1d
-  ExpoLocalAuthentication: bd9d9037a96a11ccc456e327ddb404df02da10ca
-  ExpoModulesCore: cfc52053496bae101b7ce6cd20a0ebaefbf977c0
+  EXApplication: 3aa9d9e0ece52ede16fe5f08079441ea106f1ed2
+  EXConstants: b4a9e85ac485e96eba796b3c0cdbf20523aa2a44
+  EXFileSystem: c1c539edf5ebfbe98f171e4b229f63faeda265c7
+  EXFont: 990728c493793fe0118926c0798bc4e0d848a261
+  EXMediaLibrary: fd7071a6d19c37b3b7ac4fe0988309812a6643da
+  Expo: ef43c242b9eaf3e51cca7f88fce44758e18a0a25
+  ExpoKeepAwake: 396a8209c9a4e6cc0fb3da0cf26acbf4a4803114
+  ExpoLocalAuthentication: a70f7b3a8a8459c4ed67e33e6b737b320bd86e71
+  ExpoModulesCore: 197200ec1dc092f5971c42725bbf03e7b0039ab8
   FBLazyVector: bb17efca94c43508cbe54fb0a35e36df30da5213
   FBReactNativeSpec: 6e7e74b1ed7f0a1a469a82a67521b33285f5fef3
   Flipper: 6edb735e6c3e332975d1b17956bcc584eccf5818
@@ -825,9 +837,11 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 990287d74aedc4fdd08ebd80736b1a5c71b54da2
   React-jsinspector: 8d754fc957255a29d93e52fc67a895045cdc8703
   React-logger: 454ffb01980778a43b0153ee98721d0275b56616
-  react-native-safe-area-context: 36cc67648134e89465663b8172336a19eeda493d
-  react-native-skia: 73b15a92d31e322fd25e5bb7feff226c0a25215e
-  react-native-view-shot: f5507655f122e6b104888a11130f267a427f0d57
+  react-native-cameraroll: 60ac50a5209777cbccfe8d7a62d0743a9da87060
+  react-native-html-to-pdf: d994a500216e88032cce3635d3240f6e4fa0cb40
+  react-native-safe-area-context: 81e412ec17d63e5b2b3045d5170d82b366b25c76
+  react-native-skia: f4d52c69fd3534143365287d03db35270d7b09b7
+  react-native-view-shot: 368e113038c2d3c19e7411b87f3a66f9a239946b
   React-NativeModulesApple: 038cd625999ff352fc13d11fd335ea7509794599
   React-perflogger: 684a11499a0589cc42135d6d5cc04d0e4e0e261a
   React-RCTActionSheet: 00b0a4c382a13b834124fa3f541a7d8d1d56efb9
@@ -845,16 +859,17 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 24614bcd31643eacb06c78c0b9101b453d6aac47
   React-utils: c12d2e75c8bbc727939ddc4319ed95493395ed5a
   ReactCommon: 517b45ed311ba9146aa8b55a8ef6617425f7448e
-  RNCAsyncStorage: f57e929cd7757f2cb3dd8186d123c09e8281a1ad
-  RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
-  RNDateTimePicker: 3942382593f104af226ad9c56e16166960c7ae30
-  RNGestureHandler: dec4645026e7401a0899f2846d864403478ff6a5
-  RNReanimated: 9f7068e43b9358a46a688d94a5a3adb258139457
-  RNScreens: 68fd1060f57dd1023880bf4c05d74784b5392789
+  RNCAsyncStorage: 2109d7257a1d6d99a23d7f1a1f8dd4789679250b
+  RNCMaskedView: f127cd9652acfa31b91dcff613e07ba18b774db6
+  RNDateTimePicker: 6edde50635bf73ff47c73733aa2813c5b86cbc57
+  RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
+  RNGestureHandler: 6e46dde1f87e5f018a54fe5d40cd0e0b942b49ee
+  RNReanimated: ab2e96c6d5591c3dfbb38a464f54c8d17fb34a87
+  RNScreens: 3c2d122f5e08c192e254c510b212306da97d2581
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 1d6727ed193122f6adaf435c3de1a768326ff83b
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
 PODFILE CHECKSUM: 2285e05650462ac2671d53798fec59afb504bc6e
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.14.2

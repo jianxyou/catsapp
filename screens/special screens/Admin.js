@@ -48,6 +48,7 @@ const AdminScreen = ({navigation}) => {
             setAuthStatus(result);
         }
 
+        
         authenticate();
     }
     , []);
@@ -106,6 +107,7 @@ const AdminScreen = ({navigation}) => {
 
 
             </View>
+            
             </View>
         </View>
     );
