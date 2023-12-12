@@ -23,10 +23,10 @@ const SoRLEScreen = ({navigation}) => {
     );
     return (  
         <SIASQuestionList
-            questionnaireNumber={14}
+            questionnaireNumber={17}
             scale={["", "", "", ""]} 
             values={["not at all part of my life", "only slightly", "distinctly", "very much",]} 
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('PatientScreen')}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}

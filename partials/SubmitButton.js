@@ -26,21 +26,44 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber }) => {
 
     
 
-    async function copyImage(uri1) {
+    // async function copyImage(uri1) {
 
-        const name = returnInternalName(questionnaireNumber);
-        const myname = name.replace(/\s/g,'');
-        const uri2 = FileSystem.documentDirectory+'cats-data/'+val+myname+'image'+'.png';
+    //     const name = returnInternalName(questionnaireNumber);
+    //     const myname = name.replace(/\s/g,'');
+    //     const uri2 = FileSystem.documentDirectory+'cats-data/'+val+myname+'image'+'.png';
 
-        //this function creates the file, confusing since there is no createFile function
-        await FileSystem.writeAsStringAsync(uri2, '')
-            .then(() => console.log('image created at' + uri2 + "!!"));
-        await FileSystem.copyAsync({from: uri1, to: uri2})
-            .then(() => console.log('image copied!'))
-            .catch(e => console.log(e));
+    //     //this function creates the file, confusing since there is no createFile function
+    //     await FileSystem.writeAsStringAsync(uri2, '')
+    //         .then(() => console.log('image created at' + uri2 + "!!"));
+    //     await FileSystem.copyAsync({from: uri1, to: uri2})
+    //         .then(() => console.log('image copied!'))
+    //         .catch(e => console.log(e));
 
-        return uri2;
+    //     return uri2;    
+    // }
+
+
+
+async function saveImageToAsyncStorage(uri) {
+    try {
+        // 从原始 URI 读取图像为 Base64
+        const base64 = await FileSystem.readAsStringAsync(uri, { encoding: FileSystem.EncodingType.Base64 });
+
+        // 生成一个唯一的键名用于存储图像
+        const imageKey = 'image' + Date.now();
+
+        // 将 Base64 图像数据存储到 AsyncStorage
+        await AsyncStorage.setItem(imageKey, base64);
+        console.log('Image saved to AsyncStorage with key:', imageKey);
+
+        return imageKey;
+
+    } catch (error) {
+        console.error('Error saving image to AsyncStorage', error);
+        return null;
     }
+}
+
 
 
     async function copyImage(uri1) {
@@ -91,20 +114,14 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber }) => {
     
             // 捕获屏幕截图
             const uri = await capture();
-                
+
+            await saveImageToAsyncStorage(uri);
+
+
             // 复制图片并获取新路径
-            let myuri = await copyImage(uri);
+            //let myuri = await copyImage(uri);
             
-            // 读取图片为 Base64
-            const base64 = await FileSystem.readAsStringAsync(myuri, { encoding: FileSystem.EncodingType.Base64 });
-    
-            // 创建一个唯一的键名
-            const imageKey = 'image' + Date.now();
-    
-            // 将 Base64 图片存储到 AsyncStorage
-            await AsyncStorage.setItem(imageKey, base64);
-    
-            console.log('Image stored with key:', imageKey);
+
     
             goHome();
         } catch (error) {

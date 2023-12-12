@@ -1,6 +1,7 @@
+import { isNewBackTitleImplementation } from "react-native-screens";
 import { tableColumnsSelf } from "../schemaconstants";
 
-function queryZipper(questionnaireNumber : number, data : Array<any>) : string | Array<String> {
+function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : string | Array<String> {
 
     let query = ""; 
 
@@ -137,11 +138,11 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
 
             // if table is RLE
             if (questionnaireNumber == 14){
-                if (data[i] == "YES"){
+                if (data[i] == "true"){
                     data[i] = 1;
                 }
 
-                else if (data[i] == "Still affects me"){
+                else if (data[i] == "false"){
                     data[i] = 2;
                 }
 
@@ -159,8 +160,8 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
             }
 
 
-
-            if (questionnaireNumber == 14){
+             // if table is SRLE
+            if (questionnaireNumber == 17){
                 if (data[i] == "not at all part of my life") {
                     
                     data[i] = 1;
@@ -182,19 +183,51 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
                 }
 
             }
+
+
+            // if its  TICS
+            if (questionnaireNumber == 22){
+                if (data[i] == "Not at all") {
+                    
+                    data[i] = 0;
+
+                }
+                else if (data[i] == "Slightly"){
+
+                    data[i] = 1;
+                }
+
+                else if (data[i] == "Moderately"){
+                    data[i] = 2;
+    
+                }
+
+
+                else if (data[i] == "Very"){
+                    data[i] = 3;
+                }
+
+                else if (data[i] == "Extremely"){
+                    data[i] = 4;
+                }
+
+            }
             
             
 
 
             if (i == mycolumns.length -1){
-                let currinsert = currcolumn + " = " + data[i]; 
+
+                let currinsert = data[i]; 
                 query = query + currinsert;
                 break;
             }
 
+
+            
             
 
-            let currinsert = currcolumn + " = " + data[i] + ','; 
+            let currinsert = data[i] + ','; 
 
             query = query + currinsert;
         }
@@ -203,4 +236,4 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
     return query;
 }
 
-export default queryZipper;
+export default queryZipper_insert;

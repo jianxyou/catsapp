@@ -19,15 +19,14 @@ const SIASScreen = ({navigation}) => {
     );
     return (  
         <SIASQuestionList
-            questionnaireNumber={8}
+            questionnaireNumber={11}
             scale={["", "", "", "", ""]} 
             values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('PatientScreen')}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}
             questionstyle={SIASStyle}
-
             qs={[
                 "I get nervous if I have to speak with someone in authority (teacher, boss, etc.)",  
                 "I have difficulty making eye contact with others",  

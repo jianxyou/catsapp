@@ -1,12 +1,15 @@
 import CompoundInternalRadioQuestionList from "../../surveytypes/CompoundInteralRadioQuestionList";
 
-import { Text } from 'react-native';
+import { Text, View} from 'react-native';
 
 import textstyles from "../../styles/textstyles";
 import barrettRadioStyle from "../../styles/input styles/barrettRadioStyle";
 import BarrattStyle from "../../styles/question styles/BarrattStyle";
 import BarrattCompoundStyle from "../../styles/compound survey styles/BarrattCompoundStyle";
 import barrattQuestionListStyle from "../../styles/question list styles/barrattQuestionListStyle";
+import CompoundSurvey from "../../surveytypes/CompoundSurvey";
+
+
 
 const BarrattScreen = ({navigation}) => {
     return ( 
@@ -32,7 +35,15 @@ const BarrattScreen = ({navigation}) => {
                 "Nurse, skilled technician, medical technician, counselor, manager, police and fire personnel, financial manager, physical, occupational, speech therapist.",
                 "Mechanical, nuclear, and electrical engineer, educational aadministrator, verterinaarian, military officer, elementary, high school and special education teacher.",
                 "Physician, attorney, professor, chemical and aerospace engineer, judge, CEO, senior manager, public offical, pyschologist, pharmacist, accountant."
-            ]
+            ],
+
+            [
+                "If you grew up with both parents add Mother Father and divide by 2, if you grew up with one parent enter that score to the right",
+                "If you are married or partnered add Spouse + You and divide by 2 \n If you live alone enter Your score to the right \n If you are a full-time student leave this blank.",
+                "Double your score from line 2. \n If you are a full-time student leave this blank." 
+                "If you are a full-time student enter only your parents' score. \n Add line 1 and line 3 then divide by 3 (three) for a TOTAL EDUCATION SCore should be between 3 and 21",
+            ],
+
         ]} 
         scales={[
             [
@@ -55,7 +66,14 @@ const BarrattScreen = ({navigation}) => {
                 [35,35,35,35],
                 [40,40,40,40],
                 [45,45,45,45],
-            ],
+            ]
+            ,
+
+
+
+            [
+
+            ]
         ]} 
         values={[
             [
@@ -81,6 +99,16 @@ const BarrattScreen = ({navigation}) => {
             ],
         ]} 
 
+
+        qtypes = {
+            [],
+
+            [],
+
+            ["shortanswer","shortanswer","shortanswer","shortanswer","shortanswer"]
+        
+        }
+
         labels={[
             ["Level of School Completed", "Mother", "Father", "Spouse", "You"],
             ["Occupation", "Mother", "Father", "Spouse", "You"],
@@ -97,12 +125,13 @@ const BarrattScreen = ({navigation}) => {
         </Text>
         ]}
         desc=""
-        goHome={() => navigation.navigate('Home')} 
+        goHome={() => navigation.navigate('AdminScreen')} 
         buttonstyles={barrettRadioStyle} 
         questionstyles={BarrattStyle} 
         liststyles={BarrattCompoundStyle} 
         finalstyles={barrattQuestionListStyle}
         />
+        
      );
 }
  

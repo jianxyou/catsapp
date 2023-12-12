@@ -10,7 +10,7 @@ import textstyles from '../../styles/textstyles';
 const AuditScreen = ({navigation}) => {
     return ( 
         <AuditQuestionList
-        questionnaireNumber={15}
+        questionnaireNumber={18}
         scales={
             [
                 ["Never", "Monthly or less", "2 to 4 times a month", "2 to 3 time a week", "4 or more times a week"],
@@ -82,7 +82,7 @@ const AuditScreen = ({navigation}) => {
 
 
             }
-        goHome={() => navigation.navigate('Home')}
+        goHome={() => navigation.navigate('PatientScreen')}
         buttonstyles={auditRadioStyles} 
         questionstyles={auditStyle}
         liststyles={auditQuestionListStyle}

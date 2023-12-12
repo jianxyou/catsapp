@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react'
+import React, { useEffect,useState  } from 'react';
 import { useColorScheme } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -41,6 +40,16 @@ import MaccatScreen from './screens/surveys screens/MacCAT';
 import GAFScreen from './screens/surveys screens/GAF';
 import CannabisWithdrawalScreen from './screens/surveys screens/CannabisWithdrawalScale';
 import BarrattScreen from './screens/surveys screens/BSMSS';
+import SSRScreen from './screens/surveys screens/SSRS';
+import HAMDScreen from './screens/surveys screens/HAMD';
+import TICSScreen from './screens/surveys screens/TICS';
+import SAQScreen from './screens/surveys screens/SAQ';
+import TLFBScreen from './screens/surveys screens/TLFB';
+import PatientScreen from './screens/special screens/PatientScreen';
+import AdminScales from './screens/special screens/AdminScreen';
+import MriScreen from './screens/special screens/MriScreen';
+
+
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { View, Text } from 'react-native';
@@ -69,6 +78,8 @@ function App(): JSX.Element {
     <NavigationContainer>
       <ParticipantContext.Provider value={{val, setVal}}>
       <Stack.Navigator>
+
+
       <Stack.Screen name="Main" component={MainScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       {/* <Stack.Screen name="Worker" component={WorkerScreen} /> */}
@@ -101,8 +112,15 @@ function App(): JSX.Element {
       <Stack.Screen name="Maccat" component={MaccatScreen} />
       <Stack.Screen name="GAF" component={GAFScreen} />
       <Stack.Screen name='Cannabis' component={CannabisWithdrawalScreen} />
-      <Stack.Screen name='Barratt'component={BarrattScreen} />
-      
+      <Stack.Screen name='BSMSS'component={BarrattScreen} />
+      <Stack.Screen name='SSRS'component={SSRScreen} />
+      <Stack.Screen name='HAMD'component={HAMDScreen} />
+      <Stack.Screen name='TICS'component={TICSScreen} />
+      <Stack.Screen name='SAQ'component={SAQScreen} />
+      <Stack.Screen name='TLFB' component={TLFBScreen} />
+      <Stack.Screen name='PatientScreen' component={PatientScreen} />
+      <Stack.Screen name='AdminScreen' component={AdminScales} />
+      <Stack.Screen name='MriScreen' component={MriScreen} />
 
       </Stack.Navigator>
       </ParticipantContext.Provider>

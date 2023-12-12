@@ -19,11 +19,11 @@ const SASSCreen = ({navigation}) => {
 
     return (
         <SIASQuestionList
-            questionnaireNumber={9}
+            questionnaireNumber={12}
             desc={desc}
             scale={["", "", "", ""]}
             values={["None OR little of the time", "Some of the time", "Good part of the time", "Most OR all of the time"]}
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('PatientScreen')}
             buttonstyle={SASRadioStyles}
             liststyle={SASQuestionListStyle}
             questionstyle={SIASStyle}
@@ -49,7 +49,11 @@ const SASSCreen = ({navigation}) => {
                 "My face gets hot and blushes",
                 "I fall asleep easily and get a good night’s rest",
                 "I have nightmares",
+                
             ]}
+
+
+            
 
         />
       );

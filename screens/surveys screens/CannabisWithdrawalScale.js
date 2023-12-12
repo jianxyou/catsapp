@@ -26,11 +26,11 @@ const CannabisWithdrawalScreen = ({navigation}) => {
 
     return (
         <CannabisQuestionList
-            questionnaireNumber={18}
+            questionnaireNumber={21}
             desc={desc}
             scale={[0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
             values={[0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('PatientScreen')}
             buttonstyle={cannabisRadioStyles}
             liststyle={cannabisQuestionListStyle}
             questionstyle={SIASStyle}

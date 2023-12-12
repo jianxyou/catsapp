@@ -6,7 +6,7 @@ import RLEStyle from "../../styles/question styles/RLEStyle";
 const RLEScreen = ({navigation}) => {
     return (  
         <CheckboxSurvey 
-        questionnaireNumber={11}
+        questionnaireNumber={14}
 
         qs={[
             "Have you had a serious illness or been seriously injured?",
@@ -107,7 +107,7 @@ const RLEScreen = ({navigation}) => {
         Please tick the YES box if the event has occurred.
         Please tick the 'still affects me' box if the event is still having an effect on your life" 
         
-        goHome={() => navigation.navigate('Home')} 
+        goHome={() => navigation.navigate('PatientScreen')} 
         labels={["YES", "Still affects me"]} 
         buttonstyles={checkButtonStyle} 
         questionstyles={RLEStyle} 

@@ -10,7 +10,7 @@ import textstyles from '../../styles/textstyles';
 const RosenbergScreen = ({navigation}) => {
     return (  
         <NoNumberQuestionList
-            questionnaireNumber={10}
+            questionnaireNumber={13}
             desc={
                     <Text style={textstyles.desctext}>
                         Please mark the appropriate answer for each of the statements below:
@@ -20,7 +20,7 @@ const RosenbergScreen = ({navigation}) => {
             scale={["", "", "", ""]}
             values={["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]}
             labels={["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]}
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('PatientScreen')}
             buttonstyles={rosenbergRadioStyles}
             questionstyles={rosenbergStyle}
             finalstyles={rosenbergQuestionListStyle}

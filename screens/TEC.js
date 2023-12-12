@@ -8,7 +8,7 @@ import questionListStyle from "../styles/question list styles/questionListStyle"
 const TecScreen = ({navigation}) => {
     return ( 
         <TecQuestionList
-        questionnaireNumber={17}
+        questionnaireNumber={20}
         qs={[
             "Having to look after your parents and/or brothers and sisters when you were a child.",
             "Family problems (e.g., parent with alcohol or psychiatric problems, poverty).",
@@ -70,7 +70,7 @@ const TecScreen = ({navigation}) => {
                 </Text>
             </View>
         } 
-        goHome={() => navigation.navigate('Home')} 
+        goHome={() => navigation.navigate('PatientScreen')} 
         finalstyles={questionListStyle}
         />
      );
