@@ -23,7 +23,7 @@ const RadioQuestion = ({q, scale, values, num, callback, questionstyle, buttonst
     ));
 
     const onRadioBtnClick = (item) => {
-
+        
         let updatedState = isLiked.map((isLikedItem) =>
             isLikedItem.id === item.id
             ? { ...isLikedItem, selected: !(isLikedItem.selected) }

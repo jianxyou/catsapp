@@ -48,8 +48,8 @@ import TLFBScreen from './screens/surveys screens/TLFB';
 import PatientScreen from './screens/special screens/PatientScreen';
 import AdminScales from './screens/special screens/AdminScreen';
 import MriScreen from './screens/special screens/MriScreen';
-
-
+import { displayNamesSelf, internalNamesSelf } from './schemaconstants';
+import CSSRSScreen from './screens/surveys screens/SSRS';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { View, Text } from 'react-native';
@@ -61,6 +61,8 @@ function App(): JSX.Element {
 
   const [val, setVal] = useState(getAsyncData());
 
+  
+
   useEffect(() => {
     const clearStorage = async () => {
         try {
@@ -71,8 +73,24 @@ function App(): JSX.Element {
             console.error('Failed to clear the async storage.', e);
         }
     };
+
+    const initializeFilled = async () => {
+      try {
+        
+        const initialFilled = displayNamesSelf.map(() => false);
+        await AsyncStorage.setItem('filled', JSON.stringify(initialFilled));
+        console.log(initialFilled);
+      } catch (error) {
+        // 错误处理
+        console.error('Failed to initialize filled array', error);
+      }
+    };
+
+    
     clearStorage();
+    initializeFilled();
 }, []);
+
 
   return (
     <NavigationContainer>
@@ -113,7 +131,7 @@ function App(): JSX.Element {
       <Stack.Screen name="GAF" component={GAFScreen} />
       <Stack.Screen name='Cannabis' component={CannabisWithdrawalScreen} />
       <Stack.Screen name='BSMSS'component={BarrattScreen} />
-      <Stack.Screen name='SSRS'component={SSRScreen} />
+      <Stack.Screen name='SSRS'component={CSSRSScreen } />
       <Stack.Screen name='HAMD'component={HAMDScreen} />
       <Stack.Screen name='TICS'component={TICSScreen} />
       <Stack.Screen name='SAQ'component={SAQScreen} />

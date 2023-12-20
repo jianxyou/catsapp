@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text } from 'react-native'
+import { ScrollView,StyleSheet, View, Text } from 'react-native'
 
 import SIASQuestionList from '../../surveytypes/SIASQuestionList';
 import SIASRadioStyles from '../../styles/input styles/SIASRadioStyles';
@@ -10,6 +10,32 @@ const SIASScreen = ({navigation}) => {
 
     const styles = SIASquestionliststyle;
 
+    const styles2 = StyleSheet.create({
+        stickyHeader: {
+            // 添加您的样式，例如背景色，字体样式等
+            backgroundColor: 'white',
+            padding: 10,
+            // 确保它在顶部
+            zIndex: 1000
+        },
+        // headerItem: {
+        //     // 为每个 header item 设置样式
+        //     flex: 1, // 每个子视图都占据等量的空间
+        //     alignItems: 'center', // 水平居中
+        //     justifyContent: 'center', // 垂直居中
+        //     padding: 5, // 适当的内边距
+        // },
+    });
+
+    const StickyHeader = () => (
+
+
+        <View style={styles2.stickyHeader}>
+        <Text>From left to right</Text>
+        <Text>Not at all, Slightly, Moderately, Very, Extremely</Text>
+        </View>
+    );
+
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
@@ -18,6 +44,8 @@ const SIASScreen = ({navigation}) => {
         </View>
     );
     return (  
+        <ScrollView stickyHeaderIndices={[0]}>
+            <StickyHeader />
         <SIASQuestionList
             questionnaireNumber={11}
             scale={["", "", "", "", ""]} 
@@ -50,7 +78,13 @@ const SIASScreen = ({navigation}) => {
                 "I am unsure whether to greet someone I know only slightly",  
             ]}
         />
+        </ScrollView>
     );
+
+    
+     
 }
- 
+
+
 export default SIASScreen;
+

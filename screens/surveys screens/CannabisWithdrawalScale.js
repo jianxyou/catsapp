@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import {ScrollView, StyleSheet, View, Text } from 'react-native';
 
 import SIASQuestionList from '../../surveytypes/SIASQuestionList';
 import SASQuestionListStyle from '../../styles/question list styles/SASQuestionListStyle';
@@ -12,6 +12,23 @@ import textstyles from '../../styles/textstyles';
 const CannabisWithdrawalScreen = ({navigation}) => {
 
     const styles = SIASquestionliststyle;
+    const styles2 = StyleSheet.create({
+        stickyHeader: {
+            // 添加您的样式，例如背景色，字体样式等
+            backgroundColor: 'white',
+            padding: 10,
+            // 确保它在顶部
+            zIndex: 1000
+        },
+    });
+
+
+    const StickyHeader = () => (
+        <View style={styles2.stickyHeader}>
+        <Text>From left to right, 0 to 10</Text>
+        <Text>Not at all, Moderately, Extreme</Text>
+        </View>
+    );
 
     const desc = (
         <View style={styles.desc}>
@@ -23,8 +40,11 @@ const CannabisWithdrawalScreen = ({navigation}) => {
             </Text>
         </View>
     );
+    
 
     return (
+        <ScrollView stickyHeaderIndices={[0]}>
+            <StickyHeader />
         <CannabisQuestionList
             questionnaireNumber={21}
             desc={desc}
@@ -58,6 +78,7 @@ const CannabisWithdrawalScreen = ({navigation}) => {
             ]}
 
         />
+        </ScrollView>
       );
 }
  

@@ -159,7 +159,7 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
             }
 
 
-
+            
             if (questionnaireNumber == 14){
                 if (data[i] == "not at all part of my life") {
                     
@@ -180,7 +180,6 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
                 else if (data[i] == "very much"){
                     data[i] = 4;
                 }
-
             }
             
             

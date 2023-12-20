@@ -20,9 +20,11 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback}) => {
     }
 
     const genq = (q, index, short) => {
+
+        const key = `subq-${index}`;
         if (short) {
             return (
-                <View style={styles.singlequestion} key={index}>
+                <View style={styles.singlequestion} key={key}>
 
                     <View style={styles.questionlabelcontainer} >
 
@@ -73,7 +75,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback}) => {
             )
         } else {
             return (
-                <View style={styles.singlequestion}>
+                <View style={styles.singlequestion} key={key}>
 
                 <View style={styles.questionlabelcontainer} >
 

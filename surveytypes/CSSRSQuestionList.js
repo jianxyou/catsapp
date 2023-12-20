@@ -8,7 +8,7 @@ import NoNumberMultiselectRadioQuestion from '../questiontypes/NoNumberMultisele
 import FormattedCompound from '../SurveyWrappers/FormattedCompund';
 import ShortAnswerQuestion from '../questiontypes/ShortAnswerQuestion';
 
-const CompoundInternalRadioQuestionList = ({listoflistofqs, scales, values, questionnaireNumber, minidescs, desc, goHome, labels, buttonstyles, questionstyles, liststyles, finalstyles}) => {
+const CSSRSQuestionList = ({listoflistofqs, scales, values, questionnaireNumber, minidescs, desc, goHome, labels, buttonstyles, questionstyles, liststyles, finalstyles}) => {
 
     const [data, changeData] = useState(allNull(totalLength(listoflistofqs)));
 
@@ -32,19 +32,10 @@ const CompoundInternalRadioQuestionList = ({listoflistofqs, scales, values, ques
         for (let i = 0; i < l.length; i++) {
             let temp = l[i];
 
-            if (i >= 2 ){
-                let tempJSX = temp.map(
-                    (q, index) =>  <ShortAnswerQuestion key={index+currindex} scale={scales[i][index]} values={values[i][index]} num={index+currindex} q={q} callback={respond} buttonstyles={buttonstyles} questionstyles={questionstyles}/>
-                );
-                myarr[i] = tempJSX;
-            }
-            
-            else{
-                let tempJSX = temp.map(
-                    (q, index) =>  <NoNumberMultiselectRadioQuestion key={index+currindex} scale={scales[i][index]} values={values[i][index]} num={index+currindex} q={q} callback={respond} buttonstyles={buttonstyles} questionstyles={questionstyles}/>
-                );
-                myarr[i] = tempJSX;
-            }
+            let tempJSX = temp.map(
+                (q, index) =>  <NoNumberMultiselectRadioQuestion key={index+currindex} scale={scales[i]} values={values[i]} num={index+currindex} q={q} callback={respond} buttonstyles={buttonstyles} questionstyles={questionstyles}/>
+            );
+            myarr[i] = tempJSX;
 
             currindex =+ temp.length;
         }
@@ -69,5 +60,7 @@ const CompoundInternalRadioQuestionList = ({listoflistofqs, scales, values, ques
     );
 }
 
+
+
  
-export default CompoundInternalRadioQuestionList;
+export default CSSRSQuestionList ;

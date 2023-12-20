@@ -1,24 +1,49 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, ScrollView, TouchableOpacity } from 'react-native';
-import TLFBStyles from '../../styles/question styles/TLFBStyle'; // Your calendar-specific styles
+//import TLFBStyles from '../../styles/question styles/TLFBStyle'; // Your calendar-specific styles
 import moment from 'moment'; // You might need to install moment for date manipulation
+import TLFBQuestionList from "../../surveytypes/TLFBQuestionList";
 
-const TLFBScreen = ({ navigation }) => {
-  // Create a state to hold the values of all inputs
+import textstyles from "../../styles/textstyles";
+import barrettRadioStyle from "../../styles/input styles/barrettRadioStyle";
+import BarrattStyle from "../../styles/question styles/BarrattStyle";
+import BarrattCompoundStyle from "../../styles/compound survey styles/BarrattCompoundStyle";
+import barrattQuestionListStyle from "../../styles/question list styles/barrattQuestionListStyle";
+import TLFBStyles from '../../styles/TLFBStyles';
+
+
+const TLFBScreen = ({ navigation }) =>{
+
   const [days, setDays] = useState({});
-  const startOfMonth = moment().startOf('month');
+  
+  // 月份和天数数据
+  const months = [
+    { name: 'January', days: 31 },
+    { name: 'February', days: 28 }, // 注意：未考虑闰年
+    { name: 'March', days: 31 },
+    { name: 'April', days: 30 },
+    { name: 'May', days: 31 },
+    { name: 'June', days: 30 },
+    { name: 'July', days: 31 },
+    { name: 'August', days: 31 },
+    { name: 'September', days: 30 },
+    { name: 'October', days: 31 },
+    { name: 'November', days: 30 },
+    { name: 'December', days: 31 }
+  ];
 
-  // Function to handle the change of any input field
+  // 处理输入变化的函数
+  // 处理输入变化的函数
   const handleInputChange = (value, dayKey) => {
     setDays(prevDays => ({ ...prevDays, [dayKey]: value }));
   };
 
-  // Render a single cell input
-  const renderCell = (day, index) => {
-    const dayKey = day.format('YYYY-MM-DD');
+  // 渲染单个格子的函数
+  const renderCell = (month, day) => {
+    const dayKey = `${month.name}-${day}`;
     return (
       <View key={dayKey} style={TLFBStyles.cell}>
-        <Text style={TLFBStyles.dateText}>{day.date()}</Text>
+        <Text style={TLFBStyles.dateText}>{day}</Text>
         <TextInput
           style={TLFBStyles.dayInput}
           keyboardType="numeric"
@@ -29,57 +54,107 @@ const TLFBScreen = ({ navigation }) => {
     );
   };
 
-  // Render the calendar grid
+  // 渲染整个表格的函数
   const renderGrid = () => {
-    const grid = [];
-    let day = startOfMonth.clone();
-
-    // Start the calendar on the correct day of the week
-    const startDay = startOfMonth.day();
-
-    // If the month does not start on Sunday, add the last few days of the previous month
-    if (startDay !== 0) {
-      for (let i = 0; i < startDay; i++) {
-        grid.push(
-          <View key={`empty-${i}`} style={TLFBStyles.cell}>
-            <Text style={TLFBStyles.dateText}></Text>
+    return months.map(month => (
+      <View key={month.name} style={TLFBStyles.monthContainer}>
+        <Text style={TLFBStyles.monthYearText}>{month.name}</Text>
+        {Array.from({ length: Math.ceil(month.days / 10) }).map((_, rowIndex) => (
+          <View key={`${month.name}-row-${rowIndex}`} style={TLFBStyles.row}>
+            {Array.from({ length: Math.min(10, month.days - rowIndex * 10) }, (_, index) => {
+              return renderCell(month, rowIndex * 10 + index + 1);
+            })}
           </View>
-        );
-      }
-    }
-
-    // Add the days of the month
-    while (day.month() === startOfMonth.month()) {
-      grid.push(renderCell(day.clone(), grid.length));
-      day.add(1, 'day');
-    }
-
-    // Break the grid array into rows for the weeks
-    const rows = [];
-    for (let i = 0; i < grid.length; i += 7) {
-      const weekRow = grid.slice(i, i + 7);
-      rows.push(
-        <View key={`row-${i}`} style={TLFBStyles.row}>
-          {weekRow}
-        </View>
-      );
-    }
-    return rows;
+        ))}
+      </View>
+    ));
   };
 
-  return (
+
+  return ( 
+
     <ScrollView style={TLFBStyles.container}>
-      <Text style={TLFBStyles.monthYearText}>
-        {startOfMonth.format('MMMM YYYY')}
-      </Text>
+      
+      <Text style={textstyles.desctext}>
+        
+        </Text>
+
       <View style={TLFBStyles.calendar}>
         {renderGrid()}
       </View>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')} style={TLFBStyles.button}>
-        <Text>Go Home</Text>
-      </TouchableOpacity>
+
+    <TLFBQuestionList
+    listoflistofqs={[
+      
+        [
+          "Total Joints :",
+          "Days Joints :",
+          "Perc Days Joints :",
+          "Avg Joint Per User :",
+          "Avg Joint Per Day :",
+          "Abstinent Days :",
+          "Est Joints Year :",
+          "Great Joint Day :",
+          "Joints Per Week :",
+          
+
+        ]
+
+    ]} 
+    scales={[
+        [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+        
+
+    ]} 
+    values={[
+
+        [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+
+    ]} 
+    labels={[
+        []
+    ]}
+
+    title="The Barrat Simplified Measure of Social Status (BSMSS)" 
+    minidescs={[
+      
+        
+
+    ]}
+    desc=""
+    goHome={() => navigation.navigate('PatientScreen')} 
+    buttonstyles={barrettRadioStyle} 
+    questionstyles={BarrattStyle} 
+    liststyles={BarrattCompoundStyle} 
+    finalstyles={barrattQuestionListStyle}
+    questionnaireNumber = {23}
+    />
+
     </ScrollView>
-  );
+    
+ );
 }
+
+
+
+
 
 export default TLFBScreen;

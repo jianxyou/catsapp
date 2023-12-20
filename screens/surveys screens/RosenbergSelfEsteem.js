@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { ScrollView, StyleSheet,View, Text } from 'react-native';
 
 import NoNumberQuestionList from "../../surveytypes/NoNumberQuestionList";
 
@@ -8,7 +8,30 @@ import rosenbergQuestionListStyle from "../../styles/question list styles/rosenb
 import textstyles from '../../styles/textstyles';
 
 const RosenbergScreen = ({navigation}) => {
+
+    const styles2 = StyleSheet.create({
+        stickyHeader: {
+            // 添加您的样式，例如背景色，字体样式等
+            backgroundColor: 'white',
+            padding: 10,
+            // 确保它在顶部
+            zIndex: 1000
+        },
+    });
+
+
+    const StickyHeader = () => (
+        <View style={styles2.stickyHeader}>
+        <Text>From left to right</Text>
+        <Text>Strongly Disagree, Disagree, Agree, Strongly Agree</Text>
+        </View>
+    );
+
     return (  
+
+        <ScrollView stickyHeaderIndices={[0]}>
+            <StickyHeader />
+
         <NoNumberQuestionList
             questionnaireNumber={13}
             desc={
@@ -38,6 +61,7 @@ const RosenbergScreen = ({navigation}) => {
             ]}
 
         />
+        </ScrollView>
     );
 }
  

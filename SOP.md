@@ -8,3 +8,24 @@ To use the app follow 4 basic steps
 
 4. After transfering data, you can optionally, (but recommended), clear the stored data from the app through the admin menu. 
 
+
+
+
+
+
+定下本周的汇报任务： 
+
+
+先想好我要汇报什么
+
+1， app的工作进展的很顺利，成功在app上部署，按照sop进行了测试，可以进行完整的测试并且并且做了两个完整的流程测试了
+
+2， 关于database 的bug 也有进行相应的修复， 修复的bug是什么
+
+3， data相关的retraction 任务，了解发给别人data的sop 是什么
+
+4，
+
+
+
+如何把整个sop给设计出来呢，我真的非常的

@@ -4,6 +4,8 @@ const tableNamesSelf : ArraUZHIDy<string | Array<string> > = [
     "BSMSS",
     "HAMD",
     
+
+    
     ["HUS_Hassles", "HUS_Uplifts" ],
     "MCQ_curbfeppa",
     "SAQ",
@@ -26,7 +28,7 @@ const tableNamesSelf : ArraUZHIDy<string | Array<string> > = [
     "tbl_CWS",
     //"SRAC",
     "TICS",
-    //"TLFB"
+    "TLFB"
 ];
 
 const displayNamesSelf = [
@@ -34,6 +36,8 @@ const displayNamesSelf = [
     "SSRS",
     "BSMSS",
     "HAMD",
+
+
 
     "Hassles and Uplifts Scale",
     "12 - Item Marijuana Craving Questionnaire", 
@@ -56,7 +60,7 @@ const displayNamesSelf = [
     'T.E.C.', 
     'The Cannabis Withdrawal Scale',
     "TICS",
-  //  "TLFB"
+    "TLFB"
 ];
 
 
@@ -65,6 +69,8 @@ const internalNamesSelf : Array<string> = [
     "SSRS",
     "BSMSS",
     "HAMD",
+
+
 
     "Hassles and Uplifts", 
     "MCQ", 
@@ -87,7 +93,7 @@ const internalNamesSelf : Array<string> = [
     'Tec', 
     "Cannabis",
     "TICS",
-    //"TLFB"
+    "TLFB"
 ];
 
 
@@ -115,10 +121,11 @@ const sqlCreateTablesSelf : Array<string> = [
     //'strSQL="CREATE TABLE [TICS] IF NOT EXISTS ([IDTICS] Counter,[patientID] Long,[visit] Integer,[tics_1] Integer,[tics_2] Integer,[tics_3] Integer,[tics_4] Integer,[tics_5] Integer,[tics_6] Integer,[tics_7] Integer,[tics_8] Integer,[tics_9] Integer,[tics_10] Integer,[tics_11] Integer,[tics_12] Integer,[tics_13] Integer,[tics_14] Integer,[tics_15] Integer,[tics_16] Integer,[tics_17] Integer,[tics_18] Integer,[tics_19] Integer,[tics_20] Integer,[tics_21] Integer,[tics_22] Integer,[tics_23] Integer,[tics_24] Integer,[tics_25] Integer,[tics_26] Integer,[tics_27] Integer,[tics_28] Integer,[tics_29] Integer,[tics_30] Integer )"\nCurrentdb.Execute strSQL'
 ];
 
-const tableColumnsSelf : Array<any> = [
+const tableColumnsSelf : Array<any> = [ 
+
 
     ["Life_FirstUse","Life_HowLong","Life_TypicalRoute","Life_Frequency","Life_Dose","Life_AgeFirstUse","Life_totalMonthsUse","Life_FreqMonth","Life_TotalAmount","12_FirstUse","12_TypicalRoute","12_Freq","12_AgeFirstUse","12_TotalMonthsUse","12_FreqMonth","12_TotalAmountofLifetime","UseMore","NeedMore","[SXSDuring&HowLong]","SXSstop","OtherDrugs","TakeMore","CutDown","TimeSpent","GivenUp","KeepTaking","WhyTake","Harmful","DamageBrain","Crave","InGroup","FamilyHistDrug","WillingtoChange"],
-    [],
+    ["wocao"],
     ["Occupation","Education","SocialStatus"], //BSSS
     ["HRSD_1", "HRSD_2", "HRSD_3", "HRSD_4", "HRSD_5", "HRSD_6", "HRSD_7", "HRSD_8", "HRSD_9", "HRSD_10", "HRSD_11", "HRSD_12", "HRSD_13", "HRSD_14", "HRSD_15", "HRSD_16", "HRSD_17", "HRSD_18","HRSD_18AMPM", "HRSD_19", "HRSD_20", "HRSD_21"],
 
@@ -145,6 +152,7 @@ const tableColumnsSelf : Array<any> = [
     ["Age_0-6_1_Duration","Age_7-12_1_Duration","Age_13-18_1_Duration","Age_0-6_2_Duration","Age_7-12_2_Duration","Age_13-18_2_Duration","Age_0-6_3_Duration","Age_7-12_3_Duration","Age_13-18_3_Duration","Age_0-6_4_Duration","Age_7-12_4_Duration","Age_13-18_4_Duration","Age_0-6_5_Duration","Age_7-12_5_Duration","Age_13-18_5_Duration","Age_0-6_6_Duration","Age_7-12_6_Duration","Age_13-18_6_Duration","Age_0-6_7_Duration","Age_7-12_7_Duration","Age_13-18_7_Duration","Age_0-6_8_Duration","Age_7-12_8_Duration","Age_13-18_8_Duration","Age_0-6_9_Duration","Age_7-12_9_Duration","Age_13-18_9_Duration","Age_0-6_10_Duration","Age_7-12_10_Duration","Age_13-18_10_Duration","Age_0-6_11_Duration","Age_7-12_11_Duration","Age_13-18_11_Duration","Age_0-6_12_Duration","Age_7-12_12_Duration","Age_13-18_12_Duration","Age_0-6_13_Duration","Age_7-12_13_Duration","Age_13-18_13_Duration","Age_0-6_14_Duration","Age_7-12_14_Duration","Age_13-18_14_Duration","Age_0-6_15_Duration","Age_7-12_15_Duration","Age_13-18_15_Duration","Age_0-6_16_Duration","Age_7-12_16_Duration","Age_13-18_16_Duration","Age_0-6_17_Duration","Age_7-12_17_Duration","Age_13-18_17_Duration","Age_0-6_18_Duration","Age_7-12_18_Duration","Age_13-18_18_Duration","Age_0-6_19_Duration","Age_7-12_19_Duration","Age_13-18_19_Duration","Age_0-6_20_Duration","Age_7-12_20_Duration","Age_13-18_20_Duration","Age_0-6_21_Duration","Age_7-12_21_Duration","Age_13-18_21_Duration","Age_0-6_22_Duration","Age_7-12_22_Duration","Age_13-18_22_Duration","Age_0-6_23_Duration","Age_7-12_23_Duration","Age_13-18_23_Duration","Age_0-6_24_Duration","Age_7-12_24_Duration","Age_13-18_24_Duration","Age_0-6_25_Duration","Age_7-12_25_Duration","Age_13-18_25_Duration","Age_0-6_26_Duration","Age_7-12_26_Duration","Age_13-18_26_Duration","Age_0-6_27_Duration","Age_7-12_27_Duration","Age_13-18_27_Duration","Age_0-6_28_Duration","Age_7-12_28_Duration","Age_13-18_28_Duration","Age_0-6_29_Duration","Age_7-12_29_Duration","Age_13-18_29_Duration"],
     ["Severity_1","Impact_1","Severity_2","Impact_2","Severity_3","Impact_3","Severity_4","Impact_4","Severity_5","Impact_5","Severity_6","Impact_6","Severity_7","Impact_7","Severity_8","Impact_8","Severity_9","Impact_9","Severity_10","Impact_10","Severity_11","Impact_11","Severity_12","Impact_12","Severity_13","Impact_13","Severity_14","Impact_14","Severity_15","Impact_15","Severity_16","Impact_16","Severity_17","Impact_17","Severity_18","Impact_18","Severity_19","Impact_19"],
     ["tics_1","tics_2","tics_3","tics_4","tics_5","tics_6","tics_7","tics_8","tics_9","tics_10","tics_11","tics_12","tics_13","tics_14","tics_15","tics_16","tics_17","tics_18","tics_19","tics_20","tics_21","tics_22","tics_23","tics_24","tics_25","tics_26","tics_27","tics_28","tics_29","tics_30"],
+    ["TotalJoints","DaysJoints","PercDaysJoints","AvgJointPerUseDay","AvgJointPerDay","AbstinentDays","EstJointsYear","GreatJointDay","JointsPerWeek"]
 ];
 
 

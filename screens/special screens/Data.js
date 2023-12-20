@@ -26,27 +26,29 @@ const DataScreen = ({ navigation }) => {
         }
     };
 
-    const saveDataToFile = async () => {
-        const fileName = 'AllData.txt';
-        const destinationPath = `${RNFS.LibraryDirectoryPath}/${fileName}`;
+    
+const saveDataToFile = async () => {
+    const fileName = 'AllData.txt';
+    // 使用DocumentDirectoryPath而不是LibraryDirectoryPath
+    const destinationPath = `${RNFS.DocumentDirectoryPath}/${fileName}`;
 
-        // 将所有的数据合并为一个字符串
-        const allData = data.map(item => item.value).join('\n');
+    // 将所有的数据合并为一个字符串
+    const allData = data.map(item => item.value).join('\n');
 
-        // 检查文件是否已存在，如果存在则删除（可选步骤）
-        if (await RNFS.exists(destinationPath)) {
-            await RNFS.unlink(destinationPath);
-        }
+    // 检查文件是否已存在，如果存在则删除（可选步骤）
+    if (await RNFS.exists(destinationPath)) {
+        await RNFS.unlink(destinationPath);
+    }
 
-        // 写入数据到文件
-        try {
-            await RNFS.writeFile(destinationPath, allData, 'utf8');
-            Alert.alert('成功', `数据已保存到文件夹: ${destinationPath}`);
-        } catch (error) {
-            console.error('Error saving data to file', error);
-            Alert.alert('错误', '无法保存数据');
-        }
-    };
+    // 写入数据到文件
+    try {
+        await RNFS.writeFile(destinationPath, allData, 'utf8');
+        Alert.alert('成功', `数据已保存到文件夹: ${destinationPath}`);
+    } catch (error) {
+        console.error('Error saving data to file', error);
+        Alert.alert('错误', '无法保存数据');
+    }
+};
 
     return (
         <ScrollView>

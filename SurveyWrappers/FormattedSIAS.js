@@ -18,8 +18,12 @@ const FormattedSIAS = ({questionnaireNumber, listofqs, data, goHome, desc, value
                 ))}
             </View>
         )
-            
     }
+
+
+
+
+
 
     const mydesc = (
         <View>
@@ -28,10 +32,13 @@ const FormattedSIAS = ({questionnaireNumber, listofqs, data, goHome, desc, value
                     <Text style={styles.underline}>
                         {returnDisplayName(questionnaireNumber)}
                     </Text>
+
                 </Text>
             </View>
 
             {desc}
+
+            
 
             {generatelabels(values)}
 

@@ -47,7 +47,8 @@ const AuditQuestionList = ({questionnaireNumber, scales, values, qs, visible, de
             labels={[0,1,2,3,4]}
             speciallabel="Questions"
 
-        />
+
+            />
     );
 }
  

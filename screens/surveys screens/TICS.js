@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text } from 'react-native'
+import { ScrollView, StyleSheet, View, Text } from 'react-native'
 
 import SIASQuestionList from '../../surveytypes/SIASQuestionList';
 import SIASRadioStyles from '../../styles/input styles/SIASRadioStyles';
@@ -10,6 +10,24 @@ const TICSScreen = ({navigation}) => {
 
     const styles = SIASquestionliststyle;
 
+    const styles2 = StyleSheet.create({
+        stickyHeader: {
+            // 添加您的样式，例如背景色，字体样式等
+            backgroundColor: 'white',
+            padding: 10,
+            // 确保它在顶部
+            zIndex: 1000
+        },
+    });
+
+
+    const StickyHeader = () => (
+        <View style={styles2.stickyHeader}>
+        <Text>From left to right</Text>
+        <Text>Not at all, Slightly, Moderately, Very, Extremely</Text>
+        </View>
+    );
+
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
@@ -18,6 +36,8 @@ const TICSScreen = ({navigation}) => {
         </View>
     );
     return (  
+        <ScrollView stickyHeaderIndices={[0]}>
+            <StickyHeader />
         <SIASQuestionList
             questionnaireNumber={22}
             scale={["", "", "", "", ""]} 
@@ -60,6 +80,7 @@ const TICSScreen = ({navigation}) => {
                 "Times when i have no friends with whom i can do things"
             ]}
         />
+        </ScrollView>
     );
 }
  

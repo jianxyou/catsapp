@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { ScrollView,StyleSheet, View, Text } from 'react-native';
 
 import NoNumberQuestionList from '../../surveytypes/NoNumberQuestionList';
 import tableStyle from '../../styles/question styles/tableStyle';
@@ -9,7 +9,19 @@ import textstyles from '../../styles/textstyles';
 
 export default BeckScreen = ({navigation, route}) => {
 
+    const StickyHeader = () => (
+        <View style={styles.stickyHeader}>
+            <Text>0 : Not at all</Text>
+            <Text>1 : Mildly, but it didn’t bother me much</Text>
+            <Text>2 : Moderately – it wasn’t pleasant at times</Text>
+            <Text>3 : Severely – it bothered me a lot</Text>
+        </View>
+    );
+
     return (
+
+        <ScrollView stickyHeaderIndices={[0]}>
+            <StickyHeader />
         <NoNumberQuestionList
         questionnaireNumber={7}
         scale={[0, 1, 2, 3]} 
@@ -49,6 +61,7 @@ export default BeckScreen = ({navigation, route}) => {
         column next to each symptom</Text>}
     />
 
+    </ScrollView>
     );
 }
 
@@ -64,5 +77,13 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         flexDirection: 'column',
 
+    },
+
+    stickyHeader: {
+        // 添加您的样式，例如背景色，字体样式等
+        backgroundColor: 'white',
+        padding: 10,
+        // 确保它在顶部
+        zIndex: 1000
     },
 })

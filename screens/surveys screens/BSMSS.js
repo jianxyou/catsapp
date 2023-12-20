@@ -40,9 +40,20 @@ const BarrattScreen = ({navigation}) => {
             [
                 "If you grew up with both parents add Mother Father and divide by 2, if you grew up with one parent enter that score to the right",
                 "If you are married or partnered add Spouse + You and divide by 2 \n If you live alone enter Your score to the right \n If you are a full-time student leave this blank.",
-                "Double your score from line 2. \n If you are a full-time student leave this blank." 
+                "Double your score from line 2. \n If you are a full-time student leave this blank.",
                 "If you are a full-time student enter only your parents' score. \n Add line 1 and line 3 then divide by 3 (three) for a TOTAL EDUCATION SCore should be between 3 and 21",
             ],
+
+            [
+                "If you grew up with both parents add Mother Father and divide by 2, if you grew up with one parent enter that score to the right",
+                "If you are married or partnered add Spouse + You and divide by 2 \n If you live alone enter Your score to the right \n If you are a full-time student leave this blank.",
+                "Double your score from line 2. \n If you are a full-time student leave this blank.",
+                "If you are a full-time student enter only your parents' score. \n Add line 1 and line 3 then divide by 3 (three) for a TOTAL EDUCATION SCore should be between 3 and 21",
+            ],
+
+            [
+                "Add total education + total occupation (score should be between 8 and 66)"
+            ]
 
         ]} 
         scales={[
@@ -68,12 +79,24 @@ const BarrattScreen = ({navigation}) => {
                 [45,45,45,45],
             ]
             ,
+            [   
+                [],
+                [],
+                [],
+                []
+            ],
 
-
+            [   
+                [],
+                [],
+                [],
+                []
+            ],
 
             [
-
+                []
             ]
+
         ]} 
         values={[
             [
@@ -97,21 +120,33 @@ const BarrattScreen = ({navigation}) => {
                 [40,40,40,40],
                 [45,45,45,45],
             ],
+
+            [
+
+                [],
+                [],
+                [],
+                []
+            ],
+            [
+
+                [],
+                [],
+                [],
+                []
+            ],
+
+            [
+                []
+            ]
         ]} 
-
-
-        qtypes = {
-            [],
-
-            [],
-
-            ["shortanswer","shortanswer","shortanswer","shortanswer","shortanswer"]
-        
-        }
-
         labels={[
             ["Level of School Completed", "Mother", "Father", "Spouse", "You"],
             ["Occupation", "Mother", "Father", "Spouse", "You"],
+            [],
+            [],
+            []
+
         ]}
 
         title="The Barrat Simplified Measure of Social Status (BSMSS)" 
@@ -122,7 +157,20 @@ const BarrattScreen = ({navigation}) => {
 
         <Text style={textstyles.desctext}>
             Circle the appropriate number for your <Text style={textstyles.underline}>Mother's</Text>, your <Text style={textstyles.underline}>Father's</Text>, your <Text style={textstyles.underline}>Spouse / Partner's</Text>, and <Text style={textstyles.underline}>your</Text> occupation. If you grew up in a single parent home, use only the score from your parent. If you are not married or partnered circle only your score. If you are still a full-time student only circle the scores for your parents. If you are retired use your most recent occupation.
-        </Text>
+        </Text>,
+
+            <Text style={textstyles.desctext}>
+                Level of School Completed Scoring
+            </Text>,
+
+            <Text style={textstyles.desctext}>
+                Occupation Scoring
+            </Text>,
+
+            <Text style={textstyles.desctext}>
+            Total score
+            </Text>,
+
         ]}
         desc=""
         goHome={() => navigation.navigate('AdminScreen')} 
@@ -130,6 +178,7 @@ const BarrattScreen = ({navigation}) => {
         questionstyles={BarrattStyle} 
         liststyles={BarrattCompoundStyle} 
         finalstyles={barrattQuestionListStyle}
+        questionnaireNumber = {2}
         />
         
      );

@@ -25,11 +25,11 @@ const FinalWrapper = (questionnaireNumber, arr, data, goHome, styles) => {
 
     // creates a refernece to a JSX element, essentially a variable name
     const ref1 = useRef();
-    const ref2 = useRef();
+    // const ref2 = useRef();
 
-    const longenough = false;
+    // const longenough = false;
 
-    const qlist = arr[1];
+    // const qlist = arr[1];
 
     const copy = arr.map(val => val);
 
