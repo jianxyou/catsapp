@@ -63,6 +63,8 @@ const TecQuestion = ({q, num, callback}) => {
         if (item.selected) {
             let temp = cur;
             temp[2] = null;
+            temp[1] = null;
+            temp[3] = null;
             changeCur(temp);
         // selected
         } else {
@@ -81,6 +83,15 @@ const TecQuestion = ({q, num, callback}) => {
         changeText(val);
         let temp = cur;
         temp[1] = text;
+        changeCur(temp);
+        callback(num, cur);
+
+    };
+
+    const modify_2 = val => { 
+        changeText(val);
+        let temp = cur;
+        temp[3] = text;
         changeCur(temp);
         callback(num, cur);
 
@@ -154,7 +165,7 @@ style={{
 </View>
 
 <View style={styles.textinput}>
-<TextInput onChangeText={t => modify(t)} 
+<TextInput onChangeText={t => modify_2(t)} 
 placeholder='Support'
 style={{
     marginLeft: 50,

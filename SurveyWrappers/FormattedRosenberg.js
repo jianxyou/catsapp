@@ -9,7 +9,7 @@ const FormattedRosenberg = ({questionnaireNumber, listofqs, data, goHome, desc, 
 
     const generatelabels = labels => {
         return (
-            <View >
+            <View style={styles.withempty}>
 
                 <View style={styles.emptylabel} key={1}><Text style={styles.labeltext}>{speciallabel}</Text></View>
 

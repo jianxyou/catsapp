@@ -28,7 +28,7 @@ const DataScreen = ({ navigation }) => {
 
     
 const saveDataToFile = async () => {
-    const fileName = 'AllData.txt';
+    const fileName = 'sql.txt';
     // 使用DocumentDirectoryPath而不是LibraryDirectoryPath
     const destinationPath = `${RNFS.DocumentDirectoryPath}/${fileName}`;
 

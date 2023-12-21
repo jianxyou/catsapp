@@ -134,15 +134,25 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
             }
 
 
-    
+            
+
+            // if table is TEC
+
+            // if table is RLE
+            if (questionnaireNumber == 20){
+                if (data[i] == ""){
+                    data[i] = "null"
+                }
+
+            }
 
             // if table is RLE
             if (questionnaireNumber == 14){
-                if (data[i] == "true"){
+                if (data[i] == "YES"){
                     data[i] = 1;
                 }
 
-                else if (data[i] == "false"){
+                else if (data[i] == "YES, still effects me"){
                     data[i] = 2;
                 }
 
