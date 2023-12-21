@@ -10,6 +10,7 @@ import createQuery from '../helpers/createQuery';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import buttonStyle from '../styles/partials styles/buttonStyle';
 import returnInternalName from '../helpers/returnInternalName';
+import { FadeInLeft } from 'react-native-reanimated';
 
 const styles = buttonStyle;
 
@@ -97,12 +98,15 @@ async function saveImageToAsyncStorage(uri) {
 
     const storeData = async (data) => {
         try {
-            const query = await createQuery(questionnaireNumber, data, val);
-            await AsyncStorage.setItem(JSON.stringify(questionnaireNumber), JSON.stringify(query));
+            let query = await createQuery(questionnaireNumber, data, val);
+            // 假设您想更改 query 的值
+            // query = "wocassssso";
+    
+            // 确保调用 AsyncStorage.setItem 时传递字符串类型的参数
+            await AsyncStorage.setItem('1', query);
         } catch (e) {
             console.error('Error saving data', e);
         }
-    
     };
  
 
@@ -116,8 +120,6 @@ async function saveImageToAsyncStorage(uri) {
           // 更新数组中的特定索引
           filledArray[questionnaireNumber] = true;
 
-          console.log("xixi");
-          console.log(filledArray);
       
           // 将更新后的数组保存回 AsyncStorage
           await AsyncStorage.setItem('filled', JSON.stringify(filledArray));
@@ -138,17 +140,16 @@ async function saveImageToAsyncStorage(uri) {
 
             await saveImageToAsyncStorage(uri);
 
-            console.log("00000");
+    
             await handleSubmission(questionnaireNumber);
-            console.log("1111");
-
+        
 
             // 复制图片并获取新路径
             //let myuri = await copyImage(uri);
         
             goHome();
 
-            console.log("22222");
+            
         } catch (error) {
             Alert.alert('Error', 'An error occurred while capturing and saving the table.');
             console.error(error);

@@ -195,6 +195,18 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
             }
 
 
+                
+            if (questionnaireNumber == 20){
+
+                if (i >= 32){
+                    query = query.slice(0,-1);
+                    break
+                }
+                
+            
+            }
+
+
             // if its  TICS
             if (questionnaireNumber == 22){
                 if (data[i] == "Not at all") {
@@ -247,3 +259,4 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
 }
 
 export default queryZipper_insert;
+

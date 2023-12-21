@@ -6,6 +6,8 @@ import returnDisplayName from '../helpers/returnDisplayName';
 
 const FormattedMCQ = ({listofqs, data, goHome, questionnaireNumber, desc, styles}) => {
 
+    console.log('shei ta ma de ge bi');
+    console.log(data);
     const mydesc = (
         <View>
         <View style={styles.titlecontainer}>

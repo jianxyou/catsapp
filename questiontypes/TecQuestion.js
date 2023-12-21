@@ -11,17 +11,23 @@ import tecRadioStyles from '../styles/input styles/tecRadioStyles';
 const TecQuestion = ({q, num, callback}) => {
 
     const styles = TecStyle;
+    
+
+    // 1 state
     const [showAdditionalOptions, setShowAdditionalOptions] = useState(false);
 
-    const [cur, changeCur] = useState([null, null, null]);
+    // 2
+    const [cur, changeCur] = useState(["null", "null", "null", "null"]);
+    callback(num, cur);
 
+    // 3
     const [isLikedYN, setIsLikedYN] = useState([      
         { key: 1000, id: 0, value: "no", name: "no", selected: false, visible: true },
         { key: 1001, id: 1, value: 'yes', name: 'yes', selected: false, visible: true }
     ]);
 
+    // 4
     const myarr = [1,2,3,4,5];
-
     const [isLikedSeverity, setIsLikedSeverity] = useState(myarr.map(
         (val, index) => ({ id: index, value: val, name: val, selected: false })
     ));
@@ -41,9 +47,34 @@ const TecQuestion = ({q, num, callback}) => {
     
         // 更新当前值
         let temp = cur;
-        temp[0] = item.selected ? null : item.value;
+        temp[0] = item.selected ? "null": item.value;
+
+        if (temp[0] == "null"){
+            temp[0] = "no";
+            temp[1] = "null";
+            temp[2] = "null";
+            temp[3] = "null";
+
+        }
+
+        // if (!item.selected){
+        //     temp[0] = "ri";
+        //     temp[1] = "ri";
+        //     temp[2] = "ri";
+        //     temp[3] = "ri";
+        // }
+        
+        // else{
+        //     temp[0] = item.value;
+        // }
+        if (item.value == "no"){
+            temp[0] = "no";
+            temp[1] = "null";
+            temp[2] = "null";
+            temp[3] = "null";
+
+        }
         changeCur(temp);
-    
         callback(num, cur);
     };
     
@@ -62,9 +93,6 @@ const TecQuestion = ({q, num, callback}) => {
         //not selected
         if (item.selected) {
             let temp = cur;
-            temp[2] = null;
-            temp[1] = null;
-            temp[3] = null;
             changeCur(temp);
         // selected
         } else {

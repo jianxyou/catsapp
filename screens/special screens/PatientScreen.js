@@ -47,7 +47,6 @@ function PatientScreen({ navigation }) {
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       loadFilled(); // 当屏幕获得焦点时，加载 filled 数据
-      console.log(filled);
     });
   
     return unsubscribe; // 清理监听器
@@ -93,8 +92,7 @@ function PatientScreen({ navigation }) {
   };
 
 
-  console.log("made ge bi");
-  console.log(filled);
+  
   const newButtons = createLinks({
     displayNames: displayNamesSelf.slice(7,),
     internalNames: internalNamesSelf.slice(7,),

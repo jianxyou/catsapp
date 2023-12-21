@@ -6,11 +6,11 @@ import allNull from '../helpers/allNull';
 import tecSpecialStyle from '../styles/question styles/tecSpecialStyle';
 import textstyles from '../styles/textstyles';
 
-const TecSpecialQuestion = ({q, subqs, short, num, callback}) => {
+const TecSpecial2 = ({q, subqs, short, num, callback}) => {
 
     const styles = tecSpecialStyle
 
-    const [cur, changeCur] = useState(["null","null","null","null"]);
+    const [cur, changeCur] = useState(["null","null","null","null","null"]);
 
     callback(num,cur)
     const modify = (val,index) => { 
@@ -22,7 +22,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback}) => {
 
     const genq = (q, index, short) => {
 
-        const key = `subq-${index}`;
+        const key = `subqq-${index}`;
         if (short) {
             return (
                 <View style={styles.singlequestion} key={key}>
@@ -100,7 +100,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback}) => {
                 
                 <View style={styles.long}>
 
-                    <TextInput onChangeText={t => modify(t)} 
+                    <TextInput onChangeText={t => modify(t,index)} 
                         placeholder='Please describe'
                         textAlign='center'
                         style={{
@@ -168,4 +168,4 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback}) => {
     );
 }
 
-export default TecSpecialQuestion;
+export default TecSpecial2;
