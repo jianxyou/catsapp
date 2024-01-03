@@ -8,7 +8,7 @@ import TecStyle from '../styles/question styles/TecStyle';
 import hasslesRadioStyle from '../styles/input styles/hasslesRadioStyles';
 import tecRadioStyles from '../styles/input styles/tecRadioStyles';
 
-const TecQuestion = ({q, num, callback}) => {
+const TecQuestion = ({q, num, callback, callback_flag}) => {
 
     const styles = TecStyle;
     
@@ -76,6 +76,12 @@ const TecQuestion = ({q, num, callback}) => {
         }
         changeCur(temp);
         callback(num, cur);
+        callback_flag(num, item.value);
+
+        if (item.selected){
+            console.log("我才知道");
+            callback_flag(num, null);
+        }
     };
     
 

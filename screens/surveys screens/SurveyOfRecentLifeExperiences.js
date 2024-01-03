@@ -17,13 +17,18 @@ const SoRLEScreen = ({navigation}) => {
             // 确保它在顶部
             zIndex: 1000
         },
+
+        textLarge: {
+            fontSize: 35, // 这里的数值可以根据你的需要进行调整
+            paddingLeft: 330
+          },
     });
 
 
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
-        <Text>From left to right</Text>
-        <Text>Strongly Disagree, Disagree, Agree, Strongly Agree</Text>
+        <Text style={styles2.textLarge}>not at all,    only slightly,   distinctly,   very much</Text>
+        
         </View>
     );
 

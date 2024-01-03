@@ -11,16 +11,14 @@ export default BeckScreen = ({navigation, route}) => {
 
     const StickyHeader = () => (
         <View style={styles.stickyHeader}>
-            <Text>0 : Not at all</Text>
-            <Text>1 : Mildly, but it didn’t bother me much</Text>
-            <Text>2 : Moderately – it wasn’t pleasant at times</Text>
-            <Text>3 : Severely – it bothered me a lot</Text>
+        <Text style = {styles.textLarge}>Not at all,      Mildly,       Moderately,     Severely</Text>
         </View>
     );
 
     return (
 
         <ScrollView stickyHeaderIndices={[0]}>
+            
             <StickyHeader />
         <NoNumberQuestionList
         questionnaireNumber={7}
@@ -86,4 +84,9 @@ const styles = StyleSheet.create({
         // 确保它在顶部
         zIndex: 1000
     },
+
+    textLarge: {
+        fontSize: 40, // 这里的数值可以根据你的需要进行调整
+        paddingLeft: 350
+      },
 })

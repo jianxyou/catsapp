@@ -16,20 +16,19 @@ const SASSCreen = ({navigation}) => {
             // 确保它在顶部
             zIndex: 1000
         },
-        // headerItem: {
-        //     // 为每个 header item 设置样式
-        //     flex: 1, // 每个子视图都占据等量的空间
-        //     alignItems: 'center', // 水平居中
-        //     justifyContent: 'center', // 垂直居中
-        //     padding: 5, // 适当的内边距
-        // },
+
+        textLarge: {
+            fontSize: 20, // 这里的数值可以根据你的需要进行调整
+            paddingLeft: 350
+          },
     });
+
+    
 
 
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
-        <Text>From left to right</Text>
-        <Text>None or little of the time, Some of the time, Good part of the time, Most or all of the time</Text>
+        <Text style={styles2.textLarge}>None or little of the time,   Some of the time,   Good part of the time,   Most or all of the time</Text>
         </View>
     );
     

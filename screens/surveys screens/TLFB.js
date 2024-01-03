@@ -84,9 +84,8 @@ const TLFBScreen = ({ navigation }) =>{
       </View>
 
     <TLFBQuestionList
-    listoflistofqs={[
-      
-        [
+      listoflistofqs={[
+        
           "Total Joints :",
           "Days Joints :",
           "Perc Days Joints :",
@@ -96,39 +95,37 @@ const TLFBScreen = ({ navigation }) =>{
           "Est Joints Year :",
           "Great Joint Day :",
           "Joints Per Week :",
-          
-
-        ]
-
-    ]} 
-    scales={[
-        [
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
         
 
     ]} 
-    values={[
+    // scales={[
+    //     [
+    //       [],
+    //       [],
+    //       [],
+    //       [],
+    //       [],
+    //       [],
+    //       [],
+    //       []
+    //     ]
+        
 
-        [
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
+    // ]} 
+    // values={[
 
-    ]} 
+    //     [
+    //       [],
+    //       [],
+    //       [],
+    //       [],
+    //       [],
+    //       [],
+    //       [],
+    //       []
+    //     ]
+
+    // ]} 
     labels={[
         []
     ]}

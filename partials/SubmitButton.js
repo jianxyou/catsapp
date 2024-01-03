@@ -14,8 +14,11 @@ import { FadeInLeft } from 'react-native-reanimated';
 
 const styles = buttonStyle;
 
-const SubmitButton = ({ data, goHome, capture, questionnaireNumber }) => {
+const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndices,dataForFlag}) => {
 
+
+
+    
 
     const {val, setVal} = useContext(ParticipantContext);
 
@@ -103,7 +106,7 @@ async function saveImageToAsyncStorage(uri) {
             // query = "wocassssso";
     
             // 确保调用 AsyncStorage.setItem 时传递字符串类型的参数
-            await AsyncStorage.setItem('1', query);
+            await AsyncStorage.setItem(JSON.stringify(questionnaireNumber), JSON.stringify(query));
         } catch (e) {
             console.error('Error saving data', e);
         }
@@ -132,6 +135,22 @@ async function saveImageToAsyncStorage(uri) {
 
     const handleSubmit = async () => {
         try {
+
+            console.log("xiaoxixix");
+            console.log(data);
+            let containsNull = 33;
+            if (dataForFlag){
+                containsNull = dataForFlag.includes(null);
+            }
+            else{
+                containsNull = data.includes(null);
+            }
+            
+
+            // 如果没有 "null" 值，则存储数据
+            // 如果没有 "null" 值，则存储数据
+            if (!containsNull) {
+                // await storeData(data);
             // 存储表单数据
             await storeData(data);
     
@@ -148,6 +167,31 @@ async function saveImageToAsyncStorage(uri) {
             //let myuri = await copyImage(uri);
         
             goHome();
+            } else {
+                // 找出 "null" 值的索引
+                let nullIndices = 33;
+                if (dataForFlag){
+                    nullIndices = dataForFlag.map((item, index) => item === null ? index : null).filter(index => index !== null);
+
+                }
+                else{
+                    nullIndices = data.map((item, index) => item === null ? index : null).filter(index => index !== null);
+                }
+                console.log('Null value indices:', nullIndices);
+                onErrorIndices(nullIndices);
+
+                // 可选：处理包含 "null" 值的情况
+                // 例如，显示警告或记录消息
+                console.log('Data contains null values at indices:', nullIndices);
+                // 这里可以添加更多的处理逻辑，例如提醒用户
+                Alert.alert(
+                    "Missing Value"
+                );
+
+                
+            }
+
+            
 
             
         } catch (error) {

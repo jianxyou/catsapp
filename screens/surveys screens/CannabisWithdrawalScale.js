@@ -20,13 +20,16 @@ const CannabisWithdrawalScreen = ({navigation}) => {
             // 确保它在顶部
             zIndex: 1000
         },
+        textLarge: {
+            fontSize: 50, // 这里的数值可以根据你的需要进行调整
+            paddingLeft: 350
+          },
     });
 
 
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
-        <Text>From left to right, 0 to 10</Text>
-        <Text>Not at all, Moderately, Extreme</Text>
+        <Text style = {styles2.textLarge}>     Not at all,      Moderately,       Extreme</Text>
         </View>
     );
 
@@ -48,7 +51,7 @@ const CannabisWithdrawalScreen = ({navigation}) => {
         <CannabisQuestionList
             questionnaireNumber={21}
             desc={desc}
-            scale={[0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+            scale={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
             values={[0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
             goHome={() => navigation.navigate('PatientScreen')}
             buttonstyle={cannabisRadioStyles}

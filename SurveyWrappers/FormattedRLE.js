@@ -57,5 +57,5 @@ export default FormattedRLE = ({ questionnaireNumber, listofqs, data, goHome, de
         </Text>
     );
 
-    return FinalWrapper(questionnaireNumber, [mydesc, listofqs, finalcomment], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [mydesc, listofqs, finalcomment], data, goHome, styles,null);
 };

@@ -6,7 +6,7 @@ import allNull from '../helpers/allNull';
 import tecSpecialStyle from '../styles/question styles/tecSpecialStyle';
 import textstyles from '../styles/textstyles';
 
-const TecSpecial2 = ({q, subqs, short, num, callback}) => {
+const TecSpecial2 = ({q, subqs, short, num, callback,callback_flag}) => {
 
     const styles = tecSpecialStyle
 
@@ -18,8 +18,15 @@ const TecSpecial2 = ({q, subqs, short, num, callback}) => {
         temp[index] = val;
         changeCur(temp);
         callback(num, cur);
-    }
 
+        let containsNoNulls = cur.every(element => element !== "null");
+        if (containsNoNulls) {
+            callback_flag(num,"22");
+        }
+        else{
+            callback_flag(num,null);
+        }
+    }
     const genq = (q, index, short) => {
 
         const key = `subqq-${index}`;

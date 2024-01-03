@@ -28,7 +28,7 @@ const FormattedSANS = ({questionnaireNumber, qs, data, goHome, desc}) => {
     );
 
 
-    return FinalWrapper(questionnaireNumber, [mydesc, qs], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [mydesc, qs], data, goHome, styles,null);
 }
  
 export default FormattedSANS;

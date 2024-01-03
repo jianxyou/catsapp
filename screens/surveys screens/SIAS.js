@@ -25,14 +25,18 @@ const SIASScreen = ({navigation}) => {
         //     justifyContent: 'center', // 垂直居中
         //     padding: 5, // 适当的内边距
         // },
+
+        textLarge: {
+            fontSize: 35, // 这里的数值可以根据你的需要进行调整
+            paddingLeft: 350
+          },
     });
 
     const StickyHeader = () => (
 
 
         <View style={styles2.stickyHeader}>
-        <Text>From left to right</Text>
-        <Text>Not at all, Slightly, Moderately, Very, Extremely</Text>
+        <Text style = {styles2.textLarge}>Not at all,     Slightly,    Moderately,    Very,    Extremely</Text>
         </View>
     );
 

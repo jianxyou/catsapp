@@ -1,10 +1,15 @@
-import { View, ScrollView, SafeAreaView } from 'react-native';
-import { useRef } from 'react';
+
+import { useRef,useState,useEffect} from 'react';
+import { StyleSheet,Text, View, ScrollView, SafeAreaView} from 'react-native';
+
 import { captureRef } from 'react-native-view-shot';
 
 import SubmitButton from "./SubmitButton";
 
 import returnInternalName from '../helpers/returnInternalName';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { sub } from '@shopify/react-native-skia';
+
 
 // the final step in formatting all surveys
 // adds the button and combines the desc, questions and button
@@ -17,14 +22,40 @@ import returnInternalName from '../helpers/returnInternalName';
 // @params styles contains css that adds a little margin around the survey
 
 // initally, the function to capture images had problems with capturing long images, 
-// however, this seems to be fixed
+// however, this seemss to be fixed
 // orginially ref2, longenough, half, qlist, first, last, doublebuttons were parameters exclusively for that, but they are no longer necessary
 // i suggest ingnoring those variables 
 
-const FinalWrapper = (questionnaireNumber, arr, data, goHome, styles) => {
+function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFlag) {
 
     // creates a refernece to a JSX element, essentially a variable name
+    const [clientId, setClientId] = useState('');
+    const [visitId, setVisitId] = useState('');
+    const [subjectId, setSubjectId] = useState('');
+  
+    useEffect(() => {
+      const loadIds = async () => {
+        const storedClientId = await AsyncStorage.getItem('clientId');
+        const storedVisitId = await AsyncStorage.getItem('visitId');
+        const storedSubjectId = await AsyncStorage.getItem('subjectId');
+        setClientId(storedClientId);
+        setVisitId(storedVisitId);
+        setSubjectId(storedSubjectId);
+      };
+  
+      loadIds();
+    }, []);
+
     const ref1 = useRef();
+
+    const [errorIndices, setErrorIndices] = useState([]);
+
+    
+    
+    const handleErrorIndices = (indices) => {
+        setErrorIndices(indices);
+        // 这里还可以添加其它处理逻辑
+    };
     // const ref2 = useRef();
 
     // const longenough = false;
@@ -57,13 +88,58 @@ const FinalWrapper = (questionnaireNumber, arr, data, goHome, styles) => {
 
     // in partice shortresult will always return since bug was fixed
 
-    const button = <SubmitButton data={data} capture={() => capture(ref1)} goHome={goHome} questionnaireNumber={questionnaireNumber}/>
+    const button = <SubmitButton data={data} capture={() => capture(ref1)} goHome={goHome} questionnaireNumber={questionnaireNumber} onErrorIndices={handleErrorIndices} dataForFlag = {dataForFlag}/>
     copy.push(button);
 
+
+    const styles2 = StyleSheet.create({
+        // ...其他样式
+
+
+        errorIndicator: {
+            color: 'red',
+            fontWeight: 'bold',
+            fontSize : 20
+            // 其他样式，如字体大小等
+        },
+      });
+
+      
+      const renderView = (val, index) => {
+        const isError = errorIndices.includes(index);
+        return (
+            <View key={index}>
+                {isError && <Text style={styles2.errorIndicator}>* need complete </Text>}
+                {val}
+            </View>
+        );
+    };
+
+    // 获取当前日期
+        const getCurrentDate = () => {
+        const date = new Date();
+        return date.toLocaleDateString(); // 这将返回格式化的日期字符串
+        };
+
+
+    
+    
+    const today =  getCurrentDate();
+    
     const shortresult = (
+
+
         <View style={styles.page}>
+            
+            
             <ScrollView ref={ref1} >
-                {copy.map((val, index) => <View key={index}>{val}</View>)}
+            <Text>Date : {today} </Text>
+            <Text>Subject Id : {subjectId}</Text>
+            <Text>Participant ID : {clientId}</Text>
+            
+            <View key={1}>{copy[0]}</View>
+            {copy[1].map((val, index) => renderView(val, index))}
+            {button}
             </ScrollView>
         </View>
     );

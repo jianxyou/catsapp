@@ -45,7 +45,7 @@ const FormattedSIAS = ({questionnaireNumber, listofqs, data, goHome, desc, value
         </View>
     );
 
-    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles,null);
 
 }
  
