@@ -12,7 +12,7 @@ import { displayNamesSelf, internalNamesSelf } from '../../schemaconstants';
 import createLinks from '../../helpers/createLinks';
 
 
-function MriScreen({ navigation }) {
+function AdminScreen({ navigation }) {
   const { val } = useContext(ParticipantContext);
 
   const [filled, setFilled] = useState(displayNamesSelf.map(val => false))
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
     }
   }) 
 
-export default MriScreen;
+export default AdminScreen;

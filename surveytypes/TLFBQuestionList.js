@@ -8,12 +8,12 @@ import NoNumberMultiselectRadioQuestion from '../questiontypes/NoNumberMultisele
 import FormattedCompound from '../SurveyWrappers/FormattedCompund';
 import ShortAnswerQuestion from '../questiontypes/ShortAnswerQuestion';
 
-const TLFBQuestionList = ({listoflistofqs,values, questionnaireNumber, minidescs, desc, goHome, labels, buttonstyles, questionstyles, liststyles, finalstyles}) => {
+const TLFBQuestionList = ({listoflistofqs,values, questionnaireNumber, minidescs, desc, goHome, labels, buttonstyles, questionstyles, liststyles, finalstyles,data_haha}) => {
 
     
     const [data, changeData] = useState(allNull(listoflistofqs.length));
 
-
+    console.log("wode ma", data_haha);
     const respond = (index, value) => {
         let temp = data;
 
@@ -59,9 +59,6 @@ const TLFBQuestionList = ({listoflistofqs,values, questionnaireNumber, minidescs
         
     );
 
-    console.log("rangwokanakn 1 ",listoflistofqs.length);
-    console.log("rwo zai kan kan 2",listofqs.length);
-
 
 
     return (
@@ -70,7 +67,7 @@ const TLFBQuestionList = ({listoflistofqs,values, questionnaireNumber, minidescs
             qs={listofqs}
             questionnaireNumber={questionnaireNumber}
             desc={desc}
-            data={data}
+            data={data_haha}
             goHome={goHome}
         />
     );

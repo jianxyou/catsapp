@@ -1,4 +1,4 @@
-const tableNamesSelf : ArraUZHIDy<string | Array<string> > = [
+const tableNamesSelf : Array<string | Array<string> > = [
     "DrugHQ", //Drug history questionnaire
     "CSSRS", //不知道有没有这个表名
     "BSMSS",

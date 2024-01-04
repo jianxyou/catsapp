@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const TLFBStyles = StyleSheet.create({
+
   container: {
     flex: 1,
     padding: 10,
@@ -47,6 +48,8 @@ const TLFBStyles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
   },
+
+   
   // 其他你可能需要的样式...
 });
 
