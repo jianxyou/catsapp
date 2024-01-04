@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text } from 'react-native'
+import { ScrollView, StyleSheet,View, Text } from 'react-native'
 
 import SIASQuestionList from '../../surveytypes/SIASQuestionList';
 import SIASRadioStyles from '../../styles/input styles/SIASRadioStyles';
@@ -9,6 +9,29 @@ import SIASStyle from '../../styles/question styles/SIASStyle';
 const SoRLEScreen = ({navigation}) => {
 
     const styles = SIASquestionliststyle;
+    const styles2 = StyleSheet.create({
+        stickyHeader: {
+            // 添加您的样式，例如背景色，字体样式等
+            backgroundColor: 'white',
+            padding: 10,
+            // 确保它在顶部
+            zIndex: 1000
+        },
+
+        textLarge: {
+            fontSize: 35, // 这里的数值可以根据你的需要进行调整
+            paddingLeft: 330
+          },
+    });
+
+
+    const StickyHeader = () => (
+        <View style={styles2.stickyHeader}>
+        <Text style={styles2.textLarge}>not at all,    only slightly,   distinctly,   very much</Text>
+        
+        </View>
+    );
+
 
     const desc = (
         <View style={styles.desc}>
@@ -22,11 +45,13 @@ const SoRLEScreen = ({navigation}) => {
         </View>
     );
     return (  
+        <ScrollView stickyHeaderIndices={[0]}>
+            <StickyHeader />
         <SIASQuestionList
-            questionnaireNumber={14}
+            questionnaireNumber={17}
             scale={["", "", "", ""]} 
             values={["not at all part of my life", "only slightly", "distinctly", "very much",]} 
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('PatientScreen')}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}
@@ -76,6 +101,7 @@ const SoRLEScreen = ({navigation}) => {
                 "Hard work to look after and maintain home",
             ]}
         />
+        </ScrollView>
     );
 }
  

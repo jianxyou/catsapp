@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react'
+import React, { useEffect,useState  } from 'react';
 import { useColorScheme } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -41,6 +40,17 @@ import MaccatScreen from './screens/surveys screens/MacCAT';
 import GAFScreen from './screens/surveys screens/GAF';
 import CannabisWithdrawalScreen from './screens/surveys screens/CannabisWithdrawalScale';
 import BarrattScreen from './screens/surveys screens/BSMSS';
+import SSRScreen from './screens/surveys screens/SSRS';
+import HAMDScreen from './screens/surveys screens/HAMD';
+import TICSScreen from './screens/surveys screens/TICS';
+import SAQScreen from './screens/surveys screens/SAQ';
+import TLFBScreen from './screens/surveys screens/TLFB';
+import PatientScreen from './screens/special screens/PatientScreen';
+import AdminScales from './screens/special screens/AdminScreen';
+import MriScreen from './screens/special screens/MriScreen';
+import { displayNamesSelf, internalNamesSelf } from './schemaconstants';
+import CSSRSScreen from './screens/surveys screens/SSRS';
+
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { View, Text } from 'react-native';
@@ -52,6 +62,8 @@ function App(): JSX.Element {
 
   const [val, setVal] = useState(getAsyncData());
 
+  
+
   useEffect(() => {
     const clearStorage = async () => {
         try {
@@ -62,13 +74,31 @@ function App(): JSX.Element {
             console.error('Failed to clear the async storage.', e);
         }
     };
+
+    const initializeFilled = async () => {
+      try {
+        
+        const initialFilled = displayNamesSelf.map(() => false);
+        await AsyncStorage.setItem('filled', JSON.stringify(initialFilled));
+        console.log(initialFilled);
+      } catch (error) {
+        // 错误处理
+        console.error('Failed to initialize filled array', error);
+      }
+    };
+
+    
     clearStorage();
+    initializeFilled();
 }, []);
+
 
   return (
     <NavigationContainer>
       <ParticipantContext.Provider value={{val, setVal}}>
       <Stack.Navigator>
+
+
       <Stack.Screen name="Main" component={MainScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       {/* <Stack.Screen name="Worker" component={WorkerScreen} /> */}
@@ -101,8 +131,15 @@ function App(): JSX.Element {
       <Stack.Screen name="Maccat" component={MaccatScreen} />
       <Stack.Screen name="GAF" component={GAFScreen} />
       <Stack.Screen name='Cannabis' component={CannabisWithdrawalScreen} />
-      <Stack.Screen name='Barratt'component={BarrattScreen} />
-      
+      <Stack.Screen name='BSMSS'component={BarrattScreen} />
+      <Stack.Screen name='SSRS'component={CSSRSScreen } />
+      <Stack.Screen name='HAMD'component={HAMDScreen} />
+      <Stack.Screen name='TICS'component={TICSScreen} />
+      <Stack.Screen name='SAQ'component={SAQScreen} />
+      <Stack.Screen name='TLFB' component={TLFBScreen} />
+      <Stack.Screen name='PatientScreen' component={PatientScreen} />
+      <Stack.Screen name='AdminScreen' component={AdminScales} />
+      <Stack.Screen name='MriScreen' component={MriScreen} />
 
       </Stack.Navigator>
       </ParticipantContext.Provider>

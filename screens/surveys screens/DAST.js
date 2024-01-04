@@ -23,10 +23,10 @@ const DASTScrenn = ({navigation}) => {
 
     return ( 
         <SIASQuestionList
-            questionnaireNumber={13}
+            questionnaireNumber={16}
             scale={["", "",]} 
             values={["YES", "NO"]} 
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('PatientScreen')}
             desc={desc}
             buttonstyle={dastRadioStyles}
             liststyle={dastQuestionListStyle}

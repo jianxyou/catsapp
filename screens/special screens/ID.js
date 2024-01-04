@@ -7,13 +7,16 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const IDScreen = ({ navigation }) => {
   const [clientId, setClientId] = useState('');
   const [visitId, setVisitId] = useState('');
+  const [subjectId, setSubjectId] = useState('');
 
   useEffect(() => {
     const loadIds = async () => {
       const storedClientId = await AsyncStorage.getItem('clientId');
       const storedVisitId = await AsyncStorage.getItem('visitId');
+      const storedSubjectId = await AsyncStorage.getItem('subjectId');
       if (storedClientId) setClientId(storedClientId);
       if (storedVisitId) setVisitId(storedVisitId);
+      if (storedSubjectId) setSubjectId(storedSubjectId);
     };
 
     loadIds();
@@ -21,12 +24,13 @@ const IDScreen = ({ navigation }) => {
 
   const handleSubmit = async () => {
     if (!clientId.trim() || !visitId.trim()) {
-      Alert.alert('Error', 'Please enter valid Client ID and Visit ID.');
+      Alert.alert('Error', 'Please enter valid IDs.');
       return;
     }
 
     await AsyncStorage.setItem('clientId', clientId);
     await AsyncStorage.setItem('visitId', visitId);
+    await AsyncStorage.setItem('subjectId', subjectId);
     Alert.alert('Info Saved', `Client ID: ${clientId} and Visit ID: ${visitId} saved.`, [
       { text: "OK", onPress: () => navigation.navigate('Home') }
     ]);
@@ -34,6 +38,14 @@ const IDScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+
+
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Subject ID"
+        value={subjectId}
+        onChangeText={setSubjectId}
+      />
       <TextInput
         style={styles.input}
         placeholder="Enter Patient ID"

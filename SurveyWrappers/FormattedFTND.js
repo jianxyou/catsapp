@@ -24,7 +24,7 @@ const FormattedFTND = ({questionnaireNumber, listofqs, data, goHome, desc}) => {
 
     );
 
-    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles); 
+    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles,null); 
     
 }
  

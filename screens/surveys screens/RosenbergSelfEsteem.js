@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { ScrollView, StyleSheet,View, Text } from 'react-native';
 
 import NoNumberQuestionList from "../../surveytypes/NoNumberQuestionList";
 
@@ -8,9 +8,38 @@ import rosenbergQuestionListStyle from "../../styles/question list styles/rosenb
 import textstyles from '../../styles/textstyles';
 
 const RosenbergScreen = ({navigation}) => {
+
+    const styles2 = StyleSheet.create({
+        stickyHeader: {
+            // 添加您的样式，例如背景色，字体样式等
+            backgroundColor: 'white',
+            padding: 10,
+            // 确保它在顶部
+            zIndex: 1000
+        },
+
+
+        textLarge: {
+            fontSize: 30, // 这里的数值可以根据你的需要进行调整
+            paddingLeft: 350
+          },
+    });
+
+
+    const StickyHeader = () => (
+        <View style={styles2.stickyHeader}>
+    
+        <Text style = {styles2.textLarge}>  Strongly Disagree,      Disagree,     Agree,       Strongly Agree</Text>
+        </View>
+    );
+
     return (  
+
+        <ScrollView stickyHeaderIndices={[0]}>
+            <StickyHeader />
+
         <NoNumberQuestionList
-            questionnaireNumber={10}
+            questionnaireNumber={13}
             desc={
                     <Text style={textstyles.desctext}>
                         Please mark the appropriate answer for each of the statements below:
@@ -20,7 +49,7 @@ const RosenbergScreen = ({navigation}) => {
             scale={["", "", "", ""]}
             values={["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]}
             labels={["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]}
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('PatientScreen')}
             buttonstyles={rosenbergRadioStyles}
             questionstyles={rosenbergStyle}
             finalstyles={rosenbergQuestionListStyle}
@@ -38,6 +67,7 @@ const RosenbergScreen = ({navigation}) => {
             ]}
 
         />
+        </ScrollView>
     );
 }
  

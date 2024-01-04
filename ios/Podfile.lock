@@ -398,9 +398,13 @@ PODS:
   - React-jsinspector (0.72.0)
   - React-logger (0.72.0):
     - glog
+  - react-native-blob-util (0.19.6):
+    - React-Core
   - react-native-cameraroll (4.1.2):
     - React-Core
   - react-native-html-to-pdf (0.12.0):
+    - React-Core
+  - react-native-pdf (6.7.3):
     - React-Core
   - react-native-safe-area-context (4.7.4):
     - React-Core
@@ -623,8 +627,10 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - react-native-blob-util (from `../node_modules/react-native-blob-util`)
   - "react-native-cameraroll (from `../node_modules/@react-native-community/cameraroll`)"
   - react-native-html-to-pdf (from `../node_modules/react-native-html-to-pdf`)
+  - react-native-pdf (from `../node_modules/react-native-pdf`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - "react-native-skia (from `../node_modules/@shopify/react-native-skia`)"
   - react-native-view-shot (from `../node_modules/react-native-view-shot`)
@@ -733,10 +739,14 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-blob-util:
+    :path: "../node_modules/react-native-blob-util"
   react-native-cameraroll:
     :path: "../node_modules/@react-native-community/cameraroll"
   react-native-html-to-pdf:
     :path: "../node_modules/react-native-html-to-pdf"
+  react-native-pdf:
+    :path: "../node_modules/react-native-pdf"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-skia:
@@ -837,8 +847,10 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 990287d74aedc4fdd08ebd80736b1a5c71b54da2
   React-jsinspector: 8d754fc957255a29d93e52fc67a895045cdc8703
   React-logger: 454ffb01980778a43b0153ee98721d0275b56616
+  react-native-blob-util: d8fa1a7f726867907a8e43163fdd8b441d4489ea
   react-native-cameraroll: 60ac50a5209777cbccfe8d7a62d0743a9da87060
   react-native-html-to-pdf: d994a500216e88032cce3635d3240f6e4fa0cb40
+  react-native-pdf: b4ca3d37a9a86d9165287741c8b2ef4d8940c00e
   react-native-safe-area-context: 81e412ec17d63e5b2b3045d5170d82b366b25c76
   react-native-skia: f4d52c69fd3534143365287d03db35270d7b09b7
   react-native-view-shot: 368e113038c2d3c19e7411b87f3a66f9a239946b

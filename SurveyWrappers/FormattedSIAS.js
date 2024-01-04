@@ -18,8 +18,12 @@ const FormattedSIAS = ({questionnaireNumber, listofqs, data, goHome, desc, value
                 ))}
             </View>
         )
-            
     }
+
+
+
+
+
 
     const mydesc = (
         <View>
@@ -28,17 +32,20 @@ const FormattedSIAS = ({questionnaireNumber, listofqs, data, goHome, desc, value
                     <Text style={styles.underline}>
                         {returnDisplayName(questionnaireNumber)}
                     </Text>
+
                 </Text>
             </View>
 
             {desc}
+
+            
 
             {generatelabels(values)}
 
         </View>
     );
 
-    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles,null);
 
 }
  

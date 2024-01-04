@@ -3,7 +3,7 @@ import AESQuestionList from "../../surveytypes/AESQuestionList";
 const AESScreen = ({navigation}) => {
     return (
         <AESQuestionList 
-            questionnaireNumber={6}
+            questionnaireNumber={10}
             desc="For each statement, circle the answer that best describes the subject’s thoughts, feelings, and activity in the past 4 weeks"
             scale={[
                 "NOT AT ALL",
@@ -17,12 +17,11 @@ const AESScreen = ({navigation}) => {
                 "SOMEWHAT",
                 "A LOT",
             ]}
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('PatientScreen')}
 
             qs={[
                 "I am interested in things.",
-                "I get things done during the day.",
-                "Getting things started on my own is important to me.",
+                "I get things done during the day.",                "Getting things started on my own is important to me.",
                 "I am interested in having new experiences.",
                 "I am interested in learning new things",
                 "I put little effort into anything.",
@@ -41,6 +40,14 @@ const AESScreen = ({navigation}) => {
             ]}
         />
       );
+
+
+    
+
+
+            黎曼几何的价值是什
 }
  
 export default AESScreen;
+
+

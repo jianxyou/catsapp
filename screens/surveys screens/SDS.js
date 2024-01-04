@@ -79,7 +79,7 @@ const SDSScreen = ({navigation}) => {
                 [0,1,2,3],
             ],
         ]} 
-        questionnaireNumber={12}
+        questionnaireNumber={15}
 
         minidescs={[
             "Over the last 3 months...",
@@ -90,7 +90,7 @@ const SDSScreen = ({navigation}) => {
             <Text style={textstyles.desctext}>
             Directions: Please read each statement carefully and circle ONE number for each question which best applies to you and your experiences.
             </Text>}
-        goHome={() => navigation.navigate('Home')} 
+        goHome={() => navigation.navigate('PatientScreen')} 
         buttonstyles={radioStyles}
         questionstyles={SDSStyle} 
         liststyles={CompoundSDSStyle} 

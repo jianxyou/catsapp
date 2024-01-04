@@ -1,14 +1,41 @@
-import { View, Text } from 'react-native';
+import {StyleSheet, ScrollView, View, Text } from 'react-native';
 
 import TecQuestionList from "../surveytypes/TecQuestionList";
 
 import textstyles from '../styles/textstyles';
 import questionListStyle from "../styles/question list styles/questionListStyle";
+import TLFBQuestion from "../surveytypes/TecQuestionList";
 
 const TecScreen = ({navigation}) => {
+
+    const styles2 = StyleSheet.create({
+        stickyHeader: {
+            // 添加您的样式，例如背景色，字体样式等
+            backgroundColor: 'white',
+            // 确保它在顶部
+            fontsize: 300
+        },
+
+        textLarge: {
+            backgroundColor: 'white',
+            paddingLeft: 500,
+            fontSize: 33, // 这里的数值可以根据你的需要进行调整
+          },
+    });
+
+    const StickyHeader = () => (
+        <View >
+        <Text style={styles2.textLarge}>           Age,                  level of impact,          level of support(0 - 2) </Text>
+        </View>
+    );
+
     return ( 
+
+
+        <ScrollView stickyHeaderIndices={[0]}>
+            <StickyHeader />
         <TecQuestionList
-        questionnaireNumber={17}
+        questionnaireNumber={20}
         qs={[
             "Having to look after your parents and/or brothers and sisters when you were a child.",
             "Family problems (e.g., parent with alcohol or psychiatric problems, poverty).",
@@ -34,26 +61,26 @@ const TecScreen = ({navigation}) => {
             "Physical abuse by non-family members.",
             "Bizarre punishment",
             "Sexual harassment (acts of a sexual nature that DO NOT involve physical contact) by your parents, brothers, or sisters.",
-            "Sexual haraassment by more distant members of your family.",
+            "Sexual harassment by more distant members of your family.",
             "Sexual harassment by non-family members.",
             "Sexual abuse (unwanted sexual acts involving physical contact) by your parents, brothers, or sisters.",
             "Sexual abuse by more distant members of your family.",
-            "Sexual abuse by non-faamily members.",
+            "Sexual abuse by non-family members.",
         ]} 
         desc={
             <View style={questionListStyle.desc}>
                 <Text style={textstyles.desctext}>
                 {"People may experience a variety of traumatic experiences during their life. We would like to know three things: 1) if you have experienced any of the following 29 events, 2) how old you were when they happened, and 3) how much of an impact these experiences had upon you."}
                 {"\n\n"}
-                {"A) In the "}<Text style={textstyles.underline}>first column</Text>{" (i.e., Did this haappen to you?), indicaate whether you had each of the 29 experiences by circling YES or NO."}
+                {"A) In the "}<Text style={textstyles.underline}>first column</Text>{" (i.e., Did this happen to you?), indicate whether you had each of the 29 experiences by circling YES or NO."}
                 {"\n\n"}
-                {"B) For eaach experience where you circled YES, list "}<Text style={textstyles.underline}>in the second column</Text>{" (i.e., Age) your age when it happened"}
+                {"B) For each experience where you circled YES, list "}<Text style={textstyles.underline}>in the second column</Text>{" (i.e., Age) your age when it happened"}
                 {"\n"}
                 {"If it happened more than once, list ALL of the ages when thiss happened to you."}
                 {"\n"}
                 {"If it happened for years (e.g., age 7-12), list the age range (i.e., age 7-12)."}
                 {"\n\n"}
-                {"C) In the "}<Text style={textstyles.underline}>final column</Text>{" (i.e., How much impact did this have on you?), indicaate the IMPACT (by circling the aappropriate number): 1,2,3,4, or 5."}
+                {"C) In the "}<Text style={textstyles.underline}>second column</Text>{" (i.e., How much impact did this have on you?), indicate the IMPACT (by circling the appropriate number): 1,2,3,4, or 5."}
                 {"\n\n"}
                 {"1 = none"}
                 {"\n"}
@@ -66,13 +93,24 @@ const TecScreen = ({navigation}) => {
                 {"5 = an extreme amount"}
                 {"\n"}
                 {"\n"}
+
+                {"D) In the "}<Text style={textstyles.underline}>final column</Text>{" (i.e., How much impact did this have on you?), indicate how much support did you receive afterwards"} 
+                {"\n\n"}
+                {"0 = none"}
+                {"\n"}
+                {"1 = some"}
+                {"\n"}
+                {"2 = good"}
+                {"\n"}
                 Thank you for your cooperation.
                 </Text>
             </View>
         } 
-        goHome={() => navigation.navigate('Home')} 
+        goHome={() => navigation.navigate('PatientScreen')} 
         finalstyles={questionListStyle}
         />
+
+        </ScrollView>
      );
 }
  

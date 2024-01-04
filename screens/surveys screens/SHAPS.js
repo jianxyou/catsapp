@@ -22,10 +22,10 @@ const SHAPSScreen = ({navigation}) => {
 
     return ( 
         <SIASQuestionList
-            questionnaireNumber={16}
+            questionnaireNumber={19}
             scale={["", "",]} 
             values={["True", "False"]} 
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('PatientScreen')}
             desc={desc}
             buttonstyle={dastRadioStyles}
             liststyle={shapsQuestionListStyle}
