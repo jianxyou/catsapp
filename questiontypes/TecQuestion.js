@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { View, Text, TextInput } from 'react-native'
 
 import RadioWrapper from '../input wrappers/RadioWrapper';
@@ -18,7 +18,10 @@ const TecQuestion = ({q, num, callback, callback_flag}) => {
 
     // 2
     const [cur, changeCur] = useState(["null", "null", "null", "null"]);
-    callback(num, cur);
+    useEffect(() => {
+        callback(num, cur);
+    }, [cur]);
+
 
     // 3
     const [isLikedYN, setIsLikedYN] = useState([      

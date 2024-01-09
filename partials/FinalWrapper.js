@@ -1,6 +1,6 @@
 
 import { useRef,useState,useEffect} from 'react';
-import { StyleSheet,Text, View, ScrollView, SafeAreaView} from 'react-native';
+import { StyleSheet,Text,TextInput, TouchableOpacity,View, ScrollView, SafeAreaView} from 'react-native';
 
 import { captureRef } from 'react-native-view-shot';
 
@@ -9,6 +9,8 @@ import SubmitButton from "./SubmitButton";
 import returnInternalName from '../helpers/returnInternalName';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { sub } from '@shopify/react-native-skia';
+import textstyles from "../styles/textstyles";
+import TLFBStyles from '../styles/TLFBStyles';
 
 
 // the final step in formatting all surveys
@@ -315,11 +317,18 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
 
     
     let shortresult
-    if( questionnaireNumber == 23){
+    if( questionnaireNumber == 7){
+
+
+        let data; 
+        
+        data_23= [stats.totalJoints,stats.daysJoints,stats.percDaysJoints.toFixed(2),stats.avgJointPerUser.toFixed(2),stats.avgJointPerDay.toFixed(2),stats.abstinentDays.toFixed(2),stats.estJointsYear.toFixed(2),stats.greatJointDay,stats.jointsPerWeek.toFixed(2)]
+
+        const button = <SubmitButton data={data_23} capture={() => capture(ref1)} goHome={goHome} questionnaireNumber={questionnaireNumber} onErrorIndices={handleErrorIndices} dataForFlag = {dataForFlag}></SubmitButton>
         shortresult = (
 
 
-            <View style={styles.page}>
+        <View style={styles.page}>
             
             
             <ScrollView ref={ref1} >
@@ -329,7 +338,22 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
             
             <View key={1}>{copy[0]}</View>
             {listofqs}
-            {copy[1].map((val, index) => renderView(val, index))}
+            {/* {copy[1].map((val, index) => renderView(val, index))} */}
+            {/* {button} */}
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ fontWeight: 'bold', fontSize: 25 }}>
+            {"\n\n"}
+            <Text>Total Joints (sum of joints taken during the 90 dayes period): {stats.totalJoints}  </Text> {"\n\n"}
+            <Text>Days Joints (total of days of cannabis use): {stats.daysJoints} </Text> {"\n\n"} 
+            <Text>Perc Days Joints (DaysJoints / 90 * 100): {stats.percDaysJoints.toFixed(2)}%  </Text> {"\n\n"}
+            <Text>Avg Joint Per User (Total Joints / Days Joints): {stats.avgJointPerUser.toFixed(2)} </Text> {"\n\n"} 
+            <Text>Avg Joint Per Day (Total Joints / 90): {stats.avgJointPerDay.toFixed(2)} {"\n\n"}</Text>
+            <Text>Abstinent Days (90 - Days joints):: {stats.abstinentDays} {"\n\n"}</Text>
+            <Text>Est Joints Year (AvgJointPerDay * 365): {stats.estJointsYear.toFixed(2)} {"\n\n"}</Text>
+            <Text>Great Joint Day (Max amount of cannabis use taken in one day): {stats.greatJointDay} {"\n\n"}</Text>
+            <Text>Joints Per Week (EstJointsYear / 52): {stats.jointsPerWeek.toFixed(2)} {"\n\n"}</Text>
+            </Text>
+            </View>
             {button}
             </ScrollView>
         </View>
@@ -350,7 +374,7 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
             
             <View key={1}>{copy[0]}</View>
             {copy[1].map((val, index) => renderView(val, index))}
-            {button}
+            {button} 
             </ScrollView>
         </View>
     );

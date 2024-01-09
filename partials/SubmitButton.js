@@ -16,89 +16,29 @@ const styles = buttonStyle;
 
 const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndices,dataForFlag}) => {
 
-
-
-    
-
     const {val, setVal} = useContext(ParticipantContext);
 
-    //val contains the current participant id
+    async function saveImageToAsyncStorage(uri) {
+        try {
+            // 从原始 URI 读取图像为 Base64
+            const base64 = await FileSystem.readAsStringAsync(uri, { encoding: FileSystem.EncodingType.Base64 });
 
-    // @pre the file at uri1 must exist
-    // @post copies the temporary image into a new permanent file
+            // 生成一个唯一的键名用于存储图像
+            const imageKey = 'image' + Date.now();
 
+            // 将 Base64 图像数据存储到 AsyncStorage
+            await AsyncStorage.setItem(imageKey, base64);
+            console.log('Image saved to AsyncStorage with key:', imageKey);
 
-    
+            return imageKey;
 
-    // async function copyImage(uri1) {
-
-    //     const name = returnInternalName(questionnaireNumber);
-    //     const myname = name.replace(/\s/g,'');
-    //     const uri2 = FileSystem.documentDirectory+'cats-data/'+val+myname+'image'+'.png';
-
-    //     //this function creates the file, confusing since there is no createFile function
-    //     await FileSystem.writeAsStringAsync(uri2, '')
-    //         .then(() => console.log('image created at' + uri2 + "!!"));
-    //     await FileSystem.copyAsync({from: uri1, to: uri2})
-    //         .then(() => console.log('image copied!'))
-    //         .catch(e => console.log(e));
-
-    //     return uri2;    
-    // }
-
-
-
-async function saveImageToAsyncStorage(uri) {
-    try {
-        // 从原始 URI 读取图像为 Base64
-        const base64 = await FileSystem.readAsStringAsync(uri, { encoding: FileSystem.EncodingType.Base64 });
-
-        // 生成一个唯一的键名用于存储图像
-        const imageKey = 'image' + Date.now();
-
-        // 将 Base64 图像数据存储到 AsyncStorage
-        await AsyncStorage.setItem(imageKey, base64);
-        console.log('Image saved to AsyncStorage with key:', imageKey);
-
-        return imageKey;
-
-    } catch (error) {
-        console.error('Error saving image to AsyncStorage', error);
-        return null;
+        } catch (error) {
+            console.error('Error saving image to AsyncStorage', error);
+            return null;
+        }
     }
-}
 
-
-
-    // async function copyImage(uri1) {
-    //     const name = returnInternalName(questionnaireNumber);
-    //     const myname = name.replace(/\s/g,'');
-    //     const uri2 = FileSystem.documentDirectory+'cats-data/'+val+myname+'image'+'.png';
     
-    //     // 创建文件
-    //     await FileSystem.writeAsStringAsync(uri2, '')
-    //         .then(() => console.log('image created at' + uri2 + "!!"));
-    //     // 复制文件
-    //     await FileSystem.copyAsync({from: uri1, to: uri2})
-    //         .then(() => console.log('image copied!'))
-    //         .catch(e => console.log(e));
-    
-    //     // 读取为 Base64
-    //     const base64 = await FileSystem.readAsStringAsync(uri2, { encoding: FileSystem.EncodingType.Base64 });
-    
-    //     // 存储 Base64 数据
-    //     try {
-    //         await AsyncStorage.setItem('image_base64', base64);
-    //     } catch (error) {
-    //         console.error('Error saving base64 image', error);
-    //     }
-    
-    //     return uri2;
-    // }
-    
-
-
-
     const storeData = async (data) => {
         try {
             let query = await createQuery(questionnaireNumber, data, val);
@@ -121,7 +61,7 @@ async function saveImageToAsyncStorage(uri) {
         
           
           // 更新数组中的特定索引
-          filledArray[questionnaireNumber] = true;
+          filledArray[questionnaireNumber-1] = true;
 
       
           // 将更新后的数组保存回 AsyncStorage
@@ -138,7 +78,7 @@ async function saveImageToAsyncStorage(uri) {
 
             console.log("xiaoxixix");
             console.log(data);
-            let containsNull = 33;
+            let containsNull;
             if (dataForFlag){
                 containsNull = dataForFlag.includes(null);
             }
@@ -169,7 +109,7 @@ async function saveImageToAsyncStorage(uri) {
             goHome();
             } else {
                 // 找出 "null" 值的索引
-                let nullIndices = 33;
+                let nullIndices;
                 if (dataForFlag){
                     nullIndices = dataForFlag.map((item, index) => item === null ? index : null).filter(index => index !== null);
 
@@ -177,7 +117,7 @@ async function saveImageToAsyncStorage(uri) {
                 else{
                     nullIndices = data.map((item, index) => item === null ? index : null).filter(index => index !== null);
                 }
-                console.log('Null value indices:', nullIndices);
+                // console.log('Null value indices:', nullIndices);
                 onErrorIndices(nullIndices);
 
                 // 可选：处理包含 "null" 值的情况

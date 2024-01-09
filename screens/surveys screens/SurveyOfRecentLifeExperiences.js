@@ -48,7 +48,7 @@ const SoRLEScreen = ({navigation}) => {
         <ScrollView stickyHeaderIndices={[0]}>
             <StickyHeader />
         <SIASQuestionList
-            questionnaireNumber={17}
+            questionnaireNumber={18}
             scale={["", "", "", ""]} 
             values={["not at all part of my life", "only slightly", "distinctly", "very much",]} 
             goHome={() => navigation.navigate('PatientScreen')}

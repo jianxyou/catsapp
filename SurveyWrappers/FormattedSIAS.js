@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet} from 'react-native';
 
 import FinalWrapper from '../partials/FinalWrapper';
 
@@ -26,6 +26,8 @@ const FormattedSIAS = ({questionnaireNumber, listofqs, data, goHome, desc, value
 
 
     const mydesc = (
+
+
         <View>
             <View style={styles.titlecontainer}>
                 <Text style={styles.titletext}>
@@ -35,13 +37,11 @@ const FormattedSIAS = ({questionnaireNumber, listofqs, data, goHome, desc, value
 
                 </Text>
             </View>
-
-            {desc}
+        
+        {desc}
 
             
-
-            {generatelabels(values)}
-
+        {generatelabels(values)}
         </View>
     );
 

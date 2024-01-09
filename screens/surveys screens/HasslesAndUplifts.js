@@ -5,9 +5,9 @@ const HasslesScreen = ({navigation}) => {
     const survey = 
         <HasslesStyleSurvey 
 
-            questionnaireNumber={3}
+            questionnaireNumber={4}
 
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('MriScreen')}
 
             scales={[
                 [0,1,2,3],

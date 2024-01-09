@@ -10,53 +10,101 @@ import RealLongAnswerQuestion from '../questiontypes/RealLongAnswerQuestion';
 
 const TecQuestionList = ({ questionnaireNumber, qs, desc, goHome, finalstyles }) => {
 
-    const [data, changeData] = useState(allNull(39));
 
-    const [flag, changeFlag] = useState(allNull(32));
+    const createInitialData = (size) => {
+        let initialData = [];
+    
+        for (let i = 0; i < size; i++) {
+            if (i >= 28 && i <= 38) {
+                initialData.push("empty");
+            } else {
+                initialData.push(null);
+            }
+        }
+    
+        return initialData;
+    };
+
+    const createInitialFlag = (size) => {
+        let initialData = [];
+    
+        for (let i = 0; i < size; i++) {
+            if (i >= 29 && i <= 31) {
+                initialData.push("empty");
+            } else {
+                initialData.push(null);
+            }
+        }
+    
+        return initialData;
+    };
+    
+    const [data, changeData] = useState(createInitialData(39));
+    const [flag, changeFlag] = useState(createInitialFlag(32));
+    // const data1 = [1,2,3,4,5];
 
     // console.log(data);
 
-    const respond = (num, value) => {
-        let temp = data;
-
-        temp[num] = value;
-        changeData(temp);
- 
-        console.log('callback worked!', temp[num]);
-    }
-
-
-    const [canEdit1, setCanEdit1] = useState(false);
-    const [canEdit2, setCanEdit2] = useState(false);
-    const [canEdit3, setCanEdit3] = useState(false);
-    const [canEdit4, setCanEdit4] = useState(false);
-
-
-    useEffect(() => {
-        console.log('点击一下就巨婴')
-        setCanEdit1(checkForYesAnswers(13, 19));
-        setCanEdit2(checkForYesAnswers(19, 23));
-        setCanEdit3(checkForYesAnswers(23, 26));
-        setCanEdit4(checkForYesAnswers(27, 29));
-    }, [flag]); // 依赖项为 data 数组
-
-
-
-    const respond_flag = (index, value) => {
-        let temp = flag;
+    const respond = (index, value) => {
+        let temp = [...data];
 
         temp[index] = value;
-        changeFlag(temp);
-        // let temp = [...flag]; // 创建 flag 的副本
-        // temp[index] = value;
-        // changeFlag(temp); // 使用新的数组更新状态
+        changeData(temp);
  
         console.log('callback worked!', temp[index]);
     }
 
 
+    const respond_flag = (index, value) => {
+
+        let temp = [...flag];
+
+        temp[index] = value;
+        changeFlag(temp);
+        // console.log("假如我们检查到了更新");
+        console.log('callback worked!', temp[index]);
+    }
+
+
+    // const [canEdit1, setCanEdit1] = useState(false);
+    // const [canEdit2, setCanEdit2] = useState(false);
+    // const [canEdit3, setCanEdit3] = useState(false);
+    // const [canEdit4, setCanEdit4] = useState(false);
+    const [shouldDisplay1, setDisplay1] = useState(false);
+    const [shouldDisplay2, setDisplay2] = useState(false);
+    const [shouldDisplay3, setDisplay3] = useState(false);
+    const [shouldDisplay4, setDisplay4] = useState(false);
+
+
+    const [shouldDisplay5, setDisplay5] = useState(false);
+    const [shouldDisplay6, setDisplay6] = useState(false);
+    const [shouldDisplay7, setDisplay7] = useState(false);
+    const [shouldDisplay8, setDisplay8] = useState(false);
+    const [shouldDisplay9, setDisplay9] = useState(false);
+
+
+    useEffect(() => {
+        setDisplay1(checkForYesAnswers(13, 19));
+        setDisplay2(checkForYesAnswers(19, 23));
+        setDisplay3(checkForYesAnswers(23, 26));
+        setDisplay4(checkForYesAnswers(27, 29));
+
+        setDisplay5(checkForYesAnswers(13, 16));
+        setDisplay6(checkForYesAnswers(17, 20));
+        setDisplay7(checkForYesAnswers(20, 23));
+        setDisplay8(checkForYesAnswers(24, 27));
+        setDisplay9(checkForYesAnswers(27, 30));
+ 
+    }, [flag]); // 依赖项为 data 数组
+
+
+
+    
+
+
 
     const checkForYesAnswers = (a,b) => {
+        // console.log("我看看点击一下会不会变")
         return flag.slice(a, b).includes("yes");
     }
 
@@ -64,6 +112,9 @@ const TecQuestionList = ({ questionnaireNumber, qs, desc, goHome, finalstyles })
         (val, index) => <TecQuestion key={index} q={val} num={index} callback={respond} callback_flag={respond_flag} />
     );
 
+
+
+    // const shouldDisplay1 = checkForYesAnswers(14,16)
     listofqs.push(
         <TecSpecialQuestion 
         
@@ -79,11 +130,12 @@ const TecQuestionList = ({ questionnaireNumber, qs, desc, goHome, finalstyles })
             num={29} 
             callback_flag = {respond_flag}
             callback={respond}
-            checkForYesAnswers = {checkForYesAnswers}
-            canEdit1={canEdit1}
-            canEdit2={canEdit2}
-            canEdit3={canEdit3}
-            canEdit4={canEdit4}
+            // checkForYesAnswers = {checkForYesAnswers}
+            shouldDisplay1 = {shouldDisplay1}
+            shouldDisplay2 = {shouldDisplay2}
+            shouldDisplay3 = {shouldDisplay3}
+            shouldDisplay4 = {shouldDisplay4}
+
         />
     );
 
@@ -97,11 +149,16 @@ const TecQuestionList = ({ questionnaireNumber, qs, desc, goHome, finalstyles })
                 "Physical abuse",
                 "Sexual harassment",
                 "Sexual abuse",
-            ]}
+            ]}          
             short={false}
             callback_flag = {respond_flag}
             num={30}
             callback={respond}
+            shouldDisplay5 = {shouldDisplay5}
+            shouldDisplay6 = {shouldDisplay6}
+            shouldDisplay7 = {shouldDisplay7}
+            shouldDisplay8 = {shouldDisplay8}
+            shouldDisplay9 = {shouldDisplay9}
 
         />
     )

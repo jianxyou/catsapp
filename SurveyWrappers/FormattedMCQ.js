@@ -6,8 +6,8 @@ import returnDisplayName from '../helpers/returnDisplayName';
 
 const FormattedMCQ = ({listofqs,data,dataForFlag,goHome, questionnaireNumber, desc, styles}) => {
 
-    console.log("rangwolaikanakn Q!!!!!!!!!",dataForFlag);
-    console.log("MCq de changdushi shenme ne ", listofqs.length);
+    console.log("rangwolaikanakn Q!!!!!!!!!",data);
+    // console.log("MCq de changdushi shenme ne ", listofqs.length);
     const mydesc = (
         <View>
         <View style={styles.titlecontainer}>
@@ -28,7 +28,7 @@ const FormattedMCQ = ({listofqs,data,dataForFlag,goHome, questionnaireNumber, de
 
     if(dataForFlag){
         console.log("9899999999999999")
-        return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles, dataForFlag);
+        return FinalWrapper(questionnaireNumber, [mydesc, listofqs],data, goHome, styles, dataForFlag);
     }
 
     return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles, null);

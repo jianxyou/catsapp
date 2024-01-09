@@ -23,7 +23,7 @@ const DASTScrenn = ({navigation}) => {
 
     return ( 
         <SIASQuestionList
-            questionnaireNumber={16}
+            questionnaireNumber={17}
             scale={["", "",]} 
             values={["YES", "NO"]} 
             goHome={() => navigation.navigate('PatientScreen')}

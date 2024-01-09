@@ -25,11 +25,6 @@ function PatientScreen({ navigation }) {
 
  
 
-  
-
-
-
-
 
 
   useEffect(() => {
@@ -69,7 +64,7 @@ function PatientScreen({ navigation }) {
   
 
   const checkPassword = () => {
-    if (password === 'guess') {
+    if (password === '123') {
       navigation.goBack();
     } else {
       Alert.alert('wrong', 'wrong password');
@@ -94,8 +89,8 @@ function PatientScreen({ navigation }) {
 
   
   const newButtons = createLinks({
-    displayNames: displayNamesSelf.slice(7,),
-    internalNames: internalNamesSelf.slice(7,),
+    displayNames: displayNamesSelf.slice(8,),
+    internalNames: internalNamesSelf.slice(8,),
     navigation: navigation,
     filled: filled,
   });
@@ -105,8 +100,6 @@ function PatientScreen({ navigation }) {
   return (
     <View style={styles.container}>
       {newButtons}
-
-
       <Modal
   animationType="slide"
   transparent={true}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { View, Text, TextInput } from 'react-native'
 
 import allNull from '../helpers/allNull';
@@ -6,18 +6,23 @@ import allNull from '../helpers/allNull';
 import tecSpecialStyle from '../styles/question styles/tecSpecialStyle';
 import textstyles from '../styles/textstyles';
 
-const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, checkForYesAnswer,canEdit1,canEdit2,canEdit3,canEdit4}) => {
+const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, checkForYesAnswer,shouldDisplay1, shouldDisplay2, shouldDisplay3,shouldDisplay4}) => {
 
     const styles = tecSpecialStyle
 
-    const [cur, changeCur] = useState(["null","null","null","null"]);
+    const [cur, changeCur] = useState(["empty","empty","empty","empty"]);
+    // callback(num,cur)
 
-    const [inputValue1, setInputValue1] = useState("0");
-    const [inputValue2, setInputValue2] = useState("0");
-    const [inputValue3, setInputValue3] = useState("0");
-    const [inputValue4, setInputValue4] = useState("0");
+    useEffect(() => {
+        callback(num, cur);
+    }, [cur]);
 
-    callback(num,cur)
+    const [inputValue1, setInputValue1] = useState("");
+    const [inputValue2, setInputValue2] = useState("");
+    const [inputValue3, setInputValue3] = useState("");
+    const [inputValue4, setInputValue4] = useState("");
+
+    
     const modify = (val,index) => { 
         
         switch (index) {
@@ -52,9 +57,11 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
 
     const genq = (q, index, short) => {
 
-        let canEdit;
+        
         switch (index) {
             case 0:
+
+                if (shouldDisplay1){
                 return (
                     <View style={styles.singlequestion} key={key}>
     
@@ -78,6 +85,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
     
                         </View>
                         
+                       
                         <View style={styles.short}>
     
                             <View style={styles.textcontainer}>
@@ -106,13 +114,18 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
                                 textAlign: 'center'
                     }}
                 />
-    
                         </View>
-    
                     </View>
-                )
+            
+                )}
+
+                else{
+                    return null;
+                }
                 break;
             case 1:
+
+            if (shouldDisplay2){
                 return (
                     <View style={styles.singlequestion} key={key}>
     
@@ -169,8 +182,14 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
     
                     </View>
                 )
+            }
+            else{
+                return null;
+            }
                 break;
             case 2:
+
+                if (shouldDisplay3){
                 return (
                     <View style={styles.singlequestion} key={key}>
     
@@ -227,8 +246,18 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
     
                     </View>
                 )
+                }
+
+            else{
+                return null;
+            }
                 break;
             case 3:
+
+
+                if (shouldDisplay4){
+
+                
                 return (
                     <View style={styles.singlequestion} key={key}>
     
@@ -285,6 +314,10 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
     
                     </View>
                 )
+                }
+                else{
+                    return null;
+                }
                 break;
         }
 

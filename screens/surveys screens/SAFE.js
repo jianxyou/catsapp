@@ -4,7 +4,7 @@ const SAFEScreen = ({navigation}) => {
     return ( 
         <SAFEQuestionList 
 
-            questionnaireNumber={9}
+            questionnaireNumber={10}
             desc=""
             scale={[1,2,3,4,5]}
             values={[1,2,3,4,5]}

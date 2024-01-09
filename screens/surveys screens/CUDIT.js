@@ -32,7 +32,7 @@ const CUDITScreen = ({navigation}) => {
         <CUDITQuestionList
 
             desc = {desc}
-            questionnaireNumber={8}
+            questionnaireNumber={9}
             finalstyle={cuditQuestionListStyle}
             buttonstyle={cuditRadioStyles}
             goHome={() => navigation.navigate('PatientScreen')}

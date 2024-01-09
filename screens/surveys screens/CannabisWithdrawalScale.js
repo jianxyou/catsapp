@@ -49,7 +49,7 @@ const CannabisWithdrawalScreen = ({navigation}) => {
         <ScrollView stickyHeaderIndices={[0]}>
             <StickyHeader />
         <CannabisQuestionList
-            questionnaireNumber={21}
+            questionnaireNumber={22}
             desc={desc}
             scale={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
             values={[0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}

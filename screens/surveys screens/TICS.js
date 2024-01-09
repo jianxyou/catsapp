@@ -43,7 +43,7 @@ const TICSScreen = ({navigation}) => {
         <ScrollView stickyHeaderIndices={[0]}>
             <StickyHeader />
         <SIASQuestionList
-            questionnaireNumber={22}
+            questionnaireNumber={23}
             scale={["", "", "", "", ""]} 
             values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
             goHome={() => navigation.navigate('PatientScreen')}

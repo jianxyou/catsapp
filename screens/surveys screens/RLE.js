@@ -5,7 +5,7 @@ import RLEStyle from "../../styles/question styles/RLEStyle";
 import SIASQuestionList from '../../surveytypes/SIASQuestionList';
 import dastRadioStyles from '../../styles/input styles/dastRadioStyles';
 import dastQuestionListStyle from '../../styles/question list styles/dastQuestionListStyle';
-import DASTStyle from '../../styles/question styles/DASTStyle';
+import RLE_mainStyle from '../../styles/question styles/RLE_mainStyle';
 import textstyles from '../../styles/textstyles';
 
 import * as React from 'react';
@@ -144,15 +144,15 @@ const RLEScreen = ({navigation}) => {
 
     return ( 
         <SIASQuestionList
-            questionnaireNumber={14}
-            scale={["", "",]} 
-            values={["YES", "YES, still effects me"]} 
+            questionnaireNumber={15}
+            scale={["", "",""]} 
+            values={["YES", "YES, still effects me", "No"]} 
             goHome={() => navigation.navigate('PatientScreen')}
             desc={desc}
             buttonstyle={dastRadioStyles}
             liststyle={dastQuestionListStyle}
-            questionstyle={DASTStyle}
-            labels={["YES", "Still affects me"]} 
+            questionstyle={RLE_mainStyle}
+            labels={["YES", "Still affects me", ""]} 
 
             qs={[
                 "Have you had a serious illness or been seriously injured?",

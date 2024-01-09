@@ -35,7 +35,7 @@ const TecScreen = ({navigation}) => {
         <ScrollView stickyHeaderIndices={[0]}>
             <StickyHeader />
         <TecQuestionList
-        questionnaireNumber={20}
+        questionnaireNumber={21}
         qs={[
             "Having to look after your parents and/or brothers and sisters when you were a child.",
             "Family problems (e.g., parent with alcohol or psychiatric problems, poverty).",
