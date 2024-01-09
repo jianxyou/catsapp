@@ -52,7 +52,7 @@ function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <Button title="Participent" onPress={() => navigation.navigate('PatientScreen')} />
       <Button title="Administrator" onPress={() => navigation.navigate('AdminScreen')} />
-      <Button title="Mri" onPress={() => navigation.navigate('MriScreen')} />
+      <Button title="Pet" onPress={() => navigation.navigate('MriScreen')} />
       {/* <Button title="Mri" onPress={() => navigation.navigate('MriScreen')} /> */}
     </View>
   );

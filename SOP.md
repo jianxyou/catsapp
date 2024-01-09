@@ -1,31 +1,23 @@
-To use the app follow 4 basic steps
+Standard Operating Procedure for Application Usage
 
-1. Upon opening the app, go into the admin menu and set the current participant ID (i.e. CURB-1058). This will ensure that the data between different participants does not get mixed up. For a second measure of clarity, the text files will include the date and time that they were created. 
+1,Initial Application Interface:
+Upon opening the application, users are presented with three interfaces: 'Scales', 'Data', and 'PDF'. Each interface serves a distinct purpose:
+Scales: This interface is dedicated to the primary task of filling out various scales (forms or tables).
 
-2. Hand the iPad to a participant and let them fill out the surveys. Note that, if you leave a page without submitting it, the entered data will not be saved.
+Data: After completing the scales, users can click on this interface to automatically generate SQL statements. These statements facilitate the execution of tasks in Access software, thereby eliminating the need for manual data entry.
 
-3. Once the surveys are completed, (if the box next to its name is not green, the data was NOT saved) you can transfer the files stored locally on the iPad, in a folder called "CaTS Research" by plugging it into a computer, or by any other basic method you would use to transfer data from your phone to a computer.  
+PDF: Users can generate PDF files to store participant data after completing the scales.
 
-4. After transfering data, you can optionally, (but recommended), clear the stored data from the app through the admin menu. 
+2,Using the 'Scales' Interface:
+Inside the 'Scales' interface, there are three options: 'Participant', 'Administrator', and 'Pet'. Each button leads to different scales that need to be filled:
+The 'Administrator' initiates the process by guiding the 'Participant' to complete all the scales under the 'Participant' and 'Pet' categories. Once the 'Participant' and 'Pet' scales are selected, the iPad can be handed over to the participant for completion.
+After the participant completes their part, the 'Administrator' completes the scales available under the 'Administrator' category.
 
+3,Post-Scale Completion:
+Once all the required scales are duly completed, navigate back to the main interface. Sequentially click on the 'Data' and 'PDF' buttons to generate and save the required data.
 
+4,Saving the Files:
+The saved files are stored within the 'Files' app on the iPad, specifically in the 'On My iPad/CaTS Research' directory.
 
-
-
-
-定下本周的汇报任务： 
-
-
-先想好我要汇报什么
-
-1， app的工作进展的很顺利，成功在app上部署，按照sop进行了测试，可以进行完整的测试并且并且做了两个完整的流程测试了
-
-2， 关于database 的bug 也有进行相应的修复， 修复的bug是什么
-
-3， data相关的retraction 任务，了解发给别人data的sop 是什么
-
-4，
-
-
-
-如何把整个sop给设计出来呢，我真的非常的
+5,Transferring and Utilizing Files:
+Transfer the txt and PDF files to a computer. Run the SQL files in Access for data processing. The PDF files serve as a backup for the recorded data.
