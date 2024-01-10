@@ -3,6 +3,7 @@ import {ScrollView, StyleSheet, View, Text } from 'react-native';
 import SIASQuestionList from '../../surveytypes/SIASQuestionList';
 import SASQuestionListStyle from '../../styles/question list styles/SASQuestionListStyle';
 import SIASStyle from '../../styles/question styles/SIASStyle';
+import CWSStyle from '../../styles/question styles/CWSStyle';
 import cannabisRadioStyles from '../../styles/input styles/cannabisRadioStyles';
 import CannabisQuestionList from '../../surveytypes/CannabisQuestionList';
 import cannabisQuestionListStyle from '../../styles/question list styles/cannabisQuestionListStyle';
@@ -21,15 +22,20 @@ const CannabisWithdrawalScreen = ({navigation}) => {
             zIndex: 1000
         },
         textLarge: {
-            fontSize: 50, // 这里的数值可以根据你的需要进行调整
-            paddingLeft: 350
-          },
+            fontSize: 35, // 这里的数值可以根据你的需要进行调整
+            paddingLeft: 300
+        },
+
+        textLittle: {
+            fontSize: 20, // 这里的数值可以根据你的需要进行调整
+            marginLeft: 1000
+        }
     });
 
 
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
-        <Text style = {styles2.textLarge}>     Not at all,      Moderately,       Extreme</Text>
+        <Text style = {styles2.textLarge}>     Not at all       Moderately        Extreme                        <Text style = {styles2.textLittle}> Impact(1-10)</Text> </Text>
         </View>
     );
 
@@ -56,7 +62,7 @@ const CannabisWithdrawalScreen = ({navigation}) => {
             goHome={() => navigation.navigate('PatientScreen')}
             buttonstyle={cannabisRadioStyles}
             liststyle={cannabisQuestionListStyle}
-            questionstyle={SIASStyle}
+            questionstyle={CWSStyle}
 
             qs={[
                 "The only thing I could think about was smoking some cannabis",

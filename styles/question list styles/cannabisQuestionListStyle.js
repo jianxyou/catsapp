@@ -32,10 +32,11 @@ export default cannabisQuestionListStyle = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'row',
         margin: 20,
+        
     },
 
     titletext: {
-        fontSize: 33, 
+        fontSize: 22, 
         fontWeight: 'bold'    
     },
 
@@ -53,7 +54,7 @@ export default cannabisQuestionListStyle = StyleSheet.create({
     },
 
     optionlabel: { 
-        width: 250,
+        width: 200,
         display: 'flex',
         flexDirection:'row',
         justifyContent: 'center',
@@ -61,6 +62,7 @@ export default cannabisQuestionListStyle = StyleSheet.create({
     },
 
     optionlabeltext: {
+        width: 200,
         display: 'flex',
         justifyContent: 'center',
         margin: 5,
@@ -71,7 +73,6 @@ export default cannabisQuestionListStyle = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignContent: 'center',
-
         marginLeft: 350,
 
     },
@@ -84,7 +85,7 @@ export default cannabisQuestionListStyle = StyleSheet.create({
         marginTop: 20,
         borderTopWidth: 2,
         borderTopColor: 'black',
-        width: 1132,
+        width: 1050,
         borderRightWidth: 2,
         borderRightColor: 'black',
         borderLeftWidth: 2,

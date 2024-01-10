@@ -4,12 +4,12 @@ import { useEffect, useState, useContext } from 'react'
 import * as FileSystem from 'expo-file-system';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
 import { ParticipantContext } from '../../context and async storage/ParticipantContext';
-import checkFiles from '../../helpers/checkfiles';
+
 
 import { displayNamesSelf, internalNamesSelf } from '../../schemaconstants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import createLinks from '../../helpers/createLinks';
+import createLinks_Pet from '../../helpers/createLinks_Pet';
 
 function MriScreen({ navigation }) {
 
@@ -88,7 +88,7 @@ function MriScreen({ navigation }) {
 
 
   
-  const newButtons = createLinks({
+  const newButtons = createLinks_Pet({
     displayNames: displayNamesSelf.slice(4,8),
     internalNames: internalNamesSelf.slice(4,8),
     navigation: navigation,
@@ -101,26 +101,26 @@ function MriScreen({ navigation }) {
     <View style={styles.container}>
       {newButtons}
       <Modal
-  animationType="slide"
-  transparent={true}
-  visible={modalVisible}
-  onRequestClose={() => setModalVisible(false)}
->
-  <View style={styles.modalView}>
-    <View style={styles.inputContainer}>
-      <TextInput
-        secureTextEntry
-        placeholder="enter password"
-        value={password}
-        onChangeText={setPassword}
-      />
-      <View style={styles.buttonContainer}>
-        <Button title="confirm" onPress={checkPassword} />
-        <Button title="cancel" onPress={() => setModalVisible(false)} />
+      animationType="slide"
+      transparent={true}
+      visible={modalVisible}
+      onRequestClose={() => setModalVisible(false)}
+    >
+      <View style={styles.modalView}>
+        <View style={styles.inputContainer}>
+          <TextInput
+            secureTextEntry
+            placeholder="enter password"
+            value={password}
+            onChangeText={setPassword}
+          />
+          <View style={styles.buttonContainer}>
+            <Button title="confirm" onPress={checkPassword} />
+            <Button title="cancel" onPress={() => setModalVisible(false)} />
+          </View>
+        </View>
       </View>
-    </View>
-  </View>
-</Modal>
+    </Modal>
 
 
       

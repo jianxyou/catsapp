@@ -137,6 +137,7 @@ const RLEScreen = ({navigation}) => {
         
     //     Please tick the YES box if the event has occurred.
     //     Please tick the 'still affects me' box if the event is still having an effect on your life
+    
             </Text>
         </View>
     );

@@ -8,7 +8,7 @@ import returnDisplayName from '../helpers/returnDisplayName';
 const FormattedRosenberg = ({questionnaireNumber, listofqs, data, goHome, desc, styles, labels, speciallabel}) => {
 
 
-    console.log("bai de changdu shi ",listofqs.length);
+    // console.log("bai de changdu shi ",listofqs.length);
     const generatelabels = labels => {
         return (
             <View style={styles.withempty}>

@@ -15,6 +15,8 @@ const TecQuestion = ({q, num, callback, callback_flag}) => {
 
     // 1 state
     const [showAdditionalOptions, setShowAdditionalOptions] = useState(false);
+    const [text, changeText] = useState(null); 
+
 
     // 2
     const [cur, changeCur] = useState(["null", "null", "null", "null"]);
@@ -114,8 +116,7 @@ const TecQuestion = ({q, num, callback, callback_flag}) => {
     
     };
 
-    const [text, changeText] = useState(null); 
-
+    
     const modify = val => { 
         changeText(val);
         let temp = cur;
@@ -181,7 +182,7 @@ const TecQuestion = ({q, num, callback, callback_flag}) => {
 <TextInput onChangeText={t => modify(t)} 
 placeholder='Age'
 style={{
-    marginLeft: 0,
+    marginLeft: -55,
     marginTop: 15,
     fontSize: 25,
     borderColor: "#E6E6E6", 
@@ -207,7 +208,7 @@ placeholder='Support'
 style={{
     marginLeft: 50,
     marginTop: 15,
-    fontSize: 25,
+    fontSize: 18,
     borderColor: "#E6E6E6", 
     backgroundColor: "#F8F8F8", 
     borderRadius: 15, 
@@ -218,7 +219,6 @@ style={{
     flexDirection: 'row', 
     justifyContent: 'center',
     }}></TextInput>
-
 </View>
                     </>
                 )}

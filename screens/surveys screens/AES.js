@@ -4,7 +4,7 @@ const AESScreen = ({navigation}) => {
     return (
         <AESQuestionList 
             questionnaireNumber={11}
-            desc="For each statement, circle the answer that best describes the subject’s thoughts, feelings, and activity in the past 4 weeks"
+            desc="For each statement, check the answer that best describes the subject’s thoughts, feelings, and activity in the past 4 weeks"
             scale={[
                 "NOT AT ALL",
                 "SLIGHTLY",
@@ -43,9 +43,6 @@ const AESScreen = ({navigation}) => {
 
 
     
-
-
-            黎曼几何的价值是什
 }
  
 export default AESScreen;

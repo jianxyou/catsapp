@@ -68,7 +68,7 @@ const AuditScreen = ({navigation}) => {
         desc={
             <View>
                 <Text style={textstyles.desctext}>
-                    PATIENT: Because alcohol use can affect your health and can interfere with certain medications and treatments, it is important that we ask some questions about your use of alcohol. Your answers will remain confidential, so please be honest. {"\n\n"}For each question in the chart below, place an X in one box that best describes your answer.
+                    PATIENT: Because alcohol use can affect your health and can interfere with certain medications and treatments, it is important that we ask some questions about your use of alcohol. Your answers will remain confidential, so please be honest. {"\n\n"}For each question in the chart below, check the box that best describes your answer.
                 </Text>
 
                 <View style={auditQuestionListStyle.imagewithtext}>

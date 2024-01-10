@@ -6,7 +6,7 @@ import allNull from '../helpers/allNull';
 import tecSpecialStyle from '../styles/question styles/tecSpecialStyle';
 import textstyles from '../styles/textstyles';
 
-const TecSpecial2 = ({q, subqs, short, num, callback,callback_flag,shouldDisplay5,shouldDisplay6,shouldDisplay7,shouldDisplay8,shouldDisplay9}) => {
+const TecSpecial2 = ({q, subqs, short, num, callback,callback_flag, shouldDisplay5, shouldDisplay6, shouldDisplay7, shouldDisplay8, shouldDisplay9}) => {
 
     const styles = tecSpecialStyle
 
@@ -19,7 +19,7 @@ const TecSpecial2 = ({q, subqs, short, num, callback,callback_flag,shouldDisplay
     }, [cur]);
 
     const modify = (val,index) => { 
-        let temp = cur;s
+        let temp = cur;
         temp[index] = val;
         changeCur(temp);
         callback(num, cur);

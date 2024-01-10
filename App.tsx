@@ -122,7 +122,7 @@ function App(): JSX.Element {
       <Stack.Screen name="PANSS" component={PANSSScreen} />
       <Stack.Screen name="SDS" component={SDSScreen} />
       <Stack.Screen name="DAST" component={DASTScrenn} />
-      <Stack.Screen name="SoRLE" component={SoRLEScreen} />
+      <Stack.Screen name="SRLE" component={SoRLEScreen} />
       <Stack.Screen name="Mood Episodes" component={MoodEpisodesScreen} />
       <Stack.Screen name="Audit" component={AuditScreen} />
       <Stack.Screen name="Cgi" component={CGIScreen} />

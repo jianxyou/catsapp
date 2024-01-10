@@ -21,11 +21,17 @@ const TecScreen = ({navigation}) => {
             paddingLeft: 500,
             fontSize: 33, // 这里的数值可以根据你的需要进行调整
           },
+
+        textLittle: {
+            backgroundColor: 'white',
+            paddingLeft: 500,
+            fontSize: 20, // 这里的数值可以根据你的需要进行调整
+          }
     });
 
     const StickyHeader = () => (
         <View >
-        <Text style={styles2.textLarge}>           Age,                  level of impact,          level of support(0 - 2) </Text>
+        <Text style={styles2.textLarge}>           Age              level of impact      <Text style={styles2.textLittle}>level of support(0 - 2) </Text> </Text>
         </View>
     );
 

@@ -11,7 +11,7 @@ export default BeckScreen = ({navigation, route}) => {
 
     const StickyHeader = () => (
         <View style={styles.stickyHeader}>
-        <Text style = {styles.textLarge}>Not at all,      Mildly,       Moderately,     Severely</Text>
+        <Text style = {styles.textLarge}>Not at all       Mildly        Moderately     Severely</Text>
         </View>
     );
 
@@ -35,7 +35,7 @@ export default BeckScreen = ({navigation, route}) => {
             "Wobbliness in legs",  
             "Unable to relax",  
             "Fear of worst happening",  
-            "Dizzy or lightheaded",  
+            "Dizzy or light headache",  
             "Heart pounding / racing",  
             "Unsteady",  
             "Terrified or afraid",  
@@ -55,7 +55,7 @@ export default BeckScreen = ({navigation, route}) => {
          
         desc={
             <Text style={textstyles.desctext}>Below is a list of common symptoms of anxiety. Please carefully read each item in the list. Indicate how much you have been 
-        bothered by that symptom during the past month, including today, by circling the number in the corresponding space in the 
+        bothered by that symptom during the past month, including today, by checking the number in the corresponding space in the 
         column next to each symptom</Text>}
     />
 

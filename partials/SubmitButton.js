@@ -63,7 +63,7 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
           // 更新数组中的特定索引
           filledArray[questionnaireNumber-1] = true;
 
-      
+          console.log(filledArray);
           // 将更新后的数组保存回 AsyncStorage
           await AsyncStorage.setItem('filled', JSON.stringify(filledArray));
         } catch (error) {
@@ -76,8 +76,6 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
     const handleSubmit = async () => {
         try {
 
-            console.log("xiaoxixix");
-            console.log(data);
             let containsNull;
             if (dataForFlag){
                 containsNull = dataForFlag.includes(null);
@@ -117,9 +115,27 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
                 else{
                     nullIndices = data.map((item, index) => item === null ? index : null).filter(index => index !== null);
                 }
+
+
+                if (questionnaireNumber == 22){
+    
+      
+                    // 创建一个新的 Set 来存储不重复的处理后的 indices
+                    const processedIndices = new Set();
+            
+                    // 对每个 index 进行地板除 2，并添加到 Set 中
+                    nullIndices.forEach(index => {
+                        const processedIndex = Math.floor(index / 2);
+                        processedIndices.add(processedIndex);
+                    });
+            
+                    nullIndices = Array.from(processedIndices);
+                  
+                }
+            
                 // console.log('Null value indices:', nullIndices);
                 onErrorIndices(nullIndices);
-
+                console.log('我傻了',data);
                 // 可选：处理包含 "null" 值的情况
                 // 例如，显示警告或记录消息
                 console.log('Data contains null values at indices:', nullIndices);

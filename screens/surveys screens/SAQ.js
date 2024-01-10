@@ -1,14 +1,29 @@
 import * as React from 'react';
-import { View, Text } from 'react-native'
+import { ScrollView,View, Text, StyleSheet} from 'react-native'
 
-import SIASQuestionList from '../../surveytypes/SIASQuestionList';
+import SIASQuestionList_SAQ from '../../surveytypes/SIASQuestionList_SAQ';
 import SIASRadioStyles from '../../styles/input styles/SIASRadioStyles';
 import SIASquestionliststyle from '../../styles/question list styles/SIASquestionliststyle';
 import SIASStyle from '../../styles/question styles/SIASStyle';
 
-const SAQScreen = ({navigation}) => {
+ SAQScreen = ({navigation}) => {
 
     const styles = SIASquestionliststyle;
+
+
+
+
+
+
+
+    const StickyHeader = () => (
+        <View style={banner_styles.stickyHeader}>
+        <Text style = {banner_styles.textLarge}>Not at all      Mildly      Moderately     Very    Extremely  </Text>
+        </View>
+    );
+
+    
+
 
     const desc = (
         <View style={styles.desc}>
@@ -17,15 +32,14 @@ const SAQScreen = ({navigation}) => {
                     For questions 1 to 20, please answer based on how you feel <Text style={{fontWeight: 'bold'}}>right now, at this moment</Text>. 
                 </Text>
                 <Text>{"\n"}</Text> {/* 这里添加换行 */}
-                <Text>
-                For questions 21 to 40, please answer based on how you feel <Text style={{fontWeight: 'bold'}}>in general</Text>. There are no right or wrong answers. Do not spend too much time on any one statement, but give the answer which seems to describe your feelings best.
-                </Text>
             </Text>
         </View>
     );
     return (  
-        
-        <SIASQuestionList
+        <ScrollView stickyHeaderIndices={[0]}>
+            
+            <StickyHeader />
+        <SIASQuestionList_SAQ  
             questionnaireNumber={6}
             scale={["", "", "", "", ""]} 
             values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
@@ -81,11 +95,38 @@ const SAQScreen = ({navigation}) => {
             ]}
         />
 
+        </ScrollView>
     );
 }
  
 export default SAQScreen;
 
 
+const banner_styles = StyleSheet.create({
+    submit: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        flexDirection: 'column',
+    },
 
+    submitDiv: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        flexDirection: 'column',
+
+    },
+
+    stickyHeader: {
+        // 添加您的样式，例如背景色，字体样式等
+        backgroundColor: 'white',
+        padding: 10,
+        // 确保它在顶部
+        zIndex: 1000
+    },
+
+    textLarge: {
+        fontSize: 35, // 这里的数值可以根据你的需要进行调整
+        paddingLeft: 350
+      },
+})
 

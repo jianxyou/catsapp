@@ -244,7 +244,12 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
     
     
     const handleErrorIndices = (indices) => {
-        setErrorIndices(indices);
+
+
+    
+          setErrorIndices(indices);
+
+
         // 这里还可以添加其它处理逻辑
     };
     

@@ -102,7 +102,7 @@ const createPdfFromImages = async (base64Images) => {
 
   try {
     const file = await RNHTMLtoPDF.convert(options); // 创建 PDF
-    console.log(file.filePath);
+    // console.log(file.filePath);
     return file.filePath; // 返回 PDF 文件路径
   } catch (error) {
     console.error('Error creating PDF', error);

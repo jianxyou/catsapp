@@ -14,9 +14,10 @@ const DASTScrenn = ({navigation}) => {
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}><Text style={textstyles.makebold}>Directions</Text>
-            : The following questions concern information about your involvement with drugs. Drug abuse refers to (1) the use of prescribed or “over-the-counter” drugs in excess of the directions, and (2) any non-medical use of drugs. Consider the past year (12 months) and carefully read each statement. Then decide whether your answer is YES or NO and check the appropriate space. 
+            : The following questions concern information about your involvement with drugs. Drug abuse refers to (1) the use of prescribed or “over-the-counter” drugs in excess of the directions, and (2) any non-medical use of drugs. Consider the past year (12 months) and carefully read each statement. Then decide whether your answer is YES or NO and check the appropriate space. Please check 'No' if it's not applicable 
 
             {"\n"}Please be sure to answer every question.
+            
             </Text>
         </View>
     );

@@ -17,7 +17,7 @@ const TLFBQuestionList = ({listoflistofqs,values, questionnaireNumber, minidescs
     
     const [data, changeData] = useState(allNull(listoflistofqs.length));
 
-    console.log("wode ma", data_haha);
+    // console.log("wode ma", data_haha);
     const respond = (index, value) => {
         let temp = data;
 
@@ -28,32 +28,32 @@ const TLFBQuestionList = ({listoflistofqs,values, questionnaireNumber, minidescs
 
 
 
-    // const returnJSXqs = l => {
+    const returnJSXqs = l => {
 
-    //     let currindex = 0;
-    //     let myarr = new Array(l.length);
+        let currindex = 0;
+        let myarr = new Array(l.length);
 
 
-    //     for (let i = 0; i < l.length; i++) {
-    //         let temp = l[i];
+        for (let i = 0; i < l.length; i++) {
+            let temp = l[i];
 
         
-    //         let tempJSX = temp.map(
-    //             (q, index) =>  <ShortAnswerQuestion key={index+currindex} scale={scales[i][index]} values={values[i][index]} num={index+currindex} q={q} callback={respond} buttonstyles={buttonstyles} questionstyles={questionstyles}/>
-    //         );
-    //         myarr[i] = tempJSX;
+            let tempJSX = temp.map(
+                (q, index) =>  <ShortAnswerQuestion key={index+currindex} scale={scales[i][index]} values={values[i][index]} num={index+currindex} q={q} callback={respond} buttonstyles={buttonstyles} questionstyles={questionstyles}/>
+            );
+            myarr[i] = tempJSX;
             
         
 
-    //         currindex =+ temp.length;
-    //     }
+            currindex =+ temp.length;
+        }
         
     
-    //     // let tmp2 = l[2];
-    //     // let temp2
+        // let tmp2 = l[2];
+        // let temp2
 
-    //     return myarr;
-    // }
+        return myarr;
+    }
 
     
 
@@ -63,151 +63,7 @@ const TLFBQuestionList = ({listoflistofqs,values, questionnaireNumber, minidescs
         
     // );
 
-    const buttonStyles = StyleSheet.create({
-        buttonContainer: {
-         // ... 您原有的样式 ...
-         // flex: 1,
-         // justifyContent: 'flex-end',
-         // alignItems: 'flex-end',
-         marginLeft: 800,
-         marginBottom: 50,
-         width: 80,      // 按钮宽度
-         height: 20,      // 按钮高度
-         borderRadius: 5,            // 圆角
-         borderWidth: 1,             // 边框
-         // borderColor: '#fff',        // 白色边框
-         // shadowColor: '#000',        // 阴影颜色
-         // shadowOffset: { width: 0, height: 2 }, // 阴影偏移
-         // shadowOpacity: 0.25,        // 阴影不透明度
-         // shadowRadius: 3.84,         // 阴影半径
-         // elevation: 5,
-         // paddingleft: 100,               // 按钮内边距
-         // marginLeft: 50,
-         backgroundColor: 'green' // 背景颜色
-       },
    
-       buttonText: {
-         color: '#fff',             // 文字颜色
-         textAlign: 'center',       // 文字居中
-         fontWeight: 'bold'         // 文字加粗
-       }
-     // 其他你可能需要的样式...
-     });
-     
-     const extractStatsToArray = (stats) => {
-     return [
-       stats.totalJoints,     // Total Joints
-       stats.daysJoints,      // Days Joints
-       stats.percDaysJoints,  // Perc Days Joints
-       stats.avgJointPerUser, // Avg Joint Per User
-       stats.avgJointPerDay,  // Avg Joint Per Day
-       stats.abstinentDays,   // Abstinent Days
-       stats.estJointsYear,   // Est Joints Year
-       stats.greatJointDay,   // Great Joint Day
-       stats.jointsPerWeek,   // Joints Per Week
-     ];
-   }
-     
-   
-     const [days, setDays] = useState({});
-     const [stats, setStats] = useState({
-     totalJoints: 0,     // Total Joints
-     daysJoints: 0,      // Days Joints
-     percDaysJoints: 0,  // Perc Days Joints
-     avgJointPerUser: 0, // Avg Joint Per User
-     avgJointPerDay: 0,  // Avg Joint Per Day
-     abstinentDays: 0,   // Abstinent Days
-     estJointsYear: 0,   // Est Joints Year
-     greatJointDay: 0,   // Great Joint Day
-     jointsPerWeek: 0,   // Joints Per Week
-     });
-     
-     const [data_haha, setData_haha] = useState({});
-     
-     // 月份和天数数据
-     const months = [
-       { name: '2023 - September', days: 30 },
-       { name: '2023 - October', days: 31 },
-       { name: '2023 - November', days: 30 },
-       { name: '2023 - December', days: 31 },
-       { name: '2024 - January', days: 31 },
-       { name: '2024 - February', days: 28 }, // 注意：未考虑闰年
-       { name: '2024 - March', days: 31 },
-       { name: '2024 - April', days: 30 },
-       // { name: '2May', days: 31 },
-       // { name: 'June', days: 30 },
-       // { name: 'July', days: 31 },
-       // { name: 'August', days: 31 },
-     ];
-   
-     // 处理输入变化的函数
-     // 处理输入变化的函数
-     const handleInputChange = (value, dayKey) => {
-       setDays(prevDays => ({ ...prevDays, [dayKey]: value }));
-     };
-   
-     // 渲染单个格子的函数
-     const renderCell = (month, day) => {
-       const dayKey = `${month.name}-${day}`;
-       return (
-         <View key={dayKey} style={TLFBStyles.cell}>
-           <Text style={TLFBStyles.dateText}>{day}</Text>
-           <TextInput
-             style={TLFBStyles.dayInput}
-             keyboardType="numeric"
-             value={days[dayKey] || ''}
-             onChangeText={(value) => handleInputChange(value, dayKey)}
-           />
-         </View>
-       );
-     };
-   
-     // 渲染整个表格的函数
-     const renderGrid = () => {
-       return months.map(month => (
-         <View key={month.name} style={TLFBStyles.monthContainer}>
-           <Text style={TLFBStyles.monthYearText}>{month.name}</Text>
-           {Array.from({ length: Math.ceil(month.days / 10) }).map((_, rowIndex) => (
-             <View key={`${month.name}-row-${rowIndex}`} style={TLFBStyles.row}>
-               {Array.from({ length: Math.min(10, month.days - rowIndex * 10) }, (_, index) => {
-                 return renderCell(month, rowIndex * 10 + index + 1);
-               })}
-             </View>
-           ))}
-         </View>
-       ));
-     };
-   
-     const calculateStats = () => {
-     let sum = 0, count = 0, max = null;
-   
-     for (const key in days) {
-       const value = days[key];
-       if (value) {
-         const numericValue = parseFloat(value);
-         sum += numericValue;
-         count += 1;
-         if (max === null || numericValue > max) {
-           max = numericValue;
-         }
-       }
-     }
-   
-     const newStats = {
-       totalJoints: sum,
-       daysJoints: count,
-       percDaysJoints: (count / 90) * 100,
-       avgJointPerUser: count > 0 ? (sum / count) : 0,
-       avgJointPerDay: sum / 90,
-       abstinentDays: 90 - count,
-       estJointsYear: (sum / 90) * 365,
-       greatJointDay: max,
-       jointsPerWeek: (sum / 90) * 365 / 52
-     };
-   
-     setStats(newStats);
-     setData_haha(extractStatsToArray(newStats));
-   };
 
     let listofqs = <View>
     <Text style={textstyles.desctext}>
@@ -235,17 +91,17 @@ const TLFBQuestionList = ({listoflistofqs,values, questionnaireNumber, minidescs
       </Text>
 
     <View style={TLFBStyles.calendar}>
-      {renderGrid()}
+      {/* {renderGrid()} */}
 
       {/* <Button title="confirmeee" style={buttonStyles.buttonContainer} onPress={calculateStats} /> */}
       <TouchableOpacity 
-      style={buttonStyles.buttonContainer} 
+    //   style={buttonStyles.buttonContaiser} 
       onPress={() => {
         calculateStats();
         // calculateStats();
 }}
     >
-      <Text style={buttonStyles.buttonText}>Confirm</Text>
+      {/* <Text style={buttonStyles.buttonText}>Confirm</Text> */}
       </TouchableOpacity>
     </View>
     </View>
@@ -257,7 +113,7 @@ const TLFBQuestionList = ({listoflistofqs,values, questionnaireNumber, minidescs
             qs={listofqs}
             questionnaireNumber={questionnaireNumber}
             desc={desc}
-            data={data_haha}
+            data={data}
             goHome={goHome}
         />
     );

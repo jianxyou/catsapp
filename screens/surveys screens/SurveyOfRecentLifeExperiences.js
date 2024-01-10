@@ -37,11 +37,7 @@ const SoRLEScreen = ({navigation}) => {
         <View style={styles.desc}>
             <Text style={styles.desctext}>
             Following is a list of experiences which many people have some time or other. Please indicate 
-            for each experience how much it has been a part of your life over the past month. Put a '1' in 
-            the box provided next to an experience if it was not at all part of your life over the past month; 
-            '2' for an experience that was only slightly part of your life over that time; '3' for an 
-            experience that was distinctly part of your life; and '4' for an experience that was very much 
-            part of your life over the past month.</Text>
+            for each experience how much it has been a part of your life over the past month.</Text>
         </View>
     );
     return (  
