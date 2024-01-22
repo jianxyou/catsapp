@@ -29,7 +29,7 @@ const RosenbergScreen = ({navigation}) => {
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
     
-        <Text style = {styles2.textLarge}>  Strongly Disagree,      Disagree,     Agree,       Strongly Agree</Text>
+        <Text style = {styles2.textLarge}>      Strongly Disagree     Disagree      Agree       Strongly Agree</Text>
         </View>
     );
 
@@ -49,7 +49,7 @@ const RosenbergScreen = ({navigation}) => {
             scale={["", "", "", ""]}
             values={["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]}
             labels={["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]}
-            goHome={() => navigation.navigate('PatientScreen')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             buttonstyles={rosenbergRadioStyles}
             questionstyles={rosenbergStyle}
             finalstyles={rosenbergQuestionListStyle}

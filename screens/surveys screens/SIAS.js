@@ -36,7 +36,7 @@ const SIASScreen = ({navigation}) => {
 
 
         <View style={styles2.stickyHeader}>
-        <Text style = {styles2.textLarge}>Not at all,     Slightly,    Moderately,    Very,    Extremely</Text>
+        <Text style = {styles2.textLarge}>Not at all      Slightly     Moderately    Very    Extremely</Text>
         </View>
     );
 
@@ -54,7 +54,7 @@ const SIASScreen = ({navigation}) => {
             questionnaireNumber={12}
             scale={["", "", "", "", ""]} 
             values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
-            goHome={() => navigation.navigate('PatientScreen')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}

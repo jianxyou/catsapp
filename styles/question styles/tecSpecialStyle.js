@@ -33,6 +33,7 @@ export default tecSpecialStyle = StyleSheet.create({
         justifyContent: 'flex-start',
         marginTop: 0,
         fontSize: 25,
+        width:1050
     },
 
     alloptions: {

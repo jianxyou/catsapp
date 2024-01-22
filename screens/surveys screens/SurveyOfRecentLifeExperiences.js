@@ -27,7 +27,7 @@ const SoRLEScreen = ({navigation}) => {
 
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
-        <Text style={styles2.textLarge}>not at all,    only slightly,   distinctly,   very much</Text>
+        <Text style={styles2.textLarge}>not at all     only slightly   distinctly     very much</Text>
         
         </View>
     );
@@ -47,7 +47,7 @@ const SoRLEScreen = ({navigation}) => {
             questionnaireNumber={18}
             scale={["", "", "", ""]} 
             values={["not at all part of my life", "only slightly", "distinctly", "very much",]} 
-            goHome={() => navigation.navigate('PatientScreen')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}
@@ -102,7 +102,6 @@ const SoRLEScreen = ({navigation}) => {
 }
  
 export default SoRLEScreen;
-
 
 
 

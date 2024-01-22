@@ -57,13 +57,14 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
 
     const genq = (q, index, short) => {
 
+        const key = `subq-${index}`;
         
         switch (index) {
             case 0:
 
                 if (shouldDisplay1){
                 return (
-                    <View style={styles.singlequestion} key={key}>
+                    <View style={styles.singlequestion} key={key+500}>
     
                         <View style={styles.questionlabelcontainer} >
     
@@ -108,7 +109,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
                                 borderWidth: 2,
                                 width: 100, 
                                 height: 60,
-                                display: 's', 
+                                // display: 's', 
                                 flexDirection: 'row', 
                                 justifyContent: 'center',
                                 textAlign: 'center'
@@ -127,7 +128,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
 
             if (shouldDisplay2){
                 return (
-                    <View style={styles.singlequestion} key={key}>
+                    <View style={styles.singlequestion} key={key+501}>
     
                         <View style={styles.questionlabelcontainer} >
     
@@ -171,7 +172,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
                                 borderWidth: 2,
                                 width: 100, 
                                 height: 60,
-                                display: 's', 
+                                // display: 's', 
                                 flexDirection: 'row', 
                                 justifyContent: 'center',
                                 textAlign: 'center'
@@ -191,7 +192,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
 
                 if (shouldDisplay3){
                 return (
-                    <View style={styles.singlequestion} key={key}>
+                    <View style={styles.singlequestion} key={key+502}>
     
                         <View style={styles.questionlabelcontainer} >
     
@@ -235,7 +236,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
                                 borderWidth: 2,
                                 width: 100, 
                                 height: 60,
-                                display: 's', 
+                                // display: 's', 
                                 flexDirection: 'row', 
                                 justifyContent: 'center',
                                 textAlign: 'center'
@@ -259,7 +260,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
 
                 
                 return (
-                    <View style={styles.singlequestion} key={key}>
+                    <View style={styles.singlequestion} key={key+503}>
     
                         <View style={styles.questionlabelcontainer} >
     
@@ -303,7 +304,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
                                 borderWidth: 2,
                                 width: 100, 
                                 height: 60,
-                                display: 's', 
+                                // display: 's', 
                                 flexDirection: 'row', 
                                 justifyContent: 'center',
                                 textAlign: 'center'
@@ -321,7 +322,7 @@ const TecSpecialQuestion = ({q, subqs, short, num, callback,callback_flag, check
                 break;
         }
 
-        const key = `subq-${index}`;
+        
     
             
         

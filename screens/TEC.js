@@ -96,7 +96,7 @@ const TecScreen = ({navigation}) => {
                 {"\n"}
                 {"4 = quite a bit"}
                 {"\n"}
-                {"5 = an extreme amount"}
+                {"5 = an extreme amount"}   
                 {"\n"}
                 {"\n"}
 
@@ -112,7 +112,7 @@ const TecScreen = ({navigation}) => {
                 </Text>
             </View>
         } 
-        goHome={() => navigation.navigate('PatientScreen')} 
+        goHome={() => navigation.navigate('ParticipantScreen')} 
         finalstyles={questionListStyle}
         />
 

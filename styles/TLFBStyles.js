@@ -30,8 +30,8 @@ const TLFBStyles = StyleSheet.create({
     marginBottom: 4,
   },
   cell: {
-    width: 48, // 可以根据实际情况调整宽度
-    height: 48, // 同上，调整高度
+    width: 100, // 可以根据实际情况调整宽度
+    height: 80, // 同上，调整高度
     borderWidth: 1,
     borderColor: '#ddd',
     alignItems: 'center',
@@ -39,8 +39,14 @@ const TLFBStyles = StyleSheet.create({
     margin: 2,
   },
   dateText: {
+    paddingTop:30,
     fontSize: 16,
     color: '#333', // 文本颜色
+  },
+
+  holidayText: {
+    // ... 其他样式设置
+    color: 'red',  // 设置文本颜色为红色
   },
   dayInput: {
     width: '100%',

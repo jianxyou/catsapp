@@ -14,12 +14,24 @@ import barrattQuestionListStyle from "../../styles/question list styles/barrattQ
 import CompoundSurvey from "../../surveytypes/CompoundSurvey";
 import { ScrollView } from "react-native-gesture-handler";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import DropdownMenu from "../../buttons/DropdownMenu";
+// import RNPickerSelect from 'react-native-picker-select';
 
 
 const CSSRSScreen = ({navigation}) => {
     return ( 
         <GestureHandlerRootView>
         <ScrollView>
+        <RNPickerSelect
+        onValueChange={(value) => console.log(value)}
+        items={[
+          { label: 'JavaScript', value: 'javascript' },
+          { label: 'PHP', value: 'php' },
+          // ... 其他选项
+        ]}
+      />
+
+            
         <CSSRSQuestionList
         listoflistofqs={[
             [

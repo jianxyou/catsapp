@@ -9,47 +9,40 @@ export default RLEQuestionListStyle = StyleSheet.create({
     },
 
     desc: {
-        margin: 5,
         marginBottom: 0,
         display: 'flex',
-        justifyContent: 'space-evenly',
+        justifyContent: 'flex-start',
+        flexDirection: 'row',
+        width: 1132,
+        borderStyle: 'solid',
+        borderWidth: 2,
+        borderColor: 'black',
 
     },
 
     desctext: {
         fontSize: 25,
-        marginBottom: 0,
+        margin: 5,
     },
 
     page: {
         display: 'flex',
         justifyContent: 'space-between',
+        alignContent: 'center',
         margin: 20,
     },
 
     titlecontainer: {
         display: 'flex',
         justifyContent: 'center',
-        flexDirection: 'column',
-        margin: 20,
-        marginLeft: 5,
+        flexDirection: 'row',
+        marginLeft: 400,
+        width: 300
     },
 
     titletext: {
-        fontSize: 45, 
+        fontSize: 33, 
         fontWeight: 'bold'    
-    },
-
-    uppertitle: {
-
-    },
-
-    lowertitle: {
-        marginTop: 10,
-    },
-
-    subtitle: {
-        fontSize: 33,
     },
 
     makeitalic: {
@@ -66,54 +59,25 @@ export default RLEQuestionListStyle = StyleSheet.create({
     },
 
     optionlabel: { 
-        width: 200,
+        width: 165,
         display: 'flex',
         flexDirection:'row',
         justifyContent: 'center',
-        alignContent: 'center',
-    },
-
-    optionlabeltext: {
-        marginBottom: 10,
+        borderLeftWidth: 2, 
+        borderLeftColor: 'black',
     },
 
     optionslabelcontainer: {
         display: 'flex',
         flexDirection: 'row',
-        alignContent: 'center',
+        justifyContent: 'flex-end',
+        width: 1132,
         borderBottomColor: 'black',
         borderBottomWidth: 2,
-
+        borderRightColor: 'black',
+        borderRightWidth: 2,
+        borderLeftColor: 'black',
+        borderLeftWidth: 2,
     },
-
-    withempty: {
-        display: 'flex',
-        flexDirection: 'row',
-        marginTop: 30,
-
-    },
-
-    emptylabel: {
-        width: 740,
-        borderBottomColor: 'black',
-        borderBottomWidth: 2,
-    },
-
-    specialboy: {
-        display: 'flex',
-        flexDirection:'row',
-        justifyContent: 'flex-start',
-        alignContent: 'center',
-    },
-
-    finalcomment: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-    },
-
-    test: {
-        fontSize: 25,
-    }
 
 });

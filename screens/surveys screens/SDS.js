@@ -93,7 +93,7 @@ const SDSScreen = ({navigation}) => {
             <Text style={textstyles.desctext}>
             Directions: Please read each statement carefully and circle ONE number for each question which best applies to you and your experiences.
             </Text>}
-        goHome={() => navigation.navigate('PatientScreen')} 
+        goHome={() => navigation.navigate('ParticipantScreen')} 
         buttonstyles={radioStyles}
         questionstyles={SDSStyle} 
         liststyles={CompoundSDSStyle} 

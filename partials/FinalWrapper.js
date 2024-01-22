@@ -39,8 +39,8 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
          // alignItems: 'flex-end',
          marginLeft: 800,
          marginBottom: 50,
-         width: 80,      // 按钮宽度
-         height: 20,      // 按钮高度
+         width: 200,      // 按钮宽度
+         height: 40,      // 按钮高度
          borderRadius: 5,            // 圆角
          borderWidth: 1,             // 边框
          // borderColor: '#fff',        // 白色边框
@@ -93,58 +93,82 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
      const [data_haha, setData_haha] = useState({});
      
      // 月份和天数数据
-     const months = [
-       { name: '2023 - September', days: 30 },
-       { name: '2023 - October', days: 31 },
-       { name: '2023 - November', days: 30 },
-       { name: '2023 - December', days: 31 },
-       { name: '2024 - January', days: 31 },
-       { name: '2024 - February', days: 28 }, // 注意：未考虑闰年
-       { name: '2024 - March', days: 31 },
-       { name: '2024 - April', days: 30 },
-       // { name: '2May', days: 31 },
-       // { name: 'June', days: 30 },
-       // { name: 'July', days: 31 },
-       // { name: 'August', days: 31 },
-     ];
+     
    
      // 处理输入变化的函数
      // 处理输入变化的函数
      const handleInputChange = (value, dayKey) => {
        setDays(prevDays => ({ ...prevDays, [dayKey]: value }));
      };
+
+
+     function getDayOfWeek(year, month, day) {
+      const date = new Date(year, month - 1, day); // 月份减1，因为JavaScript中月份从0开始
+      const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      return daysOfWeek[date.getDay()];
+  }
    
+
+  const months = [
+    { year: 2023, month: 9, days:30},
+    { year: 2023, month: 10, days:31 },
+    { year: 2023, month: 11, days:30 },
+    { year: 2023, month: 12, days:31 },
+    { year: 2024, month: 1, days: 31 },
+    { year: 2024, month: 2, days: 28 }, // 注意：未考虑闰年
+    { year: 2024, month: 3, days: 31 },
+    { year: 2024, month: 4, days: 30 },
+    // { name: '2May', days: 31 },
+    // { name: 'June', days: 30 },
+    // { name: 'July', days: 31 },
+    // { name: 'August', days: 31 },
+  ];
+
+
+    const holidays = {
+      '2023-12-25': 'Christmas',
+      '2024-01-01': 'New Year\'s Day',
+      // 在这里添加更多节假日
+    };
+
+    const monthNames = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
      // 渲染单个格子的函数
      const renderCell = (month, day) => {
-       const dayKey = `${month.name}-${day}`;
-       return (
-         <View key={dayKey} style={TLFBStyles.cell}>
-           <Text style={TLFBStyles.dateText}>{day}</Text>
-           <TextInput
-             style={TLFBStyles.dayInput}
-             keyboardType="numeric"
-             value={days[dayKey] || ''}
-             onChangeText={(value) => handleInputChange(value, dayKey)}
-           />
-         </View>
-       );
-     };
+      const dayKey = `${month.year}-${month.month}-${day}`;
+      const weekDay = getDayOfWeek(month.year, month.month, day);
+      const holidayName = holidays[dayKey];
+      
+      return (
+        <View key={dayKey} style={TLFBStyles.cell}>
+          <Text style={TLFBStyles.dateText}>{`${day} (${weekDay})`}</Text>
+          {holidayName && <Text style={TLFBStyles.holidayText}>{holidayName}</Text>}
+          <TextInput
+            style={TLFBStyles.dayInput}
+            keyboardType="numeric"
+            value={days[dayKey] || ''}
+            onChangeText={(value) => handleInputChange(value, dayKey)}
+          />
+        </View>
+      );
+    };
    
      // 渲染整个表格的函数
      const renderGrid = () => {
-       return months.map(month => (
-         <View key={month.name} style={TLFBStyles.monthContainer}>
-           <Text style={TLFBStyles.monthYearText}>{month.name}</Text>
-           {Array.from({ length: Math.ceil(month.days / 10) }).map((_, rowIndex) => (
-             <View key={`${month.name}-row-${rowIndex}`} style={TLFBStyles.row}>
-               {Array.from({ length: Math.min(10, month.days - rowIndex * 10) }, (_, index) => {
-                 return renderCell(month, rowIndex * 10 + index + 1);
-               })}
-             </View>
-           ))}
-         </View>
-       ));
-     };
+      return months.map(month => (
+        <View key={`${month.year}-${month.month}`} style={TLFBStyles.monthContainer}>
+          <Text style={TLFBStyles.monthYearText}>{`${monthNames[month.month]} ${month.year}`}</Text>
+          {Array.from({ length: Math.ceil(month.days / 10) }).map((_, rowIndex) => (
+            <View key={`${month.year}-${month.month}-row-${rowIndex}`} style={TLFBStyles.row}>
+              {Array.from({ length: Math.min(10, month.days - rowIndex * 10) }, (_, index) => {
+                return renderCell(month, rowIndex * 10 + index + 1);
+              })}
+            </View>
+          ))}
+        </View>
+      ));
+    };
+    
    
      const calculateStats = () => {
      let sum = 0, count = 0, max = null;

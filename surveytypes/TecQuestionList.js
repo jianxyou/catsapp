@@ -142,7 +142,7 @@ const TecQuestionList = ({ questionnaireNumber, qs, desc, goHome, finalstyles })
     listofqs.push(
         <TecSpecial2
             key={listofqs.length + 1}
-            q="Please describe your relationship with each person mentioned in your answer to question 30 (e.g., father, brother, friend, teacher, stanger, etc.), and add if the persson(s) was (were) at least 4 years older than you at the time when the experience(s) occurred. For example, write 'friend (-)' if this friend waas less than 4 years older thaan you. Write 'uncle (+)' if this uncle was more than 4 years older than you."
+            q="Please describe your relationship with each person mentioned in your answer to question 30 (e.g., father, brother, friend, teacher, stanger, etc.), and add if the persson(s) was (were) at least 4 years older than you at the time when the experience(s) occurred. For example, write 'friend (-)' if this friend was less than 4 years older thaan you. Write 'uncle (+)' if this uncle was more than 4 years older than you."
             subqs={[
                 "Emotional neglect",
                 "Emotional abuse",

@@ -46,7 +46,7 @@ const TICSScreen = ({navigation}) => {
             questionnaireNumber={23}
             scale={["", "", "", "", ""]} 
             values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
-            goHome={() => navigation.navigate('PatientScreen')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}

@@ -25,7 +25,7 @@ const SHAPSScreen = ({navigation}) => {
             questionnaireNumber={20}
             scale={["", "",]} 
             values={["True", "False"]} 
-            goHome={() => navigation.navigate('PatientScreen')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             desc={desc}
             buttonstyle={dastRadioStyles}
             liststyle={shapsQuestionListStyle}

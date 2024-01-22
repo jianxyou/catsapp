@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, TextInput, Button, Alert, StyleSheet } from 'react-native';
+import { View, TextInput, Button, Alert, StyleSheet,Text } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
@@ -7,7 +7,18 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const IDScreen = ({ navigation }) => {
   const [clientId, setClientId] = useState('');
   const [visitId, setVisitId] = useState('');
+  const [clientIdError, setClientIdError] = useState(false);
+  const [visitIdError, setVisitIdError] = useState(false);
+
+  
   const [subjectId, setSubjectId] = useState('');
+
+
+  const validateInput = (text, setType) => {
+    const isValid = /^\d+$/.test(text);
+    setType(!isValid);
+    return isValid;
+  };  
 
   useEffect(() => {
     const loadIds = async () => {
@@ -21,6 +32,18 @@ const IDScreen = ({ navigation }) => {
 
     loadIds();
   }, []);
+
+
+  const handleClientIdChange = text => {
+    setClientId(text);
+    validateInput(text, setClientIdError);
+  };
+
+
+  const handleVisitIdChange = text => {
+    setVisitId(text);
+    validateInput(text, setVisitIdError);
+  };
 
   const handleSubmit = async () => {
     if (!clientId.trim() || !visitId.trim()) {
@@ -46,18 +69,20 @@ const IDScreen = ({ navigation }) => {
         value={subjectId}
         onChangeText={setSubjectId}
       />
-      <TextInput
-        style={styles.input}
-        placeholder="Enter Patient ID"
-        value={clientId}
-        onChangeText={setClientId}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Enter Visit ID"
-        value={visitId}
-        onChangeText={setVisitId}
-      />
+        <TextInput
+          style={styles.input}
+          placeholder="Enter Patient ID"
+          value={clientId}
+          onChangeText={handleClientIdChange}
+        />
+        {clientIdError && <Text style={styles.errorText}>Only numbers are allowed</Text>}   
+        <TextInput
+          style={styles.input}
+          placeholder="Enter Visit ID"
+          value={visitId}
+          onChangeText={handleVisitIdChange }
+        />
+        {visitIdError && <Text style={styles.errorText}>Only numbers are allowed</Text>}
       <Button
         title="Save IDs" 
         onPress={handleSubmit}
@@ -67,6 +92,11 @@ const IDScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+
+  errorText: {
+    color: 'red', // 设置错误文本为红色
+    // ... 你想要的其他样式
+  },
     container: {
         flex: 1,
         justifyContent: 'center',

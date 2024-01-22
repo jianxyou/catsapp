@@ -87,7 +87,7 @@ const internalNamesSelf : Array<string> = [
     "RLE", 
     'SDS', 
     'DAST', 
-    'SoRLE', 
+    'SRLE', 
     'Audit', 
     'Shaps', 
     'Tec', 

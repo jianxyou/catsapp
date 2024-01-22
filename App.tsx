@@ -137,7 +137,7 @@ function App(): JSX.Element {
       <Stack.Screen name='TICS'component={TICSScreen} />
       <Stack.Screen name='SAQ'component={SAQScreen} />
       <Stack.Screen name='TLFB' component={TLFBScreen} />
-      <Stack.Screen name='PatientScreen' component={PatientScreen} />
+      <Stack.Screen name='ParticipantScreen' component={PatientScreen} />
       <Stack.Screen name='AdminScreen' component={AdminScales} />
       <Stack.Screen name='MriScreen' component={MriScreen} />
 

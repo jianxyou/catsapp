@@ -39,6 +39,7 @@ export default AdminStyle = StyleSheet.create({
     textinput: {
         marginRight: 20,
     },
+    
     button: {
         backgroundColor: "#F8F8F8",
         marginLeft: 20,

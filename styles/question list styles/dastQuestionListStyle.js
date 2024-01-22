@@ -37,7 +37,7 @@ export default dastQuestionListStyle = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'row',
         margin: 20,
-        width: 3000
+        width: 1100
     },
 
     titletext: {

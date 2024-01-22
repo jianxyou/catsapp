@@ -34,12 +34,12 @@ const TecSpecial2 = ({q, subqs, short, num, callback,callback_flag, shouldDispla
     }
     const genq = (q, index, short) => {
 
-        const key = `subqq-${index}`;
+        const key = `subq-${index}`;
         switch (index){
             case 0:
                 if (shouldDisplay5){
             return (
-                    <View style={styles.singlequestion} key={key}>
+                    <View style={styles.singlequestion} key={key+1500}>
 
                     <View style={styles.questionlabelcontainer} >
 
@@ -90,7 +90,7 @@ const TecSpecial2 = ({q, subqs, short, num, callback,callback_flag, shouldDispla
             case 1: 
             if (shouldDisplay6){
                 return (
-                        <View style={styles.singlequestion} key={key}>
+                        <View style={styles.singlequestion} key={key+1501}>
     
                         <View style={styles.questionlabelcontainer} >
     
@@ -141,7 +141,7 @@ const TecSpecial2 = ({q, subqs, short, num, callback,callback_flag, shouldDispla
             case 2: 
             if (shouldDisplay7){
                 return (
-                        <View style={styles.singlequestion} key={key}>
+                        <View style={styles.singlequestion} key={key+1502}>
     
                         <View style={styles.questionlabelcontainer} >
     
@@ -191,7 +191,7 @@ const TecSpecial2 = ({q, subqs, short, num, callback,callback_flag, shouldDispla
             case 3: 
             if (shouldDisplay8){
                 return (
-                        <View style={styles.singlequestion} key={key}>
+                        <View style={styles.singlequestion} key={key+1503}>
     
                         <View style={styles.questionlabelcontainer} >
     
@@ -242,7 +242,7 @@ const TecSpecial2 = ({q, subqs, short, num, callback,callback_flag, shouldDispla
                 case 4: 
                 if (shouldDisplay9){
                     return (
-                            <View style={styles.singlequestion} key={key}>
+                            <View style={styles.singlequestion} key={key+1504}>
         
                             <View style={styles.questionlabelcontainer} >
         

@@ -5,6 +5,8 @@ import RLEStyle from "../../styles/question styles/RLEStyle";
 import SIASQuestionList from '../../surveytypes/SIASQuestionList';
 import dastRadioStyles from '../../styles/input styles/dastRadioStyles';
 import dastQuestionListStyle from '../../styles/question list styles/dastQuestionListStyle';
+
+// import RLEQuestionListStyle from '../../styles/question list styles/RLEQuestionListStyle';
 import RLE_mainStyle from '../../styles/question styles/RLE_mainStyle';
 import textstyles from '../../styles/textstyles';
 
@@ -148,10 +150,10 @@ const RLEScreen = ({navigation}) => {
             questionnaireNumber={15}
             scale={["", "",""]} 
             values={["YES", "YES, still effects me", "No"]} 
-            goHome={() => navigation.navigate('PatientScreen')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             desc={desc}
             buttonstyle={dastRadioStyles}
-            liststyle={dastQuestionListStyle}
+            liststyle={RLEQuestionListStyle}
             questionstyle={RLE_mainStyle}
             labels={["YES", "Still affects me", ""]} 
 
@@ -172,7 +174,7 @@ const RLEScreen = ({navigation}) => {
     
                 "Have you, or an immediate family member been subject to serious racial abuse, attack or /threats",
     
-                "Have you, or an immediate family member been subject to any abuse, attack, threat - perhaps due to you or someone close to you having a disability of any kind (i.e. a mental health problem, a learning disability or a physical problem)?",
+                "Have you, or an immediate family member been subject to any abuse, attack, threat - perhaps due to you or someone close to you having a disability of any kind",
     
                 "Have you, or an immediate family member been subject to any other form of serious abuse, attack, or threat?",
     

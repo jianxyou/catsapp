@@ -12,19 +12,19 @@ export default RLE_mainStyle = StyleSheet.create({
     questionlabelcontainer: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'flex-start',
-        width: 638,
         justifyContent: 'center',
+        width: 635,
         borderBottomColor: 'black',
         borderBottomWidth: 2,
-        height: 80,
-        // flexWrap: 'wrap'
+        height: 90,
+        flexWrap: 'wrap', // 这里添加了换行的设置
+      },
 
-    },
+
     questionlabel: {
         display: 'flex',
-        flexDirection: 'column',
-        fontSize: 15,
+        flexDirection: 'row',
+        fontSize: 21,
         margin: 5, 
     },
 
@@ -47,7 +47,8 @@ export default RLE_mainStyle = StyleSheet.create({
     alltext: {
         display: 'flex',
         flexDirection: 'column',
-        width: 540,
+        width: 580,
+        height:400
 
     },
     subtext: {

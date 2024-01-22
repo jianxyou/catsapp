@@ -35,7 +35,7 @@ const CannabisWithdrawalScreen = ({navigation}) => {
 
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
-        <Text style = {styles2.textLarge}>     Not at all       Moderately        Extreme                        <Text style = {styles2.textLittle}> Impact(1-10)</Text> </Text>
+        <Text style = {styles2.textLarge}>     Not at all       Moderately        Extreme                      <Text style = {styles2.textLittle}> Impact(1-10)</Text> </Text>
         </View>
     );
 
@@ -59,7 +59,7 @@ const CannabisWithdrawalScreen = ({navigation}) => {
             desc={desc}
             scale={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
             values={[0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-            goHome={() => navigation.navigate('PatientScreen')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             buttonstyle={cannabisRadioStyles}
             liststyle={cannabisQuestionListStyle}
             questionstyle={CWSStyle}
@@ -91,4 +91,4 @@ const CannabisWithdrawalScreen = ({navigation}) => {
       );
 }
  
-export default CannabisWithdrawalScreen;
+export default CannabisWithdrawalScreen;    

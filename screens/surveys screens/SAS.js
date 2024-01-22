@@ -28,7 +28,7 @@ const SASSCreen = ({navigation}) => {
 
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
-        <Text style={styles2.textLarge}>None or little of the time,   Some of the time,   Good part of the time,   Most or all of the time</Text>
+        <Text style={styles2.textLarge}>None or little of the time    Some of the time    Good part of the time    Most or all of the time</Text>
         </View>
     );
     
@@ -48,7 +48,7 @@ const SASSCreen = ({navigation}) => {
             desc={desc}
             scale={["", "", "", ""]}
             values={["None OR little of the time", "Some of the time", "Good part of the time", "Most OR all of the time"]}
-            goHome={() => navigation.navigate('PatientScreen')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             buttonstyle={SASRadioStyles}
             liststyle={SASQuestionListStyle}
             questionstyle={SIASStyle}

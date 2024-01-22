@@ -25,7 +25,7 @@ export default BeckScreen = ({navigation, route}) => {
         scale={[0, 1, 2, 3]} 
         values={[0, 1, 2, 3]} 
         labels={["Not at all", "Mildly, but it didn’t bother me much", "Moderately – it wasn’t pleasant at times", "Severely – it bothered me a lot"]}
-        goHome={() => navigation.navigate('PatientScreen')}
+        goHome={() => navigation.navigate('ParticipantScreen')}
         questionstyles={tableStyle}
         buttonstyles={tableRadioStyles}
         finalstyles={borderQuestionListStyle}
@@ -46,7 +46,7 @@ export default BeckScreen = ({navigation, route}) => {
             "Fear of losing control",  
             "Difficulty in breathing",  
             "Fear of dying",  
-            "Scared",  
+            "Scared",   
             "Indigestion",  
             "Faint / lightheaded",  
             "Face flushed",  

@@ -82,7 +82,7 @@ const AuditScreen = ({navigation}) => {
 
 
             }
-        goHome={() => navigation.navigate('PatientScreen')}
+        goHome={() => navigation.navigate('ParticipantScreen')}
         buttonstyles={auditRadioStyles} 
         questionstyles={auditStyle}
         liststyles={auditQuestionListStyle}

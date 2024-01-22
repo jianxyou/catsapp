@@ -17,7 +17,7 @@ const AESScreen = ({navigation}) => {
                 "SOMEWHAT",
                 "A LOT",
             ]}
-            goHome={() => navigation.navigate('PatientScreen')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
 
             qs={[
                 "I am interested in things.",
