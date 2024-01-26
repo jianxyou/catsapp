@@ -1,43 +1,29 @@
 import { isNewBackTitleImplementation } from "react-native-screens";
 import { tableColumnsSelf } from "../schemaconstants";
 
-function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  hassOrUp : number) : string | Array<String> {
+function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : string | Array<String> {
 
     let query = ""; 
 
     let mycolumns = tableColumnsSelf[questionnaireNumber];
 
-    if (questionnaireNumber == 4) {
+    if (questionnaireNumber == 3) {
 
-        if (hassOrUp == 0){
-            for(let i : number = 0; i < 53; i++) {
-                
-                if (i == 52){
+        let mycolumns1 = mycolumns[0];
+        let mycolumns2 = mycolumns[1];
 
-                    let currinsert = data[i]; 
-                    query = query + currinsert;
-                    break;
-                }
-                let currinsert = data[i] + ','; 
-                query = query + currinsert;
-            }
-        }
-        else{
-            for(let i : number = 53; i < 106; i++) {
-
-                if (i == 105){
-
-                    let currinsert = data[i]; 
-                    query = query + currinsert;
-                    break;
-                }
-                let currinsert = data[i] + ','; 
-                query = query + currinsert;
-            }
-
+        for(let i : number = 0; i < mycolumns1.length; i++) {
+            let currcolumn : string = mycolumns1[i];
+            let currinsert = currcolumn + " = " + data[i] + ", ";
+            query = query + currinsert;
         }
 
-        
+
+        for(let i : number = 0; i < mycolumns2.length; i++) {
+            let currcolumn : string = mycolumns2[i];
+            let currinsert = currcolumn + " = " + data[i+53] + ", ";
+            query = query + currinsert;
+        }
 
     } else {
 
@@ -45,7 +31,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
             let currcolumn : string = mycolumns[i];
 
             // if table is SIAS
-            if (questionnaireNumber == 12){
+            if (questionnaireNumber == 11){
                 if (data[i] == "Moderately"){
                     data[i] = 3;
                 }
@@ -67,7 +53,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
             }
 
             // if table is AES
-            if (questionnaireNumber == 11){
+            if (questionnaireNumber == 10){
                 if (data[i] == "NOT AT ALL"){
                     data[i] = 1;
                 }
@@ -85,7 +71,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
             }
 
             // if table is SAS
-            if (questionnaireNumber == 13 ){
+            if (questionnaireNumber == 12 ){
                 if (data[i] == "None OR little of the time"){
                     data[i] = 1;
                 }
@@ -107,7 +93,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
 
             
             // if table is Rosenberg scale
-            if (questionnaireNumber == 14 ){
+            if (questionnaireNumber == 13 ){
                 if (data[i] == "Strongly Disagree"){
                     data[i] = 1;
                 }
@@ -127,7 +113,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
 
 
             // if table is SHAPS
-            if (questionnaireNumber == 20 ){
+            if (questionnaireNumber == 19 ){
                 if (data[i] == "True"){
                     data[i] = 1;
                 }
@@ -138,7 +124,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
 
 
             // if table is DAST
-            if (questionnaireNumber == 17 ){
+            if (questionnaireNumber == 16 ){
                 if (data[i] == "YES"){
                     data[i] = 1;
                 }
@@ -153,7 +139,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
             // if table is TEC
 
             // if table is RLE
-            if (questionnaireNumber == 21){
+            if (questionnaireNumber == 20){
                 if (data[i] == ""){
                     data[i] = "null"
                 }
@@ -161,7 +147,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
             }
 
             // if table is RLE
-            if (questionnaireNumber == 15){
+            if (questionnaireNumber == 14){
                 if (data[i] == "YES"){
                     data[i] = 1;
                 }
@@ -185,16 +171,18 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
 
 
              // if table is SRLE
-            if (questionnaireNumber == 18){
+            if (questionnaireNumber == 17){
                 if (data[i] == "not at all part of my life") {
-                    
                     data[i] = 1;
-
                 }
+
+
                 else if (data[i] == "only slightly"){
 
                     data[i] = 2;
                 }
+                    
+                
 
                 else if (data[i] == "distinctly"){
                     data[i] = 3;
@@ -210,7 +198,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
 
 
                 
-            if (questionnaireNumber == 21){
+            if (questionnaireNumber == 20){
 
                 if (i >= 32){
                     query = query.slice(0,-1);
@@ -221,12 +209,14 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
             }
 
 
+
             // if its  TICS
-            if (questionnaireNumber == 23){
+            if (questionnaireNumber == 22){
                 if (data[i] == "Not at all") {
                     
                     data[i] = 0;
 
+                    
                 }
                 else if (data[i] == "Slightly"){
 
@@ -242,8 +232,10 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>,  ha
                 else if (data[i] == "Very"){
                     data[i] = 3;
                 }
+                    
+                
 
-                else if (data[i] == "Extremely"){
+                else if (data[i] == "Extrem   ely"){
                     data[i] = 4;
                 }
 

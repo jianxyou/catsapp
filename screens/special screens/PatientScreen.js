@@ -89,8 +89,8 @@ function PatientScreen({ navigation }) {
 
   
   const newButtons = createLinks({
-    displayNames: displayNamesSelf.slice(8,),
-    internalNames: internalNamesSelf.slice(8,),
+    displayNames: displayNamesSelf.slice(8,24),
+    internalNames: internalNamesSelf.slice(8,24),
     navigation: navigation,
     filled: filled,
   });

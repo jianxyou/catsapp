@@ -87,7 +87,7 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
 
             // 如果没有 "null" 值，则存储数据
             // 如果没有 "null" 值，则存储数据
-            if (!containsNull) {
+            if (!containsNull || questionnaireNumber ==24) {
                 // await storeData(data);
             // 存储表单数据
             await storeData(data);
@@ -135,10 +135,6 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
             
                 // console.log('Null value indices:', nullIndices);
                 onErrorIndices(nullIndices);
-                console.log('我傻了',data);
-                // 可选：处理包含 "null" 值的情况
-                // 例如，显示警告或记录消息
-                console.log('Data contains null values at indices:', nullIndices);
                 // 这里可以添加更多的处理逻辑，例如提醒用户
                 Alert.alert(
                     "Missing Value"

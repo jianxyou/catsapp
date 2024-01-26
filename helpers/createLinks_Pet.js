@@ -30,7 +30,14 @@ const createLinks_Pet = ({ displayNames, internalNames, navigation,filled }) => 
     );
 
     const buttons = internalNames.map((internalName, index) => {
-        const isFilled = filled[index+3];
+        
+        
+        let isFilled = filled[index + 3];
+        if (index == 4) {
+            console.log(internalName, "几把");
+            isFilled = filled[23]
+        }
+        
         return (
             <View style={{ width: 300, height: 100, display: 'flex', flexDirection: 'row' }} key={index}>
                 <Pressable 

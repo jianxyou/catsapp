@@ -89,8 +89,8 @@ function MriScreen({ navigation }) {
 
   
   const newButtons = createLinks_Pet({
-    displayNames: displayNamesSelf.slice(4,8),
-    internalNames: internalNamesSelf.slice(4,8),
+    displayNames: [...displayNamesSelf.slice(4, 8), displayNamesSelf[24]],
+    internalNames: [...internalNamesSelf.slice(4, 8), internalNamesSelf[24]],
     navigation: navigation,
     filled: filled,
   });

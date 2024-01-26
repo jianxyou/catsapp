@@ -11,6 +11,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { sub } from '@shopify/react-native-skia';
 import textstyles from "../styles/textstyles";
 import TLFBStyles from '../styles/TLFBStyles';
+// import CompoundSurvey from "../surveytypes/CompoundSurvey";
+// import textstyles from '../../styles/textstyles'; 
 
 
 // the final step in formatting all surveys
@@ -389,13 +391,31 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
         )
     }
 
+  
+  else if (questionnaireNumber == 24){
+    shortresult = (
+        <View style={styles.page}>
+            <ScrollView ref={ref1} >
+            <Text>Date : {today} </Text>
+            <Text>Subject Id : {subjectId}</Text>
+            <Text>Participant ID : {clientId}</Text>
+            
+            <View key={1}>{copy[0]}</View>
+            {copy[1].map((val, index) => {
+                // if (index === 0) {
+                //     return renderView(val, index);
+                // }
+                return <View key={index}>{val}</View>; // 或者返回空的 React 元素，例如 <></> 或 <View></View> 等
+            })}
+            {button} 
+            </ScrollView>
+        </View>
+    );
+    }
+  
     else{
     shortresult = (
-
-
         <View style={styles.page}>
-            
-            
             <ScrollView ref={ref1} >
             <Text>Date : {today} </Text>
             <Text>Subject Id : {subjectId}</Text>

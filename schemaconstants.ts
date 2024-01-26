@@ -28,7 +28,8 @@ const tableNamesSelf : Array<string | Array<string> > = [
     "tbl_TEC_Duration",
     "tbl_CWS",
     //"SRAC",
-    "TICS"
+    "TICS",
+    "FTND"
 ];
 
 const displayNamesSelf = [
@@ -59,7 +60,9 @@ const displayNamesSelf = [
     'SHAPS', 
     'T.E.C.', 
     'The Cannabis Withdrawal Scale',
-    "TICS"
+    "TICS",
+    "Fagerstorm Test For Nicotine Dependence (FTND)" 
+
 ];
 
 
@@ -92,7 +95,8 @@ const internalNamesSelf : Array<string> = [
     'Shaps', 
     'Tec', 
     "Cannabis",
-    "TICS"
+    "TICS",
+    "FTND"
 ];
 
 
@@ -152,7 +156,8 @@ const tableColumnsSelf : Array<any> = [
     //["Age_0-6_1_Duration","Age_7-12_1_Duration","Age_13-18_1_Duration","Age_0-6_2_Duration","Age_7-12_2_Duration","Age_13-18_2_Duration","Age_0-6_3_Duration","Age_7-12_3_Duration","Age_13-18_3_Duration","Age_0-6_4_Duration","Age_7-12_4_Duration","Age_13-18_4_Duration","Age_0-6_5_Duration","Age_7-12_5_Duration","Age_13-18_5_Duration","Age_0-6_6_Duration","Age_7-12_6_Duration","Age_13-18_6_Duration","Age_0-6_7_Duration","Age_7-12_7_Duration","Age_13-18_7_Duration","Age_0-6_8_Duration","Age_7-12_8_Duration","Age_13-18_8_Duration","Age_0-6_9_Duration","Age_7-12_9_Duration","Age_13-18_9_Duration","Age_0-6_10_Duration","Age_7-12_10_Duration","Age_13-18_10_Duration","Age_0-6_11_Duration","Age_7-12_11_Duration","Age_13-18_11_Duration","Age_0-6_12_Duration","Age_7-12_12_Duration","Age_13-18_12_Duration","Age_0-6_13_Duration","Age_7-12_13_Duration","Age_13-18_13_Duration","Age_0-6_14_Duration","Age_7-12_14_Duration","Age_13-18_14_Duration","Age_0-6_15_Duration","Age_7-12_15_Duration","Age_13-18_15_Duration","Age_0-6_16_Duration","Age_7-12_16_Duration","Age_13-18_16_Duration","Age_0-6_17_Duration","Age_7-12_17_Duration","Age_13-18_17_Duration","Age_0-6_18_Duration","Age_7-12_18_Duration","Age_13-18_18_Duration","Age_0-6_19_Duration","Age_7-12_19_Duration","Age_13-18_19_Duration","Age_0-6_20_Duration","Age_7-12_20_Duration","Age_13-18_20_Duration","Age_0-6_21_Duration","Age_7-12_21_Duration","Age_13-18_21_Duration","Age_0-6_22_Duration","Age_7-12_22_Duration","Age_13-18_22_Duration","Age_0-6_23_Duration","Age_7-12_23_Duration","Age_13-18_23_Duration","Age_0-6_24_Duration","Age_7-12_24_Duration","Age_13-18_24_Duration","Age_0-6_25_Duration","Age_7-12_25_Duration","Age_13-18_25_Duration","Age_0-6_26_Duration","Age_7-12_26_Duration","Age_13-18_26_Duration","Age_0-6_27_Duration","Age_7-12_27_Duration","Age_13-18_27_Duration","Age_0-6_28_Duration","Age_7-12_28_Duration","Age_13-18_28_Duration","Age_0-6_29_Duration","Age_7-12_29_Duration","Age_13-18_29_Duration"],
     ["TEC_1", "Age_1", "Impact_1", "Support_1", "TEC_2", "Age_2", "Impact_2", "Support_2", "TEC_3", "Age_3", "Impact_3", "Support_3", "TEC_4", "Age_4", "Impact_4", "Support_4", "TEC_5", "Age_5", "Impact_5", "Support_5", "TEC_6", "Age_6", "Impact_6", "Support_6", "TEC_7", "Age_7", "Impact_7", "Support_7", "TEC_8", "Age_8", "Impact_8", "Support_8", "TEC_9", "Age_9", "Impact_9", "Support_9", "TEC_10", "Age_10", "Impact_10", "Support_10", "TEC_11", "Age_11", "Impact_11", "Support_11", "TEC_12", "Age_12", "Impact_12", "Support_12", "TEC_13", "Age_13", "Impact_13", "Support_13", "TEC_14", "Age_14", "Impact_14", "Support_14", "TEC_15", "Age_15", "Impact_15", "Support_15", "TEC_16", "Age_16", "Impact_16", "Support_16", "TEC_17", "Age_17", "Impact_17", "Support_17", "TEC_18", "Age_18", "Impact_18", "Support_18", "TEC_19", "Age_19", "Impact_19", "Support_19", "TEC_20", "Age_20", "Impact_20", "Support_20", "TEC_21", "Age_21", "Impact_21", "Support_21", "TEC_22", "Age_22", "Impact_22", "Support_22", "TEC_23", "Age_23", "Impact_23", "Support_23", "TEC_24", "Age_24", "Impact_24", "Support_24", "TEC_25", "Age_25", "Impact_25", "Support_25", "TEC_26", "Age_26", "Impact_26", "Support_26", "TEC_27", "Age_27", "Impact_27", "Support_27", "TEC_28", "Age_28", "Impact_28", "Support_28", "TEC_29", "Age_29", "Impact_29", "Support_29","N_EM_MAL","N_PHY_MAL","N_SEX_MAL","N_SEX_AB","RELATION_EM_NEGLECT","RELATION_EM_ABUSE","RELATION_PHYS_ABUSE","RELATION_SEX_HARASS","RELATION_SEX_ABUSE","OTHER_TRAUMA"],
     ["Severity_1","Impact_1","Severity_2","Impact_2","Severity_3","Impact_3","Severity_4","Impact_4","Severity_5","Impact_5","Severity_6","Impact_6","Severity_7","Impact_7","Severity_8","Impact_8","Severity_9","Impact_9","Severity_10","Impact_10","Severity_11","Impact_11","Severity_12","Impact_12","Severity_13","Impact_13","Severity_14","Impact_14","Severity_15","Impact_15","Severity_16","Impact_16","Severity_17","Impact_17","Severity_18","Impact_18","Severity_19","Impact_19"],
-    ["tics_1","tics_2","tics_3","tics_4","tics_5","tics_6","tics_7","tics_8","tics_9","tics_10","tics_11","tics_12","tics_13","tics_14","tics_15","tics_16","tics_17","tics_18","tics_19","tics_20","tics_21","tics_22","tics_23","tics_24","tics_25","tics_26","tics_27","tics_28","tics_29","tics_30"],
+    ["tics_1", "tics_2", "tics_3", "tics_4", "tics_5", "tics_6", "tics_7", "tics_8", "tics_9", "tics_10", "tics_11", "tics_12", "tics_13", "tics_14", "tics_15", "tics_16", "tics_17", "tics_18", "tics_19", "tics_20", "tics_21", "tics_22", "tics_23", "tics_24", "tics_25", "tics_26", "tics_27", "tics_28", "tics_29", "tics_30"],
+    ["FTND_1", "FTND_2", "FTND_3", "FTND_4", "FTND_5", "FTND_6"], 
 ];
 
 
