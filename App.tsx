@@ -40,7 +40,7 @@ import MaccatScreen from './screens/surveys screens/MacCAT';
 import GAFScreen from './screens/surveys screens/GAF';
 import CannabisWithdrawalScreen from './screens/surveys screens/CannabisWithdrawalScale';
 import BarrattScreen from './screens/surveys screens/BSMSS';
-import SSRScreen from './screens/surveys screens/SSRS';
+import CSSRSScreen from './screens/surveys screens/CSSRS';
 import HAMDScreen from './screens/surveys screens/HAMD';
 import TICSScreen from './screens/surveys screens/TICS';
 import SAQScreen from './screens/surveys screens/SAQ';
@@ -49,7 +49,7 @@ import PatientScreen from './screens/special screens/PatientScreen';
 import AdminScales from './screens/special screens/AdminScreen';
 import MriScreen from './screens/special screens/MriScreen';
 import { displayNamesSelf, internalNamesSelf } from './schemaconstants';
-import CSSRSScreen from './screens/surveys screens/SSRS';
+// import CSSRSScreen from './screens/surveys screens/SSRS';
 
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -132,7 +132,7 @@ function App(): JSX.Element {
       <Stack.Screen name="GAF" component={GAFScreen} />
       <Stack.Screen name='Cannabis' component={CannabisWithdrawalScreen} />
       <Stack.Screen name='BSMSS'component={BarrattScreen} />
-      <Stack.Screen name='SSRS'component={CSSRSScreen } />
+      <Stack.Screen name='CSSRS'component={CSSRSScreen } />
       <Stack.Screen name='HAMD'component={HAMDScreen} />
       <Stack.Screen name='TICS'component={TICSScreen} />
       <Stack.Screen name='SAQ'component={SAQScreen} />

@@ -18,18 +18,18 @@ import DropdownMenu from "../../buttons/DropdownMenu";
 // import RNPickerSelect from 'react-native-picker-select';
 
 
-const CSSRSScreen = ({navigation}) => {
+const SSRSScreen = ({navigation}) => {
     return ( 
         <GestureHandlerRootView>
         <ScrollView>
-        <RNPickerSelect
+        {/* <RNPickerSelect
         onValueChange={(value) => console.log(value)}
         items={[
           { label: 'JavaScript', value: 'javascript' },
           { label: 'PHP', value: 'php' },
           // ... 其他选项
         ]}
-      />
+      /> */}
 
             
         <CSSRSQuestionList
@@ -130,7 +130,7 @@ const CSSRSScreen = ({navigation}) => {
      ); 
 }
  
-export default CSSRSScreen;
+export default SSRSScreen;
 
 
 

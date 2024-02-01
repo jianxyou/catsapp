@@ -34,7 +34,7 @@ const tableNamesSelf : Array<string | Array<string> > = [
 
 const displayNamesSelf = [
     "Drug History Questionnaire", 
-    "SSRS",
+    "CSSRS",
     "BSMSS",
     "HAMD",
 
@@ -68,7 +68,7 @@ const displayNamesSelf = [
 
 const internalNamesSelf : Array<string> = [
     "MJ Drug History Questionnaire", 
-    "SSRS",
+    "CSSRS",
     "BSMSS",
     "HAMD",
 
