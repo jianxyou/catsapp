@@ -7,7 +7,7 @@ import textstyles from '../../styles/textstyles';
 // import { ScrollView } from 'react-native-gesture-handler';
 import CompoundSurvey_for_ftnd from '../../surveytypes/compoundSurver_for_ftnd';
 
-const FagerstrormScreen = ({navigation}) => {
+const FTND_fu_Screen = ({navigation}) => {
 
 
     const [smokes, setSmokes] = useState(null);
@@ -130,14 +130,14 @@ const FagerstrormScreen = ({navigation}) => {
                 "A) Lifetime History",
                 "To current smokers",
             ]}
-            goHome={() => navigation.navigate('MriScreen')}
+            goHome={() => navigation.navigate('FollowUp')}
         />
     
     
     
     const survey2 = 
         <CompoundSurvey_for_ftnd 
-            questionnaireNumber={24}
+            questionnaireNumber={32}
             listoflistofqs={[
 
                 [
@@ -251,13 +251,13 @@ const FagerstrormScreen = ({navigation}) => {
                 "A) Lifetime History",
                 "To Non-smokers"
             ]}
-            goHome={() => navigation.navigate('MriScreen')}
+            goHome={() => navigation.navigate('FollowUp')}
         />
     
     
     const survey3 = 
         <CompoundSurvey_for_ftnd 
-            questionnaireNumber={24}
+            questionnaireNumber={32}
             listoflistofqs={[
 
                 [
@@ -419,4 +419,4 @@ const FagerstrormScreen = ({navigation}) => {
 
 }
  
-export default FagerstrormScreen;
+export default FTND_fu_Screen;

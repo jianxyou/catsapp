@@ -29,7 +29,20 @@ const tableNamesSelf : Array<string | Array<string> > = [
     "tbl_CWS",
     //"SRAC",
     "TICS",
-    "FTND"
+    "FTND",
+
+
+    "SRLE", //SoRLE
+    "BAI",
+    "SHAPS",
+    "AES",
+    "SIAS",
+    "SAS",
+    "FTND",
+    "tbl_CUDITR",
+    "SDS",
+
+
 ];
 
 const displayNamesSelf = [
@@ -61,7 +74,24 @@ const displayNamesSelf = [
     'T.E.C.', 
     'The Cannabis Withdrawal Scale',
     "TICS",
-    "Fagerstorm Test For Nicotine Dependence (FTND)" 
+    "Fagerstorm Test For Nicotine Dependence (FTND)" ,
+
+
+    'Survey of recent life events', 
+    'Beck Anxiety Inventory', 
+    "SHAPS",
+    "Apathy Evaluation Scale (Self-rated)", 
+    "SIAS", 
+    "SAS", 
+    'AUDIT', 
+    "Fagerstorm Test For Nicotine Dependence (FTND)" ,
+    'Cannabis Use Disorder Identification Test - Revised (CUDIT-R)', 
+    'SDS',
+
+
+
+
+
 
 ];
 
@@ -71,8 +101,6 @@ const internalNamesSelf : Array<string> = [
     "CSSRS",
     "BSMSS",
     "HAMD",
-
-
 
     "Hassles and Uplifts", 
     "MCQ", 
@@ -96,7 +124,20 @@ const internalNamesSelf : Array<string> = [
     'Tec', 
     "Cannabis",
     "TICS",
-    "FTND"
+    "FTND",
+
+
+    'SRLE_fu',
+    'Beck Anxiety_fu', 
+    "Shaps_fu",
+    "AES_fu", 
+    "SIAS_fu",
+    "SAS_fu",
+    'Audit_fu',
+    "FTND_fu",
+    'CUDIT-R_fu',
+    'SDS_fu',
+
 ];
 
 
@@ -158,6 +199,19 @@ const tableColumnsSelf : Array<any> = [
     ["Severity_1","Impact_1","Severity_2","Impact_2","Severity_3","Impact_3","Severity_4","Impact_4","Severity_5","Impact_5","Severity_6","Impact_6","Severity_7","Impact_7","Severity_8","Impact_8","Severity_9","Impact_9","Severity_10","Impact_10","Severity_11","Impact_11","Severity_12","Impact_12","Severity_13","Impact_13","Severity_14","Impact_14","Severity_15","Impact_15","Severity_16","Impact_16","Severity_17","Impact_17","Severity_18","Impact_18","Severity_19","Impact_19"],
     ["tics_1", "tics_2", "tics_3", "tics_4", "tics_5", "tics_6", "tics_7", "tics_8", "tics_9", "tics_10", "tics_11", "tics_12", "tics_13", "tics_14", "tics_15", "tics_16", "tics_17", "tics_18", "tics_19", "tics_20", "tics_21", "tics_22", "tics_23", "tics_24", "tics_25", "tics_26", "tics_27", "tics_28", "tics_29", "tics_30"],
     ["FTND_1", "FTND_2", "FTND_3", "FTND_4", "FTND_5", "FTND_6"], 
+
+
+    ["SRLE_1","SRLE_2","SRLE_3","SRLE_4","SRLE_5","SRLE_6","SRLE_7","SRLE_8","SRLE_9","SRLE_10","SRLE_11","SRLE_12","SRLE_13","SRLE_14","SRLE_15","SRLE_16","SRLE_17","SRLE_18","SRLE_19","SRLE_20","SRLE_21","SRLE_22","SRLE_23","SRLE_24","SRLE_25","SRLE_26","SRLE_27","SRLE_28","SRLE_29","SRLE_30","SRLE_31","SRLE_32","SRLE_33","SRLE_34","SRLE_35","SRLE_36","SRLE_37","SRLE_38","SRLE_39","SRLE_40","SRLE_41"],
+    ["BAI_1", "BAI_2", "BAI_3", "BAI_4", "BAI_5", "BAI_6", "BAI_7", "BAI_8", "BAI_9", "BAI_10", "BAI_11", "BAI_12", "BAI_13", "BAI_14", "BAI_15", "BAI_16", "BAI_17", "BAI_18","BAI_19", "BAI_20", "BAI_21"],
+    ["SHAPS_1","SHAPS_2","SHAPS_3","SHAPS_4","SHAPS_5","SHAPS_6","SHAPS_7","SHAPS_8","SHAPS_9","SHAPS_10","SHAPS_11","SHAPS_12","SHAPS_13","SHAPS_14","SHAPS_15"],
+    ["AES_1","AES_2","AES_3","AES_4","AES_5","AES_6","AES_7","AES_8","AES_9","AES_10","AES_11","AES_12","AES_13","AES_14","AES_15","AES_16","AES_17","AES_18","AES_1_num","AES_2_num","AES_3_num","AES_4_num","AES_5_num","Reversed_AES_6_num","AES_7_num","AES_8_num","AES_9_num","Reversed_AES_10_num","Reversed_AES_11_num","AES_12_num","AES_13_num","AES_14_num","AES_15_num","AES_16_num","AES_17_num","AES_18_num"],
+    ["SIAS_1","SIAS_2","SIAS_3","SIAS_4","SIAS_5","SIAS_6","SIAS_7","SIAS_8","SIAS_9","SIAS_10","SIAS_11","SIAS_12","SIAS_13","SIAS_14","SIAS_15","SIAS_16","SIAS_17","SIAS_18","SIAS_19","SIAS_20"],
+    ["SAS_1","SAS_2","SAS_3","SAS_4","SAS_5","SAS_6","SAS_7","SAS_8","SAS_9","SAS_10","SAS_11","SAS_12","SAS_13","SAS_14","SAS_15","SAS_16","SAS_17","SAS_18","SAS_19","SAS_20"],
+    ["AUDITR_1","AUDITR_2","AUDITR_3","AUDITR_4","AUDITR_5","AUDITR_6","AUDITR_7","AUDITR_8","AUDITR_9","AUDITR_10"],
+    ["FTND_1", "FTND_2", "FTND_3", "FTND_4", "FTND_5", "FTND_6"], 
+    ["CUDITR_1", "CUDITR_2", "CUDITR_3", "CUDITR_4", "CUDITR_5", "CUDITR_6", "CUDITR_7", "CUDITR_8"],
+    ["SDS_1","SDS_2","SDS_3","SDS_4","SDS_5"],
+    
 ];
 
 

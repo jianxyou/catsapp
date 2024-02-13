@@ -54,6 +54,19 @@ import { displayNamesSelf, internalNamesSelf } from './schemaconstants';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { View, Text } from 'react-native';
+import FollowUpScreen from './screens/special screens/FollowUp';
+
+
+import Sorle_fu_screen from './screens/surveys screens/Sorle_fu';
+import BAI_fu from './screens/surveys screens/BAI_fu';
+import SHAPS_fu_Screen from './screens/surveys screens/SHAPS_fu';
+import AES_fu_Screen from './screens/surveys screens/AES_fu';
+import SIAS_fu_Screen from './screens/surveys screens/SIAS_fu';
+import SAS_fu_SCreen from './screens/surveys screens/SAS_fu';
+import Audit_fu_Screen from './screens/surveys screens/AUDIT_fu';
+import FTND_fu_Screen from './screens/surveys screens/FTND_fu';
+import CUDIT_fu_Screen from './screens/surveys screens/CUDIT_fu';
+import SDS_fu_Screen from './screens/surveys screens/SDS_fu';
 
 const Stack = createNativeStackNavigator();
 
@@ -140,6 +153,20 @@ function App(): JSX.Element {
       <Stack.Screen name='ParticipantScreen' component={PatientScreen} />
       <Stack.Screen name='AdminScreen' component={AdminScales} />
       <Stack.Screen name='MriScreen' component={MriScreen} />
+      <Stack.Screen name='FollowUp' component={FollowUpScreen} />
+
+
+      <Stack.Screen name='SRLE_fu' component={Sorle_fu_screen} />
+      <Stack.Screen name='Beck Anxiety_fu' component={BAI_fu} />
+      <Stack.Screen name='Shaps_fu' component={SHAPS_fu_Screen} />
+      <Stack.Screen name='AES_fu' component={AES_fu_Screen} />
+      <Stack.Screen name='SIAS_fu' component={SIAS_fu_Screen} />
+      <Stack.Screen name='SAS_fu' component={SAS_fu_SCreen} />
+      <Stack.Screen name='Audit_fu' component={Audit_fu_Screen} />
+      <Stack.Screen name='FTND_fu' component={FTND_fu_Screen} />
+      <Stack.Screen name='CUDIT-R_fu' component={CUDIT_fu_Screen} />
+      <Stack.Screen name='SDS_fu' component={SDS_fu_Screen} />
+
 
       </Stack.Navigator>
       </ParticipantContext.Provider>

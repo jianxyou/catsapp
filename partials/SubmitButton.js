@@ -87,7 +87,7 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
 
             // 如果没有 "null" 值，则存储数据
             // 如果没有 "null" 值，则存储数据
-            if (!containsNull || questionnaireNumber ==24) {
+            if (!containsNull || questionnaireNumber ==24 || questionnaireNumber ==32) {
                 // await storeData(data);
             // 存储表单数据
             await storeData(data);
