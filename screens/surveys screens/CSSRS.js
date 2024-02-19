@@ -47,6 +47,8 @@ const CSSRSScreen = ({navigation}) => {
                 "How many times during the last 3 months do you remember having done or started doing something to end with your life."
             ],
 
+        
+
             [
                 "How many times in your life do you remember done or stasrted doing something to end with your life."
             ],

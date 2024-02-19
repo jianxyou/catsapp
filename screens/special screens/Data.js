@@ -31,7 +31,6 @@ const saveDataToFile = async () => {
     const fileName = 'sql.txt';
     // 使用DocumentDirectoryPath而不是LibraryDirectoryPath
     const destinationPath = `${RNFS.DocumentDirectoryPath}/${fileName}`;
-
     // 将所有的数据合并为一个字符串
     const allData = data.map(item => item.value).join('\n');
 
