@@ -2,207 +2,118 @@ import CheckboxSurvey from "../../surveytypes/CheckboxSurvey";
 import checkButtonStyle from "../../styles/input styles/checkboxStyles";
 import RLEQuestionListStyle from "../../styles/question list styles/RLEQuestionListStyle";
 import RLEStyle from "../../styles/question styles/RLEStyle";
-import SIASQuestionList from '../../surveytypes/SIASQuestionList';
-import dastRadioStyles from '../../styles/input styles/dastRadioStyles';
-import dastQuestionListStyle from '../../styles/question list styles/dastQuestionListStyle';
-
-// import RLEQuestionListStyle from '../../styles/question list styles/RLEQuestionListStyle';
-import RLE_mainStyle from '../../styles/question styles/RLE_mainStyle';
-import textstyles from '../../styles/textstyles';
-
-import * as React from 'react';
-import {View, Text} from 'react-native'
-
-
 
 const RLEScreen = ({navigation}) => {
-    // return (  
-    //     <CheckboxSurvey 
-    //     questionnaireNumber={14}
+    return (  
+        <CheckboxSurvey 
+        questionnaireNumber={11}
 
-    //     qs={[
-    //         "Have you had a serious illness or been seriously injured?",
+        qs={[
+            "Avez-vous eu une maladie grave ou avez-vous été grièvement blessé?",
 
-    //         "Has one of your immediate family * been seriously ill or injured?",
+            "Has one of your immediate family * been seriously ill or injured?",
 
-    //         "Have any of your close friends or other close relatives been seriously ill or injured?",
+            "Est-ce que l'un de vos amis proches ou d'autres membres proches de votre famille ont été gravement malades ou blessés?",
 
-    //         "Have any of your immediate family died?",
+            "Est-ce que quelqu'un de votre famille immédiate est décédé?",
 
-    //         "Have any of your other close relatives or close friends died?",
+            "Est-ce qu’un membre proche de votre famille ou l’un de vos amis proches sont décédés?",
 
-    //         "Have you separated from your partner (not including death)?",
+            "Vous êtes-vous séparé de votre partenaire (sans compter un décès)?",
 
-    //         "Have you had any serious problem with a close friend, neighbour or relative?",
+            "Avez-vous eu un problème sérieux avec un ami proche, un voisin ou un parent?",
 
-    //         "Have you, or an immediate family member been subject to serious racial abuse, attack or /threats",
+            "Avez-vous, ou un membre de votre famille immédiate, été victime d'abus raciaux, d'attaques ou de menaces graves?",
 
-    //         "Have you, or an immediate family member been subject to any abuse, attack, threat - perhaps due to you or someone close to you having a disability of any kind (i.e. a mental health problem, a learning disability or a physical problem)?",
+            "Avez-vous, ou un membre de votre famille immédiate, été victime d'abus, d'attaques, de menaces - peut-être parce que vous ou quelqu'un de proche avez un handicap quelconque (c'est-à-dire un problème de santé mentale, un trouble d'apprentissage ou un problème physique)?",
 
-    //         "Have you, or an immediate family member been subject to any other form of serious abuse, attack, or threat?",
+            "Avez-vous, ou un membre de votre famille immédiate, été victime d'une autre forme d'abus grave, d'attaque ou de menace",
 
-    //         "Have you or your partner been unemployed or seeking work for more than one month?",
+            "Vous, ou votre partenaire, êtes au chômage ou à la recherche d'un emploi depuis plus d'un mois?",
 
-    //         "Have you or your partner been sacked from your job or made redundant?",
+            "Vous, ou votre partenaire, avez été licencié de votre emploi ou ils vous ont fait sentir redondant?",
 
-    //         "Have you had any major financial difficulties (e.g. debts, difficulty paying bills)?",
+            "Avez-vous eu des difficultés financières majeures (ex.: dettes, difficultés à payer vos factures)?",
 
-    //         "Have you, or an immediate family member had any Police contact or been in a court appearance?",
+            "Est-ce que vous ou un membre de votre famille immédiate avez eu des contacts avec la police ou avez comparu en cour?",
 
-    //         "Have you or an immediate member of your family been burgled or mugged?",
+            "Est-ce que vous ou un membre proche de votre famille avez été cambriolé ou agressé?",
 
-    //         "Have you or another individual who lives with you given birth?",
+            "Est-ce que vous ou une autre personne qui habite avec vous avez accouché?",
 
-    //         "Have you or another individual who lives with you suffered from a miscarriage or had a stillbirth?",
+            "Est-ce que vous ou une autre personne vivant avec vous avez fait une fausse couche ou avez eu un mort-né?",
 
-    //         "Have you moved house (through choice)?",
+            "Avez-vous déménagé (par choix)?",
 
-    //         "Have you moved house (not through choice)?",
+            "Avez-vous déménagé (pas par choix)?",
 
-    //         "Have you had any housing difficulties?",
+            "Avez-vous eu des difficultés de logement?",
 
-    //         "Have you had any other significant event ( Please specify)?",
-    //     ]}
+            "Avez-vous eu un autre événement significatif (veuillez préciser)?",
+        ]}
 
-    //     options={[
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //         ["", ""],
-    //     ]} 
+        options={[
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+            ["", ""],
+        ]} 
         
-    //     values={[
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //         ["YES", "YES, STILL AFFECTS ME"],
-    //     ]} 
+        values={[
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+            ["YES", "YES, STILL AFFECTS ME"],
+        ]} 
 
-    //     desc="Listed below are a number of events. Please read each item carefully and then indicate whether or not each event has 
-    //     happened to you in the past year.
-        
-        
-    //     Please tick the YES box if the event has occurred.
-    //     Please tick the 'still affects me' box if the event is still having an effect on your life" 
-        
-    //     goHome={() => navigation.navigate('PatientScreen')} 
-    //     labels={["YES", "Still affects me"]} 
-    //     buttonstyles={checkButtonStyle} 
-    //     questionstyles={RLEStyle} 
-    //     finalstyles={RLEQuestionListStyle}
-    //     />
-    // );
-
-
-    const styles = dastQuestionListStyle;
-
-    const desc = (
-        <View style={styles.desc}>
-            <Text style={styles.desctext}><Text style={textstyles.makebold}>Directions</Text>
-            Listed below are a number of events. Please read each item carefully and then indicate whether or not each event has 
-            happened to you in the past year.
+        desc="Listed below are a number of events. Please read each item carefully and then indicate whether or not each event has 
+        happened to you in the past year.
         
         
-    //     Please tick the YES box if the event has occurred.
-    //     Please tick the 'still affects me' box if the event is still having an effect on your life
-    
-            </Text>
-        </View>
-    );
-
-
-    return ( 
-        <SIASQuestionList
-            questionnaireNumber={15}
-            scale={["", "",""]} 
-            values={["YES", "YES, still effects me", "No"]} 
-            goHome={() => navigation.navigate('ParticipantScreen')}
-            desc={desc}
-            buttonstyle={dastRadioStyles}
-            liststyle={RLEQuestionListStyle}
-            questionstyle={RLE_mainStyle}
-            labels={["YES", "Still affects me", ""]} 
-
-            qs={[
-                "Have you had a serious illness or been seriously injured?",
-    
-                "Has one of your immediate family * been seriously ill or injured?",
-    
-                "Have any of your close friends or other close relatives been seriously ill or injured?",
-    
-                "Have any of your immediate family died?",
-    
-                "Have any of your other close relatives or close friends died?",
-    
-                "Have you separated from your partner (not including death)?",
-    
-                "Have you had any serious problem with a close friend, neighbour or relative?",
-    
-                "Have you, or an immediate family member been subject to serious racial abuse, attack or /threats",
-    
-                "Have you, or an immediate family member been subject to any abuse, attack, threat - perhaps due to you or someone close to you having a disability of any kind",
-    
-                "Have you, or an immediate family member been subject to any other form of serious abuse, attack, or threat?",
-    
-                "Have you or your partner been unemployed or seeking work for more than one month?",
-    
-                "Have you or your partner been sacked from your job or made redundant?",
-    
-                "Have you had any major financial difficulties (e.g. debts, difficulty paying bills)?",
-    
-                "Have you, or an immediate family member had any Police contact or been in a court appearance?",
-    
-                "Have you or an immediate member of your family been burgled or mugged?",
-    
-                "Have you or another individual who lives with you given birth?",
-    
-                "Have you or another individual who lives with you suffered from a miscarriage or had a stillbirth?",
-    
-                "Have you moved house (through choice)?",
-    
-                "Have you moved house (not through choice)?",
-    
-                "Have you had any housing difficulties?",
-    
-                "Have you had any other significant event ( Please specify)?",
-            ]}
-
+        Please tick the YES box if the event has occurred.
+        Please tick the 'still affects me' box if the event is still having an effect on your life" 
+        
+        goHome={() => navigation.navigate('Home')} 
+        labels={["Oui", "M'affecte encore"]} 
+        buttonstyles={checkButtonStyle} 
+        questionstyles={RLEStyle} 
+        finalstyles={RLEQuestionListStyle}
         />
-     );
+    );
 }
  
 export default RLEScreen;

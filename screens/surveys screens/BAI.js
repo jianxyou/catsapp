@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView,StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 import NoNumberQuestionList from '../../surveytypes/NoNumberQuestionList';
 import tableStyle from '../../styles/question styles/tableStyle';
@@ -9,57 +9,46 @@ import textstyles from '../../styles/textstyles';
 
 export default BeckScreen = ({navigation, route}) => {
 
-    const StickyHeader = () => (
-        <View style={styles.stickyHeader}>
-        <Text style = {styles.textLarge}>Not at all       Mildly        Moderately     Severely</Text>
-        </View>
-    );
-
     return (
-
-        <ScrollView stickyHeaderIndices={[0]}>
-            
-            <StickyHeader />
         <NoNumberQuestionList
-        questionnaireNumber={8}
+        questionnaireNumber={0}
         scale={[0, 1, 2, 3]} 
         values={[0, 1, 2, 3]} 
-        labels={["Not at all", "Mildly, but it didn’t bother me much", "Moderately – it wasn’t pleasant at times", "Severely – it bothered me a lot"]}
-        goHome={() => navigation.navigate('ParticipantScreen')}
+        labels={["Aucunement", "Légèrement, mais cela ne m’a pas beaucoup dérangé", "Modérément - ce n’était pas agréable parfois ", "Sévèrement - cela m’a beaucoup dérangé"]}
+        goHome={() => navigation.navigate('Home')}
         questionstyles={tableStyle}
         buttonstyles={tableRadioStyles}
         finalstyles={borderQuestionListStyle}
         qs={[
-            "Numbness or tingling",  
-            "Feeling hot",  
-            "Wobbliness in legs",  
-            "Unable to relax",  
-            "Fear of worst happening",  
-            "Dizzy or light headache",  
-            "Heart pounding / racing",  
-            "Unsteady",  
+            "Engourdissement ou picotement  ",  
+            "Sensation de chaleur ",  
+            "Tremblement dans les jambes",  
+            "Incapacité de se détendre  ",  
+            "Peur que le pire arrive ",  
+            "Étourdissement ",  
+            "Terrifié(e) ou effrayé(e)   ",  
+            "Perte d’équilibre ",  
             "Terrified or afraid",  
-            "Nervous",  
-            "Feeling of choking",  
-            "Hands trembling",  
-            "Shaky / unsteady",  
-            "Fear of losing control",  
-            "Difficulty in breathing",  
-            "Fear of dying",  
-            "Scared",   
-            "Indigestion",  
-            "Faint / lightheaded",  
-            "Face flushed",  
-            "Hot / cold sweats"  
+            "Nerveux  ",  
+            "Sentiment d’étouffement  ",  
+            "Mains tremblantes",  
+            "Tremblements/instabilité ",  
+            "Peur de perdre le contrôle  ",  
+            "Difficulté à respirer  ",  
+            "Peur de mourir",  
+            "Sentiment de peur  ",  
+            "Indigestion ",  
+            "Sensation de faiblesse/évanouissement ",  
+            "Visage rouge ",  
+            "Sueurs chaudes/froides  "  
         ]}
          
         desc={
             <Text style={textstyles.desctext}>Below is a list of common symptoms of anxiety. Please carefully read each item in the list. Indicate how much you have been 
-        bothered by that symptom during the past month, including today, by checking the number in the corresponding space in the 
+        bothered by that symptom during the past month, including today, by circling the number in the corresponding space in the 
         column next to each symptom</Text>}
     />
 
-    </ScrollView>
     );
 }
 
@@ -76,17 +65,4 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
 
     },
-
-    stickyHeader: {
-        // 添加您的样式，例如背景色，字体样式等
-        backgroundColor: 'white',
-        padding: 10,
-        // 确保它在顶部
-        zIndex: 1000
-    },
-
-    textLarge: {
-        fontSize: 40, // 这里的数值可以根据你的需要进行调整
-        paddingLeft: 350
-      },
 })

@@ -4,59 +4,59 @@ const SAFEScreen = ({navigation}) => {
     return ( 
         <SAFEQuestionList 
 
-            questionnaireNumber={10}
+            questionnaireNumber={5}
             desc=""
             scale={[1,2,3,4,5]}
             values={[1,2,3,4,5]}
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.navigate('Home')}
             qs={[
-                "I feel uncomfortable when others make jokes about or put down people of my ethnic background.", 
+                "Je me sens inconfortable quand d’autres font des blagues ou rabaissent des personnes du même origine ethnique que le mien.", 
 
-                "I have more barriers to overcome than most people.",
+                "J’ai plus ddddd’obstacles à surmonter que la plupart des autres.",
 
-                "It bothers me that family members I am close to do not understand my new values.",
+                "Cela me dérange que les membres de ma famille dont je suis proche ne comprennent pas mes nouvelles valeurs.",
 
-                "Close family members and I have conflicting expectations about my future.",
+                "Des membres de ma famille dont je suis proche et moi-même avons des attentes contradictoires quant à mon avenir.",
 
-                "It is hard to express to my friends how I really feel.",
+                "Il est difficile d’exprimer à mes amis ce que je ressens vraiment.",
 
-                "My family does not want me to move away but I would like to.",
+                "Ma famille ne veut pas déménager mais je le voudrais.",
 
-                "It bothers me to think that so many people use drugs.",
+                "Cela me dérange de penser que tant de gens consomment de la drogue.",
 
-                "It bothers me that I cannot be with my family.",
+                "Cela me dérange de ne pas pouvoir être avec ma famille.",
 
-                "In looking for a good job, I sometimes feel that my ethnicity is a limitation.",
+                "Quand je cherche un nouveau travail, j’ai parfois l’impression que mon origine ethnique est une limitation.",
 
-                "I don't have any close friends.",
+                "Je n’ai aucun ami proche.",
 
-                "Many people have stereotypes about my culture or ethnic group and treat me as if they are true.",
+                "eaucoup de personnes ont des stéréotypes sur ma culture ou groupe ethnique et me traitent comme s’ils étaient vrais.",
 
-                "I don't feel at home.",
+                "Je ne me sens pas chez moi.",
 
-                "People think I am unsociable when in fact I have trouble communicating in English.",
+                "PLes gens croient que je ne suis pas sociable mais en fait c’est que j’ai de la misère à communiquer en français.",
 
-                "I often feel that people actively try to stop me from advancing.",
+                "J’ai souvent l’impression que les gens essaient activement de m’empêcher d’avancer.",
 
-                "It bothers me when people pressure me to assimilate.",
+                "Cela me dérange quand les gens me mettent de la pression pour m’assimiler.",
 
-                "I often feel ignored by people who are supposed to assist me.",
+                "Je me sens souvent ignoré(e) par des gens qui sont sensés m’assister.",
      
-                "Because I am different I do not get enough credit for the work I do.",
+                "On ne me donne pas assez de crédit pour le travail que je fais parce que je suis différent(e).",
 
-                "It bothers me that I have an accent.",
+                "J’ai un accent et cela me dérange.",
 
-                "Loosening the ties with my country is difficult.",
+                "Desserrer les liens avec mon pays est difficile.",
 
-                "I often think about my cultural background.",
+                "Je pense souvent à mon origine culturelle.",
 
-                "Because of my ethnic background, I feel that others often exclude me from participating in their activities.",
+                "J’ai l’impression que les autres m’excluent de leurs activités à cause de mon origine culturelle.",
 
-                "It is difficult for me to 'show off' my family.", 
+                "Cela est difficile pour moi de vanter ma famille.", 
 
-                "People look down upon me if I practice customs of my culture.",
+                "Les gens me regardent de haut quand je pratique des coutumes de ma culture.",
 
-                "I have trouble understanding others when they speak.",
+                "J’ai de la misère à comprendre les autres quand ils parlent.",
             ]}
 
         />

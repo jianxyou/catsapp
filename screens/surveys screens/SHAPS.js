@@ -15,38 +15,38 @@ const SHAPSScreen = ({navigation}) => {
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
-            This questionnaire is designed to measure your ability to experience pleasure in the last few days. It is important to read each statement very <Text style={textstyles.makeitalic}>carefully</Text>. Please check true or false.
+            This questionnaire is designed to measure your ability to experience pleasure in the last few days. It is important to read each statement very <Text style={textstyles.makeitalic}>carefully</Text>. 
             </Text>
         </View>
     );
 
     return ( 
         <SIASQuestionList
-            questionnaireNumber={20}
+            questionnaireNumber={16}
             scale={["", "",]} 
             values={["True", "False"]} 
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.navigate('Home')}
             desc={desc}
             buttonstyle={dastRadioStyles}
             liststyle={shapsQuestionListStyle}
             questionstyle={DASTStyle}
 
             qs={[
-                "I would enjoy my favorite television or radio program",
-                "I would enjoy being with family or close friends",
-                "I would find pleasure in my hobbies and pastimes",
-                "I would be able to enjoy my favorite meal",
-                "I would enjoy a warm bath or refreshing shower",
-                "I would find pleasure in the scent of flowers or the smell of a fresh sea breeze or freshly baked bread",
-                "I would enjoy seeing other people's smiling faces",
-                "I would enjoy looking smart when I have made an effort with my appearance",
-                "I would enjoy reading a book, magazine or newspaper",
-                "I would enjoy a cup of tea or coffee or my favorite drink",
-                "I would find pleasure in small things, e.g. bright sunny day",
-                "Telephone call from a friend",
-                "I would be able to enjoy a beautiful landscape or view",
-                "I would get pleasure from helping others",
-                "I would feel pleasure when I receive praise from other people",
+                "Mon émission préférée de télévision ou de radio me procurerait beaucoup de plaisir.",
+                "J’apprécierais beaucoup d’être avec ma famille ou aves mes amis proches.",
+                "Je trouverais du plaisir dans mes hobbies et passe-temps.",
+                "Je serais capable d’apprécier mon plat favori.",
+                "J’apprécierais prendre un bain chaud ou une douche rafraîchissante.",
+                "Je trouverais du plaisir dans le parfum des fleurs ou dans l’odeur d’une fraîche brise de mer ou du pain fraîchement cuit.",
+                "J’apprécierais voir des visages souriants autour de moi.",
+                "J’apprécierais de paraître élégant quand j’ai fait un effort pour soigner mon apparence.",
+                "J’apprécierais de lire un livre, un magazine ou un journal",
+                "J’apprécierais une tasse de thé ou de café ou un verre de ma boisson favorite.",
+                "Je trouverais du plaisir dans des petits riens tels que, par exemple, une journée fortement ensoleillée,",
+                "Ou un coup de téléphone d’un ami.",
+                "Je serais capable d’apprécier un beau paysage ou une belle vue.",
+                "Je prendrais plaisir à aider les autres.",
+                "Je ressentirais du plaisir à recevoir les éloges d’autres personnes.",
             ]}
 
         />

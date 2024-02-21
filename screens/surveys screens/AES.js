@@ -3,13 +3,13 @@ import AESQuestionList from "../../surveytypes/AESQuestionList";
 const AESScreen = ({navigation}) => {
     return (
         <AESQuestionList 
-            questionnaireNumber={11}
-            desc="For each statement, check the answer that best describes the subject’s thoughts, feelings, and activity in the past 4 weeks"
+            questionnaireNumber={6}
+            desc="For each statement, circle the answer that best describes the subject’s thoughts, feelings, and activity in the past 4 weeks"
             scale={[
-                "NOT AT ALL",
-                "SLIGHTLY",
-                "SOMEWHAT",
-                "A LOT",
+                "PAS DU TOUT",
+                "LÉGÈREMENT",
+                "MODÉRÉMENT",
+                "BEAUCOUP",
             ]}
             values={[
                 "NOT AT ALL",
@@ -17,34 +17,30 @@ const AESScreen = ({navigation}) => {
                 "SOMEWHAT",
                 "A LOT",
             ]}
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.navigate('Home')}
 
             qs={[
-                "I am interested in things.",
-                "I get things done during the day.",                "Getting things started on my own is important to me.",
-                "I am interested in having new experiences.",
-                "I am interested in learning new things",
-                "I put little effort into anything.",
-                "I approach life with intensity.",
-                "Seeing a job through to the end is important to me.",
-                "I spend time doing things that interest me.",
-                "Someone has to tell me what to do each day.",
-                "I am less concerned about my problems than I should be.",
-                "I have friends.",
-                "Getting together with friends is important to me.",
-                "When something good happens, I get excited.",
-                "I have an accurate understanding of my problems.",
-                "Getting things done during the day is important to me.",
-                "I have initiative.",
-                "I have motivation.",
+                "Des choses m'intéressant.",
+                "J'accomplis des tâches durant la journée.",
+                "Commencer des tâches oar moi-même est important pour moi",
+                "Vivre de nouvelles expériences m'intéresse",
+                "Apprendre de nouvelles choses m'intéresse",
+                "Je met peu d'effort dans quoi que ce soit",
+                "J'approche la vie avec intensité",
+                "Compléter une tâche jusqu'au bout m'est important",
+                "Je passe du temps à faire des choses qui m'intéressent.",
+                "Quelqu'un doit me dire quoi faire à tous les jours.",
+                "Je suis moins concerné(e) par mes problèmes que je devrais l'être.",
+                "J'ai des amis",
+                "Passer du temps avec mes amis est important pour moi",
+                "Lorsque quelque chose de bien arrive, je suis excité(e)",
+                "J'ai une compréhension exacte de mes problèmes",
+                "Accomplir des tâches  durant la journée est important pour moi",
+                "J'ai de l'initiative",
+                
             ]}
         />
       );
-
-
-    
 }
  
 export default AESScreen;
-
-

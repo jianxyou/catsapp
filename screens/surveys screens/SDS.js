@@ -14,14 +14,14 @@ const SDSScreen = ({navigation}) => {
         listoflistofqs={[
 
             [
-                "Did you ever think your use of cannabis was out of control?",
-                "Did the prospect of missing a smoke make you very anxious or worried?",
-                "Did you worry about your use of cannabis?",
-                "Did you wish you could stop?",
+                "Avez-vous trouvé que votre consommation de cannabis était hors de contrôle?",
+                "Est-ce que l’idée de manquer une dose de cannabis vous a déjà rendu très anxieux/anxieuse ou inquiet/inquiète?",
+                "Vous êtes-vous inquiété à propos de votre consommation de cannabis?",
+                "Avez-vous souhaité pouvoir arrêter?",
             ],
 
             [
-                "How difficult would you find it to stop or go without cannabis?",
+                "À quel point serait-il difficile pour vous d’arrêter ou vous passer de cannabis?",
             ],
 
         ]}
@@ -29,43 +29,41 @@ const SDSScreen = ({navigation}) => {
         scales={[ 
         [
             [
-                "0 = Never or almost never",
-                "1 = Sometimes",
-                "2 = Often",
-                "3 = Always or nearly always",
-            ],
-
-
-            
-
-            [
-                "0 = Never or almost never",
-                "1 = Sometimes",
-                "2 = Often",
-                "3 = Always or nearly always",
+                "0 = Jamais / presque jamais",
+                "1 = Parfois",
+                "2 = Souvent",
+                "3 = Toujours / presque toujours",
             ],
 
             [
-                "0 = Not at all",
-                "1 = A little",
-                "2 = Quite a lot",
-                "3 = A great deal",
+                "0 = Jamais / presque jamais",
+                "1 = Parfois",
+                "2 = Souvent",
+                "3 = Toujours / presque toujours",
             ],
 
             [
-                "0 = Never or almost never",
-                "1 = Sometimes",
-                "2 = Often",
-                "3 = Always or nearly always",
+                "0 = Jamais / presque jamais",
+                "1 = Parfois",
+                "2 = Souvent",
+                "3 = Toujours / presque toujours",
+            ],
+
+
+            [
+                "0 = Jamais / presque jamais",
+                "1 = Parfois",
+                "2 = Souvent",
+                "3 = Toujours / presque toujours",
             ],
         ],
 
         [
             [
-                "0 = Not difficult",
-                "1 = Quite difficult",
-                "2 = Very difficult",
-                "3 = Impossible"
+                "0 = Pas difficile",
+                "1 = Assez difficile",
+                "2 = Très difficile",
+                "3 =Impossible"
             ],
         ],
         ]}
@@ -82,7 +80,7 @@ const SDSScreen = ({navigation}) => {
                 [0,1,2,3],
             ],
         ]} 
-        questionnaireNumber={16}
+        questionnaireNumber={12}
 
         minidescs={[
             "Over the last 3 months...",
@@ -93,7 +91,7 @@ const SDSScreen = ({navigation}) => {
             <Text style={textstyles.desctext}>
             Directions: Please read each statement carefully and circle ONE number for each question which best applies to you and your experiences.
             </Text>}
-        goHome={() => navigation.navigate('ParticipantScreen')} 
+        goHome={() => navigation.navigate('Home')} 
         buttonstyles={radioStyles}
         questionstyles={SDSStyle} 
         liststyles={CompoundSDSStyle} 
