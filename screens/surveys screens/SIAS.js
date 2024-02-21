@@ -68,7 +68,7 @@ const SIASScreen = ({navigation}) => {
                 "I tense up if I meet an acquaintance on the street",  
                 "When mixing socially, I am uncomfortable",  
                 "I feel tense if I am alone with just one person",  
-                "I am at east meeting people at parties, etc.",  
+                "I am at ease meeting people at parties, etc.",  
                 "I have difficulty talking with other people",  
                 "I find it easy to think of things to talk about",  
                 "I worry about expressing myself in case I appear awkward",  
