@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { ScrollView, View, Text, StyleSheet } from 'react-native';
 
 import SIASQuestionList from "../../surveytypes/SIASQuestionList";
 import SASRadioStyles from "../../styles/input styles/SASRadioStyles";
@@ -8,7 +8,30 @@ import SIASStyle from "../../styles/question styles/SIASStyle";
 const SASSCreen = ({navigation}) => {
 
     const styles = SIASquestionliststyle;
+    const styles2 = StyleSheet.create({
+        stickyHeader: {
+            // 添加您的样式，例如背景色，字体样式等
+            backgroundColor: 'white',
+            padding: 10,
+            // 确保它在顶部
+            zIndex: 1000
+        },
 
+        textLarge: {
+            fontSize: 20, // 这里的数值可以根据你的需要进行调整
+            paddingLeft: 350
+          },
+    });
+
+    
+
+
+    const StickyHeader = () => (
+        <View style={styles2.stickyHeader}>
+        <Text style={styles2.textLarge}>None or little of the time    Some of the time    Good part of the time    Most or all of the time</Text>
+        </View>
+    );
+    
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
@@ -18,12 +41,14 @@ const SASSCreen = ({navigation}) => {
     );
 
     return (
+        <ScrollView stickyHeaderIndices={[0]}>
+            <StickyHeader />
         <SIASQuestionList
-            questionnaireNumber={9}
+            questionnaireNumber={13}
             desc={desc}
             scale={["", "", "", ""]}
             values={["None OR little of the time", "Some of the time", "Good part of the time", "Most OR all of the time"]}
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             buttonstyle={SASRadioStyles}
             liststyle={SASQuestionListStyle}
             questionstyle={SIASStyle}
@@ -49,10 +74,16 @@ const SASSCreen = ({navigation}) => {
                 "My face gets hot and blushes",
                 "I fall asleep easily and get a good night’s rest",
                 "I have nightmares",
+                
             ]}
 
         />
+        </ScrollView>
       );
+      
+
+
+       
 }
  
 export default SASSCreen;

@@ -1,13 +1,36 @@
 import HasslesStyleSurvey from "../../surveytypes/HasslesStyleSurvey";
+import * as React from 'react';
+import { ScrollView,View, Text, StyleSheet} from 'react-native'
+
 
 const HasslesScreen = ({navigation}) => {
 
+
+
+    const StickyHeader = () => (
+        <View style={banner_styles.stickyHeader}>
+
+        <Text style = {banner_styles.textLarge}>
+        0= None or not applicable
+        {"\n1= somewhat"}
+        {"\n2= quite a bit"}
+        {"\n3= a great deal"}  
+        {"\n Please complete both sides"}  
+        </Text>
+        </View>
+    );
+
+    
     const survey = 
+
+        <ScrollView stickyHeaderIndices={[0]}>
+            
+            <StickyHeader />
         <HasslesStyleSurvey 
 
-            questionnaireNumber={3}
+            questionnaireNumber={4}
 
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('MriScreen')}
 
             scales={[
                 [0,1,2,3],
@@ -184,7 +207,40 @@ const HasslesScreen = ({navigation}) => {
         
         />
 
+        </ScrollView>
+
     return survey;
 }
  
 export default HasslesScreen;
+
+
+
+
+const banner_styles = StyleSheet.create({
+    submit: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        flexDirection: 'column',
+    },
+
+    submitDiv: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        flexDirection: 'column',
+
+    },
+
+    stickyHeader: {
+        // 添加您的样式，例如背景色，字体样式等
+        backgroundColor: 'white',
+        padding: 10,
+        // 确保它在顶部
+        zIndex: 1000
+    },
+
+    textLarge: {
+        fontSize: 25, // 这里的数值可以根据你的需要进行调整
+        paddingLeft: 450
+      },
+})

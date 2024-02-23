@@ -2,25 +2,25 @@ import { createElement, useState } from 'react';
 
 import allNull from '../helpers/allNull';
 import FormattedRosenberg from '../SurveyWrappers/FormattedRosenberg';
-import InternalRadioQuestion from '../questiontypes/InternalRadioQuestion';
+import InternalRadioQuestion_CWS from '../questiontypes/InternalRadioQuestion_CWS';
 
 const CannabisQuestionList = ({questionnaireNumber, scale, values, qs, desc, goHome, liststyle, buttonstyle, questionstyle}) => {
 
-    const [data, changeData] = useState(allNull(qs.length));
+    const [data, changeData] = useState(allNull(38));
 
-    const respond = (num, value) => {
+    const respond = (index, value) => {
         let temp = data;
 
-        temp[num] = value;
+        temp[index] = value;
         changeData(temp);
  
-        console.log('callback worked!', temp[num]);
+        console.log('callback worked!', temp[index]);
     }
 
     let listofqs = qs.map(
         (val, index) => 
-        <InternalRadioQuestion
-            key={index} name={questionnaireNumber} q={val} scale={scale} values={values} num={index} callback={respond} buttonstyles={buttonstyle} questionstyles={questionstyle}/>
+        <InternalRadioQuestion_CWS
+            key={index} name={questionnaireNumber} q={val} scale={scale} values={values} num={index*2} callback={respond} buttonstyles={buttonstyle} questionstyles={questionstyle}/>
     );
 
     

@@ -1,8 +1,9 @@
-import { View, Text } from 'react-native';
+import {ScrollView, StyleSheet, View, Text } from 'react-native';
 
 import SIASQuestionList from '../../surveytypes/SIASQuestionList';
 import SASQuestionListStyle from '../../styles/question list styles/SASQuestionListStyle';
 import SIASStyle from '../../styles/question styles/SIASStyle';
+import CWSStyle from '../../styles/question styles/CWSStyle';
 import cannabisRadioStyles from '../../styles/input styles/cannabisRadioStyles';
 import CannabisQuestionList from '../../surveytypes/CannabisQuestionList';
 import cannabisQuestionListStyle from '../../styles/question list styles/cannabisQuestionListStyle';
@@ -12,6 +13,31 @@ import textstyles from '../../styles/textstyles';
 const CannabisWithdrawalScreen = ({navigation}) => {
 
     const styles = SIASquestionliststyle;
+    const styles2 = StyleSheet.create({
+        stickyHeader: {
+            // 添加您的样式，例如背景色，字体样式等
+            backgroundColor: 'white',
+            padding: 10,
+            // 确保它在顶部
+            zIndex: 1000
+        },
+        textLarge: {
+            fontSize: 35, // 这里的数值可以根据你的需要进行调整
+            paddingLeft: 300
+        },
+
+        textLittle: {
+            fontSize: 20, // 这里的数值可以根据你的需要进行调整
+            marginLeft: 1000
+        }
+    });
+
+
+    const StickyHeader = () => (
+        <View style={styles2.stickyHeader}>
+        <Text style = {styles2.textLarge}>     Not at all       Moderately        Extreme                      <Text style = {styles2.textLittle}> Impact(1-10)</Text> </Text>
+        </View>
+    );
 
     const desc = (
         <View style={styles.desc}>
@@ -23,17 +49,20 @@ const CannabisWithdrawalScreen = ({navigation}) => {
             </Text>
         </View>
     );
+    
 
     return (
+        <ScrollView stickyHeaderIndices={[0]}>
+            <StickyHeader />
         <CannabisQuestionList
-            questionnaireNumber={18}
+            questionnaireNumber={22}
             desc={desc}
-            scale={[0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+            scale={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
             values={[0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             buttonstyle={cannabisRadioStyles}
             liststyle={cannabisQuestionListStyle}
-            questionstyle={SIASStyle}
+            questionstyle={CWSStyle}
 
             qs={[
                 "The only thing I could think about was smoking some cannabis",
@@ -58,7 +87,8 @@ const CannabisWithdrawalScreen = ({navigation}) => {
             ]}
 
         />
+        </ScrollView>
       );
 }
  
-export default CannabisWithdrawalScreen;
+export default CannabisWithdrawalScreen;    

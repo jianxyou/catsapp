@@ -15,17 +15,17 @@ const SHAPSScreen = ({navigation}) => {
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
-            This questionnaire is designed to measure your ability to experience pleasure in the last few days. It is important to read each statement very <Text style={textstyles.makeitalic}>carefully</Text>. 
+            This questionnaire is designed to measure your ability to experience pleasure in the last few days. It is important to read each statement very <Text style={textstyles.makeitalic}>carefully</Text>. Please check true or false.
             </Text>
         </View>
     );
 
     return ( 
         <SIASQuestionList
-            questionnaireNumber={16}
+            questionnaireNumber={20}
             scale={["", "",]} 
             values={["True", "False"]} 
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             desc={desc}
             buttonstyle={dastRadioStyles}
             liststyle={shapsQuestionListStyle}

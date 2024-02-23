@@ -32,10 +32,10 @@ const CUDITScreen = ({navigation}) => {
         <CUDITQuestionList
 
             desc = {desc}
-            questionnaireNumber={1}
+            questionnaireNumber={9}
             finalstyle={cuditQuestionListStyle}
             buttonstyle={cuditRadioStyles}
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
             scales={[
                 ["Never","Monthly or less","2-4 times a month","2-3 times a week", "4 or more times a week"],
                 ["Less than 1", "1 or 2", "3 or 4", "5 or 6", "7 or more"],

@@ -10,103 +10,142 @@ import createQuery from '../helpers/createQuery';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import buttonStyle from '../styles/partials styles/buttonStyle';
 import returnInternalName from '../helpers/returnInternalName';
+import { FadeInLeft } from 'react-native-reanimated';
 
 const styles = buttonStyle;
 
-const SubmitButton = ({ data, goHome, capture, questionnaireNumber }) => {
-
+const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndices,dataForFlag}) => {
 
     const {val, setVal} = useContext(ParticipantContext);
 
-    //val contains the current participant id
-
-    // @pre the file at uri1 must exist
-    // @post copies the temporary image into a new permanent file
-
-
-    
-
-    async function copyImage(uri1) {
-
-        const name = returnInternalName(questionnaireNumber);
-        const myname = name.replace(/\s/g,'');
-        const uri2 = FileSystem.documentDirectory+'cats-data/'+val+myname+'image'+'.png';
-
-        //this function creates the file, confusing since there is no createFile function
-        await FileSystem.writeAsStringAsync(uri2, '')
-            .then(() => console.log('image created at' + uri2 + "!!"));
-        await FileSystem.copyAsync({from: uri1, to: uri2})
-            .then(() => console.log('image copied!'))
-            .catch(e => console.log(e));
-
-        return uri2;
-    }
-
-
-    async function copyImage(uri1) {
-        const name = returnInternalName(questionnaireNumber);
-        const myname = name.replace(/\s/g,'');
-        const uri2 = FileSystem.documentDirectory+'cats-data/'+val+myname+'image'+'.png';
-    
-        // 创建文件
-        await FileSystem.writeAsStringAsync(uri2, '')
-            .then(() => console.log('image created at' + uri2 + "!!"));
-        // 复制文件
-        await FileSystem.copyAsync({from: uri1, to: uri2})
-            .then(() => console.log('image copied!'))
-            .catch(e => console.log(e));
-    
-        // 读取为 Base64
-        const base64 = await FileSystem.readAsStringAsync(uri2, { encoding: FileSystem.EncodingType.Base64 });
-    
-        // 存储 Base64 数据
+    async function saveImageToAsyncStorage(uri) {
         try {
-            await AsyncStorage.setItem('image_base64', base64);
+            // 从原始 URI 读取图像为 Base64
+            const base64 = await FileSystem.readAsStringAsync(uri, { encoding: FileSystem.EncodingType.Base64 });
+
+            // 生成一个唯一的键名用于存储图像
+            const imageKey = 'image' + Date.now();
+
+            // 将 Base64 图像数据存储到 AsyncStorage
+            await AsyncStorage.setItem(imageKey, base64);
+            console.log('Image saved to AsyncStorage with key:', imageKey);
+
+            return imageKey;
+
         } catch (error) {
-            console.error('Error saving base64 image', error);
+            console.error('Error saving image to AsyncStorage', error);
+            return null;
         }
-    
-        return uri2;
     }
+
     
-
-
-
     const storeData = async (data) => {
         try {
-            const query = await createQuery(questionnaireNumber, data, val);
+            let query = await createQuery(questionnaireNumber, data, val);
+            // 假设您想更改 query 的值
+            // query = "wocassssso";
+    
+            // 确保调用 AsyncStorage.setItem 时传递字符串类型的参数
             await AsyncStorage.setItem(JSON.stringify(questionnaireNumber), JSON.stringify(query));
         } catch (e) {
             console.error('Error saving data', e);
         }
-    
     };
  
+
+    
+    const handleSubmission = async (questionnaireNumber) => {
+        try {
+          const storedFilled = await AsyncStorage.getItem('filled');
+          let filledArray =JSON.parse(storedFilled);
+        
+          
+          // 更新数组中的特定索引
+          filledArray[questionnaireNumber-1] = true;
+
+          console.log(filledArray);
+          // 将更新后的数组保存回 AsyncStorage
+          await AsyncStorage.setItem('filled', JSON.stringify(filledArray));
+        } catch (error) {
+          // 错误处理
+          console.error('Error updating filled array', error);
+        }
+      };
 
 
     const handleSubmit = async () => {
         try {
+
+            let containsNull;
+            if (dataForFlag){
+                containsNull = dataForFlag.includes(null);
+            }
+            else{
+                containsNull = data.includes(null);
+            }
+            
+
+            // 如果没有 "null" 值，则存储数据
+            // 如果没有 "null" 值，则存储数据
+            if (!containsNull || questionnaireNumber ==24 || questionnaireNumber ==32) {
+                // await storeData(data);
             // 存储表单数据
             await storeData(data);
     
             // 捕获屏幕截图
             const uri = await capture();
-                
+
+            await saveImageToAsyncStorage(uri);
+
+    
+            await handleSubmission(questionnaireNumber);
+        
+
             // 复制图片并获取新路径
-            let myuri = await copyImage(uri);
-            
-            // 读取图片为 Base64
-            const base64 = await FileSystem.readAsStringAsync(myuri, { encoding: FileSystem.EncodingType.Base64 });
-    
-            // 创建一个唯一的键名
-            const imageKey = 'image' + Date.now();
-    
-            // 将 Base64 图片存储到 AsyncStorage
-            await AsyncStorage.setItem(imageKey, base64);
-    
-            console.log('Image stored with key:', imageKey);
-    
+            //let myuri = await copyImage(uri);
+        
             goHome();
+            } else {
+                // 找出 "null" 值的索引
+                let nullIndices;
+                if (dataForFlag){
+                    nullIndices = dataForFlag.map((item, index) => item === null ? index : null).filter(index => index !== null);
+
+                }
+                else{
+                    nullIndices = data.map((item, index) => item === null ? index : null).filter(index => index !== null);
+                }
+
+
+                if (questionnaireNumber == 22){
+    
+      
+                    // 创建一个新的 Set 来存储不重复的处理后的 indices
+                    const processedIndices = new Set();
+            
+                    // 对每个 index 进行地板除 2，并添加到 Set 中
+                    nullIndices.forEach(index => {
+                        const processedIndex = Math.floor(index / 2);
+                        processedIndices.add(processedIndex);
+                    });
+            
+                    nullIndices = Array.from(processedIndices);
+                  
+                }
+            
+                // console.log('Null value indices:', nullIndices);
+                onErrorIndices(nullIndices);
+                // 这里可以添加更多的处理逻辑，例如提醒用户
+                Alert.alert(
+                    "Missing Value"
+                );
+
+                
+            }
+
+            
+
+            
         } catch (error) {
             Alert.alert('Error', 'An error occurred while capturing and saving the table.');
             console.error(error);

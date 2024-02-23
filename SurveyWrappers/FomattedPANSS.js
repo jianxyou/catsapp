@@ -46,7 +46,7 @@ const FormattedPANSS = ({questionnaireNumber, qs, data, goHome, desc, labels, st
     );
 
 
-    return FinalWrapper(questionnaireNumber, [mydesc, qs], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [mydesc, qs], data, goHome, styles,null);
 }
  
 export default FormattedPANSS;
