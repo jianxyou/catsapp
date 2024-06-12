@@ -7,31 +7,20 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
 
     let mycolumns = tableColumnsSelf[questionnaireNumber];
 
-    if (questionnaireNumber == 3) {
+    if (questionnaireNumber == 4) {
 
-        let mycolumns1 = mycolumns[0];
-        let mycolumns2 = mycolumns[1];
-
-        for(let i : number = 0; i < mycolumns1.length; i++) {
-            let currcolumn : string = mycolumns1[i];
-            let currinsert = currcolumn + " = " + data[i] + ", ";
+        for(let i : number = 0; i < 106; i++) {
+            let currinsert = data[i] + ','; 
             query = query + currinsert;
+
         }
-
-
-        for(let i : number = 0; i < mycolumns2.length; i++) {
-            let currcolumn : string = mycolumns2[i];
-            let currinsert = currcolumn + " = " + data[i+53] + ", ";
-            query = query + currinsert;
-        }
-
-    } else {
+ } else {
 
         for(let i : number = 0; i < mycolumns.length; i++) {
             let currcolumn : string = mycolumns[i];
 
             // if table is SIAS
-            if (questionnaireNumber == 11){
+            if (questionnaireNumber == 12){
                 if (data[i] == "Moderately"){
                     data[i] = 3;
                 }
@@ -53,7 +42,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
             }
 
             // if table is AES
-            if (questionnaireNumber == 10){
+            if (questionnaireNumber == 11){
                 if (data[i] == "NOT AT ALL"){
                     data[i] = 1;
                 }
@@ -71,7 +60,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
             }
 
             // if table is SAS
-            if (questionnaireNumber == 12 ){
+            if (questionnaireNumber == 13 ){
                 if (data[i] == "None OR little of the time"){
                     data[i] = 1;
                 }
@@ -93,7 +82,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
 
             
             // if table is Rosenberg scale
-            if (questionnaireNumber == 13 ){
+            if (questionnaireNumber == 14 ){
                 if (data[i] == "Strongly Disagree"){
                     data[i] = 1;
                 }
@@ -113,7 +102,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
 
 
             // if table is SHAPS
-            if (questionnaireNumber == 19 ){
+            if (questionnaireNumber == 20 ){
                 if (data[i] == "True"){
                     data[i] = 1;
                 }
@@ -124,7 +113,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
 
 
             // if table is DAST
-            if (questionnaireNumber == 16 ){
+            if (questionnaireNumber == 17 ){
                 if (data[i] == "YES"){
                     data[i] = 1;
                 }
@@ -138,8 +127,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
 
             // if table is TEC
 
-            // if table is RLE
-            if (questionnaireNumber == 20){
+            if (questionnaireNumber == 21){
                 if (data[i] == ""){
                     data[i] = "null"
                 }
@@ -147,7 +135,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
             }
 
             // if table is RLE
-            if (questionnaireNumber == 14){
+            if (questionnaireNumber == 15){
                 if (data[i] == "YES"){
                     data[i] = 1;
                 }
@@ -171,7 +159,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
 
 
              // if table is SRLE
-            if (questionnaireNumber == 17){
+            if (questionnaireNumber == 18){
                 if (data[i] == "not at all part of my life") {
                     data[i] = 1;
                 }
@@ -198,9 +186,9 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
 
 
                 
-            if (questionnaireNumber == 20){
+            if (questionnaireNumber == 21){
 
-                if (i >= 32){
+                if (i >= 42){
                     query = query.slice(0,-1);
                     break
                 }
@@ -211,7 +199,7 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
 
 
             // if its  TICS
-            if (questionnaireNumber == 22){
+            if (questionnaireNumber == 23){
                 if (data[i] == "Not at all") {
                     
                     data[i] = 0;
@@ -235,12 +223,46 @@ function queryZipper_insert(questionnaireNumber : number, data : Array<any>) : s
                     
                 
 
-                else if (data[i] == "Extrem   ely"){
+                else if (data[i] == "Extremely"){
                     data[i] = 4;
                 }
 
             }
             
+
+
+
+            //如果表格是SAQ
+
+            if (questionnaireNumber == 6){
+                if (data[i] == "Not at all") {
+                    
+                    data[i] = 0;
+
+                    
+                }
+                else if (data[i] == "Slightly"){
+
+                    data[i] = 1;
+                }
+
+                else if (data[i] == "Moderately"){
+                    data[i] = 2;
+    
+                }
+
+
+                else if (data[i] == "Very"){
+                    data[i] = 3;
+                }
+                    
+                
+
+                else if (data[i] == "Extremely"){
+                    data[i] = 4;
+                }
+
+            }
             
 
 

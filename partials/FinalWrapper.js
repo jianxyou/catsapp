@@ -8,7 +8,7 @@ import SubmitButton from "./SubmitButton";
 
 import returnInternalName from '../helpers/returnInternalName';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { sub } from '@shopify/react-native-skia';
+import { cartesian2Canvas, sub } from '@shopify/react-native-skia';
 import textstyles from "../styles/textstyles";
 import TLFBStyles from '../styles/TLFBStyles';
 // import CompoundSurvey from "../surveytypes/CompoundSurvey";
@@ -204,16 +204,16 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
    };
 
     // creates a refernece to a JSX element, essentially a variable name
-    const [clientId, setClientId] = useState('');
+    // const [clientId, setClientId] = useState('');
     const [visitId, setVisitId] = useState('');
     const [subjectId, setSubjectId] = useState('');
   
     useEffect(() => {
       const loadIds = async () => {
-        const storedClientId = await AsyncStorage.getItem('clientId');
+        // const storedClientId = await AsyncStorage.getItem('clientId');
         const storedVisitId = await AsyncStorage.getItem('visitId');
         const storedSubjectId = await AsyncStorage.getItem('subjectId');
-        setClientId(storedClientId);
+        // setClientId(storedClientId);
         setVisitId(storedVisitId);
         setSubjectId(storedSubjectId);
       };
@@ -346,7 +346,8 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
     const today =  getCurrentDate();
     
 
-    
+        
+
     let shortresult
     if( questionnaireNumber == 7){
 
@@ -365,7 +366,7 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
             <ScrollView ref={ref1} >
             <Text>Date : {today} </Text>
             <Text>Subject Id : {subjectId}</Text>
-            <Text>Participant ID : {clientId}</Text>
+            {/* <Text>Participant ID : {clientId}</Text> */}
             
             <View key={1}>{copy[0]}</View>
             {listofqs}
@@ -398,7 +399,7 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
             <ScrollView ref={ref1} >
             <Text>Date : {today} </Text>
             <Text>Subject Id : {subjectId}</Text>
-            <Text>Participant ID : {clientId}</Text>
+            {/* <Text>Participant ID : {clientId}</Text> */}
             
             <View key={1}>{copy[0]}</View>
             {copy[1].map((val, index) => {
@@ -419,7 +420,7 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
             <ScrollView ref={ref1} >
             <Text>Date : {today} </Text>
             <Text>Subject Id : {subjectId}</Text>
-            <Text>Participant ID : {clientId}</Text>
+            {/* <Text>Participant ID : {clientId}</Text> */}
             
             <View key={1}>{copy[0]}</View>
             {copy[1].map((val, index) => renderView(val, index))}

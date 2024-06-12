@@ -21,7 +21,7 @@ export default BAI_fu = ({navigation, route}) => {
             
             <StickyHeader />
         <NoNumberQuestionList
-        questionnaireNumber={8}
+        questionnaireNumber={26}
         scale={[0, 1, 2, 3]} 
         values={[0, 1, 2, 3]} 
         labels={["Not at all", "Mildly, but it didn’t bother me much", "Moderately – it wasn’t pleasant at times", "Severely – it bothered me a lot"]}

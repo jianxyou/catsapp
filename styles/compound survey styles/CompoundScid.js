@@ -23,3 +23,4 @@ export default CompoundScid = StyleSheet.create({
     },
 
 })
+

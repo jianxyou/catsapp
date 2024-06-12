@@ -367,7 +367,7 @@ const FTND_fu_Screen = ({navigation}) => {
                 "A) Lifetime History",
                 "To Non-smokers"
             ]}
-            goHome={() => navigation.navigate('MriScreen')}
+            goHome={() => navigation.navigate('FollowUp')}
         />
 
 

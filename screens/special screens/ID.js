@@ -5,14 +5,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const IDScreen = ({ navigation }) => {
-  const [clientId, setClientId] = useState('');
+  // const [clientId, setClientId] = useState('');
   const [visitId, setVisitId] = useState('');
-  const [clientIdError, setClientIdError] = useState(false);
+  // const [clientIdError, setClientIdError] = useState(false);
   const [visitIdError, setVisitIdError] = useState(false);
 
   
   const [subjectId, setSubjectId] = useState('');
-
 
   const validateInput = (text, setType) => {
     const isValid = /^\d+$/.test(text);
@@ -22,10 +21,10 @@ const IDScreen = ({ navigation }) => {
 
   useEffect(() => {
     const loadIds = async () => {
-      const storedClientId = await AsyncStorage.getItem('clientId');
+      // const storedClientId = await AsyncStorage.getItem('clientId');
       const storedVisitId = await AsyncStorage.getItem('visitId');
       const storedSubjectId = await AsyncStorage.getItem('subjectId');
-      if (storedClientId) setClientId(storedClientId);
+      // if (storedClientId) setClientId(storedClientId);
       if (storedVisitId) setVisitId(storedVisitId);
       if (storedSubjectId) setSubjectId(storedSubjectId);
     };
@@ -46,15 +45,15 @@ const IDScreen = ({ navigation }) => {
   };
 
   const handleSubmit = async () => {
-    if (!clientId.trim() || !visitId.trim()) {
+    if (!visitId.trim()) {
       Alert.alert('Error', 'Please enter valid IDs.');
       return;
     }
 
-    await AsyncStorage.setItem('clientId', clientId);
+    // await AsyncStorage.setItem('clientId', clientId);
     await AsyncStorage.setItem('visitId', visitId);
     await AsyncStorage.setItem('subjectId', subjectId);
-    Alert.alert('Info Saved', `Client ID: ${clientId} and Visit ID: ${visitId} saved.`, [
+    Alert.alert('Info Saved', ` Visit ID: ${visitId} saved.`, [
       { text: "OK", onPress: () => navigation.navigate('Home') }
     ]);
   };
@@ -69,13 +68,13 @@ const IDScreen = ({ navigation }) => {
         value={subjectId}
         onChangeText={setSubjectId}
       />
-        <TextInput
+        {/* <TextInput
           style={styles.input}
           placeholder="Enter Patient ID"
           value={clientId}
           onChangeText={handleClientIdChange}
         />
-        {clientIdError && <Text style={styles.errorText}>Only numbers are allowed</Text>}   
+        {clientIdError && <Text style={styles.errorText}>Only numbers are allowed</Text>}    */}
         <TextInput
           style={styles.input}
           placeholder="Enter Visit ID"
@@ -90,6 +89,9 @@ const IDScreen = ({ navigation }) => {
     </View>
   );
 };
+
+
+
 
 const styles = StyleSheet.create({
 

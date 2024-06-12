@@ -15,7 +15,7 @@ const TecQuestionList = ({ questionnaireNumber, qs, desc, goHome, finalstyles })
         let initialData = [];
     
         for (let i = 0; i < size; i++) {
-            if (i >= 28 && i <= 38) {
+            if (i >= 28) {
                 initialData.push("empty");
             } else {
                 initialData.push(null);
@@ -39,7 +39,7 @@ const TecQuestionList = ({ questionnaireNumber, qs, desc, goHome, finalstyles })
         return initialData;
     };
     
-    const [data, changeData] = useState(createInitialData(39));
+    const [data, changeData] = useState(createInitialData(46));
     const [flag, changeFlag] = useState(createInitialFlag(32));
     // const data1 = [1,2,3,4,5];
 

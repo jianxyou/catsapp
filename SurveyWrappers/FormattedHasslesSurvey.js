@@ -8,7 +8,7 @@ import returnDisplayName from '../helpers/returnDisplayName';
 const styles = questionListStyle;
 
 const FormattedHasslesSurvey = ({questionnaireNumber, listofqs, data, goHome}) => {
-
+    console.log(data);
     const desc=(
         <View>
         <View style={styles.titlecontainer}>

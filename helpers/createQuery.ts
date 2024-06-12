@@ -40,9 +40,9 @@ async function createQuery (questionnaireNumber : number, data : Array<any>, val
         //     myarray2[i-55] = data[i];
         // } 
 
-        query = query + "INSERT INTO " + tableName1 + " " + columnsString1  + " VALUES " + "( " + storedClientId + "," + storedVisitId + "," + queryZipper_insert(questionnaireNumber,data,0) + " )" + ";";
+        query = query + "INSERT INTO " + tableName1 + " " + columnsString1  + " VALUES " + "( " + storedClientId + "," + storedVisitId + "," + queryZipper_insert(questionnaireNumber,data) + " )" + ";";
 
-        query = query + "INSERT INTO " + tableName2 + " " + columnsString2  + " VALUES " + "( " + storedClientId + "," + storedVisitId + "," + queryZipper_insert(questionnaireNumber,data,1) + " )" + ";";
+        query = query + "INSERT INTO " + tableName2 + " " + columnsString2  + " VALUES " + "( " + storedClientId + "," + storedVisitId + "," + queryZipper_insert(questionnaireNumber,data) + " )" + ";";
 
         return query;
     } 

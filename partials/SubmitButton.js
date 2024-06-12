@@ -1,16 +1,17 @@
-import React, { useRef, useContext } from 'react';
+import React, { useRef, useContext,useState } from 'react';
 import { Pressable, Text, View, Alert, ScrollView } from 'react-native';
 import CameraRoll from '@react-native-community/cameraroll';
 import * as FileSystem from 'expo-file-system';
 import { captureRef } from 'react-native-view-shot';
+
 
 import { ParticipantContext } from '../context and async storage/ParticipantContext';
 import fileWrite from '../helpers/fileWriter';
 import createQuery from '../helpers/createQuery';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import buttonStyle from '../styles/partials styles/buttonStyle';
-import returnInternalName from '../helpers/returnInternalName';
-import { FadeInLeft } from 'react-native-reanimated';
+import { getAllImages, createPdfFromImages, savePdfToFileApp } from './pdfUtils';
+
 
 const styles = buttonStyle;
 
@@ -18,6 +19,7 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
 
     const {val, setVal} = useContext(ParticipantContext);
 
+    const [isLoading, setIsLoading] = useState(false);
     async function saveImageToAsyncStorage(uri) {
         try {
             // 从原始 URI 读取图像为 Base64
@@ -38,7 +40,7 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
         }
     }
 
-    
+
     const storeData = async (data) => {
         try {
             let query = await createQuery(questionnaireNumber, data, val);
@@ -74,8 +76,9 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
 
 
     const handleSubmit = async () => {
+        if (isLoading) return; // Prevent multiple submissions
+        setIsLoading(true);
         try {
-
             let containsNull;
             if (dataForFlag){
                 containsNull = dataForFlag.includes(null);
@@ -103,9 +106,17 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
 
             // 复制图片并获取新路径
             //let myuri = await copyImage(uri);
+
+            const base64Images = await getAllImages();
+            const pdfPath = await createPdfFromImages(base64Images);
+            if (pdfPath) {
+                await savePdfToFileApp(`file://${pdfPath}`);
+            }
         
             goHome();
-            } else {
+            } 
+            
+            else {
                 // 找出 "null" 值的索引
                 let nullIndices;
                 if (dataForFlag){
@@ -149,6 +160,10 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
         } catch (error) {
             Alert.alert('Error', 'An error occurred while capturing and saving the table.');
             console.error(error);
+        }
+
+        finally {
+            setIsLoading(false);
         }
     };
     
