@@ -10,32 +10,29 @@ const SASSCreen = ({navigation}) => {
     const styles = SIASquestionliststyle;
     const styles2 = StyleSheet.create({
         stickyHeader: {
-            // 添加您的样式，例如背景色，字体样式等
+            // Ajouter vos styles, par exemple couleur de fond, style de police, etc.
             backgroundColor: 'white',
             padding: 10,
-            // 确保它在顶部
+            // Assurez-vous qu'il est en haut
             zIndex: 1000
         },
 
         textLarge: {
-            fontSize: 20, // 这里的数值可以根据你的需要进行调整
+            fontSize: 20, // Vous pouvez ajuster cette valeur selon vos besoins
             paddingLeft: 350
           },
     });
 
-    
-
-
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
-        <Text style={styles2.textLarge}>None or little of the time    Some of the time    Good part of the time    Most or all of the time</Text>
+        <Text style={styles2.textLarge}>Jamais ou peu souvent    Parfois    Une bonne partie du temps      La plupart ou tout le temps</Text>
         </View>
     );
     
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
-            For each question, please check the box that indicates the degree to which you feel the statement is characteristic or true of you.
+            Pour chaque question, veuillez cocher la case qui indique dans quelle mesure vous estimez que l'affirmation est caractéristique ou vraie pour vous.
             </Text>
         </View>
     );
@@ -47,43 +44,37 @@ const SASSCreen = ({navigation}) => {
             questionnaireNumber={13}
             desc={desc}
             scale={["", "", "", ""]}
-            values={["None OR little of the time", "Some of the time", "Good part of the time", "Most OR all of the time"]}
+            values={["Jamais ou peu souvent", "Parfois", "Une bonne partie du temps", "La plupart ou tout le temps"]}
             goHome={() => navigation.navigate('ParticipantScreen')}
             buttonstyle={SASRadioStyles}
             liststyle={SASQuestionListStyle}
             questionstyle={SIASStyle}
 
             qs={[
-                "I feel more nervous and anxious then usual",
-                "I feel afraid for no reason at all",
-                "I get upset easily or feel panicky",
-                "I feel like I’m falling apart and going to pieces",
-                "I feel that everything is all right and nothing bad will happen",
-                "My arms and legs shake and tremble",
-                "I am bothered by headaches, neck and back pains",
-                "I feel weak and get tired easily",
-                "I feel calm and can sit still easily",
-                "I can feel my heart beating fast",
-                "I am bothered by dizzy spells",
-                "I have fainting spells or feel like fainting",
-                "I can breathe in and out easily",
-                "I get feelings of numbness and tingling in my fingers, toes",
-                "I am bothered by stomach aches or indigestion",
-                "I have to empty my bladder often",
-                "My hands are usually dry and warm",
-                "My face gets hot and blushes",
-                "I fall asleep easily and get a good night’s rest",
-                "I have nightmares",
-                
+                "Je me sens plus nerveux et anxieux que d'habitude",
+                "J'ai peur sans raison",
+                "Je m'énerve facilement ou je panique",
+                "Je sens que je m'effondre et que je vais en morceaux",
+                "Je sens que tout va bien et que rien de mal ne va se passer",
+                "Mes bras et mes jambes tremblent et tremblent",
+                "J'ai des maux de tête, des douleurs au cou et au dos",
+                "Je me sens faible et je me fatigue facilement",
+                "Je me sens calme et je peux m'asseoir tranquillement",
+                "Je peux sentir mon cœur battre vite",
+                "Je suis dérangé par des étourdissements",
+                "J'ai des évanouissements ou je sens que je vais m'évanouir",
+                "Je peux respirer facilement",
+                "J'ai des sensations d'engourdissement et de picotements dans les doigts, les orteils",
+                "Je suis dérangé par des maux d'estomac ou une indigestion",
+                "Je dois souvent vider ma vessie",
+                "Mes mains sont généralement sèches et chaudes",
+                "Mon visage devient chaud et rougit",
+                "Je m'endors facilement et je passe une bonne nuit de sommeil",
+                "Je fais des cauchemars",
             ]}
-
         />
         </ScrollView>
       );
-      
-
-
-       
 }
- 
+
 export default SASSCreen;

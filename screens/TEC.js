@@ -1,123 +1,118 @@
-import {StyleSheet, ScrollView, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
 import TecQuestionList from "../surveytypes/TecQuestionList";
 
 import textstyles from '../styles/textstyles';
 import questionListStyle from "../styles/question list styles/questionListStyle";
-import TLFBQuestion from "../surveytypes/TecQuestionList";
 
-const TecScreen = ({navigation}) => {
+const TecScreen = ({ navigation }) => {
 
     const styles2 = StyleSheet.create({
         stickyHeader: {
-            // 添加您的样式，例如背景色，字体样式等
+            // Ajouter vos styles, par exemple couleur de fond, style de police, etc.
             backgroundColor: 'white',
-            // 确保它在顶部
+            // Assurez-vous qu'il est en haut
             fontsize: 300
         },
 
         textLarge: {
             backgroundColor: 'white',
             paddingLeft: 500,
-            fontSize: 33, // 这里的数值可以根据你的需要进行调整
-          },
+            fontSize: 29, // Vous pouvez ajuster cette valeur selon vos besoins
+        },
 
         textLittle: {
             backgroundColor: 'white',
             paddingLeft: 500,
-            fontSize: 20, // 这里的数值可以根据你的需要进行调整
-          }
+            fontSize: 20, // Vous pouvez ajuster cette valeur selon vos besoins
+        }
     });
 
     const StickyHeader = () => (
-        <View >
-        <Text style={styles2.textLarge}>           Age              level of impact      <Text style={styles2.textLittle}>level of support(0 - 2) </Text> </Text>
+        <View>
+            <Text style={styles2.textLarge}>     Âge                niveau d'impact            <Text style={styles2.textLittle}>niveau de soutien (0 - 2) </Text> </Text>
         </View>
     );
 
-    return ( 
-
-
+    return (
         <ScrollView stickyHeaderIndices={[0]}>
             <StickyHeader />
-        <TecQuestionList
-        questionnaireNumber={21}
-        qs={[
-            "Having to look after your parents and/or brothers and sisters when you were a child.",
-            "Family problems (e.g., parent with alcohol or psychiatric problems, poverty).",
-            "Loss of a family member (brother, sister, parent) when you were a CHILD.",
-            "Loss of a family member (child of partner) when you were an ADULT.",
-            "Serious bodily injury (e.g., loss of a limb, mutilation, burns).",
-            "Threat to life from illness, an operation, or an accident.",
-            "Divorce of your parents",
-            "Your own divorce",
-            "Threata to life from another person (e.g., during a crime).",
-            "Intense pain (e.g., from an injury or surgery).",
-            "War-time experiences (e.g., imprisonment, loss of relatives, deprivation, injury).",
-            "Second generation war-victim (war-time experiences of parents or close relatives)",
-            "Witnessing others udergo trauma.",
-            "Emotional neglect (e.g., being left alone, insufficient affection) by your parents, brothers or sisters.",
-            "Emotional neglect by more distant members of your family (e.g., uncles, aunts, nephews, nieces, grandparents",
-            "Emotional neglect by non-family members (e.g., neighbors, friends, step-parents, teachers).",
-            "Emotional abuse (e.g., being belittled, teased, called names, threatened verbally, or unjustly punished) by your parents, brothers or sisters.",
-            "Emotional abuse by more distant members of your family.",
-            "Emotional abuse by non-family members.",
-            "Physical abuse (e.g., being hit, tortured, or wounded) by your parents, brothers, or sisters.",
-            "Physicaal abuse by more distant members of your family",
-            "Physical abuse by non-family members.",
-            "Bizarre punishment",
-            "Sexual harassment (acts of a sexual nature that DO NOT involve physical contact) by your parents, brothers, or sisters.",
-            "Sexual harassment by more distant members of your family.",
-            "Sexual harassment by non-family members.",
-            "Sexual abuse (unwanted sexual acts involving physical contact) by your parents, brothers, or sisters.",
-            "Sexual abuse by more distant members of your family.",
-            "Sexual abuse by non-family members.",
-        ]} 
-        desc={
-            <View style={questionListStyle.desc}>
-                <Text style={textstyles.desctext}>
-                {"People may experience a variety of traumatic experiences during their life. We would like to know three things: 1) if you have experienced any of the following 29 events, 2) how old you were when they happened, and 3) how much of an impact these experiences had upon you."}
-                {"\n\n"}
-                {"A) In the "}<Text style={textstyles.underline}>first column</Text>{" (i.e., Did this happen to you?), indicate whether you had each of the 29 experiences by circling YES or NO."}
-                {"\n\n"}
-                {"B) For each experience where you circled YES, list "}<Text style={textstyles.underline}>in the second column</Text>{" (i.e., Age) your age when it happened"}
-                {"\n"}
-                {"If it happened more than once, list ALL of the ages when thiss happened to you."}
-                {"\n"}
-                {"If it happened for years (e.g., age 7-12), list the age range (i.e., age 7-12)."}
-                {"\n\n"}
-                {"C) In the "}<Text style={textstyles.underline}>second column</Text>{" (i.e., How much impact did this have on you?), indicate the IMPACT (by circling the appropriate number): 1,2,3,4, or 5."}
-                {"\n\n"}
-                {"1 = none"}
-                {"\n"}
-                {"2 = a little bit"}
-                {"\n"}
-                {"3 = a moderate amount"}
-                {"\n"}
-                {"4 = quite a bit"}
-                {"\n"}
-                {"5 = an extreme amount"}   
-                {"\n"}
-                {"\n"}
-
-                {"D) In the "}<Text style={textstyles.underline}>final column</Text>{" (i.e., How much impact did this have on you?), indicate how much support did you receive afterwards"} 
-                {"\n\n"}
-                {"0 = none"}
-                {"\n"}
-                {"1 = some"}
-                {"\n"}
-                {"2 = good"}
-                {"\n"}
-                Thank you for your cooperation.
-                </Text>
-            </View>
-        } 
-        goHome={() => navigation.navigate('ParticipantScreen')} 
-        finalstyles={questionListStyle}
-        />
-
+            <TecQuestionList
+                questionnaireNumber={21}
+                qs={[
+                    "Devoir s'occuper de vos parents et/ou frères et sœurs quand vous étiez enfant.",
+                    "Problèmes familiaux (par exemple, parent avec des problèmes d'alcool ou psychiatriques, pauvreté).",
+                    "Perte d'un membre de la famille (frère, sœur, parent) quand vous étiez ENFANT.",
+                    "Perte d'un membre de la famille (enfant du partenaire) quand vous étiez ADULTE.",
+                    "Blessure corporelle grave (par exemple, perte d'un membre, mutilation, brûlures).",
+                    "Menace pour la vie due à une maladie, une opération ou un accident.",
+                    "Divorce de vos parents",
+                    "Votre propre divorce",
+                    "Menace pour la vie de la part d'une autre personne (par exemple, lors d'un crime).",
+                    "Douleur intense (par exemple, due à une blessure ou à une opération).",
+                    "Expériences de guerre (par exemple, emprisonnement, perte de proches, privation, blessure).",
+                    "Victime de guerre de deuxième génération (expériences de guerre des parents ou proches)",
+                    "Témoigner d'autres subir des traumatismes.",
+                    "Négligence émotionnelle (par exemple, être laissé seul, affection insuffisante) par vos parents, frères ou sœurs.",
+                    "Négligence émotionnelle par des membres de la famille plus éloignés (par exemple, oncles, tantes, neveux, nièces, grands-parents).",
+                    "Négligence émotionnelle par des non-membres de la famille (par exemple, voisins, amis, beaux-parents, enseignants).",
+                    "Abus émotionnel (par exemple, être rabaissé, taquiné, insulté, menacé verbalement ou injustement puni) par vos parents, frères ou sœurs.",
+                    "Abus émotionnel par des membres de la famille plus éloignés.",
+                    "Abus émotionnel par des non-membres de la famille.",
+                    "Abus physique (par exemple, être frappé, torturé ou blessé) par vos parents, frères ou sœurs.",
+                    "Abus physique par des membres de la famille plus éloignés.",
+                    "Abus physique par des non-membres de la famille.",
+                    "Punition bizarre",
+                    "Harcèlement sexuel (actes de nature sexuelle qui n'impliquent PAS de contact physique) par vos parents, frères ou sœurs.",
+                    "Harcèlement sexuel par des membres de la famille plus éloignés.",
+                    "Harcèlement sexuel par des non-membres de la famille.",
+                    "Abus sexuel (actes sexuels non désirés impliquant un contact physique) par vos parents, frères ou sœurs.",
+                    "Abus sexuel par des membres de la famille plus éloignés.",
+                    "Abus sexuel par des non-membres de la famille.",
+                ]}
+                desc={
+                    <View style={questionListStyle.desc}>
+                        <Text style={textstyles.desctext}>
+                            {"Les gens peuvent vivre une variété d'expériences traumatisantes au cours de leur vie. Nous aimerions savoir trois choses : 1) si vous avez vécu l'un des 29 événements suivants, 2) quel âge vous aviez lorsque cela s'est produit, et 3) quel impact ces expériences ont eu sur vous."}
+                            {"\n\n"}
+                            {"A) Dans la "}<Text style={textstyles.underline}>première colonne</Text>{" (c'est-à-dire, cela vous est-il arrivé ?), indiquez si vous avez vécu chacune des 29 expériences en entourant OUI ou NON."}
+                            {"\n\n"}
+                            {"B) Pour chaque expérience où vous avez entouré OUI, indiquez "}<Text style={textstyles.underline}>dans la deuxième colonne</Text>{" (c'est-à-dire, Âge) votre âge lorsque cela s'est produit."}
+                            {"\n"}
+                            {"Si cela s'est produit plus d'une fois, indiquez TOUS les âges où cela s'est produit."}
+                            {"\n"}
+                            {"Si cela s'est produit pendant des années (par exemple, de 7 à 12 ans), indiquez la plage d'âges (c'est-à-dire de 7 à 12 ans)."}
+                            {"\n\n"}
+                            {"C) Dans la "}<Text style={textstyles.underline}>deuxième colonne</Text>{" (c'est-à-dire, Quel impact cela a-t-il eu sur vous ?), indiquez l'IMPACT (en entourant le numéro approprié) : 1, 2, 3, 4 ou 5."}
+                            {"\n\n"}
+                            {"1 = aucun"}
+                            {"\n"}
+                            {"2 = un peu"}
+                            {"\n"}
+                            {"3 = modéré"}
+                            {"\n"}
+                            {"4 = assez"}
+                            {"\n"}
+                            {"5 = beaucoup"}   
+                            {"\n"}
+                            {"\n"}
+                            {"D) Dans la "}<Text style={textstyles.underline}>dernière colonne</Text>{" (c'est-à-dire, Quel impact cela a-t-il eu sur vous ?), indiquez combien de soutien vous avez reçu par la suite."} 
+                            {"\n\n"}
+                            {"0 = aucun"}
+                            {"\n"}
+                            {"1 = un peu"}
+                            {"\n"}
+                            {"2 = bon"}
+                            {"\n"}
+                            Merci pour votre coopération.
+                        </Text>
+                    </View>
+                }
+                goHome={() => navigation.navigate('ParticipantScreen')}
+                finalstyles={questionListStyle}
+            />
         </ScrollView>
-     );
+    );
 }
- 
+
 export default TecScreen;

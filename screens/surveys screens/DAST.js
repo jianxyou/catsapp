@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Text} from 'react-native'
+import { View, Text } from 'react-native'
 
 import SIASQuestionList from '../../surveytypes/SIASQuestionList';
 import dastRadioStyles from '../../styles/input styles/dastRadioStyles';
@@ -7,17 +7,15 @@ import dastQuestionListStyle from '../../styles/question list styles/dastQuestio
 import DASTStyle from '../../styles/question styles/DASTStyle';
 import textstyles from '../../styles/textstyles';
 
-const DASTScrenn = ({navigation}) => {
+const DASTScrenn = ({ navigation }) => {
 
     const styles = dastQuestionListStyle;
 
     const desc = (
         <View style={styles.desc}>
-            <Text style={styles.desctext}><Text style={textstyles.makebold}>Directions</Text>
-            : The following questions concern information about your involvement with drugs. Drug abuse refers to (1) the use of prescribed or “over-the-counter” drugs in excess of the directions, and (2) any non-medical use of drugs. Consider the past year (12 months) and carefully read each statement. Then decide whether your answer is YES or NO and check the appropriate space. Please check 'No' if it's not applicable 
-
-            {"\n"}Please be sure to answer every question.
-            
+            <Text style={styles.desctext}>
+                <Text style={textstyles.makebold}>Instructions</Text>
+                : Les questions suivantes concernent des informations sur votre consommation de drogues. L'abus de drogues fait référence à (1) l'utilisation de médicaments prescrits ou "en vente libre" au-delà des indications, et (2) toute utilisation non médicale de drogues. Considérez la dernière année (12 mois) et lisez attentivement chaque déclaration. Ensuite, décidez si votre réponse est OUI ou NON et cochez l'espace approprié. Veuillez cocher 'Non' si cela ne s'applique pas.{"\n"}Veuillez vous assurer de répondre à chaque question.
             </Text>
         </View>
     );
@@ -25,47 +23,45 @@ const DASTScrenn = ({navigation}) => {
     return ( 
         <SIASQuestionList
             questionnaireNumber={17}
-            scale={["", "",]} 
-            values={["YES", "NO"]} 
+            scale={["", ""]} 
+            values={["OUI", "NON"]} 
             goHome={() => navigation.navigate('ParticipantScreen')}
             desc={desc}
             buttonstyle={dastRadioStyles}
             liststyle={dastQuestionListStyle}
             questionstyle={DASTStyle}
-
             qs={[
-                "Have you used drugs other than those required for medical reasons?",
-                "Have you abused prescription drugs? ",
-                "Do you abuse more than one drug at a time?",
-                "Can you get through the week without using drugs (other than those required  for medical reasons)? ",
-                "Are you always able to stop using drugs when you want to?",
-                "Do you abuse drugs on a continuous basis?",
-                "Do you try to limit your drug use to certain situations?",
-                'Have you had "blackouts" or "flashbacks" as a result of drug use?',
-                "Do you ever feel bad about your drug abuse?",
-                "Does your spouse (or parents) ever complain about your involvement with drugs?",
-                "Do your friends or relatives know or suspect you abuse drugs?",
-                "Has drug abuse ever created problems between you and your spouse?",
-                "Has any family member ever sought help for problems related to your drug use?",
-                "Have you ever lost friends because of your use of drugs?",
-                "Have you ever neglected your family or missed work because of your use of drugs?",
-                "Have you ever been in trouble at work because of drug abuse?",
-                "Have you ever lost a job because of drug abuse?",
-                "Have you gotten into fights when under the influence of drugs?",
-                "Have you ever been arrested because of unusual behavior while under the influence of drugs?",
-                "Have you ever been arrested for driving while under the influence of drugs?",
-                "Have you engaged in illegal activities in order to obtain drugs?",
-                "Have you ever been arrested for possession of illegal drugs?",
-                "Have you ever experienced withdrawal symptoms as a result of heavy drug intake?",
-                "Have you had medical problems as a result of your drug use (e.g., memory loss, hepatitis, convulsions, or bleeding)?  ",
-                "Have you ever gone to anyone for help for a drug problem?",
-                "Have you ever been in hospital for medical problems related to your drug use?",
-                "Have you ever been involved in a treatment program specifically related to drug use?",
-                "Have you been treated as an outpatient for problems related to drug abuse?",
+                "Avez-vous utilisé des drogues autres que celles nécessaires pour des raisons médicales?",
+                "Avez-vous abusé de médicaments sur ordonnance?",
+                "Abusez-vous de plus d'une drogue à la fois?",
+                "Pouvez-vous passer la semaine sans utiliser de drogues (autres que celles nécessaires pour des raisons médicales)?",
+                "Pouvez-vous toujours arrêter d'utiliser des drogues quand vous le souhaitez?",
+                "Abusez-vous de drogues de manière continue?",
+                "Essayez-vous de limiter votre consommation de drogues à certaines situations?",
+                "Avez-vous eu des 'blackouts' ou des 'flashbacks' à cause de la drogue?",
+                "Vous sentez-vous parfois mal à propos de votre consommation de drogues?",
+                "Votre conjoint (ou vos parents) se plaint-il jamais de votre implication avec la drogue?",
+                "Vos amis ou parents savent-ils ou soupçonnent-ils que vous abusez de drogues?",
+                "L'abus de drogues a-t-il déjà créé des problèmes entre vous et votre conjoint?",
+                "Un membre de votre famille a-t-il déjà cherché de l'aide pour des problèmes liés à votre consommation de drogues?",
+                "Avez-vous déjà perdu des amis à cause de votre consommation de drogues?",
+                "Avez-vous déjà négligé votre famille ou manqué le travail à cause de votre consommation de drogues?",
+                "Avez-vous déjà eu des problèmes au travail à cause de l'abus de drogues?",
+                "Avez-vous déjà perdu un emploi à cause de l'abus de drogues?",
+                "Vous êtes-vous déjà battu sous l'influence de drogues?",
+                "Avez-vous déjà été arrêté à cause d'un comportement inhabituel sous l'influence de drogues?",
+                "Avez-vous déjà été arrêté pour avoir conduit sous l'influence de drogues?",
+                "Avez-vous participé à des activités illégales pour obtenir des drogues?",
+                "Avez-vous déjà été arrêté pour possession de drogues illégales?",
+                "Avez-vous déjà ressenti des symptômes de sevrage à la suite d'une consommation excessive de drogues?",
+                "Avez-vous eu des problèmes médicaux à cause de votre consommation de drogues (par exemple, perte de mémoire, hépatite, convulsions ou saignements)?",
+                "Avez-vous déjà demandé de l'aide pour un problème de drogue?",
+                "Avez-vous déjà été hospitalisé pour des problèmes médicaux liés à votre consommation de drogues?",
+                "Avez-vous déjà participé à un programme de traitement spécifiquement lié à la consommation de drogues?",
+                "Avez-vous été traité en ambulatoire pour des problèmes liés à l'abus de drogues?",
             ]}
-
         />
-     );
+    );
 }
- 
+
 export default DASTScrenn;

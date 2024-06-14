@@ -1,106 +1,93 @@
 import * as React from 'react';
-import { ScrollView,View, Text, StyleSheet} from 'react-native'
+import { ScrollView, View, Text, StyleSheet } from 'react-native';
 
 import SIASQuestionList_SAQ from '../../surveytypes/SIASQuestionList_SAQ';
 import SIASRadioStyles from '../../styles/input styles/SIASRadioStyles';
 import SIASquestionliststyle from '../../styles/question list styles/SIASquestionliststyle';
 import SIASStyle from '../../styles/question styles/SIASStyle';
 
- SAQScreen = ({navigation}) => {
+const SAQScreen = ({navigation}) => {
 
     const styles = SIASquestionliststyle;
 
-
-
-
-
-
-
     const StickyHeader = () => (
         <View style={banner_styles.stickyHeader}>
-        <Text style = {banner_styles.textLarge}>Not at all      Mildly      Moderately     Very    Extremely  </Text>
+            <Text style={banner_styles.textLarge}>Pas du tout      Légèrement      Modérément     Très    Extrêmement</Text>
         </View>
     );
-
-    
-
 
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
                 <Text>
-                    For questions 1 to 20, please answer based on how you feel <Text style={{fontWeight: 'bold'}}>right now, at this moment</Text>. 
+                    Pour les questions 1 à 20, veuillez répondre en fonction de ce que vous ressentez <Text style={{fontWeight: 'bold'}}>en ce moment, à cet instant</Text>.
                 </Text>
-                <Text>{"\n"}</Text> {/* 这里添加换行 */}
+                <Text>{"\n"}</Text> {/* Ajoute une ligne vide */}
             </Text>
         </View>
     );
+
     return (  
         <ScrollView stickyHeaderIndices={[0]}>
-            
             <StickyHeader />
-        <SIASQuestionList_SAQ  
-            questionnaireNumber={6}
-            scale={["", "", "", "", ""]} 
-            values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
-            goHome={() => navigation.navigate('MriScreen')}
-            desc={desc}
-            buttonstyle={SIASRadioStyles}
-            liststyle={SIASquestionliststyle}
-            questionstyle={SIASStyle}
-            qs={[
-                "I feel calm",
-                "I feel secure",
-                "I am tense",
-                "I feel strained",
-                "I feel at ease",
-                "I feel upset",
-                "I am presently worrying over possible misfortunes",
-                "I feel satisfied",
-                "I feel frightened",
-                "I feel comfortable",
-                "I feel self-confident",
-                "I feel nervous",
-                "I feel jittery",
-                "I feel indecisive",
-                "I am relaxed",
-                "I feel content",
-                "I am worried",
-                "I feel confused",
-                "I feel steady",
-                "I feel pleasant",
+            <SIASQuestionList_SAQ  
+                questionnaireNumber={6}
+                scale={["", "", "", "", ""]} 
+                values={["Pas du tout", "Légèrement", "Modérément", "Très","Extrêmement"]} 
+                goHome={() => navigation.navigate('MriScreen')}
+                desc={desc}
+                buttonstyle={SIASRadioStyles}
+                liststyle={SIASquestionliststyle}
+                questionstyle={SIASStyle}
+                qs={[
+                    "Je me sens calme",
+                    "Je me sens en sécurité",
+                    "Je suis tendu",
+                    "Je me sens stressé",
+                    "Je me sens à l'aise",
+                    "Je me sens contrarié",
+                    "Je m'inquiète actuellement des éventuels malheurs",
+                    "Je me sens satisfait",
+                    "Je me sens effrayé",
+                    "Je me sens confortable",
+                    "Je me sens sûr de moi",
+                    "Je me sens nerveux",
+                    "Je me sens agité",
+                    "Je me sens indécis",
+                    "Je suis détendu",
+                    "Je me sens content",
+                    "Je suis inquiet",
+                    "Je me sens confus",
+                    "Je me sens stable",
+                    "Je me sens agréable",
 
-                "I feel pleasant",
-                "I feel nervous and restless",
-                "I feel satisfied with myself",
-                "I wish i could be as happy as others seem to be",
-                "I feel like a failure",
-                "I feel rested",
-                "I am \"calm, cool, and collected\"",
-                "I feel that difficulties are piling up so that i cannot overcome them",
-                "I worry too much over something that really doesn't matterh",
-                "I am happy",
-                "I have disturbing thoughts",
-                "I lack self-confidence",
-                "I feel secure",
-                "I make decisions easily",
-                "I feel inadequate",
-                "I am content",
-                "Some unimportant thought runs through my mind and bothers me",
-                "I take disappointments so keenly that i can't put them out of my mind",
-                "I am a steady person",
-                "I get in a state of tension or turmoil as i think over my recent concerns and interests"
-
-
-            ]}
-        />
-
+                    "Je me sens agréable",
+                    "Je me sens nerveux et agité",
+                    "Je suis satisfait de moi-même",
+                    "Je souhaite être aussi heureux que les autres semblent l'être",
+                    "Je me sens comme un échec",
+                    "Je me sens reposé",
+                    "Je suis \"calme, cool et posé\"",
+                    "Je sens que les difficultés s'accumulent et que je ne peux pas les surmonter",
+                    "Je m'inquiète trop pour quelque chose qui ne compte vraiment pas",
+                    "Je suis heureux",
+                    "J'ai des pensées perturbantes",
+                    "Je manque de confiance en moi",
+                    "Je me sens en sécurité",
+                    "Je prends des décisions facilement",
+                    "Je me sens inadéquat",
+                    "Je suis content",
+                    "Une pensée sans importance traverse mon esprit et me dérange",
+                    "Je prends les déceptions si à cœur que je ne peux pas les oublier",
+                    "Je suis une personne stable",
+                    "Je me mets dans un état de tension ou de tourment en réfléchissant à mes préoccupations et intérêts récents"
+                ]}
+            />
         </ScrollView>
     );
 }
- 
-export default SAQScreen;
 
+export default SAQScreen;
 
 const banner_styles = StyleSheet.create({
     submit: {
@@ -113,20 +100,18 @@ const banner_styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'flex-end',
         flexDirection: 'column',
-
     },
 
     stickyHeader: {
-        // 添加您的样式，例如背景色，字体样式等
+        // Ajouter vos styles, par exemple couleur de fond, style de police, etc.
         backgroundColor: 'white',
         padding: 10,
-        // 确保它在顶部
+        // Assurez-vous qu'il est en haut
         zIndex: 1000
     },
 
     textLarge: {
-        fontSize: 35, // 这里的数值可以根据你的需要进行调整
+        fontSize: 35, // Vous pouvez ajuster cette valeur selon vos besoins
         paddingLeft: 350
-      },
+    },
 })
-

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView,StyleSheet, View, Text } from 'react-native'
+import { ScrollView, StyleSheet, View, Text } from 'react-native'
 
 import SIASQuestionList from '../../surveytypes/SIASQuestionList';
 import SIASRadioStyles from '../../styles/input styles/SIASRadioStyles';
@@ -12,22 +12,22 @@ const SIASScreen = ({navigation}) => {
 
     const styles2 = StyleSheet.create({
         stickyHeader: {
-            // 添加您的样式，例如背景色，字体样式等
+            // Ajouter vos styles, par exemple couleur de fond, style de police, etc.
             backgroundColor: 'white',
             padding: 10,
-            // 确保它在顶部
+            // Assurez-vous qu'il est en haut
             zIndex: 1000
         },
         // headerItem: {
-        //     // 为每个 header item 设置样式
-        //     flex: 1, // 每个子视图都占据等量的空间
-        //     alignItems: 'center', // 水平居中
-        //     justifyContent: 'center', // 垂直居中
-        //     padding: 5, // 适当的内边距
+        //     // Stylez chaque élément d'en-tête
+        //     flex: 1, // Chaque sous-vue prend un espace égal
+        //     alignItems: 'center', // Centre horizontalement
+        //     justifyContent: 'center', // Centre verticalement
+        //     padding: 5, // Marge intérieure appropriée
         // },
 
         textLarge: {
-            fontSize: 35, // 这里的数值可以根据你的需要进行调整
+            fontSize: 28, // Vous pouvez ajuster cette valeur selon vos besoins
             paddingLeft: 350
           },
     });
@@ -36,14 +36,14 @@ const SIASScreen = ({navigation}) => {
 
 
         <View style={styles2.stickyHeader}>
-        <Text style = {styles2.textLarge}>Not at all      Slightly     Moderately    Very    Extremely</Text>
+        <Text style = {styles2.textLarge}>Pas du tout     Légèrement    Modérément    Très    Extrêmement</Text>
         </View>
     );
 
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
-            For each question, please check the box that indicates the degree to which you feel the statement is characteristic or true of you.
+            Pour chaque question, veuillez cocher la case qui indique dans quelle mesure vous estimez que l'affirmation est caractéristique ou vraie pour vous.
             </Text>
         </View>
     );
@@ -53,42 +53,38 @@ const SIASScreen = ({navigation}) => {
         <SIASQuestionList
             questionnaireNumber={12}
             scale={["", "", "", "", ""]} 
-            values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
+            values={["Pas du tout", "Légèrement", "Modérément", "Très","Extrêmement"]} 
             goHome={() => navigation.navigate('ParticipantScreen')}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}
             questionstyle={SIASStyle}
             qs={[
-                "I get nervous if I have to speak with someone in authority (teacher, boss, etc.)",  
-                "I have difficulty making eye contact with others",  
-                "I become tense if have to talk about myself or my feelings",  
-                "I find difficulty mixing comfortably with the people I work with",  
-                "I find it easy to make friends of my own age",  
-                "I tense up if I meet an acquaintance on the street",  
-                "When mixing socially, I am uncomfortable",  
-                "I feel tense if I am alone with just one person",  
-                "I am at ease meeting people at parties, etc.",  
-                "I have difficulty talking with other people",  
-                "I find it easy to think of things to talk about",  
-                "I worry about expressing myself in case I appear awkward",  
-                "I find it difficult to disagree with another’s point of view",  
-                "I have difficulty talking to an attractive person of the opposite sex",  
-                "I find myself worrying that I won’t know what to say in social situations",  
-                "I am nervous mixing with people I don’t know well",  
-                "I feel I’ll say something embarrassing when talking",  
-                "When mixing in a group, I find myself worrying I will be ignored",  
-                "I am tense mixing in a group",  
-                "I am unsure whether to greet someone I know only slightly",  
+                "Je deviens nerveux si je dois parler avec quelqu'un d'autorité (enseignant, patron, etc.)",  
+                "J'ai du mal à établir un contact visuel avec les autres",  
+                "Je deviens tendu si je dois parler de moi ou de mes sentiments",  
+                "J'ai du mal à me mélanger confortablement avec les gens avec qui je travaille",  
+                "Je trouve facile de me faire des amis de mon âge",  
+                "Je me tends si je rencontre une connaissance dans la rue",  
+                "Quand je me mélange socialement, je suis mal à l'aise",  
+                "Je me sens tendu si je suis seul avec une seule personne",  
+                "Je suis à l'aise pour rencontrer des gens lors de fêtes, etc.",  
+                "J'ai du mal à parler avec d'autres personnes",  
+                "Je trouve facile de penser à des choses à dire",  
+                "Je crains de m'exprimer au cas où j'apparais maladroit",  
+                "J'ai du mal à ne pas être d'accord avec le point de vue d'un autre",  
+                "J'ai du mal à parler à une personne attirante du sexe opposé",  
+                "Je m'inquiète de ne pas savoir quoi dire dans des situations sociales",  
+                "Je suis nerveux en me mélangeant avec des gens que je ne connais pas bien",  
+                "Je pense que je vais dire quelque chose d'embarrassant en parlant",  
+                "Quand je suis dans un groupe, je m'inquiète d'être ignoré",  
+                "Je suis tendu en me mélangeant dans un groupe",  
+                "Je ne sais pas si je dois saluer quelqu'un que je connais à peine",  
             ]}
         />
         </ScrollView>
     );
 
-    
-     
 }
 
-
 export default SIASScreen;
-

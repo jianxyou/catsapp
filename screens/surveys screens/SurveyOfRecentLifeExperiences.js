@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView, StyleSheet,View, Text } from 'react-native'
+import { ScrollView, StyleSheet, View, Text } from 'react-native'
 
 import SIASQuestionList from '../../surveytypes/SIASQuestionList';
 import SIASRadioStyles from '../../styles/input styles/SIASRadioStyles';
@@ -11,98 +11,92 @@ const SoRLEScreen = ({navigation}) => {
     const styles = SIASquestionliststyle;
     const styles2 = StyleSheet.create({
         stickyHeader: {
-            // 添加您的样式，例如背景色，字体样式等
+            // Ajouter vos styles, par exemple couleur de fond, style de police, etc.
             backgroundColor: 'white',
             padding: 10,
-            // 确保它在顶部
+            // Assurez-vous qu'il est en haut
             zIndex: 1000
         },
 
         textLarge: {
-            fontSize: 35, // 这里的数值可以根据你的需要进行调整
+            fontSize: 28, // Vous pouvez ajuster cette valeur selon vos besoins
             paddingLeft: 330
-          },
+        },
     });
-
 
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
-        <Text style={styles2.textLarge}>not at all     only slightly   distinctly     very much</Text>
-        
+            <Text style={styles2.textLarge}>pas du tout     légèrement   distinctement     beaucoup</Text>
         </View>
     );
-
 
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
-            Following is a list of experiences which many people have some time or other. Please indicate 
-            for each experience how much it has been a part of your life over the past month.</Text>
+                Voici une liste d'expériences que beaucoup de gens vivent à un moment ou à un autre. Veuillez indiquer 
+                pour chaque expérience dans quelle mesure elle a fait partie de votre vie au cours du mois dernier.
+            </Text>
         </View>
     );
+
     return (  
         <ScrollView stickyHeaderIndices={[0]}>
             <StickyHeader />
-        <SIASQuestionList
-            questionnaireNumber={18}
-            scale={["", "", "", ""]} 
-            values={["not at all part of my life", "only slightly", "distinctly", "very much",]} 
-            goHome={() => navigation.navigate('ParticipantScreen')}
-            desc={desc}
-            buttonstyle={SIASRadioStyles}
-            liststyle={SIASquestionliststyle}
-            questionstyle={SIASStyle}
-
-            qs={[
-                "Disliking your daily activities",
-                "Disliking your work",                               
-                "Ethnic or racial conflict",
-                "Conflicts with in-laws or boyfriend's/girlfriend's family",
-                "Being let down or disappointed by friends",
-                "Conflicts with supervisor(s) at work",
-                "Social rejection",
-                "Too many things to do at once",
-                "Being taken for granted",
-                "Financial conflicts with family members",
-                "Having your trust betrayed by a friend",
-                "Having your contributions overlooked",
-                "Struggling to meet your own standards of performance and accomplishment",
-                "Being taken advantage of",
-                "Not enough leisure time",
-                "Cash flow difficulties",
-                "A lot of responsibilities",
-                "Dissatisfaction with work",
-                "Decisions about intimate relationship(s)",
-                "Not enough time to meet your obligations",
-                "Financial burdens",
-                "Lower evaluation of your work than you think you deserve",
-                "Experiencing high levels of noise",
-                "Lower evaluation of your work than you hoped for",
-                "Conflicts with family member(s)",
-                "Finding your work too demanding",
-                "Conflicts with friend(s)",
-                "Trying to secure loans",
-                "Getting 'ripped off' or cheated in the purchase of goods",
-                "Unwanted interruptions of your work",
-                "Social isolation",
-                "Being ignored",
-                "Dissatisfaction with your physical appearance",
-                "Unsatisfactory housing conditions",
-                "Finding work uninteresting",
-                "Failing to get money you expected",
-                "Gossip about someone you care about",                       
-                "Dissatisfaction with your physical fitness",
-                "Gossip about yourself",
-                "Difficulty dealing with modern technology (e.g. computers)",
-                "Hard work to look after and maintain home",
-            ]}
-        />
+            <SIASQuestionList
+                questionnaireNumber={18}
+                scale={["", "", "", ""]}
+                values={["pas du tout partie de ma vie", "légèrement", "distinctement", "beaucoup"]}
+                goHome={() => navigation.navigate('ParticipantScreen')}
+                desc={desc}
+                buttonstyle={SIASRadioStyles}
+                liststyle={SIASquestionliststyle}
+                questionstyle={SIASStyle}
+                qs={[
+                    "Ne pas aimer vos activités quotidiennes",
+                    "Ne pas aimer votre travail",
+                    "Conflits ethniques ou raciaux",
+                    "Conflits avec les beaux-parents ou la famille de votre petit(e) ami(e)",
+                    "Être déçu par des amis",
+                    "Conflits avec le(s) superviseur(s) au travail",
+                    "Rejet social",
+                    "Trop de choses à faire en même temps",
+                    "Être pris pour acquis",
+                    "Conflits financiers avec les membres de la famille",
+                    "Avoir votre confiance trahie par un ami",
+                    "Vos contributions sont ignorées",
+                    "Lutter pour répondre à vos propres normes de performance et d'accomplissement",
+                    "Être exploité",
+                    "Pas assez de temps libre",
+                    "Difficultés de trésorerie",
+                    "Beaucoup de responsabilités",
+                    "Insatisfaction au travail",
+                    "Décisions concernant les relations intimes",
+                    "Pas assez de temps pour respecter vos obligations",
+                    "Charges financières",
+                    "Évaluation de votre travail inférieure à ce que vous pensez mériter",
+                    "Expérience de niveaux de bruit élevés",
+                    "Évaluation de votre travail inférieure à ce que vous espériez",
+                    "Conflits avec les membres de la famille",
+                    "Trouver votre travail trop exigeant",
+                    "Conflits avec des amis",
+                    "Essayer d'obtenir des prêts",
+                    "Se faire 'arnaquer' ou tromper lors de l'achat de biens",
+                    "Interruptions indésirables de votre travail",
+                    "Isolement social",
+                    "Être ignoré",
+                    "Insatisfaction de votre apparence physique",
+                    "Conditions de logement insatisfaisantes",
+                    "Trouver le travail inintéressant",
+                    "Ne pas obtenir l'argent que vous attendiez",
+                    "Rumeurs sur quelqu'un que vous aimez",
+                    "Insatisfaction de votre condition physique",
+                    "Rumeurs sur vous",
+                    "Difficulté à gérer la technologie moderne (par exemple, les ordinateurs)",
+                    "Travail acharné pour entretenir et maintenir la maison",
+                ]}
+            />
         </ScrollView>
     );
 }
- 
+
 export default SoRLEScreen;
-
-
-
-

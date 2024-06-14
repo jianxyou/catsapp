@@ -13,16 +13,16 @@ const AuditScreen = ({navigation}) => {
         questionnaireNumber={19}
         scales={
             [
-                ["Never", "Monthly or less", "2 to 4 times a month", "2 to 3 time a week", "4 or more times a week"],
-                ["1 or 2", "3 or 4", "5 or 6", "7 to 9", "10 or more"],
-                ["Never", "Less than monthly", "Monthly", "Weekly", "Daily or almost daily"],
-                ["Never", "Less than monthly", "Monthly", "Weekly", "Daily or almost daily"],
-                ["Never", "Less than monthly", "Monthly", "Weekly", "Daily or almost daily"],
-                ["Never", "Less than monthly", "Monthly", "Weekly", "Daily or almost daily"],
-                ["Never", "Less than monthly", "Monthly", "Weekly", "Daily or almost daily"],
-                ["Never", "Less than monthly", "Monthly", "Weekly", "Daily or almost daily"],
-                ['No', '', 'Yes, but not in the lasat year', '', 'Yes, during the last year'],
-                ['No', '', 'Yes, but not in the lasat year', '', 'Yes, during the last year']   
+                ["Jamais", "Mensuellement ou moins", "2 à 4 fois par mois", "2 à 3 fois par semaine", "4 fois ou plus par semaine"],
+                ["1 ou 2", "3 ou 4", "5 ou 6", "7 à 9", "10 ou plus"],
+                ["Jamais", "Moins d'une fois par mois", "Mensuellement", "Hebdomadairement", "Quotidiennement ou presque quotidiennement"],
+                ["Jamais", "Moins d'une fois par mois", "Mensuellement", "Hebdomadairement", "Quotidiennement ou presque quotidiennement"],
+                ["Jamais", "Moins d'une fois par mois", "Mensuellement", "Hebdomadairement", "Quotidiennement ou presque quotidiennement"],
+                ["Jamais", "Moins d'une fois par mois", "Mensuellement", "Hebdomadairement", "Quotidiennement ou presque quotidiennement"],
+                ["Jamais", "Moins d'une fois par mois", "Mensuellement", "Hebdomadairement", "Quotidiennement ou presque quotidiennement"],
+                ["Jamais", "Moins d'une fois par mois", "Mensuellement", "Hebdomadairement", "Quotidiennement ou presque quotidiennement"],
+                ['Non', '', 'Oui, mais pas au cours de la dernière année', '', 'Oui, au cours de la dernière année'],
+                ['Non', '', 'Oui, mais pas au cours de la dernière année', '', 'Oui, au cours de la dernière année']   
             ]
         }
         
@@ -40,16 +40,16 @@ const AuditScreen = ({navigation}) => {
         ]} 
 
         qs={[
-            "How often do you have a drink containing alcohol?",
-            "How many drinks containing alcohol do you have on a typical day when you are drinking?",
-            "How often do you have 5 or more drinks on one occasion?",
-            "How often during the last year have you found that you were not able to stop drinking once you had started?",
-            "How often during the last year have you failed to do what was normally expected of you because of drinking?",
-            "How often during the last year have you needed a first drink in the morning to get yourself going after a heavy drinking session?",
-            "How often during the last year have you had a feeling of guilt or remorse after drinking?",
-            "How often during the last year have you been unable to remember what happened the night before because of your drinking?",
-            "Have you or someone else been injured becaused of your drinking?",
-            "Has a relative, friend, doctor, or other heath care worker been concered about your drinking or suggested you cut down?"
+            "À quelle fréquence consommez-vous une boisson contenant de l'alcool ?",
+            "Combien de boissons contenant de l'alcool consommez-vous en une journée typique lorsque vous buvez ?",
+            "À quelle fréquence consommez-vous 5 boissons ou plus en une seule occasion ?",
+            "Au cours de la dernière année, à quelle fréquence avez-vous constaté que vous n'étiez pas capable d'arrêter de boire une fois que vous aviez commencé ?",
+            "Au cours de la dernière année, à quelle fréquence avez-vous manqué à vos obligations en raison de la consommation d'alcool ?",
+            "Au cours de la dernière année, à quelle fréquence avez-vous eu besoin d'une première boisson le matin pour vous remettre en forme après une soirée de forte consommation d'alcool ?",
+            "Au cours de la dernière année, à quelle fréquence avez-vous ressenti un sentiment de culpabilité ou de regret après avoir bu ?",
+            "Au cours de la dernière année, à quelle fréquence avez-vous été incapable de vous souvenir de ce qui s'était passé la veille à cause de votre consommation d'alcool ?",
+            "Vous ou quelqu'un d'autre avez-vous été blessé à cause de votre consommation d'alcool ?",
+            "Un parent, un ami, un médecin ou un autre professionnel de la santé s'est-il inquiété de votre consommation d'alcool ou vous a-t-il suggéré de réduire votre consommation ?"
         ]} 
 
         visible={[
@@ -68,19 +68,17 @@ const AuditScreen = ({navigation}) => {
         desc={
             <View>
                 <Text style={textstyles.desctext}>
-                    PATIENT: Because alcohol use can affect your health and can interfere with certain medications and treatments, it is important that we ask some questions about your use of alcohol. Your answers will remain confidential, so please be honest. {"\n\n"}For each question in the chart below, check the box that best describes your answer.
+                    PATIENT : Parce que la consommation d'alcool peut affecter votre santé et interférer avec certains médicaments et traitements, il est important que nous posions quelques questions sur votre consommation d'alcool. Vos réponses resteront confidentielles, alors veuillez être honnête. {"\n\n"}Pour chaque question dans le tableau ci-dessous, cochez la case qui décrit le mieux votre réponse.
                 </Text>
 
                 <View style={auditQuestionListStyle.imagewithtext}>
 
-                    <Text style={textstyles.desctext}>NOTE: In the U.S., a single drink serving contains about 14 grams of ethanol or "pure" alcohol. Although the drinks below are different sizes, each one contains the same amount of pure alcohol and counts as a single drink:</Text>
+                    <Text style={textstyles.desctext}>REMARQUE : Aux États-Unis, une portion de boisson contient environ 14 grammes d'éthanol ou d'alcool "pur". Bien que les boissons ci-dessous aient des tailles différentes, chacune contient la même quantité d'alcool pur et compte comme une seule boisson :</Text>
                     
 
                 </View>
 
             </View>
-
-
             }
         goHome={() => navigation.navigate('ParticipantScreen')}
         buttonstyles={auditRadioStyles} 

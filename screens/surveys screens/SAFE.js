@@ -10,53 +10,53 @@ const SAFEScreen = ({navigation}) => {
             values={[1,2,3,4,5]}
             goHome={() => navigation.navigate('ParticipantScreen')}
             qs={[
-                "I feel uncomfortable when others make jokes about or put down people of my ethnic background.", 
+                "Je me sens mal à l'aise lorsque d'autres personnes font des blagues ou rabaissent des personnes de mon origine ethnique.", 
 
-                "I have more barriers to overcome than most people.",
+                "J'ai plus d'obstacles à surmonter que la plupart des gens.",
 
-                "It bothers me that family members I am close to do not understand my new values.",
+                "Cela me dérange que les membres de ma famille auxquels je suis proche ne comprennent pas mes nouvelles valeurs.",
 
-                "Close family members and I have conflicting expectations about my future.",
+                "Les membres proches de ma famille et moi avons des attentes contradictoires concernant mon avenir.",
 
-                "It is hard to express to my friends how I really feel.",
+                "Il est difficile d'exprimer à mes amis ce que je ressens vraiment.",
 
-                "My family does not want me to move away but I would like to.",
+                "Ma famille ne veut pas que je déménage mais j'aimerais le faire.",
 
-                "It bothers me to think that so many people use drugs.",
+                "Cela me dérange de penser que tant de gens consomment de la drogue.",
 
-                "It bothers me that I cannot be with my family.",
+                "Cela me dérange de ne pas pouvoir être avec ma famille.",
 
-                "In looking for a good job, I sometimes feel that my ethnicity is a limitation.",
+                "En cherchant un bon emploi, j'ai parfois l'impression que mon origine ethnique est une limitation.",
 
-                "I don't have any close friends.",
+                "Je n'ai pas d'amis proches.",
 
-                "Many people have stereotypes about my culture or ethnic group and treat me as if they are true.",
+                "Beaucoup de gens ont des stéréotypes sur ma culture ou mon groupe ethnique et me traitent comme s'ils étaient vrais.",
 
-                "I don't feel at home.",
+                "Je ne me sens pas chez moi.",
 
-                "People think I am unsociable when in fact I have trouble communicating in English.",
+                "Les gens pensent que je suis asocial alors qu'en fait j'ai du mal à communiquer en anglais.",
 
-                "I often feel that people actively try to stop me from advancing.",
+                "J'ai souvent l'impression que les gens essaient activement de m'empêcher d'avancer.",
 
-                "It bothers me when people pressure me to assimilate.",
+                "Cela me dérange quand les gens me pressent de m'assimiler.",
 
-                "I often feel ignored by people who are supposed to assist me.",
+                "Je me sens souvent ignoré par les personnes censées m'aider.",
      
-                "Because I am different I do not get enough credit for the work I do.",
+                "Parce que je suis différent, je n'obtiens pas assez de crédit pour le travail que je fais.",
 
-                "It bothers me that I have an accent.",
+                "Cela me dérange d'avoir un accent.",
 
-                "Loosening the ties with my country is difficult.",
+                "Relâcher les liens avec mon pays est difficile.",
 
-                "I often think about my cultural background.",
+                "Je pense souvent à mon origine culturelle.",
 
-                "Because of my ethnic background, I feel that others often exclude me from participating in their activities.",
+                "En raison de mon origine ethnique, je sens que les autres m'excluent souvent de leur activité.",
 
-                "It is difficult for me to 'show off' my family.", 
+                "Il est difficile pour moi de 'montrer' ma famille.", 
 
-                "People look down upon me if I practice customs of my culture.",
+                "Les gens me méprisent si je pratique les coutumes de ma culture.",
 
-                "I have trouble understanding others when they speak.",
+                "J'ai du mal à comprendre les autres lorsqu'ils parlent.",
             ]}
 
         />

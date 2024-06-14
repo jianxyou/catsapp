@@ -12,15 +12,15 @@ const TICSScreen = ({navigation}) => {
 
     const styles2 = StyleSheet.create({
         stickyHeader: {
-            // 添加您的样式，例如背景色，字体样式等
+            // Ajouter vos styles, par exemple couleur de fond, style de police, etc.
             backgroundColor: 'white',
             padding: 10,
-            // 确保它在顶部
+            // Assurez-vous qu'il est en haut
             zIndex: 1000
         },
 
         textLarge: {
-            fontSize: 35, // 这里的数值可以根据你的需要进行调整
+            fontSize: 26, // Vous pouvez ajuster cette valeur selon vos besoins
             paddingLeft: 350
           },
     });
@@ -28,64 +28,64 @@ const TICSScreen = ({navigation}) => {
 
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
-        <Text style = {styles2.textLarge}>Not at all,     Slightly,    Moderately,    Very,    Extremely</Text>
+            <Text style={styles2.textLarge}>Pas du tout,     Légèrement,     Modérément,     Très,        Extrêmement</Text>
         </View>
     );
 
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
-                In the past 3 months, i expeerienced it ...
+                Au cours des 3 derniers mois, j'ai ressenti cela ...
             </Text>
         </View>
     );
     return (  
         <ScrollView stickyHeaderIndices={[0]}>
             <StickyHeader />
-        <SIASQuestionList
-            questionnaireNumber={23}
-            scale={["", "", "", "", ""]} 
-            values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
-            goHome={() => navigation.navigate('ParticipantScreen')}
-            desc={desc}
-            buttonstyle={SIASRadioStyles}
-            liststyle={SIASquestionliststyle}
-            questionstyle={SIASStyle}
-            qs={[
-                "Times that i have to put off getting some rest, even though i need it",
-                "I do not receive enough appreciation for my accomplishments",
-                "I do not have enough time to perform my daily tasks",
-                "I have differences of opinion lead to tension with others",
-                "My work involves a lot of responsibility for others",
-                "Situations in which I have to make an effort to win other eole's trust",
-                "Worry that something bad will happen",
-                "Not having interesting tasks to fill my day",
-                "I have conflicts with others because they have different goals",
-                "Times I can't stop thinking about things that worry me",
-                "I spend a lot of time dealing with other people's problems",
-                "Despite doing my best, I perform my tasks poorly",
-                "Times in which I have no meaningful tasks",
-                "I have work to do , and I must not disappoint others",
-                "I have to make a good impression on the people I have contact with",
-                "I can no longer cope with the demands of my work",
-                "Times in which my worries overwhelm me",
-                "Other people's problems take up too much of my time",
-                "Times when I do not have an opportunity to share my thoughts and feelings with others",
-                "Even thogh I do my best, my work is not apreciated",
-                "Times that I have too many duties to fulfill",
-                "Situations in which I have to try hard for people to like me ",
-                "I am not adequately rewarded for my efforts",
-                "I have to do tasks that do not use my abilityes",
-                "Times when I miss having contact with others",
-                "I have unnecessary conflict with others",
-                "Even though I try, I do not fulfill my duties as I should",
-                "Times that having responsibility for others becomes a burden for me",
-                "I have tasks to take care of that allow no mistakes at all",
-                "Times when I have no friends with whom I can do things"
-            ]}
-        />
+            <SIASQuestionList
+                questionnaireNumber={23}
+                scale={["", "", "", "", ""]} 
+                values={["Pas du tout", "Légèrement", "Modérément", "Très","Extrêmement"]} 
+                goHome={() => navigation.navigate('ParticipantScreen')}
+                desc={desc}
+                buttonstyle={SIASRadioStyles}
+                liststyle={SIASquestionliststyle}
+                questionstyle={SIASStyle}
+                qs={[
+                    "Des moments où je dois reporter le fait de me reposer, même si j'en ai besoin",
+                    "Je ne reçois pas assez de reconnaissance pour mes réalisations",
+                    "Je n'ai pas assez de temps pour accomplir mes tâches quotidiennes",
+                    "J'ai des divergences d'opinion qui entraînent des tensions avec les autres",
+                    "Mon travail implique beaucoup de responsabilités pour les autres",
+                    "Des situations dans lesquelles je dois faire des efforts pour gagner la confiance des autres",
+                    "Inquiétude que quelque chose de mauvais se produise",
+                    "Ne pas avoir de tâches intéressantes pour remplir ma journée",
+                    "J'ai des conflits avec les autres parce qu'ils ont des objectifs différents",
+                    "Des moments où je ne peux pas arrêter de penser aux choses qui m'inquiètent",
+                    "Je passe beaucoup de temps à m'occuper des problèmes des autres",
+                    "Bien que je fasse de mon mieux, j'accomplis mal mes tâches",
+                    "Des moments où je n'ai pas de tâches significatives",
+                    "J'ai du travail à faire, et je ne dois pas décevoir les autres",
+                    "Je dois faire bonne impression sur les personnes avec qui je suis en contact",
+                    "Je ne peux plus faire face aux exigences de mon travail",
+                    "Des moments où mes inquiétudes me submergent",
+                    "Les problèmes des autres prennent trop de mon temps",
+                    "Des moments où je n'ai pas l'occasion de partager mes pensées et mes sentiments avec les autres",
+                    "Même si je fais de mon mieux, mon travail n'est pas apprécié",
+                    "Des moments où j'ai trop de devoirs à remplir",
+                    "Des situations dans lesquelles je dois faire des efforts pour que les gens m'aiment",
+                    "Je ne suis pas suffisamment récompensé pour mes efforts",
+                    "Je dois faire des tâches qui n'utilisent pas mes capacités",
+                    "Des moments où le contact avec les autres me manque",
+                    "J'ai des conflits inutiles avec les autres",
+                    "Même si j'essaie, je ne remplis pas mes devoirs comme je le devrais",
+                    "Des moments où avoir la responsabilité des autres devient un fardeau pour moi",
+                    "J'ai des tâches à accomplir qui ne permettent aucune erreur",
+                    "Des moments où je n'ai pas d'amis avec qui je peux faire des choses"
+                ]}
+            />
         </ScrollView>
     );
 }
- 
+
 export default TICSScreen;

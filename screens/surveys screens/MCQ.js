@@ -4,29 +4,27 @@ import questionListStyle from "../../styles/question list styles/questionListSty
 const MCQScreen = ({navigation}) => {
 
     return ( 
-        
         <MCQQuestionList 
             questionnaireNumber={5}
             desc=""
-            scale={[1,2,3,4,5,6,7]}
-            values={[1,2,3,4,5,6,7]}
+            scale={[1, 2, 3, 4, 5, 6, 7]}
+            values={[1, 2, 3, 4, 5, 6, 7]}
             goHome={() => navigation.navigate('MriScreen')}
             finalstyles={questionListStyle}
             qs={[
-                "Smoking marijuana would be pleasant right now.",
-                "I could not easily limit how much marijuana I smoked right now.",
-                "Right now, I am making plans to use marijuana.",
-                "I would feel more in control of things right now if I could smoke marijuana.",
-                "Smoking marijuana would help me sleep better at night.",
-                "If I smoked marijuana right now, I would feel less tense.",
-                "I would not be able to control how much marijuana I smoked if I had some here.",
-                "It would be great to smoke marijuana right now.",
-                "I would feel less anxious if I smoked marijuana right now.",
-                "I need to smoke marijuana now.",
-                "If I were smoking marijuana right now, I would feel less nervous.",
-                "Smoking marijuana would make me content.",
+                "Fumer de la marijuana serait agréable en ce moment.",
+                "Je ne pourrais pas facilement limiter la quantité de marijuana que je fume en ce moment.",
+                "En ce moment, je fais des plans pour consommer de la marijuana.",
+                "Je me sentirais plus en contrôle des choses en ce moment si je pouvais fumer de la marijuana.",
+                "Fumer de la marijuana m'aiderait à mieux dormir la nuit.",
+                "Si je fumais de la marijuana en ce moment, je me sentirais moins tendu.",
+                "Je ne serais pas capable de contrôler combien de marijuana je fume si j'en avais ici.",
+                "Ce serait génial de fumer de la marijuana en ce moment.",
+                "Je me sentirais moins anxieux si je fumais de la marijuana en ce moment.",
+                "J'ai besoin de fumer de la marijuana maintenant.",
+                "Si je fumais de la marijuana en ce moment, je me sentirais moins nerveux.",
+                "Fumer de la marijuana me rendrait content.",
             ]}
-
         />
     );
 }

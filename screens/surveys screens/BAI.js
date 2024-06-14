@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView,StyleSheet, View, Text } from 'react-native';
+import { ScrollView, StyleSheet, View, Text } from 'react-native';
 
 import NoNumberQuestionList from '../../surveytypes/NoNumberQuestionList';
 import tableStyle from '../../styles/question styles/tableStyle';
@@ -11,7 +11,7 @@ export default BeckScreen = ({navigation, route}) => {
 
     const StickyHeader = () => (
         <View style={styles.stickyHeader}>
-        <Text style = {styles.textLarge}>Not at all       Mildly        Moderately     Severely</Text>
+        <Text style = {styles.textLarge}>Pas du tout         Légèrement          Modérément            Sévèrement</Text>
         </View>
     );
 
@@ -24,39 +24,37 @@ export default BeckScreen = ({navigation, route}) => {
         questionnaireNumber={8}
         scale={[0, 1, 2, 3]} 
         values={[0, 1, 2, 3]} 
-        labels={["Not at all", "Mildly, but it didn’t bother me much", "Moderately – it wasn’t pleasant at times", "Severely – it bothered me a lot"]}
+        labels={["Pas du tout", "Légèrement, mais cela ne m'a pas beaucoup dérangé", "Modérément – ce n'était pas agréable à certains moments", "Sévèrement – cela m'a beaucoup dérangé"]}
         goHome={() => navigation.navigate('ParticipantScreen')}
         questionstyles={tableStyle}
         buttonstyles={tableRadioStyles}
         finalstyles={borderQuestionListStyle}
         qs={[
-            "Numbness or tingling",  
-            "Feeling hot",  
-            "Wobbliness in legs",  
-            "Unable to relax",  
-            "Fear of worst happening",  
-            "Dizzy or light headache",  
-            "Heart pounding / racing",  
-            "Unsteady",  
-            "Terrified or afraid",  
-            "Nervous",  
-            "Feeling of choking",  
-            "Hands trembling",  
-            "Shaky / unsteady",  
-            "Fear of losing control",  
-            "Difficulty in breathing",  
-            "Fear of dying",  
-            "Scared",   
+            "Engourdissement ou picotements",  
+            "Sensation de chaleur",  
+            "Jambes flageolantes",  
+            "Incapable de se détendre",  
+            "Peur que le pire ne se produise",  
+            "Étourdi ou légère douleur à la tête",  
+            "Battements de cœur rapides",  
+            "Instable",  
+            "Terrifié ou effrayé",  
+            "Nerveux",  
+            "Sensation d'étranglement",  
+            "Mains tremblantes",  
+            "Tremblant / instable",  
+            "Peur de perdre le contrôle",  
+            "Difficulté à respirer",  
+            "Peur de mourir",  
+            "Effrayé",   
             "Indigestion",  
-            "Faint / lightheaded",  
-            "Face flushed",  
-            "Hot / cold sweats"  
+            "Évanouissement / étourdissement",  
+            "Visage rougi",  
+            "Transpiration chaude / froide"  
         ]}
          
         desc={
-            <Text style={textstyles.desctext}>Below is a list of common symptoms of anxiety. Please carefully read each item in the list. Indicate how much you have been 
-        bothered by that symptom during the past month, including today, by checking the number in the corresponding space in the 
-        column next to each symptom</Text>}
+            <Text style={textstyles.desctext}>Voici une liste de symptômes courants de l'anxiété. Veuillez lire attentivement chaque élément de la liste. Indiquez dans quelle mesure ce symptôme vous a dérangé au cours du mois dernier, y compris aujourd'hui, en cochant le chiffre dans l'espace correspondant dans la colonne à côté de chaque symptôme.</Text>}
     />
 
     </ScrollView>
@@ -78,15 +76,15 @@ const styles = StyleSheet.create({
     },
 
     stickyHeader: {
-        // 添加您的样式，例如背景色，字体样式等
+        // Ajouter vos styles, par exemple couleur de fond, style de police, etc.
         backgroundColor: 'white',
         padding: 10,
-        // 确保它在顶部
+        // Assurez-vous qu'il est en haut
         zIndex: 1000
     },
 
     textLarge: {
-        fontSize: 40, // 这里的数值可以根据你的需要进行调整
+        fontSize: 25, // Vous pouvez ajuster cette valeur selon vos besoins
         paddingLeft: 350
       },
 })

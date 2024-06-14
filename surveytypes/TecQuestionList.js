@@ -119,12 +119,12 @@ const TecQuestionList = ({ questionnaireNumber, qs, desc, goHome, finalstyles })
         <TecSpecialQuestion 
         
             key={listofqs.length}
-            q="If you were mistreated or absued, how many people did this to you?" 
+            q="Si vous avez été maltraité ou abusé, combien de personnes vous ont fait cela ?" 
             subqs={[
-                "Emotional maltreatment (if you answered YES to any of the questions 14-19).",
-                "Physical maltreatment (if you answered YES to any of the questions 20-23).",
-                "Sexual harassment (if you answered YES to any of the questions 24-26).",
-                "Sexual abuse (if you answered YES to any of the questions 27-29).",
+                "Mauvais traitements émotionnels (si vous avez répondu OUI à l'une des questions 14-19).",
+                "Mauvais traitements physiques (si vous avez répondu OUI à l'une des questions 20-23).",
+                "Harcèlement sexuel (si vous avez répondu OUI à l'une des questions 24-26).",
+                "Abus sexuels (si vous avez répondu OUI à l'une des questions 27-29).",
             ]} 
             short={true} 
             num={29} 
@@ -142,14 +142,14 @@ const TecQuestionList = ({ questionnaireNumber, qs, desc, goHome, finalstyles })
     listofqs.push(
         <TecSpecial2
             key={listofqs.length + 1}
-            q="Please describe your relationship with each person mentioned in your answer to question 30 (e.g., father, brother, friend, teacher, stanger, etc.), and add if the persson(s) was (were) at least 4 years older than you at the time when the experience(s) occurred. For example, write 'friend (-)' if this friend was less than 4 years older thaan you. Write 'uncle (+)' if this uncle was more than 4 years older than you."
-            subqs={[
-                "Emotional neglect",
-                "Emotional abuse",
-                "Physical abuse",
-                "Sexual harassment",
-                "Sexual abuse",
-            ]}          
+            q="Veuillez décrire votre relation avec chaque personne mentionnée dans votre réponse à la question 30 (par exemple, père, frère, ami, enseignant, étranger, etc.), et ajouter si la personne(s) avait (avaient) au moins 4 ans de plus que vous au moment où l'expérience(s) s'est produite. Par exemple, écrivez 'ami (-)' si cet ami avait moins de 4 ans de plus que vous. Écrivez 'oncle (+)' si cet oncle avait plus de 4 ans de plus que vous."
+        subqs={[
+            "Négligence émotionnelle",
+            "Abus émotionnels",
+            "Abus physiques",
+            "Harcèlement sexuel",
+            "Abus sexuels",
+        ]}      
             short={false}
             callback_flag = {respond_flag}
             num={30}
@@ -167,8 +167,8 @@ const TecQuestionList = ({ questionnaireNumber, qs, desc, goHome, finalstyles })
         
         <RealLongAnswerQuestion 
         key={listofqs.length + 2}
-         q="Please desribe any OTHER traumatic events that had an impact on you."
-         num={31}
+        q="Veuillez décrire tout autre événement traumatisant qui a eu un impact sur vous."
+        num={31}
          callback={respond}
          callback_flag = {respond_flag}
          />
