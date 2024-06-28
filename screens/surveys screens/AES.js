@@ -19,7 +19,7 @@ const AESScreen = ({navigation}) => {
             ]}
             goHome={() => navigation.navigate('ParticipantScreen')}
 
-            qs={[
+            qs={[ 
                 "Je suis intéressé par les choses.",
                 "Je fais des choses pendant la journée.",
                 "Il est important pour moi de commencer des choses par moi-même.",

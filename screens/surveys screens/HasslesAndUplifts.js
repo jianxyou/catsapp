@@ -12,10 +12,10 @@ const HasslesScreen = ({navigation}) => {
 
         <Text style = {banner_styles.textLarge}>
         0= None or not applicable
-        {"\n1= somewhat"}
-        {"\n2= quite a bit"}
-        {"\n3= a great deal"}  
-        {"\n Please complete both sides"}  
+        {"\n1= un peu"}
+        {"\n2= pas mal"}
+        {"\n3= beaucoup"}  
+        {"\n Veuillez compléter les deux côtés"}  
         </Text>
         </View>
     );
@@ -147,61 +147,59 @@ const HasslesScreen = ({navigation}) => {
             ]}
 
             qs={[
-                "Your child(ren)",
-                "Your parents or parents-in-law",
-                "Other relative(s)",
-                "Your spouse",
-                "Time spent with family",
-                "Health or well-being of a family member",
-                "Sex",
-
-                "Intimacy",
-                "Family-related obligations",
-                "Your friend(s)",
-                "Fellow workers",
-                "Clients, customers, patients, etc.",
-                "Your supervisor or employer",
-                "The nature of your work",
-                "Your work load",
-                "Your job security",
-                "Meeting deadlines or goals on the job",
-                "Enough money for necessities (e.g. food, clothing, housing, health care, taxes, insurance)",
-                "Enough money for education",
-                "Enough money for emergencies",
-                "Enough money for extras (e.g. entertainment, recreation, vacations)",
-                "Financial care for someone who doesn't live with you",
-                "Investments",
-                "Your smoking",
-                "Your drinking",
-                "Mood-altering drugs",
-                "Your physical appearance",
+                "Votre(vos) enfant(s)",
+                "Vos parents ou beaux-parents",
+                "Autre(s) parent(s)",
+                "Votre conjoint(e)",
+                "Temps passé avec la famille",
+                "Santé ou bien-être d'un membre de la famille",
+                "Sexe",
+                "Intimité",
+                "Obligations familiales",
+                "Vos ami(e)s",
+                "Collègues de travail",
+                "Clients, patients, etc.",
+                "Votre superviseur ou employeur",
+                "La nature de votre travail",
+                "Votre charge de travail",
+                "La sécurité de votre emploi",
+                "Respect des délais ou objectifs au travail",
+                "Assez d'argent pour les nécessités (e.g. nourriture, vêtements, logement, soins de santé, impôts, assurance)",
+                "Assez d'argent pour l'éducation",
+                "Assez d'argent pour les urgences",
+                "Assez d'argent pour les extras (e.g. divertissement, loisirs, vacances)",
+                "Prendre soin financièrement de quelqu'un qui ne vit pas avec vous",
+                "Investissements",
+                "Votre consommation de tabac",
+                "Votre consommation d'alcool",
+                "Drogues altérant l'humeur",
+                "Votre apparence physique",
                 "Contraception",
-                "Exercise(s)",
-                "Your medical care",
-
-                "Your health",
-                "Your physical appearance",
-                "The weather",
-                "News events",
-                "Your environment (e.g. quality of air, noise level, greenery)",
-                "Political or social isssues",
-                "Your neighborhood (e.g. neighbors, setting",
-                "Conserving (gas, electricity, water, gasoline, etc.)",
-                "Pets",
-                "Cooking",
-                "Houswork",
-                "Home repairs",
-                "Yardwork",
-                "Car maintenance",
-                "Taking care of paperwork (e.g. paying bills, filling out forms)",
-                "Home entertainment (e.g. TV, music, reading)",
-                "Amount of free time",
-                "Recreation and entertainment outside the home (e.g. movies, sports, eating out, walking)",
-                "Eating (at home)",
-                "Church or community organizations",
-                "Legal matters",
-                "Being organized",
-                "Social commitments",
+                "Exercice(s)",
+                "Vos soins médicaux",
+                "Votre santé",
+                "Votre apparence physique",
+                "La météo",
+                "Actualités",
+                "Votre environnement (e.g. qualité de l'air, niveau de bruit, verdure)",
+                "Questions politiques ou sociales",
+                "Votre quartier (e.g. voisins, cadre)",
+                "Économies (gaz, électricité, eau, essence, etc.)",
+                "Animaux de compagnie",
+                "Cuisine",
+                "Tâches ménagères",
+                "Réparations à la maison",
+                "Travail de jardinage",
+                "Entretien de la voiture",
+                "Prendre soin des papiers (e.g. payer les factures, remplir des formulaires)",
+                "Divertissement à domicile (e.g. TV, musique, lecture)",
+                "Quantité de temps libre",
+                "Loisirs et divertissements hors de la maison (e.g. cinéma, sports, restaurants, promenades)",
+                "Manger (à la maison)",
+                "Église ou organisations communautaires",
+                "Affaires légales",
+                "Être organisé",
+                "Engagements sociaux",
             ]}
 
         
@@ -242,5 +240,5 @@ const banner_styles = StyleSheet.create({
     textLarge: {
         fontSize: 25, // 这里的数值可以根据你的需要进行调整
         paddingLeft: 450
-      },
+      }, 
 })
