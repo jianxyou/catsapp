@@ -565,7 +565,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5F3R545496;
+				DEVELOPMENT_TEAM = H3QVSM28NY;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CaTSapp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CaTS;
@@ -604,7 +604,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5F3R545496;
+				DEVELOPMENT_TEAM = H3QVSM28NY;
 				INFOPLIST_FILE = CaTSapp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CaTS;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
