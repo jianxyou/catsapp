@@ -55,7 +55,7 @@ const SAFEScreen = ({navigation}) => {
                 "It is difficult for me to 'show off' my family.", 
 
                 "People look down upon me if I practice customs of my culture.",
-
+                
                 "I have trouble understanding others when they speak.",
             ]}
 

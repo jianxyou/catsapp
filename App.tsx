@@ -35,6 +35,7 @@ import MoodEpisodesScreen from './screens/MoodEpisodes';
 import AuditScreen from './screens/surveys screens/AUDIT';
 import CGIScreen from './screens/surveys screens/CGI';
 import SHAPSScreen from './screens/surveys screens/SHAPS';
+import GAF2Screen from'./screens/surveys screens/GAF2';
 import TecScreen from './screens/TEC';
 import MaccatScreen from './screens/surveys screens/MacCAT';
 import GAFScreen from './screens/surveys screens/GAF';
@@ -42,12 +43,15 @@ import CannabisWithdrawalScreen from './screens/surveys screens/CannabisWithdraw
 import BarrattScreen from './screens/surveys screens/BSMSS';
 import CSSRSScreen from './screens/surveys screens/CSSRS';
 import HAMDScreen from './screens/surveys screens/HAMD';
+import BISscreen from './screens/surveys screens/BIS';
 import TICSScreen from './screens/surveys screens/TICS';
 import SAQScreen from './screens/surveys screens/SAQ';
 import TLFBScreen from './screens/surveys screens/TLFB';
 import PatientScreen from './screens/special screens/PatientScreen';
 import AdminScales from './screens/special screens/AdminScreen';
 import MriScreen from './screens/special screens/MriScreen';
+
+
 import { displayNamesSelf, internalNamesSelf } from './schemaconstants';
 // import CSSRSScreen from './screens/surveys screens/SSRS';
 
@@ -150,6 +154,8 @@ function App(): JSX.Element {
       <Stack.Screen name='TICS'component={TICSScreen} />
       <Stack.Screen name='SAQ'component={SAQScreen} />
       <Stack.Screen name='TLFB' component={TLFBScreen} />
+      <Stack.Screen name='BIS' component={BISscreen} />
+      <Stack.Screen name='GAF2' component={GAF2Screen} />
       <Stack.Screen name='ParticipantScreen' component={PatientScreen} />
       <Stack.Screen name='AdminScreen' component={AdminScales} />
       <Stack.Screen name='MriScreen' component={MriScreen} />

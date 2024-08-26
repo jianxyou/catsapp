@@ -89,6 +89,12 @@ const displayNamesSelf = [
     'SDS',
 
 
+    'BIS',
+    'GAF2',
+    'BIS',
+    'BIS',
+    'BIS',
+
 
 
 
@@ -137,6 +143,9 @@ const internalNamesSelf : Array<string> = [
     "FTND_fu",
     'CUDIT-R_fu',
     'SDS_fu',
+
+    'BIS',
+    'GAF2'
 
 ];
 
