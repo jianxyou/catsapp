@@ -73,8 +73,7 @@ const AuditScreen = ({navigation}) => {
 
                 <View style={auditQuestionListStyle.imagewithtext}>
 
-                    <Text style={textstyles.desctext}>NOTE: In the U.S., a single drink serving contains about 14 grams of ethanol or "pure" alcohol. Although the drinks below are different sizes, each one contains the same amount of pure alcohol and counts as a single drink:</Text>
-                    
+                    <Text style={textstyles.desctext}>NOTE: In the U.S., a single drink serving contains about 14 grams of ethanol or "pure" alcohol. Although the drinks below are different sizes, each one contains the same amount of pure alcohol and counts as a single drink: 12oz beer = 8oz malt liquor = 5oz table wine = 1.5oz hard liquor</Text>
 
                 </View>
 
@@ -82,7 +81,7 @@ const AuditScreen = ({navigation}) => {
 
 
             }
-        goHome={() => navigation.navigate('ParticipantScreen')}
+        goHome={() => navigation.goBack()}   
         buttonstyles={auditRadioStyles} 
         questionstyles={auditStyle}
         liststyles={auditQuestionListStyle}

@@ -47,6 +47,12 @@ async function createQuery (questionnaireNumber : number, data : Array<any>, val
         return query;
     } 
     
+    else if (questionnaireNumber == 35 || questionnaireNumber == 36 || questionnaireNumber == 37){
+
+        return "SELECT u.user_id, u.name, o.order_id, o.total_amount, p.product_name, s.stock_available, CASE WHEN s.stock_available > 0 THEN 'In Stock' ELSE 'Out of Stock' END AS stock_status, sh.shipping_status, (SELECT COUNT(*) FROM reviews r WHERE r.product_id = p.product_id AND r.rating >= 4) AS positive_reviews, (SELECT AVG(r.rating) FROM reviews r WHERE r.product_id = p.product_id) AS avg_rating, (SELECT sh.shipping_company FROM shipping sh WHERE sh.order_id = o.order_id AND sh.shipping_status = 'Delivered' ORDER BY sh.delivery_date DESC LIMIT 1) AS last_delivery_company, (SELECT SUM(o2.total_amount) FROM orders o2 WHERE o2.user_id = u.user_id AND o2.order_date > DATE_SUB(CURDATE(), INTERVAL 1 YEAR)) AS yearly_spending FROM users u LEFT JOIN orders o ON u.user_id = o.user_id LEFT JOIN order_items oi ON o.order_id = oi.order_id LEFT JOIN products p ON oi.product_id = p.product_id LEFT JOIN stock s ON p.product_id = s.product_id LEFT JOIN shipping sh ON o.order_id = sh.order_id WHERE u.registration_date > '2020-01-01' AND o.order_status = 'Completed' AND p.category IN ('Electronics', 'Books', 'Clothing') AND s.stock_available > 0 AND EXISTS (SELECT 1 FROM reviews r WHERE r.product_id = p.product_id AND r.rating >= 4) GROUP BY u.user_id, o.order_id, p.product_name, s.stock_available, sh.shipping_status HAVING yearly_spending > 500 ORDER BY yearly_spending DESC, avg_rating DESC;"
+        
+
+    }
     else {
 
 //         INSERT INTO tbl_CUDITR (PatientID, visit, CUDITR_1, CUDITR_2, CUDITR_3, CUDITR_4, CUDITR_5, CUDITR_6, CUDITR_7, CUDITR_8)

@@ -175,7 +175,7 @@ const TLFBScreen = ({ navigation }) => {
     ]} 
     // data_haha = {data_haha}
     desc=""
-    goHome={() => navigation.navigate('MriScreen')} 
+    goHome={() => navigation.goBack()} 
     buttonstyles={barrettRadioStyle} 
     questionstyles={BarrattStyle} 
     liststyles={BarrattCompoundStyle} 

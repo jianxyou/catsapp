@@ -27,7 +27,7 @@ const DASTScrenn = ({navigation}) => {
             questionnaireNumber={17}
             scale={["", "",]} 
             values={["YES", "NO"]} 
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.goBack()}
             desc={desc}
             buttonstyle={dastRadioStyles}
             liststyle={dastQuestionListStyle}

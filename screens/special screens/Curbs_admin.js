@@ -12,13 +12,13 @@ import { displayNamesSelf, internalNamesSelf } from '../../schemaconstants';
 import createLinks from '../../helpers/createLinks';
 
 
-function AdminScreen({ navigation }) {
+function Curbs_admin({ navigation }) {
   const { val } = useContext(ParticipantContext);
 
   const [filled, setFilled] = useState(displayNamesSelf.map(val => false))
   const buttons = createLinks({
-    displayNames: [ ...displayNamesSelf.slice(0,4),...displayNamesSelf.slice(36, 37)],
-    internalNames: [...internalNamesSelf.slice(0,4),...displayNamesSelf.slice(36, 37)],
+    displayNames: [ ...displayNamesSelf.slice(0,2),  ...displayNamesSelf.slice(3,4), ...displayNamesSelf.slice(36, 37)],
+    internalNames: [...internalNamesSelf.slice(0,2),  ...displayNamesSelf.slice(3,4), ...displayNamesSelf.slice(36, 37)],
     navigation: navigation,
     filled: filled
   });
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
     }
   }) 
 
-export default AdminScreen;
+export default Curbs_admin;

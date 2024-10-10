@@ -18,14 +18,14 @@ const BISscreen = ({navigation}) => {
         },
 
         textLarge: {
-            fontSize: 35,
+            fontSize: 25,
             paddingLeft: 350
         },
     });
 
     const StickyHeader = () => (
         <View style={styles2.stickyHeader}>
-            <Text style={styles2.textLarge}>Rarely/Never, Occasionally, Often, Almost Always/Always</Text>
+            <Text style={styles2.textLarge}>  Rarely/Never     Occasionally       Often         Almost Always/Always</Text>
         </View>
     );
 
@@ -44,7 +44,7 @@ const BISscreen = ({navigation}) => {
                 questionnaireNumber={35}
                 scale={["", "", "", ""]}
                 values={["Never", "Occasionally", "Often", "Always"]}
-                goHome={() => navigation.navigate('ParticipantScreen')}
+                goHome={() => navigation.goBack()}   
                 desc={desc}
                 buttonstyle={SIASRadioStyles}
                 liststyle={SIASquestionliststyle}

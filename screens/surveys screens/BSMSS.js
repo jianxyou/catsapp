@@ -173,7 +173,7 @@ const BarrattScreen = ({navigation}) => {
 
         ]}
         desc=""
-        goHome={() => navigation.navigate('AdminScreen')} 
+        goHome={() => navigation.goBack()}   
         buttonstyles={barrettRadioStyle} 
         questionstyles={BarrattStyle} 
         liststyles={BarrattCompoundStyle} 

@@ -8,6 +8,12 @@ export default auditQuestionListStyle = StyleSheet.create({
         justifyContent: 'center',
     },
 
+    centeredImage: {
+        width: 800,
+        height: 300,
+        resizeMode: 'contain',
+    },
+
     desc: {
         marginBottom: 40,
         display: 'flex',

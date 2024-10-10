@@ -17,11 +17,12 @@ const AESScreen = ({navigation}) => {
                 "SOMEWHAT",
                 "A LOT",
             ]}
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.goBack()}   
 
             qs={[
                 "I am interested in things.",
-                "I get things done during the day.",                "Getting things started on my own is important to me.",
+                "I get things done during the day.",               
+                "Getting things started on my own is important to me.",
                 "I am interested in having new experiences.",
                 "I am interested in learning new things",
                 "I put little effort into anything.",
@@ -30,13 +31,14 @@ const AESScreen = ({navigation}) => {
                 "I spend time doing things that interest me.",
                 "Someone has to tell me what to do each day.",
                 "I am less concerned about my problems than I should be.",
-                "I have friends.",
+                "I have friends.", 
                 "Getting together with friends is important to me.",
                 "When something good happens, I get excited.",
                 "I have an accurate understanding of my problems.",
                 "Getting things done during the day is important to me.",
                 "I have initiative.",
                 "I have motivation.",
+                 
             ]}
         />
       );

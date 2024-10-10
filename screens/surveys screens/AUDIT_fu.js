@@ -82,7 +82,7 @@ const Audit_fu_Screen = ({navigation}) => {
 
 
             }
-        goHome={() => navigation.navigate('FollowUp')}
+        goHome={() => navigation.goBack()}   
         buttonstyles={auditRadioStyles} 
         questionstyles={auditStyle}
         liststyles={auditQuestionListStyle}

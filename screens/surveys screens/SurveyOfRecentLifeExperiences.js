@@ -47,7 +47,7 @@ const SoRLEScreen = ({navigation}) => {
             questionnaireNumber={18}
             scale={["", "", "", ""]} 
             values={["not at all part of my life", "only slightly", "distinctly", "very much",]} 
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.goBack()}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}

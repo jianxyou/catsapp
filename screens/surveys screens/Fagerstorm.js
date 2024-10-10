@@ -367,7 +367,7 @@ const FagerstrormScreen = ({navigation}) => {
                 "A) Lifetime History",
                 "To Non-smokers"
             ]}
-            goHome={() => navigation.navigate('MriScreen')}
+            goHome={() => navigation.goBack()}
         />
 
 

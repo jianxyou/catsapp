@@ -42,6 +42,13 @@ const tableNamesSelf : Array<string | Array<string> > = [
     "tbl_CUDITR",
     "SDS",
 
+    'BIS',
+    'GAF',
+    'BGLHA',
+    'BGLHA',
+    'BGLHA',
+    'BGLHA',
+
 
 ];
 
@@ -90,10 +97,11 @@ const displayNamesSelf = [
 
 
     'BIS',
-    'GAF2',
-    'BIS',
-    'BIS',
-    'BIS',
+    'GAF',
+    'BGLHA',
+    'BGLHA',
+    'BGLHA',
+    'BGLHA',
 
 
 
@@ -145,7 +153,10 @@ const internalNamesSelf : Array<string> = [
     'SDS_fu',
 
     'BIS',
-    'GAF2'
+    'GAF',
+    'BGLHA',
+    'BGLHA',
+    'BGLHA',
 
 ];
 

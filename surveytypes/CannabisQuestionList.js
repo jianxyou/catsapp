@@ -26,7 +26,7 @@ const CannabisQuestionList = ({questionnaireNumber, scale, values, qs, desc, goH
     
     return (
         <FormattedRosenberg
-        questionnaireNumber={questionnaireNumber}
+        questionnaireNumber={questionnaireNumber} 
         listofqs={listofqs} 
         data={data} 
         goHome={goHome} 
@@ -35,8 +35,8 @@ const CannabisQuestionList = ({questionnaireNumber, scale, values, qs, desc, goH
         labels={["Not at all", "Moderately", "Extreme"]} 
         speciallabel=""
         />
-
     );
+
 }
 
-export default CannabisQuestionList;
+export default CannabisQuestionList; 

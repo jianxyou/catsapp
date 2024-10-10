@@ -8,7 +8,7 @@ const SAFEScreen = ({navigation}) => {
             desc=""
             scale={[1,2,3,4,5]}
             values={[1,2,3,4,5]}
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.goBack()}
             qs={[
                 "I feel uncomfortable when others make jokes about or put down people of my ethnic background.", 
 
@@ -50,7 +50,7 @@ const SAFEScreen = ({navigation}) => {
 
                 "I often think about my cultural background.",
 
-                "Because of my ethnic background, I feel that others often exclude me from participating in their activities.",
+                "Because of my ethnic background, i feel others often exclude me from participating in their activity",
 
                 "It is difficult for me to 'show off' my family.", 
 

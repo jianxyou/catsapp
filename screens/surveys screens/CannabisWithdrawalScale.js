@@ -59,7 +59,7 @@ const CannabisWithdrawalScreen = ({navigation}) => {
             desc={desc}
             scale={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
             values={[0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.goBack()}   
             buttonstyle={cannabisRadioStyles}
             liststyle={cannabisQuestionListStyle}
             questionstyle={CWSStyle}
@@ -77,10 +77,10 @@ const CannabisWithdrawalScreen = ({navigation}) => {
                 "I had been imagining being stoned",
                 "I felt restless",
                 "I woke up early",
-                "I woke up early",
                 "I had a stomach ache",
                 "I had nightmares and/or strange dreams",
                 "Life seemed like an uphill struggle",
+                "I woke up sweating at night",
                 "I had trouble getting to sleep at night",
                 "I felt physically tense",
                 "I had hot flashes",

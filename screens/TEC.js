@@ -112,7 +112,7 @@ const TecScreen = ({navigation}) => {
                 </Text>
             </View>
         } 
-        goHome={() => navigation.navigate('ParticipantScreen')} 
+        goHome={() => navigation.goBack()} 
         finalstyles={questionListStyle}
         />
 

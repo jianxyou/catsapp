@@ -150,7 +150,7 @@ const RLEScreen = ({navigation}) => {
             questionnaireNumber={15}
             scale={["", "",""]} 
             values={["YES", "YES, still effects me", "No"]} 
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.goBack()}
             desc={desc}
             buttonstyle={dastRadioStyles}
             liststyle={RLEQuestionListStyle}

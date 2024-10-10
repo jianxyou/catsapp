@@ -16,9 +16,19 @@ const SAFEStyle = StyleSheet.create({
         display: 'flex', 
         flexDirection: 'column',
         justifyContent: 'flex-start',
+        flexWrap: 'wrap', // 确保文本可以换行
         marginBottom: 40,
+        fontSize: 10,
+        marginLeft: -5
         
     }, 
+
+    questionText: {
+        fontSize: 16, // 根据需要调整字体大小
+        flexWrap: 'wrap', // 确保文本可以换行
+        // 如果您希望文本占满整个宽度，可以添加：
+        width: '100%',
+      },
 
     questionlabel: {
         display: 'flex',

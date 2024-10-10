@@ -54,7 +54,7 @@ const SIASScreen = ({navigation}) => {
             questionnaireNumber={12}
             scale={["", "", "", "", ""]} 
             values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.goBack()}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}

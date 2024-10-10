@@ -54,7 +54,7 @@ const SIAS_fu_Screen = ({navigation}) => {
             questionnaireNumber={29}
             scale={["", "", "", "", ""]} 
             values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
-            goHome={() => navigation.navigate('FollowUp')}
+            goHome={() => navigation.goBack()}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}

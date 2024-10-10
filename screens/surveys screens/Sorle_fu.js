@@ -47,7 +47,7 @@ const Sorle_fu_screen = ({navigation}) => {
             questionnaireNumber={25}
             scale={["", "", "", ""]} 
             values={["not at all part of my life", "only slightly", "distinctly", "very much",]} 
-            goHome={() => navigation.navigate('FollowUp')}
+            goHome={() => navigation.goBack()}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}

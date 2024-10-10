@@ -39,6 +39,7 @@ import GAF2Screen from'./screens/surveys screens/GAF2';
 import TecScreen from './screens/TEC';
 import MaccatScreen from './screens/surveys screens/MacCAT';
 import GAFScreen from './screens/surveys screens/GAF';
+import BGLHA from './screens/surveys screens/BGLHA';
 import CannabisWithdrawalScreen from './screens/surveys screens/CannabisWithdrawalScale';
 import BarrattScreen from './screens/surveys screens/BSMSS';
 import CSSRSScreen from './screens/surveys screens/CSSRS';
@@ -50,8 +51,10 @@ import TLFBScreen from './screens/surveys screens/TLFB';
 import PatientScreen from './screens/special screens/PatientScreen';
 import AdminScales from './screens/special screens/AdminScreen';
 import MriScreen from './screens/special screens/MriScreen';
-
-
+import SDM8Screen from './screens/special screens/SDM8';
+import CURBScreen from './screens/special screens/CURB';
+import CURB_S_Screen from './screens/special screens/CURB_S';
+import Curbs_admin from './screens/special screens/Curbs_admin';
 import { displayNamesSelf, internalNamesSelf } from './schemaconstants';
 // import CSSRSScreen from './screens/surveys screens/SSRS';
 
@@ -156,8 +159,13 @@ function App(): JSX.Element {
       <Stack.Screen name='TLFB' component={TLFBScreen} />
       <Stack.Screen name='BIS' component={BISscreen} />
       <Stack.Screen name='GAF2' component={GAF2Screen} />
+      <Stack.Screen name='BGLHA' component={BGLHA} />
       <Stack.Screen name='ParticipantScreen' component={PatientScreen} />
+      <Stack.Screen name='SDM8Screen' component={SDM8Screen} />
+      <Stack.Screen name='CURBScreen' component={CURBScreen} />
+      <Stack.Screen name='CURB_S_Screen' component={CURB_S_Screen} />
       <Stack.Screen name='AdminScreen' component={AdminScales} />
+      <Stack.Screen name='Crubs_admin' component={Curbs_admin} />
       <Stack.Screen name='MriScreen' component={MriScreen} />
       <Stack.Screen name='FollowUp' component={FollowUpScreen} />
 

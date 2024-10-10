@@ -48,7 +48,7 @@ const SASSCreen = ({navigation}) => {
             desc={desc}
             scale={["", "", "", ""]}
             values={["None OR little of the time", "Some of the time", "Good part of the time", "Most OR all of the time"]}
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.goBack()}
             buttonstyle={SASRadioStyles}
             liststyle={SASQuestionListStyle}
             questionstyle={SIASStyle}

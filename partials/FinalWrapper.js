@@ -112,17 +112,17 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
    
 
   const months = [
-    { year: 2023, month: 9, days:30},
-    { year: 2023, month: 10, days:31 },
-    { year: 2023, month: 11, days:30 },
-    { year: 2023, month: 12, days:31 },
-    { year: 2024, month: 1, days: 31 },
-    { year: 2024, month: 2, days: 28 }, // 注意：未考虑闰年
-    { year: 2024, month: 3, days: 31 },
-    { year: 2024, month: 4, days: 30 },
+    { year: 2024, month: 6, days:30},
+    { year: 2024, month: 7, days:31 },
+    { year: 2024, month: 8, days:31 },
+    { year: 2024, month: 9, days:30 },
+    { year: 2024, month: 10, days: 31 },
+    { year: 2024, month: 11, days: 30 }, // 注意：未考虑闰年
+    { year: 2024, month: 12, days: 31 },
+    { year: 2025, month: 1, days: 31 },
     // { name: '2May', days: 31 },
     // { name: 'June', days: 30 },
-    // { name: 'July', days: 31 },
+    // { name: 'July', days: 31 },x
     // { name: 'August', days: 31 },
   ];
 
@@ -130,12 +130,10 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
     const holidays = {
       '2023-12-25': 'Christmas',
       '2024-01-01': 'New Year\'s Day',
-      // 在这里添加更多节假日
     };
 
     const monthNames = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-     // 渲染单个格子的函数
      const renderCell = (month, day) => {
       const dayKey = `${month.year}-${month.month}-${day}`;
       const weekDay = getDayOfWeek(month.year, month.month, day);
@@ -414,6 +412,23 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
     );
     }
   
+    else if (questionnaireNumber == 36){
+      shortresult = (
+        <View style={styles.page}>
+            <ScrollView ref={ref1} >
+            <Text>Date : {today} </Text>
+            <Text>Subject Id : {subjectId}</Text>
+            {/* <Text>Participant ID : {clientId}</Text> */}
+            
+            <View key={1}>{copy[0]}</View>
+            {copy[1].map((val, index) => renderView(val, index))}
+            {button} 
+            </ScrollView>
+        </View>
+    );
+    }
+
+    
     else{
     shortresult = (
         <View style={styles.page}>

@@ -7,7 +7,7 @@ const SANSScreen = ({navigation}) => {
             desc="0=None          1=Questionable          2=Mild          3=Moderate          4=Marked          5=Severe"
             scale={[0,1,2,3,4,5]}
             values={[0,1,2,3,4,5]}
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.goBack()}
 
             minidescs={[
                 "AFFECTIVE FLATTENING OR BLUNTING",

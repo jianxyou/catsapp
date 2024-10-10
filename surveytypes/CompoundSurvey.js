@@ -36,7 +36,7 @@ const CompoundSurvey = ({listoflistofqs, qtypes, scales, values, questionnaireNu
         }
         let holder = temp[num];
 
-        holder[1] = option;
+        // holder[1] = option;
 
         console.log(option);
         changeData(temp);

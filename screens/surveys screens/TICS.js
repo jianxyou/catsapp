@@ -35,7 +35,7 @@ const TICSScreen = ({navigation}) => {
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
-                In the past 3 months, i expeerienced it ...
+                In the past 3 months, i experienced it ...
             </Text>
         </View>
     );
@@ -46,7 +46,7 @@ const TICSScreen = ({navigation}) => {
             questionnaireNumber={23}
             scale={["", "", "", "", ""]} 
             values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.goBack()}   
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}
@@ -57,7 +57,7 @@ const TICSScreen = ({navigation}) => {
                 "I do not have enough time to perform my daily tasks",
                 "I have differences of opinion lead to tension with others",
                 "My work involves a lot of responsibility for others",
-                "Situations in which I have to make an effort to win other eole's trust",
+                "Situations in which I have to make an effort to win other people's trust",
                 "Worry that something bad will happen",
                 "Not having interesting tasks to fill my day",
                 "I have conflicts with others because they have different goals",

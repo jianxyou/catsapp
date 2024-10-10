@@ -30,7 +30,7 @@ const HasslesScreen = ({navigation}) => {
 
             questionnaireNumber={4}
 
-            goHome={() => navigation.navigate('MriScreen')}
+            goHome={() => navigation.goBack()}
 
             scales={[
                 [0,1,2,3],

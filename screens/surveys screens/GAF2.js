@@ -171,7 +171,7 @@ const GAF2Screen = ({navigation}) => {
         //         [0],
         //     ],
         // ]} 
-        questionnaireNumber={35}
+        questionnaireNumber={36}
 
         minidescs={[
             "Over the last 3 months...",
@@ -181,7 +181,7 @@ const GAF2Screen = ({navigation}) => {
             <Text style={textstyles.desctext}>
             Directions: Please read each statement carefully and circle ONE number for each question which best applies to you and your experiences.
             </Text>}
-        goHome={() => navigation.navigate('ParticipantScreen')} 
+        goHome={() => navigation.goBack()} 
         buttonstyles={radioStyles}
         questionstyles={SDSStyle} 
         liststyles={CompoundSDSStyle} 

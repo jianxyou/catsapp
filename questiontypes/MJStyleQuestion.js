@@ -32,8 +32,8 @@ const MJStyleQuestion = ({q, scale, values, num, callbackRadio, callbackText}) =
     const [text, changeText] = useState(null);
 
     const modify = val => { 
-        changeText(val);
-        callbackText(num, val);
+        // changeText(val);
+        // callbackText(num, val);
     }
 
     const question = (

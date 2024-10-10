@@ -238,7 +238,7 @@ const HAMDScreen = ({navigation}) => {
             <Text style={textstyles.desctext}>
             Directions: Please read each statement carefully and circle ONE number for each question which best applies to you and your experiences.
             </Text>}
-        goHome={() => navigation.navigate('AdminScreen')} 
+        goHome={() => navigation.goBack()} 
         buttonstyles={radioStyles}
         questionstyles={SDSStyle} 
         liststyles={CompoundSDSStyle} 

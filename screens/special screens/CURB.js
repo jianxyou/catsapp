@@ -4,25 +4,17 @@ import { useEffect, useState, useContext } from 'react'
 import * as FileSystem from 'expo-file-system';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
 import { ParticipantContext } from '../../context and async storage/ParticipantContext';
-import createLinks_fu from '../../helpers/createLinks_fu';
-
-
-
+import checkFiles from '../../helpers/checkfiles';
 
 import { displayNamesSelf, internalNamesSelf } from '../../schemaconstants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import createLinks from '../../helpers/createLinks';
 
-import createLinks_Pet from '../../helpers/createLinks_Pet';
-
-
-function FollowUpScreen({ navigation }) {
-
-
+function CURBScreen({ navigation }) {
 
 
   // const [submittedStatus, setSubmittedStatus] = useState({});
-
 
   // const { val } = useContext(ParticipantContext);
   const [modalVisible, setModalVisible] = useState(false);
@@ -31,11 +23,7 @@ function FollowUpScreen({ navigation }) {
   const [filled, setFilled] = useState([]);
   const [buttons, setButtons] = useState([]); // 用一个状态来保存按钮
 
-
  
-
-
-
 
 
 
@@ -48,21 +36,16 @@ function FollowUpScreen({ navigation }) {
       ),
     });
 
-
   }, [navigation]);
-
-
 
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       loadFilled(); // 当屏幕获得焦点时，加载 filled 数据
     });
- 
+  
     return unsubscribe; // 清理监听器
   }, [navigation]);
-
-
 
 
   // useEffect(() => {
@@ -78,10 +61,7 @@ function FollowUpScreen({ navigation }) {
   // }, [filled]); // 当 filled 更新时，这个 useEffect 将被触发
 
 
-
-
- 
-
+  
 
   const checkPassword = () => {
     if (password === '123') {
@@ -90,8 +70,6 @@ function FollowUpScreen({ navigation }) {
       Alert.alert('wrong', 'wrong password');
     }
   };
-
-
 
 
   const loadFilled = async () => {
@@ -109,62 +87,52 @@ function FollowUpScreen({ navigation }) {
   };
 
 
-
-
-  internalNamesSelf
-  const newButtons = createLinks_fu({
-    displayNames: displayNamesSelf.slice(25,35),
-    internalNames: internalNamesSelf.slice(25,35),
+  
+  const newButtons = createLinks({
+    displayNames: [...displayNamesSelf.slice(8, 24)],
+    internalNames: [...internalNamesSelf.slice(8, 24)],
     navigation: navigation,
     filled: filled,
   });
   // setButtons(newButtons);
 
 
-
-
   return (
     <View style={styles.container}>
       {newButtons}
       <Modal
-      animationType="slide"
-      transparent={true}
-      visible={modalVisible}
-      onRequestClose={() => setModalVisible(false)}
-    >
-      <View style={styles.modalView}>
-        <View style={styles.inputContainer}>
-          <TextInput
-            secureTextEntry
-            placeholder="enter password"
-            value={password}
-            onChangeText={setPassword}
-          />
-          <View style={styles.buttonContainer}>
-            <Button title="confirm" onPress={checkPassword} />
-            <Button title="cancel" onPress={() => setModalVisible(false)} />
-          </View>
-        </View>
+  animationType="slide"
+  transparent={true}
+  visible={modalVisible}
+  onRequestClose={() => setModalVisible(false)}
+>
+  <View style={styles.modalView}>
+    <View style={styles.inputContainer}>
+      <TextInput
+        secureTextEntry
+        placeholder="enter password"
+        value={password}
+        onChangeText={setPassword}
+      />
+      <View style={styles.buttonContainer}>
+        <Button title="confirm" onPress={checkPassword} />
+        <Button title="cancel" onPress={() => setModalVisible(false)} />
       </View>
-    </Modal>
-
-    
-
-
+    </View>
+  </View>
+</Modal>
 
 
-     
+      
     </View>
   );
 }
-
 
 const styles = StyleSheet.create({
     container: {
       width: '100%',
       height: '100%',
     },
-
 
     buttonContainer: {
       flexDirection: 'row',
@@ -178,7 +146,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',     // 水平居中
       backgroundColor: 'rgba(0, 0, 0, 0.5)', // 半透明背景
     },
- 
+  
     inputContainer: {
       width: '80%',             // 输入区域宽度
       backgroundColor: 'white', // 白色背景
@@ -186,12 +154,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,         // 圆角边框
       elevation: 5,             // 在安卓上添加阴影效果
     },
-  })
+  }) 
 
 
-
-
-export default FollowUpScreen;
-
-
-
+export default CURBScreen;

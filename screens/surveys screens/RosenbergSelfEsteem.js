@@ -49,7 +49,7 @@ const RosenbergScreen = ({navigation}) => {
             scale={["", "", "", ""]}
             values={["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]}
             labels={["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]}
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.goBack()}
             buttonstyles={rosenbergRadioStyles}
             questionstyles={rosenbergStyle}
             finalstyles={rosenbergQuestionListStyle}

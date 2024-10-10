@@ -47,7 +47,7 @@ const CGIScreen = ({navigation}) => {
             </Text>,
 
         ]} 
-        goHome={() => navigation.navigate('Home')} 
+        goHome={() => navigation.goBack()}   
         liststyle="" 
         questionstyles={cgiStandardStyle} 
         buttonstyles={cgiRadioStylesStandard}

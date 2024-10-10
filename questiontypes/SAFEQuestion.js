@@ -44,13 +44,14 @@ const SAFEQuestion = ({q, scale, values, num, callback}) => {
         </Text>
         </View>
       );
-
       
     return ( 
     <View style={styles.singlequestion}>
-
-      {question}
-
+        
+        <Text style={styles.questionText}>
+          {question}
+        </Text>
+      
       <View style={styles.alloptions}>
         <InternalRadioWrapper isLiked={isLiked} onRadioBtnClick={respond} styles={SAFERadioStyle}/>
       </View>
@@ -59,10 +60,9 @@ const SAFEQuestion = ({q, scale, values, num, callback}) => {
         <Text style={styles.labeltext}>Not Stressful</Text>
         <Text style={styles.labeltext}>Extremely Stressful</Text>
       </View>
-
+    
     </View> 
   );
-
 }
  
 export default SAFEQuestion;

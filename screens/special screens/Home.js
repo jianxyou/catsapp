@@ -50,9 +50,13 @@ function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Button title="Participant" onPress={() => navigation.navigate('ParticipantScreen')} />
-      <Button title="Administrator" onPress={() => navigation.navigate('AdminScreen')} />
-      <Button title="Pet" onPress={() => navigation.navigate('MriScreen')} />
+      {/* <Button title="SDM8" onPress={() => navigation.navigate('SDM8Screen')} />
+      <Button title="CURB" onPress={() => navigation.navigate('CURBScreen')} /> */}
+      <Button title="CURB-S" onPress={() => navigation.navigate('CURB_S_Screen')} />
+      <Button title="Other studys" onPress={() => navigation.navigate('ParticipantScreen')} />
+      <Button title="Admin/curb_sdm8" onPress={() => navigation.navigate('AdminScreen')} />
+      <Button title="Admin/curb_s" onPress={() => navigation.navigate('Crubs_admin')} />
+      <Button title="PET" onPress={() => navigation.navigate('MriScreen')} />
       <Button title="FollowUp" onPress={() => navigation.navigate('FollowUp')} />
       {/* <Button title="Mri" onPress={() => navigation.navigate('MriScreen')} /> */}
     </View>

@@ -43,7 +43,7 @@ import SIASStyle from '../../styles/question styles/SIASStyle';
             questionnaireNumber={6}
             scale={["", "", "", "", ""]} 
             values={["Not at all", "Slightly", "Moderately", "Very","Extremely"]} 
-            goHome={() => navigation.navigate('MriScreen')}
+            goHome={() => navigation.goBack()}
             desc={desc}
             buttonstyle={SIASRadioStyles}
             liststyle={SIASquestionliststyle}

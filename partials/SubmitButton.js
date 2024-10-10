@@ -20,6 +20,8 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
     const {val, setVal} = useContext(ParticipantContext);
 
     const [isLoading, setIsLoading] = useState(false);
+
+    
     async function saveImageToAsyncStorage(uri) {
         try {
             // 从原始 URI 读取图像为 Base64
@@ -53,7 +55,8 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
             console.error('Error saving data', e);
         }
     };
- 
+    
+    
 
     
     const handleSubmission = async (questionnaireNumber) => {
@@ -79,6 +82,28 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
         if (isLoading) return; // Prevent multiple submissions
         setIsLoading(true);
         try {
+            if (questionnaireNumber == 37){
+                    
+            // 捕获屏幕截图
+            const uri = await capture();
+
+            await saveImageToAsyncStorage(uri);
+
+            // await handleSubmission(questionnaireNumber);
+        
+
+            // 复制图片并获取新路径
+            // let myuri = await copyImage(uri);
+
+            const base64Images = await getAllImages();
+            const pdfPath = await createPdfFromImages(base64Images);
+            if (pdfPath) {
+                await savePdfToFileApp(`file://${pdfPath}`);
+            }
+
+            goHome();
+            return ;
+            }
             let containsNull;
             if (dataForFlag){
                 containsNull = dataForFlag.includes(null);
@@ -86,11 +111,9 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
             else{
                 containsNull = data.includes(null);
             }
-            
-
             // 如果没有 "null" 值，则存储数据
             // 如果没有 "null" 值，则存储数据
-            if (!containsNull || questionnaireNumber ==24 || questionnaireNumber ==32) {
+            if (!containsNull || questionnaireNumber ==24 || questionnaireNumber == 32) {
                 // await storeData(data);
             // 存储表单数据
             await storeData(data);
@@ -100,7 +123,6 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
 
             await saveImageToAsyncStorage(uri);
 
-    
             await handleSubmission(questionnaireNumber);
         
 
@@ -112,7 +134,8 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
             if (pdfPath) {
                 await savePdfToFileApp(`file://${pdfPath}`);
             }
-        
+
+
             goHome();
             } 
             
@@ -139,20 +162,18 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
                         const processedIndex = Math.floor(index / 2);
                         processedIndices.add(processedIndex);
                     });
-            
                     nullIndices = Array.from(processedIndices);
-                  
                 }
             
                 // console.log('Null value indices:', nullIndices);
                 onErrorIndices(nullIndices);
-                // 这里可以添加更多的处理逻辑，例如提醒用户
                 Alert.alert(
                     "Missing Value"
                 );
 
-                
+            
             }
+
 
             
 
@@ -173,7 +194,7 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
             <Pressable onPress={handleSubmit}>
                 <View style={styles.textContainer}>
                     <Text style={styles.text}>Submit</Text>
-                </View>
+                </View> 
             </Pressable>
         </View>
     );

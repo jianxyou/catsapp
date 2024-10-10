@@ -233,7 +233,7 @@ const MJDrugHistoryQuestionnaireScreen = ({navigation}) => {
                 </Text>}
 
 
-            goHome={() => navigation.navigate('AdminScreen')}
+            goHome={() => navigation.goBack()}
 
             minidescs={[
                 "A) Lifetime History",

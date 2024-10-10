@@ -25,7 +25,7 @@ export default BAI_fu = ({navigation, route}) => {
         scale={[0, 1, 2, 3]} 
         values={[0, 1, 2, 3]} 
         labels={["Not at all", "Mildly, but it didn’t bother me much", "Moderately – it wasn’t pleasant at times", "Severely – it bothered me a lot"]}
-        goHome={() => navigation.navigate('FollowUp')}
+        goHome={() => navigation.goBack()}   
         questionstyles={tableStyle}
         buttonstyles={tableRadioStyles}
         finalstyles={borderQuestionListStyle}

@@ -57,7 +57,7 @@ const PANSSScreen = ({navigation}) => {
         ]} 
         minidescs={["", "", ""]} 
         desc="" 
-        goHome={() => navigation.navigate('Home')} 
+        goHome={() => navigation.goBack()} 
         liststyle={CompoundPANSSStyle} 
         finalstyle={panssQuestionListStyle} 
         buttonstyles={panssRadioStyles} 

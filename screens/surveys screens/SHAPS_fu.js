@@ -25,7 +25,7 @@ const SHAPS_fu_Screen = ({navigation}) => {
             questionnaireNumber={27}
             scale={["", "",]} 
             values={["True", "False"]} 
-            goHome={() => navigation.navigate('FollowUp')}
+            goHome={() => navigation.goBack()}
             desc={desc}
             buttonstyle={dastRadioStyles}
             liststyle={shapsQuestionListStyle}
