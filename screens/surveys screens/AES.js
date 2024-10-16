@@ -1,3 +1,4 @@
+import { LightSpeedInLeft } from "react-native-reanimated";
 import AESQuestionList from "../../surveytypes/AESQuestionList";
 
 const AESScreen = ({navigation}) => {
