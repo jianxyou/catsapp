@@ -45,9 +45,35 @@ const tableNamesSelf : Array<string | Array<string> > = [
     'BIS',
     'GAF',
     'BGLHA',
-    'BGLHA',
-    'BGLHA',
-    'BGLHA',
+
+
+    'TEC_fr',
+    'RLE_fr',
+    'TICS_fr',
+    'FTND_fr',
+    'BIS_fr',
+    'BGLHA_fr',
+
+    'CUDIT_fr',
+    'SAFE_fr',
+    'AES_fr',
+    'SIAS_fr',
+    'SAS_fr',
+    'RS_fr',
+    'SDS_fr',
+    'DAST_fr',
+    'Sorle_fr',
+    'Audit_fr',
+    'SHAPS_fr',
+    'CWS_fr',
+    'BAI_fr',
+
+
+
+    'Hass_fr',
+    'MCQ_fr',
+    'SAQ_fr',
+
 
 
 ];
@@ -99,13 +125,36 @@ const displayNamesSelf = [
     'BIS',
     'GAF',
     'BGLHA',
-    'BGLHA',
-    'BGLHA',
-    'BGLHA',
+
+
+    'TEC_fr',
+    'RLE_fr',
+    'TICS_fr',
+    'FTND_fr',
+    'BIS_fr',
+    'BGLHA_fr',
+
+
+    
+    'CUDIT_fr',
+    'SAFE_fr',
+    'AES_fr',
+    'SIAS_fr',
+    'SAS_fr',
+    'RS_fr',
+    'SDS_fr',
+    'DAST_fr',
+    'Sorle_fr',
+    'Audit_fr',
+    'SHAPS_fr',
+    'CWS_fr',
+    'BAI_fr',
 
 
 
-
+    'Hass_fr',
+    'MCQ_fr',
+    'SAQ_fr',
 
 ];
 
@@ -155,9 +204,35 @@ const internalNamesSelf : Array<string> = [
     'BIS',
     'GAF',
     'BGLHA',
-    'BGLHA',
-    'BGLHA',
 
+
+    'TEC_fr',
+    'RLE_fr',
+    'TICS_fr',
+    'FTND_fr',
+    'BIS_fr',
+    'BGLHA_fr',
+
+
+    'CUDIT_fr',
+    'SAFE_fr',
+    'AES_fr',
+    'SIAS_fr',
+    'SAS_fr',
+    'RS_fr',
+    'SDS_fr',
+    'DAST_fr',
+    'Sorle_fr',
+    'Audit_fr',
+    'SHAPS_fr',
+    'CWS_fr',
+    'BAI_fr',
+
+
+
+    'Hass_fr',
+    'MCQ_fr',
+    'SAQ_fr',
 ];
 
 

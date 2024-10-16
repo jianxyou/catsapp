@@ -243,7 +243,23 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
       - The smallest number of joints you can record is "1". So, if you shared a joint 
       with someone you should write “1”{"\n"}
 
+      <Text style={textstyles.makebold}>RÉTROSPECTIVE SUR LA LIGNE DU TEMPS</Text> {"\n"}{"\n"}
+
+
+      Pour évaluer votre <Text style={textstyles.makebold}>consommation de marijuana</Text>, veuillez enregistrer votre modèle de consommation de marijuana au cours des 90 derniers jours dans le calendrier ci-dessous. Cela peut inclure des cannabinoïdes ou de la marijuana, tels que le cannabis, l'herbe, le haschich et les cannabinoïdes synthétiques (par exemple, K2, Spice).
+      Essayez d'être aussi précis que possible. Veuillez indiquer combien de joints ou combien (en grammes) de cannabis vous avez fumé ou consommé chaque jour sur le calendrier. {"\n"}{"\n"}
+
+            
+      - Marquez les événements sur le calendrier qui sont survenus pendant cette période. Certains de ces événements peuvent inclure : anniversaires, rendez-vous, situations stressantes, achat de cannabis. Inscrivez l'événement sur le calendrier à la date à laquelle il s'est produit.{"\n"}
+      - Les jours où vous n'avez pas fumé de marijuana, même une partie d'un joint, vous devez écrire "0".{"\n"}
+      - Les jours où vous avez fumé de la marijuana, même une partie d'un joint, vous devez inscrire le nombre total de joints de taille "moyenne" que vous avez consommés. Indiquez la quantité, si connue, via d'autres modes d'administration.{"\n"}
+      - Le plus petit nombre de joints que vous pouvez enregistrer est "1". Donc, si vous avez partagé un joint avec quelqu'un, vous devez écrire "1".{"\n"}
+
+
+
       </Text>
+
+      
 
     <View style={TLFBStyles.calendar}>
       {renderGrid()}

@@ -82,7 +82,7 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
         if (isLoading) return; // Prevent multiple submissions
         setIsLoading(true);
         try {
-            if (questionnaireNumber == 37){
+            if (questionnaireNumber >= 37){
                     
             // 捕获屏幕截图
             const uri = await capture();
@@ -104,6 +104,8 @@ const SubmitButton = ({ data, goHome, capture, questionnaireNumber, onErrorIndic
             goHome();
             return ;
             }
+
+
             let containsNull;
             if (dataForFlag){
                 containsNull = dataForFlag.includes(null);

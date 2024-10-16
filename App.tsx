@@ -75,6 +75,38 @@ import FTND_fu_Screen from './screens/surveys screens/FTND_fu';
 import CUDIT_fu_Screen from './screens/surveys screens/CUDIT_fu';
 import SDS_fu_Screen from './screens/surveys screens/SDS_fu';
 
+
+
+import CURB_S_fr_Screen from './screens/special screens/CURB_S_fr';
+import PET_fr_Screen from './screens/special screens/PET_fr';
+
+
+import Tec_fr_Screen from './screens/TEC_fr';
+import RLE_fr_Screen from './screens/surveys screens/RLE_fr';
+import TICS_fr_Screen from './screens/surveys screens/TICS_fr';
+import BIS_fr_screen from './screens/surveys screens/BIS_fr';
+import BGLHA_fr from './screens/surveys screens/BGLHA_fr';
+
+import Beck_fr_Screen from './screens/surveys screens/BAI_fr';
+import CUDIT_fr_Screen from './screens/surveys screens/CUDIT_fr';
+import SAFE_fr_Screen from './screens/surveys screens/SAFE_fr';
+import AES_fr_Screen from './screens/surveys screens/AES_fr';
+import SIAS_fr_Screen from './screens/surveys screens/SIAS_fr';
+import SAS_fr_Screen from './screens/surveys screens/SAS_fr';
+import RS_fr_Screen from './screens/surveys screens/RS_fr_screen';
+import SDS_fr_Screen from './screens/surveys screens/SDS_fr';
+import DAST_fr_Screen from './screens/surveys screens/DAST_fr';
+import Sorle_fr_Screen from './screens/surveys screens/Sorle_fr';
+import Audit_fr_Screen from './screens/surveys screens/AUDIT_fr';
+import SHAPS_fr_Screen from './screens/surveys screens/SHAPS_fr';
+import CWS_fr_Screen from './screens/surveys screens/CWS_fr';
+import Others_fr_Screen from './screens/special screens/Others_fr';
+import Hass_fr_Screen from './screens/surveys screens/hass_fr';
+import MCQ_fr_Screen from './screens/surveys screens/MCQ_fr';
+import SAQ_fr_Screen from './screens/surveys screens/SAQ_fr';
+import FTND_fr_Screen from './screens/surveys screens/FTND_fr';
+import FollowUp_fr_Screen from './screens/special screens/Followup_fr';
+
 const Stack = createNativeStackNavigator();
 
 function App(): JSX.Element {
@@ -180,6 +212,43 @@ function App(): JSX.Element {
       <Stack.Screen name='FTND_fu' component={FTND_fu_Screen} />
       <Stack.Screen name='CUDIT-R_fu' component={CUDIT_fu_Screen} />
       <Stack.Screen name='SDS_fu' component={SDS_fu_Screen} />
+
+
+      <Stack.Screen name='curbs_fr' component={CURB_S_fr_Screen} />
+      <Stack.Screen name='Others_fr' component={Others_fr_Screen} />
+      <Stack.Screen name='PET_fr' component={PET_fr_Screen} />
+
+      <Stack.Screen name='TEC_fr' component={Tec_fr_Screen} />
+      <Stack.Screen name='RLE_fr' component={RLE_fr_Screen} />
+      <Stack.Screen name='TICS_fr' component={TICS_fr_Screen} />
+      <Stack.Screen name='FTND_fr' component={FTND_fr_Screen} />
+      <Stack.Screen name='BIS_fr' component={BIS_fr_screen} />
+      <Stack.Screen name='BGLHA_fr' component={BGLHA_fr} />
+
+
+      <Stack.Screen name='BAI_fr' component={Beck_fr_Screen} />
+      <Stack.Screen name='CUDIT_fr' component={CUDIT_fr_Screen} />
+      <Stack.Screen name='SAFE_fr' component={SAFE_fr_Screen} /> 
+      <Stack.Screen name='AES_fr' component={AES_fr_Screen} />  
+      <Stack.Screen name='SIAS_fr' component={SIAS_fr_Screen} />  
+      <Stack.Screen name='SAS_fr' component={SAS_fr_Screen} />  
+      <Stack.Screen name='RS_fr' component={RS_fr_Screen} /> 
+      {/* <RLE></RLE> ，这里需要自己加上去*/}
+      <Stack.Screen name='SDS_fr' component={SDS_fr_Screen} /> 
+      <Stack.Screen name='DAST_fr' component={DAST_fr_Screen} />
+      <Stack.Screen name='Sorle_fr' component={Sorle_fr_Screen} /> 
+      <Stack.Screen name='Audit_fr' component={Audit_fr_Screen} />
+      <Stack.Screen name='SHAPS_fr' component={SHAPS_fr_Screen} />
+      {/* TEC，这里需要自己加上去*/}
+      <Stack.Screen name='CWS_fr' component={CWS_fr_Screen} />
+     {/* Tics，这里需要自己加上去*/}
+
+
+      <Stack.Screen name='Hass_fr' component={Hass_fr_Screen} />
+      <Stack.Screen name='MCQ_fr' component={MCQ_fr_Screen} />
+      <Stack.Screen name='SAQ_fr' component={SAQ_fr_Screen} />
+      <Stack.Screen name='Followup_fr' component={FollowUp_fr_Screen} />
+    
 
 
       </Stack.Navigator>

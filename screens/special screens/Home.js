@@ -53,11 +53,15 @@ function HomeScreen({ navigation }) {
       {/* <Button title="SDM8" onPress={() => navigation.navigate('SDM8Screen')} />
       <Button title="CURB" onPress={() => navigation.navigate('CURBScreen')} /> */}
       <Button title="CURB-S" onPress={() => navigation.navigate('CURB_S_Screen')} />
+      <Button title="CURB-S-fr" onPress={() => navigation.navigate('curbs_fr')} />
       <Button title="Other studys" onPress={() => navigation.navigate('ParticipantScreen')} />
+      <Button title="Other studys_fr" onPress={() => navigation.navigate('Others_fr')} />
       <Button title="Admin/curb_sdm8" onPress={() => navigation.navigate('AdminScreen')} />
       <Button title="Admin/curb_s" onPress={() => navigation.navigate('Crubs_admin')} />
       <Button title="PET" onPress={() => navigation.navigate('MriScreen')} />
+      <Button title="PET_fr" onPress={() => navigation.navigate('PET_fr')} />
       <Button title="FollowUp" onPress={() => navigation.navigate('FollowUp')} />
+      <Button title="FollowUp_fr" onPress={() => navigation.navigate('Followup_fr')} />
       {/* <Button title="Mri" onPress={() => navigation.navigate('MriScreen')} /> */}
     </View>
   );
