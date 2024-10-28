@@ -62,6 +62,8 @@ function HomeScreen({ navigation }) {
       <Button title="PET_fr" onPress={() => navigation.navigate('PET_fr')} />
       <Button title="FollowUp" onPress={() => navigation.navigate('FollowUp')} />
       <Button title="FollowUp_fr" onPress={() => navigation.navigate('Followup_fr')} />
+      <Button title="FollowUp_2fr" onPress={() => navigation.navigate('Followup_fr')} />
+        
       {/* <Button title="Mri" onPress={() => navigation.navigate('MriScreen')} /> */}
     </View>
   );
