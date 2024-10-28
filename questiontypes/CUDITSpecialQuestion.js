@@ -30,17 +30,14 @@ const CUDITSpecialQuestion = ({q, scale, values, num, callback, questionstyle, b
             : { ...isLikedItem, selected: false }
 
         );
-
-
-
         setIsLiked(updatedState);
-
+        
         if (!(item.selected)) callback(num, item.value);
         else callback (num, null);
     };
 
     const question = (
-
+        
         <View style={styles.questionlabelcontainer}>
 
             <View style={styles.number}>
@@ -67,6 +64,8 @@ const CUDITSpecialQuestion = ({q, scale, values, num, callback, questionstyle, b
 
     );
     
+
+
     return (  
         <View style={styles.singlequestion}>
 

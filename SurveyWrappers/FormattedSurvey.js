@@ -16,7 +16,7 @@ const FormattedSurvey = ({questionnaireNumber, listofqs, data, desc, goHome}) =>
         </View>
       );
 
-      return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles);
+      return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles,null);
 }
 
 export default FormattedSurvey;

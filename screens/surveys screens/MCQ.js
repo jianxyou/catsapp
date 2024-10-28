@@ -6,11 +6,11 @@ const MCQScreen = ({navigation}) => {
     return ( 
         
         <MCQQuestionList 
-            questionnaireNumber={4}
+            questionnaireNumber={5}
             desc=""
             scale={[1,2,3,4,5,6,7]}
             values={[1,2,3,4,5,6,7]}
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('MriScreen')}
             finalstyles={questionListStyle}
             qs={[
                 "Smoking marijuana would be pleasant right now.",

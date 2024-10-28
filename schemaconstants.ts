@@ -1,12 +1,21 @@
 const tableNamesSelf : Array<string | Array<string> > = [
-    "BAI",
-    "tbl_CUDITR",
-    "FTND",
+    "DrugHQ", //Drug history questionnaire
+    "CSSRS", //不知道有没有这个表名
+    "BSMSS",
+    "HAMD",
+    
+
+    
     ["HUS_Hassles", "HUS_Uplifts" ],
     "MCQ_curbfeppa",
+    "SAQ",
+    "tbl_TLFB",
+
+    "BAI",
+    "tbl_CUDITR",
+    // "FTND",
     "SAFE",
     "AES",
-    "DrugHQ", //Drug history questionnaire
     "SIAS",
     "SAS",
     "RS", //Rosenberg
@@ -18,18 +27,41 @@ const tableNamesSelf : Array<string | Array<string> > = [
     "SHAPS",
     "tbl_TEC_Duration",
     "tbl_CWS",
-   // "TICS"
+    //"SRAC",
+    "TICS",
+    "FTND",
+
+
+    "SRLE", //SoRLE
+    "BAI",
+    "SHAPS",
+    "AES",
+    "SIAS",
+    "SAS",
+    "FTND",
+    "tbl_CUDITR",
+    "SDS",
+
+
 ];
 
 const displayNamesSelf = [
+    "Drug History Questionnaire", 
+    "CSSRS",
+    "BSMSS",
+    "HAMD",
+
+    "Hassles and Uplifts Scale",
+    "12 - Item Marijuana Craving Questionnaire", 
+    "SAQ",
+    "TLFB",
+
+
     'Beck Anxiety Inventory', 
     'Cannabis Use Disorder Identification Test - Revised (CUDIT-R)',  
-    "Fagerstorm Test For Nicotine Dependence (FTND)", 
-    "Hassles and Uplifts Scale", 
-    "12 - Item Marijuana Craving Questionnaire", 
+    // "Fagerstorm Test For Nicotine Dependence (FTND)", 
     "SAFE", 
     "Apathy Evaluation Scale (Self-rated)", 
-    "Drug History Questionnaire", 
     "SIAS", 
     "SAS", 
     "Rosenberg Scale", 
@@ -41,32 +73,74 @@ const displayNamesSelf = [
     'SHAPS', 
     'T.E.C.', 
     'The Cannabis Withdrawal Scale',
-   // "TICS",
+    "TICS",
+    "Fagerstorm Test For Nicotine Dependence (FTND)" ,
+
+
+    'Survey of recent life events', 
+    'Beck Anxiety Inventory', 
+    "SHAPS",
+    "Apathy Evaluation Scale (Self-rated)", 
+    "SIAS", 
+    "SAS", 
+    'AUDIT', 
+    "Fagerstorm Test For Nicotine Dependence (FTND)" ,
+    'Cannabis Use Disorder Identification Test - Revised (CUDIT-R)', 
+    'SDS',
+
+
+
+
+
+
 ];
 
 
 const internalNamesSelf : Array<string> = [
-    'Beck Anxiety', 
-    'CUDIT-R',  
-    "FTND", 
+    "MJ Drug History Questionnaire", 
+    "CSSRS",
+    "BSMSS",
+    "HAMD",
+
     "Hassles and Uplifts", 
     "MCQ", 
+    "SAQ",
+    "TLFB",
+
+    'Beck Anxiety', 
+    'CUDIT-R',  
+    // "FTND", 
     "SAFE", 
     "AES", 
-    "MJ Drug History Questionnaire", 
     "SIAS", 
     "SAS", 
     "Rosenberg", 
     "RLE", 
     'SDS', 
     'DAST', 
-    'SoRLE', 
+    'SRLE', 
     'Audit', 
     'Shaps', 
     'Tec', 
     "Cannabis",
-    //"TICS",
+    "TICS",
+    "FTND",
+
+
+    'SRLE_fu',
+    'Beck Anxiety_fu', 
+    "Shaps_fu",
+    "AES_fu", 
+    "SIAS_fu",
+    "SAS_fu",
+    'Audit_fu',
+    "FTND_fu",
+    'CUDIT-R_fu',
+    'SDS_fu',
+
 ];
+
+
 
 const sqlCreateTablesSelf : Array<string> = [
     'strSQL="CREATE TABLE IF NOT EXISTS [BAI] ([IDBAI] Counter,[patientID] Long,[visit] Integer,[BAI_1] Integer,[BAI_2] Integer,[BAI_3] Integer,[BAI_4] Integer,[BAI_5] Integer,[BAI_6] Integer,[BAI_7] Integer,[BAI_8] Integer,[BAI_9] Integer,[BAI_10] Integer,[BAI_11] Integer,[BAI_12] Integer,[BAI_13] Integer,[BAI_14] Integer,[BAI_15] Integer,[BAI_16] Integer,[BAI_17] Integer,[BAI_18] Integer,[BAI_19] Integer,[BAI_20] Integer,[BAI_21] Integer )"\nCurrentdb.Execute strSQL',
@@ -91,15 +165,26 @@ const sqlCreateTablesSelf : Array<string> = [
     //'strSQL="CREATE TABLE [TICS] IF NOT EXISTS ([IDTICS] Counter,[patientID] Long,[visit] Integer,[tics_1] Integer,[tics_2] Integer,[tics_3] Integer,[tics_4] Integer,[tics_5] Integer,[tics_6] Integer,[tics_7] Integer,[tics_8] Integer,[tics_9] Integer,[tics_10] Integer,[tics_11] Integer,[tics_12] Integer,[tics_13] Integer,[tics_14] Integer,[tics_15] Integer,[tics_16] Integer,[tics_17] Integer,[tics_18] Integer,[tics_19] Integer,[tics_20] Integer,[tics_21] Integer,[tics_22] Integer,[tics_23] Integer,[tics_24] Integer,[tics_25] Integer,[tics_26] Integer,[tics_27] Integer,[tics_28] Integer,[tics_29] Integer,[tics_30] Integer )"\nCurrentdb.Execute strSQL'
 ];
 
-const tableColumnsSelf : Array<any> = [
+const tableColumnsSelf : Array<any> = [ 
+
+
+    ["Life_FirstUse","Life_HowLong","Life_TypicalRoute","Life_Frequency","Life_Dose","Life_AgeFirstUse","Life_totalMonthsUse","Life_FreqMonth","Life_TotalAmount","12_FirstUse","12_TypicalRoute","12_Freq","12_AgeFirstUse","12_TotalMonthsUse","12_FreqMonth","12_TotalAmountofLifetime","UseMore","NeedMore","[SXSDuring&HowLong]","SXSstop","OtherDrugs","TakeMore","CutDown","TimeSpent","GivenUp","KeepTaking","WhyTake","Harmful","DamageBrain","Crave","InGroup","FamilyHistDrug","WillingtoChange"],
+    ["wocao"],
+    ["Occupation","Education","SocialStatus"], //BSSS
+    ["HRSD_1", "HRSD_2", "HRSD_3", "HRSD_4", "HRSD_5", "HRSD_6", "HRSD_7", "HRSD_8", "HRSD_9", "HRSD_10", "HRSD_11", "HRSD_12", "HRSD_13", "HRSD_14", "HRSD_15", "HRSD_16", "HRSD_17", "HRSD_18","HRSD_18AMPM", "HRSD_19", "HRSD_20", "HRSD_21"],
+
+
+    [["hass1","hass2","hass3","hass4","hass5","hass6","hass7","hass8","hass9","hass10","hass11","hass12","hass13","hass14","hass15","hass16","hass17","hass18","hass19","hass20","hass21","hass22","hass23","hass24","hass25","hass26","hass27","hass28","hass29","hass30","hass31","hass32","hass33","hass34","hass35","hass36","hass37","hass38","hass39","hass40","hass41","hass42","hass43","hass44","hass45","hass46","hass47","hass48","hass49","hass50","hass51","hass52","hass53”]], [up1","up2","up3","up4","up5","up6","up7","up8","up9","up10","up11","up12","up13","up14","up15","up16","up17","up18","up19","up20","up21","up22","up23","up24","up25","up26","up27","up28","up29","up30","up31","up32","up33","up34","up35","up36","up37","up38","up39","up40","up41","up42","up43","up44","up45","up46","up47","up48","up49","up50","up51","up52","up53"]],
+    ["MCQ_1","MCQ_2","MCQ_3","MCQ_4","MCQ_5","MCQ_6","MCQ_7","MCQ_8","MCQ_9","MCQ_10","MCQ_11","MCQ_12"],
+    ["SAQ_1", "SAQ_2", "SAQ_3", "SAQ_4", "SAQ_5", "SAQ_6", "SAQ_7", "SAQ_8", "SAQ_9", "SAQ_10", "SAQ_11", "SAQ_12", "SAQ_13", "SAQ_14", "SAQ_15", "SAQ_16", "SAQ_17", "SAQ_18", "SAQ_19", "SAQ_20"],
+    ["TotalJoints","DaysJoints","PercDaysJoints","AvgJointPerUseDay","AvgJointPerDay","AbstinentDays","EstJointsYear","GreatJointDay","JointsPerWeek"],
+
+
     ["BAI_1", "BAI_2", "BAI_3", "BAI_4", "BAI_5", "BAI_6", "BAI_7", "BAI_8", "BAI_9", "BAI_10", "BAI_11", "BAI_12", "BAI_13", "BAI_14", "BAI_15", "BAI_16", "BAI_17", "BAI_18","BAI_19", "BAI_20", "BAI_21"],
     ["CUDITR_1", "CUDITR_2", "CUDITR_3", "CUDITR_4", "CUDITR_5", "CUDITR_6", "CUDITR_7", "CUDITR_8"],
-    ["FTND_1", "FTND_2", "FTND_3", "FTND_4", "FTND_5", "FTND_6"],  
-    [["hass1","hass2","hass3","hass4","hass5","hass6","hass7","hass8","hass9","hass10","hass11","hass12","hass13","hass14","hass15","hass16","hass17","hass18","hass19","hass20","hass21","hass22","hass23","hass24","hass25","hass26","hass27","hass28","hass29","hass30","hass31","hass32","hass33","hass34","hass35","hass36","hass37","hass38","hass39","hass40","hass41","hass42","hass43","hass44","hass45","hass46","hass47","hass48","hass49","hass50","hass51","hass52","hass53”], [up1","up2","up3","up4","up5","up6","up7","up8","up9","up10","up11","up12","up13","up14","up15","up16","up17","up18","up19","up20","up21","up22","up23","up24","up25","up26","up27","up28","up29","up30","up31","up32","up33","up34","up35","up36","up37","up38","up39","up40","up41","up42","up43","up44","up45","up46","up47","up48","up49","up50","up51","up52","up53"]],
-    ["MCQ_1","MCQ_2","MCQ_3","MCQ_4","MCQ_5","MCQ_6","MCQ_7","MCQ_8","MCQ_9","MCQ_10","MCQ_11","MCQ_12"],
+    //["FTND_1", "FTND_2", "FTND_3", "FTND_4", "FTND_5", "FTND_6"],  
     ["SAFE_1","SAFE_2","SAFE_3","SAFE_4","SAFE_5","SAFE_6","SAFE_7","SAFE_8","SAFE_9","SAFE_10","SAFE_11","SAFE_12","SAFE_13","SAFE_14","SAFE_15","SAFE_16","SAFE_17","SAFE_18","SAFE_19","SAFE_20","SAFE_21","SAFE_22","SAFE_23","SAFE_24"],
     ["AES_1","AES_2","AES_3","AES_4","AES_5","AES_6","AES_7","AES_8","AES_9","AES_10","AES_11","AES_12","AES_13","AES_14","AES_15","AES_16","AES_17","AES_18","AES_1_num","AES_2_num","AES_3_num","AES_4_num","AES_5_num","Reversed_AES_6_num","AES_7_num","AES_8_num","AES_9_num","Reversed_AES_10_num","Reversed_AES_11_num","AES_12_num","AES_13_num","AES_14_num","AES_15_num","AES_16_num","AES_17_num","AES_18_num"],
-    ["Life_FirstUse","Life_HowLong","Life_TypicalRoute","Life_Frequency","Life_Dose","Life_AgeFirstUse","Life_totalMonthsUse","Life_FreqMonth","Life_TotalAmount","12_FirstUse","12_TypicalRoute","12_Freq","12_AgeFirstUse","12_TotalMonthsUse","12_FreqMonth","12_TotalAmountofLifetime","UseMore","NeedMore","[SXSDuring&HowLong]","SXSstop","OtherDrugs","TakeMore","CutDown","TimeSpent","GivenUp","KeepTaking","WhyTake","Harmful","DamageBrain","Crave","InGroup","FamilyHistDrug","WillingtoChange"],
     ["SIAS_1","SIAS_2","SIAS_3","SIAS_4","SIAS_5","SIAS_6","SIAS_7","SIAS_8","SIAS_9","SIAS_10","SIAS_11","SIAS_12","SIAS_13","SIAS_14","SIAS_15","SIAS_16","SIAS_17","SIAS_18","SIAS_19","SIAS_20"],
     ["SAS_1","SAS_2","SAS_3","SAS_4","SAS_5","SAS_6","SAS_7","SAS_8","SAS_9","SAS_10","SAS_11","SAS_12","SAS_13","SAS_14","SAS_15","SAS_16","SAS_17","SAS_18","SAS_19","SAS_20"],
     ["RS_1","RS_2","RS_3","RS_4","RS_5","RS_6","RS_7","RS_8","RS_9","RS_10"],
@@ -109,9 +194,24 @@ const tableColumnsSelf : Array<any> = [
     ["SRLE_1","SRLE_2","SRLE_3","SRLE_4","SRLE_5","SRLE_6","SRLE_7","SRLE_8","SRLE_9","SRLE_10","SRLE_11","SRLE_12","SRLE_13","SRLE_14","SRLE_15","SRLE_16","SRLE_17","SRLE_18","SRLE_19","SRLE_20","SRLE_21","SRLE_22","SRLE_23","SRLE_24","SRLE_25","SRLE_26","SRLE_27","SRLE_28","SRLE_29","SRLE_30","SRLE_31","SRLE_32","SRLE_33","SRLE_34","SRLE_35","SRLE_36","SRLE_37","SRLE_38","SRLE_39","SRLE_40","SRLE_41"],
     ["AUDITR_1","AUDITR_2","AUDITR_3","AUDITR_4","AUDITR_5","AUDITR_6","AUDITR_7","AUDITR_8","AUDITR_9","AUDITR_10"],
     ["SHAPS_1","SHAPS_2","SHAPS_3","SHAPS_4","SHAPS_5","SHAPS_6","SHAPS_7","SHAPS_8","SHAPS_9","SHAPS_10","SHAPS_11","SHAPS_12","SHAPS_13","SHAPS_14","SHAPS_15"],
-    ["Age_0-6_1_Duration","Age_7-12_1_Duration","Age_13-18_1_Duration","Age_0-6_2_Duration","Age_7-12_2_Duration","Age_13-18_2_Duration","Age_0-6_3_Duration","Age_7-12_3_Duration","Age_13-18_3_Duration","Age_0-6_4_Duration","Age_7-12_4_Duration","Age_13-18_4_Duration","Age_0-6_5_Duration","Age_7-12_5_Duration","Age_13-18_5_Duration","Age_0-6_6_Duration","Age_7-12_6_Duration","Age_13-18_6_Duration","Age_0-6_7_Duration","Age_7-12_7_Duration","Age_13-18_7_Duration","Age_0-6_8_Duration","Age_7-12_8_Duration","Age_13-18_8_Duration","Age_0-6_9_Duration","Age_7-12_9_Duration","Age_13-18_9_Duration","Age_0-6_10_Duration","Age_7-12_10_Duration","Age_13-18_10_Duration","Age_0-6_11_Duration","Age_7-12_11_Duration","Age_13-18_11_Duration","Age_0-6_12_Duration","Age_7-12_12_Duration","Age_13-18_12_Duration","Age_0-6_13_Duration","Age_7-12_13_Duration","Age_13-18_13_Duration","Age_0-6_14_Duration","Age_7-12_14_Duration","Age_13-18_14_Duration","Age_0-6_15_Duration","Age_7-12_15_Duration","Age_13-18_15_Duration","Age_0-6_16_Duration","Age_7-12_16_Duration","Age_13-18_16_Duration","Age_0-6_17_Duration","Age_7-12_17_Duration","Age_13-18_17_Duration","Age_0-6_18_Duration","Age_7-12_18_Duration","Age_13-18_18_Duration","Age_0-6_19_Duration","Age_7-12_19_Duration","Age_13-18_19_Duration","Age_0-6_20_Duration","Age_7-12_20_Duration","Age_13-18_20_Duration","Age_0-6_21_Duration","Age_7-12_21_Duration","Age_13-18_21_Duration","Age_0-6_22_Duration","Age_7-12_22_Duration","Age_13-18_22_Duration","Age_0-6_23_Duration","Age_7-12_23_Duration","Age_13-18_23_Duration","Age_0-6_24_Duration","Age_7-12_24_Duration","Age_13-18_24_Duration","Age_0-6_25_Duration","Age_7-12_25_Duration","Age_13-18_25_Duration","Age_0-6_26_Duration","Age_7-12_26_Duration","Age_13-18_26_Duration","Age_0-6_27_Duration","Age_7-12_27_Duration","Age_13-18_27_Duration","Age_0-6_28_Duration","Age_7-12_28_Duration","Age_13-18_28_Duration","Age_0-6_29_Duration","Age_7-12_29_Duration","Age_13-18_29_Duration"],
+    //["Age_0-6_1_Duration","Age_7-12_1_Duration","Age_13-18_1_Duration","Age_0-6_2_Duration","Age_7-12_2_Duration","Age_13-18_2_Duration","Age_0-6_3_Duration","Age_7-12_3_Duration","Age_13-18_3_Duration","Age_0-6_4_Duration","Age_7-12_4_Duration","Age_13-18_4_Duration","Age_0-6_5_Duration","Age_7-12_5_Duration","Age_13-18_5_Duration","Age_0-6_6_Duration","Age_7-12_6_Duration","Age_13-18_6_Duration","Age_0-6_7_Duration","Age_7-12_7_Duration","Age_13-18_7_Duration","Age_0-6_8_Duration","Age_7-12_8_Duration","Age_13-18_8_Duration","Age_0-6_9_Duration","Age_7-12_9_Duration","Age_13-18_9_Duration","Age_0-6_10_Duration","Age_7-12_10_Duration","Age_13-18_10_Duration","Age_0-6_11_Duration","Age_7-12_11_Duration","Age_13-18_11_Duration","Age_0-6_12_Duration","Age_7-12_12_Duration","Age_13-18_12_Duration","Age_0-6_13_Duration","Age_7-12_13_Duration","Age_13-18_13_Duration","Age_0-6_14_Duration","Age_7-12_14_Duration","Age_13-18_14_Duration","Age_0-6_15_Duration","Age_7-12_15_Duration","Age_13-18_15_Duration","Age_0-6_16_Duration","Age_7-12_16_Duration","Age_13-18_16_Duration","Age_0-6_17_Duration","Age_7-12_17_Duration","Age_13-18_17_Duration","Age_0-6_18_Duration","Age_7-12_18_Duration","Age_13-18_18_Duration","Age_0-6_19_Duration","Age_7-12_19_Duration","Age_13-18_19_Duration","Age_0-6_20_Duration","Age_7-12_20_Duration","Age_13-18_20_Duration","Age_0-6_21_Duration","Age_7-12_21_Duration","Age_13-18_21_Duration","Age_0-6_22_Duration","Age_7-12_22_Duration","Age_13-18_22_Duration","Age_0-6_23_Duration","Age_7-12_23_Duration","Age_13-18_23_Duration","Age_0-6_24_Duration","Age_7-12_24_Duration","Age_13-18_24_Duration","Age_0-6_25_Duration","Age_7-12_25_Duration","Age_13-18_25_Duration","Age_0-6_26_Duration","Age_7-12_26_Duration","Age_13-18_26_Duration","Age_0-6_27_Duration","Age_7-12_27_Duration","Age_13-18_27_Duration","Age_0-6_28_Duration","Age_7-12_28_Duration","Age_13-18_28_Duration","Age_0-6_29_Duration","Age_7-12_29_Duration","Age_13-18_29_Duration"],
+    ["TEC_1", "Age_1", "Impact_1", "Support_1", "TEC_2", "Age_2", "Impact_2", "Support_2", "TEC_3", "Age_3", "Impact_3", "Support_3", "TEC_4", "Age_4", "Impact_4", "Support_4", "TEC_5", "Age_5", "Impact_5", "Support_5", "TEC_6", "Age_6", "Impact_6", "Support_6", "TEC_7", "Age_7", "Impact_7", "Support_7", "TEC_8", "Age_8", "Impact_8", "Support_8", "TEC_9", "Age_9", "Impact_9", "Support_9", "TEC_10", "Age_10", "Impact_10", "Support_10", "TEC_11", "Age_11", "Impact_11", "Support_11", "TEC_12", "Age_12", "Impact_12", "Support_12", "TEC_13", "Age_13", "Impact_13", "Support_13", "TEC_14", "Age_14", "Impact_14", "Support_14", "TEC_15", "Age_15", "Impact_15", "Support_15", "TEC_16", "Age_16", "Impact_16", "Support_16", "TEC_17", "Age_17", "Impact_17", "Support_17", "TEC_18", "Age_18", "Impact_18", "Support_18", "TEC_19", "Age_19", "Impact_19", "Support_19", "TEC_20", "Age_20", "Impact_20", "Support_20", "TEC_21", "Age_21", "Impact_21", "Support_21", "TEC_22", "Age_22", "Impact_22", "Support_22", "TEC_23", "Age_23", "Impact_23", "Support_23", "TEC_24", "Age_24", "Impact_24", "Support_24", "TEC_25", "Age_25", "Impact_25", "Support_25", "TEC_26", "Age_26", "Impact_26", "Support_26", "TEC_27", "Age_27", "Impact_27", "Support_27", "TEC_28", "Age_28", "Impact_28", "Support_28", "TEC_29", "Age_29", "Impact_29", "Support_29","N_EM_MAL","N_PHY_MAL","N_SEX_MAL","N_SEX_AB","RELATION_EM_NEGLECT","RELATION_EM_ABUSE","RELATION_PHYS_ABUSE","RELATION_SEX_HARASS","RELATION_SEX_ABUSE","OTHER_TRAUMA"],
     ["Severity_1","Impact_1","Severity_2","Impact_2","Severity_3","Impact_3","Severity_4","Impact_4","Severity_5","Impact_5","Severity_6","Impact_6","Severity_7","Impact_7","Severity_8","Impact_8","Severity_9","Impact_9","Severity_10","Impact_10","Severity_11","Impact_11","Severity_12","Impact_12","Severity_13","Impact_13","Severity_14","Impact_14","Severity_15","Impact_15","Severity_16","Impact_16","Severity_17","Impact_17","Severity_18","Impact_18","Severity_19","Impact_19"],
-    //["tics_1","tics_2","tics_3","tics_4","tics_5","tics_6","tics_7","tics_8","tics_9","tics_10","tics_11","tics_12","tics_13","tics_14","tics_15","tics_16","tics_17","tics_18","tics_19","tics_20","tics_21","tics_22","tics_23","tics_24","tics_25","tics_26","tics_27","tics_28","tics_29","tics_30"],
+    ["tics_1", "tics_2", "tics_3", "tics_4", "tics_5", "tics_6", "tics_7", "tics_8", "tics_9", "tics_10", "tics_11", "tics_12", "tics_13", "tics_14", "tics_15", "tics_16", "tics_17", "tics_18", "tics_19", "tics_20", "tics_21", "tics_22", "tics_23", "tics_24", "tics_25", "tics_26", "tics_27", "tics_28", "tics_29", "tics_30"],
+    ["FTND_1", "FTND_2", "FTND_3", "FTND_4", "FTND_5", "FTND_6"], 
+
+
+    ["SRLE_1","SRLE_2","SRLE_3","SRLE_4","SRLE_5","SRLE_6","SRLE_7","SRLE_8","SRLE_9","SRLE_10","SRLE_11","SRLE_12","SRLE_13","SRLE_14","SRLE_15","SRLE_16","SRLE_17","SRLE_18","SRLE_19","SRLE_20","SRLE_21","SRLE_22","SRLE_23","SRLE_24","SRLE_25","SRLE_26","SRLE_27","SRLE_28","SRLE_29","SRLE_30","SRLE_31","SRLE_32","SRLE_33","SRLE_34","SRLE_35","SRLE_36","SRLE_37","SRLE_38","SRLE_39","SRLE_40","SRLE_41"],
+    ["BAI_1", "BAI_2", "BAI_3", "BAI_4", "BAI_5", "BAI_6", "BAI_7", "BAI_8", "BAI_9", "BAI_10", "BAI_11", "BAI_12", "BAI_13", "BAI_14", "BAI_15", "BAI_16", "BAI_17", "BAI_18","BAI_19", "BAI_20", "BAI_21"],
+    ["SHAPS_1","SHAPS_2","SHAPS_3","SHAPS_4","SHAPS_5","SHAPS_6","SHAPS_7","SHAPS_8","SHAPS_9","SHAPS_10","SHAPS_11","SHAPS_12","SHAPS_13","SHAPS_14","SHAPS_15"],
+    ["AES_1","AES_2","AES_3","AES_4","AES_5","AES_6","AES_7","AES_8","AES_9","AES_10","AES_11","AES_12","AES_13","AES_14","AES_15","AES_16","AES_17","AES_18","AES_1_num","AES_2_num","AES_3_num","AES_4_num","AES_5_num","Reversed_AES_6_num","AES_7_num","AES_8_num","AES_9_num","Reversed_AES_10_num","Reversed_AES_11_num","AES_12_num","AES_13_num","AES_14_num","AES_15_num","AES_16_num","AES_17_num","AES_18_num"],
+    ["SIAS_1","SIAS_2","SIAS_3","SIAS_4","SIAS_5","SIAS_6","SIAS_7","SIAS_8","SIAS_9","SIAS_10","SIAS_11","SIAS_12","SIAS_13","SIAS_14","SIAS_15","SIAS_16","SIAS_17","SIAS_18","SIAS_19","SIAS_20"],
+    ["SAS_1","SAS_2","SAS_3","SAS_4","SAS_5","SAS_6","SAS_7","SAS_8","SAS_9","SAS_10","SAS_11","SAS_12","SAS_13","SAS_14","SAS_15","SAS_16","SAS_17","SAS_18","SAS_19","SAS_20"],
+    ["AUDITR_1","AUDITR_2","AUDITR_3","AUDITR_4","AUDITR_5","AUDITR_6","AUDITR_7","AUDITR_8","AUDITR_9","AUDITR_10"],
+    ["FTND_1", "FTND_2", "FTND_3", "FTND_4", "FTND_5", "FTND_6"], 
+    ["CUDITR_1", "CUDITR_2", "CUDITR_3", "CUDITR_4", "CUDITR_5", "CUDITR_6", "CUDITR_7", "CUDITR_8"],
+    ["SDS_1","SDS_2","SDS_3","SDS_4","SDS_5"],
+    
 ];
 
 

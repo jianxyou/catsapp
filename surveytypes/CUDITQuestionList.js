@@ -15,12 +15,12 @@ import InternalRadioQuestion from '../questiontypes/InternalRadioQuestion';
 
 const CUDITQuestionList = ({questionnaireNumber, scales, values, qs, desc, goHome, finalstyle, buttonstyle}) => {
 
-    const [data, changeData] = useState(allNull(qs.length+1));
+    const [data, changeData] = useState(allNull(qs.length));
 
     const respond = (num, value) => {
         let temp = data;
 
-        temp[num+1] = value;
+        temp[num] = value;
         changeData(temp);
  
         console.log('callback worked!', temp[num+1]);

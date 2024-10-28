@@ -1,10 +1,19 @@
-import { View, ScrollView, SafeAreaView } from 'react-native';
-import { useRef } from 'react';
+
+import { useRef,useState,useEffect} from 'react';
+import { StyleSheet,Text,TextInput, TouchableOpacity,View, ScrollView, SafeAreaView} from 'react-native';
+
 import { captureRef } from 'react-native-view-shot';
 
 import SubmitButton from "./SubmitButton";
 
 import returnInternalName from '../helpers/returnInternalName';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { sub } from '@shopify/react-native-skia';
+import textstyles from "../styles/textstyles";
+import TLFBStyles from '../styles/TLFBStyles';
+// import CompoundSurvey from "../surveytypes/CompoundSurvey";
+// import textstyles from '../../styles/textstyles'; 
+
 
 // the final step in formatting all surveys
 // adds the button and combines the desc, questions and button
@@ -17,20 +26,261 @@ import returnInternalName from '../helpers/returnInternalName';
 // @params styles contains css that adds a little margin around the survey
 
 // initally, the function to capture images had problems with capturing long images, 
-// however, this seems to be fixed
+// however, this seemss to be fixed
 // orginially ref2, longenough, half, qlist, first, last, doublebuttons were parameters exclusively for that, but they are no longer necessary
 // i suggest ingnoring those variables 
 
-const FinalWrapper = (questionnaireNumber, arr, data, goHome, styles) => {
+function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFlag) {
+
+
+    const buttonStyles = StyleSheet.create({
+        buttonContainer: {
+         // ... 您原有的样式 ...
+         // flex: 1,
+         // justifyContent: 'flex-end',
+         // alignItems: 'flex-end',
+         marginLeft: 800,
+         marginBottom: 50,
+         width: 200,      // 按钮宽度
+         height: 40,      // 按钮高度
+         borderRadius: 5,            // 圆角
+         borderWidth: 1,             // 边框
+         // borderColor: '#fff',        // 白色边框
+         // shadowColor: '#000',        // 阴影颜色
+         // shadowOffset: { width: 0, height: 2 }, // 阴影偏移
+         // shadowOpacity: 0.25,        // 阴影不透明度
+         // shadowRadius: 3.84,         // 阴影半径
+         // elevation: 5,
+         // paddingleft: 100,               // 按钮内边距
+         // marginLeft: 50,
+         backgroundColor: 'green' // 背景颜色
+       },
+   
+       buttonText: {
+         color: '#fff',             // 文字颜色
+         textAlign: 'center',       // 文字居中
+         fontWeight: 'bold'         // 文字加粗
+       }
+     // 其他你可能需要的样式...
+     });
+     
+     const extractStatsToArray = (stats) => {
+     return [
+       stats.totalJoints,     // Total Joints
+       stats.daysJoints,      // Days Joints
+       stats.percDaysJoints,  // Perc Days Joints
+       stats.avgJointPerUser, // Avg Joint Per User
+       stats.avgJointPerDay,  // Avg Joint Per Day
+       stats.abstinentDays,   // Abstinent Days
+       stats.estJointsYear,   // Est Joints Year
+       stats.greatJointDay,   // Great Joint Day
+       stats.jointsPerWeek,   // Joints Per Week
+     ];
+   }
+     
+   
+     const [days, setDays] = useState({});
+     const [stats, setStats] = useState({
+     totalJoints: 0,     // Total Joints
+     daysJoints: 0,      // Days Joints
+     percDaysJoints: 0,  // Perc Days Joints
+     avgJointPerUser: 0, // Avg Joint Per User
+     avgJointPerDay: 0,  // Avg Joint Per Day
+     abstinentDays: 0,   // Abstinent Days
+     estJointsYear: 0,   // Est Joints Year
+     greatJointDay: 0,   // Great Joint Day
+     jointsPerWeek: 0,   // Joints Per Week
+     });
+     
+     const [data_haha, setData_haha] = useState({});
+     
+     // 月份和天数数据
+     
+   
+     // 处理输入变化的函数
+     // 处理输入变化的函数
+     const handleInputChange = (value, dayKey) => {
+       setDays(prevDays => ({ ...prevDays, [dayKey]: value }));
+     };
+
+
+     function getDayOfWeek(year, month, day) {
+      const date = new Date(year, month - 1, day); // 月份减1，因为JavaScript中月份从0开始
+      const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      return daysOfWeek[date.getDay()];
+  }
+   
+
+  const months = [
+    { year: 2023, month: 9, days:30},
+    { year: 2023, month: 10, days:31 },
+    { year: 2023, month: 11, days:30 },
+    { year: 2023, month: 12, days:31 },
+    { year: 2024, month: 1, days: 31 },
+    { year: 2024, month: 2, days: 28 }, // 注意：未考虑闰年
+    { year: 2024, month: 3, days: 31 },
+    { year: 2024, month: 4, days: 30 },
+    // { name: '2May', days: 31 },
+    // { name: 'June', days: 30 },
+    // { name: 'July', days: 31 },
+    // { name: 'August', days: 31 },
+  ];
+
+
+    const holidays = {
+      '2023-12-25': 'Christmas',
+      '2024-01-01': 'New Year\'s Day',
+      // 在这里添加更多节假日
+    };
+
+    const monthNames = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+     // 渲染单个格子的函数
+     const renderCell = (month, day) => {
+      const dayKey = `${month.year}-${month.month}-${day}`;
+      const weekDay = getDayOfWeek(month.year, month.month, day);
+      const holidayName = holidays[dayKey];
+      
+      return (
+        <View key={dayKey} style={TLFBStyles.cell}>
+          <Text style={TLFBStyles.dateText}>{`${day} (${weekDay})`}</Text>
+          {holidayName && <Text style={TLFBStyles.holidayText}>{holidayName}</Text>}
+          <TextInput
+            style={TLFBStyles.dayInput}
+            keyboardType="numeric"
+            value={days[dayKey] || ''}
+            onChangeText={(value) => handleInputChange(value, dayKey)}
+          />
+        </View>
+      );
+    };
+   
+     // 渲染整个表格的函数
+     const renderGrid = () => {
+      return months.map(month => (
+        <View key={`${month.year}-${month.month}`} style={TLFBStyles.monthContainer}>
+          <Text style={TLFBStyles.monthYearText}>{`${monthNames[month.month]} ${month.year}`}</Text>
+          {Array.from({ length: Math.ceil(month.days / 10) }).map((_, rowIndex) => (
+            <View key={`${month.year}-${month.month}-row-${rowIndex}`} style={TLFBStyles.row}>
+              {Array.from({ length: Math.min(10, month.days - rowIndex * 10) }, (_, index) => {
+                return renderCell(month, rowIndex * 10 + index + 1);
+              })}
+            </View>
+          ))}
+        </View>
+      ));
+    };
+    
+   
+     const calculateStats = () => {
+     let sum = 0, count = 0, max = null;
+   
+     for (const key in days) {
+       const value = days[key];
+       if (value) {
+         const numericValue = parseFloat(value);
+         sum += numericValue;
+         count += 1;
+         if (max === null || numericValue > max) {
+           max = numericValue;
+         }
+       }
+     }
+   
+     const newStats = {
+       totalJoints: sum,
+       daysJoints: count,
+       percDaysJoints: (count / 90) * 100,
+       avgJointPerUser: count > 0 ? (sum / count) : 0,
+       avgJointPerDay: sum / 90,
+       abstinentDays: 90 - count,
+       estJointsYear: (sum / 90) * 365,
+       greatJointDay: max,
+       jointsPerWeek: (sum / 90) * 365 / 52
+     };
+   
+     setStats(newStats);
+     setData_haha(extractStatsToArray(newStats));
+   };
 
     // creates a refernece to a JSX element, essentially a variable name
+    const [clientId, setClientId] = useState('');
+    const [visitId, setVisitId] = useState('');
+    const [subjectId, setSubjectId] = useState('');
+  
+    useEffect(() => {
+      const loadIds = async () => {
+        const storedClientId = await AsyncStorage.getItem('clientId');
+        const storedVisitId = await AsyncStorage.getItem('visitId');
+        const storedSubjectId = await AsyncStorage.getItem('subjectId');
+        setClientId(storedClientId);
+        setVisitId(storedVisitId);
+        setSubjectId(storedSubjectId);
+      };
+  
+      loadIds();
+    }, []);
+
+
+    let listofqs = <View>
+    <Text style={textstyles.desctext}>
+      <Text style={textstyles.makebold}>TIMELINE FOLLOWBACK</Text> {"\n"}{"\n"}
+
+
+      To evaluate your <Text style={textstyles.makebold}>marijuana use</Text>, please record your pattern of marijuana use in the 
+      past 90 days in the calendar below. This can be cannabinoids or marijuana, which 
+      includes pot, weed, grass, hash, and synthetic cannabinoids (e.g., K2, Spice).
+      Try to be as accurate as possible. Please record how many joints or how much (in 
+      grams) cannabis you smoked or consumed for each day on the calendar. {"\n"}{"\n"}
+
+            
+      - Mark events on the calendar that fell within this time frame. Some of these might 
+      include: Birthdays, appointments, stressful situations, buying cannabis. Write 
+      the event on the calendar on the day it occurred.{"\n"}
+      - On days when you did not smoke marijuana, not even part of a joint, you should 
+      Write a 0.{"\n"}
+      - On days when you did smoke marijuana, even part of a joint, you should write 
+      in the total number of "average" sized joints you used. Indicate quantity, if 
+      known, through other routes of administration.{"\n"}
+      - The smallest number of joints you can record is "1". So, if you shared a joint 
+      with someone you should write “1”{"\n"}
+
+      </Text>
+
+    <View style={TLFBStyles.calendar}>
+      {renderGrid()}
+
+      {/* <Button title="confirmeee" style={buttonStyles.buttonContainer} onPress={calculateStats} /> */}
+      <TouchableOpacity 
+      style={buttonStyles.buttonContainer} 
+      onPress={() => {
+        calculateStats();
+        // calculateStats();
+}}
+    >
+      <Text style={buttonStyles.buttonText}>Confirm</Text>
+      </TouchableOpacity>
+    </View>
+    </View>
+
+    
+
+    const [errorIndices, setErrorIndices] = useState([]);
+
+    
+    
+    const handleErrorIndices = (indices) => {
+
+
+    
+          setErrorIndices(indices);
+
+
+        // 这里还可以添加其它处理逻辑
+    };
+    
+
     const ref1 = useRef();
-    const ref2 = useRef();
-
-    const longenough = false;
-
-    const qlist = arr[1];
-
     const copy = arr.map(val => val);
 
     // function that saves the image
@@ -57,17 +307,127 @@ const FinalWrapper = (questionnaireNumber, arr, data, goHome, styles) => {
 
     // in partice shortresult will always return since bug was fixed
 
-    const button = <SubmitButton data={data} capture={() => capture(ref1)} goHome={goHome} questionnaireNumber={questionnaireNumber}/>
+    const button = <SubmitButton data={data} capture={() => capture(ref1)} goHome={goHome} questionnaireNumber={questionnaireNumber} onErrorIndices={handleErrorIndices} dataForFlag = {dataForFlag}/>
     copy.push(button);
 
-    const shortresult = (
+
+    const styles2 = StyleSheet.create({
+        // ...其他样式
+
+
+        errorIndicator: {
+            color: 'red',
+            fontWeight: 'bold',
+            fontSize : 20
+            // 其他样式，如字体大小等
+        },
+      });
+
+      
+      const renderView = (val, index) => {
+        const isError = errorIndices.includes(index);
+        return (
+            <View key={index}>
+                {isError && <Text style={styles2.errorIndicator}>* need complete </Text>}
+                {val}
+            </View>
+        );
+    };
+
+    // 获取当前日期
+        const getCurrentDate = () => {
+        const date = new Date();
+        return date.toLocaleDateString(); // 这将返回格式化的日期字符串
+        };
+
+
+    
+    
+    const today =  getCurrentDate();
+    
+
+    
+    let shortresult
+    if( questionnaireNumber == 7){
+
+
+        let data; 
+        
+        data_23= [stats.totalJoints,stats.daysJoints,stats.percDaysJoints.toFixed(2),stats.avgJointPerUser.toFixed(2),stats.avgJointPerDay.toFixed(2),stats.abstinentDays.toFixed(2),stats.estJointsYear.toFixed(2),stats.greatJointDay,stats.jointsPerWeek.toFixed(2)]
+
+        const button = <SubmitButton data={data_23} capture={() => capture(ref1)} goHome={goHome} questionnaireNumber={questionnaireNumber} onErrorIndices={handleErrorIndices} dataForFlag = {dataForFlag}></SubmitButton>
+        shortresult = (
+
+
+        <View style={styles.page}>
+            
+            
+            <ScrollView ref={ref1} >
+            <Text>Date : {today} </Text>
+            <Text>Subject Id : {subjectId}</Text>
+            <Text>Participant ID : {clientId}</Text>
+            
+            <View key={1}>{copy[0]}</View>
+            {listofqs}
+            {/* {copy[1].map((val, index) => renderView(val, index))} */}
+            {/* {button} */}
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ fontWeight: 'bold', fontSize: 25 }}>
+            {"\n\n"}
+            <Text>Total Joints (sum of joints taken during the 90 dayes period): {stats.totalJoints}  </Text> {"\n\n"}
+            <Text>Days Joints (total of days of cannabis use): {stats.daysJoints} </Text> {"\n\n"} 
+            <Text>Perc Days Joints (DaysJoints / 90 * 100): {stats.percDaysJoints.toFixed(2)}%  </Text> {"\n\n"}
+            <Text>Avg Joint Per User (Total Joints / Days Joints): {stats.avgJointPerUser.toFixed(2)} </Text> {"\n\n"} 
+            <Text>Avg Joint Per Day (Total Joints / 90): {stats.avgJointPerDay.toFixed(2)} {"\n\n"}</Text>
+            <Text>Abstinent Days (90 - Days joints):: {stats.abstinentDays} {"\n\n"}</Text>
+            <Text>Est Joints Year (AvgJointPerDay * 365): {stats.estJointsYear.toFixed(2)} {"\n\n"}</Text>
+            <Text>Great Joint Day (Max amount of cannabis use taken in one day): {stats.greatJointDay} {"\n\n"}</Text>
+            <Text>Joints Per Week (EstJointsYear / 52): {stats.jointsPerWeek.toFixed(2)} {"\n\n"}</Text>
+            </Text>
+            </View>
+            {button}
+            </ScrollView>
+        </View>
+        )
+    }
+
+  
+  else if (questionnaireNumber == 24){
+    shortresult = (
         <View style={styles.page}>
             <ScrollView ref={ref1} >
-                {copy.map((val, index) => <View key={index}>{val}</View>)}
+            <Text>Date : {today} </Text>
+            <Text>Subject Id : {subjectId}</Text>
+            <Text>Participant ID : {clientId}</Text>
+            
+            <View key={1}>{copy[0]}</View>
+            {copy[1].map((val, index) => {
+                // if (index === 0) {
+                //     return renderView(val, index);
+                // }
+                return <View key={index}>{val}</View>; // 或者返回空的 React 元素，例如 <></> 或 <View></View> 等
+            })}
+            {button} 
             </ScrollView>
         </View>
     );
-
+    }
+  
+    else{
+    shortresult = (
+        <View style={styles.page}>
+            <ScrollView ref={ref1} >
+            <Text>Date : {today} </Text>
+            <Text>Subject Id : {subjectId}</Text>
+            <Text>Participant ID : {clientId}</Text>
+            
+            <View key={1}>{copy[0]}</View>
+            {copy[1].map((val, index) => renderView(val, index))}
+            {button} 
+            </ScrollView>
+        </View>
+    );
+    }
      
     return shortresult;
 }

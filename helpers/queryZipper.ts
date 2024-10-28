@@ -14,7 +14,6 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
         for(let i : number = 0; i < mycolumns1.length; i++) {
             let currcolumn : string = mycolumns1[i];
             let currinsert = currcolumn + " = " + data[i] + ", ";
-
             query = query + currinsert;
         }
 
@@ -22,20 +21,16 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
         for(let i : number = 0; i < mycolumns2.length; i++) {
             let currcolumn : string = mycolumns2[i];
             let currinsert = currcolumn + " = " + data[i+53] + ", ";
-
             query = query + currinsert;
-
         }
 
     } else {
 
         for(let i : number = 0; i < mycolumns.length; i++) {
             let currcolumn : string = mycolumns[i];
-            
-            
 
             // if table is SIAS
-            if (questionnaireNumber == 8 ){
+            if (questionnaireNumber == 11){
                 if (data[i] == "Moderately"){
                     data[i] = 3;
                 }
@@ -57,7 +52,7 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
             }
 
             // if table is AES
-            if (questionnaireNumber == 6 ){
+            if (questionnaireNumber == 10){
                 if (data[i] == "NOT AT ALL"){
                     data[i] = 1;
                 }
@@ -75,7 +70,7 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
             }
 
             // if table is SAS
-            if (questionnaireNumber == 9 ){
+            if (questionnaireNumber == 12 ){
                 if (data[i] == "None OR little of the time"){
                     data[i] = 1;
                 }
@@ -97,7 +92,7 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
 
             
             // if table is Rosenberg scale
-            if (questionnaireNumber == 10 ){
+            if (questionnaireNumber == 13 ){
                 if (data[i] == "Strongly Disagree"){
                     data[i] = 1;
                 }
@@ -117,7 +112,7 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
 
 
             // if table is SHAPS
-            if (questionnaireNumber == 16 ){
+            if (questionnaireNumber == 19 ){
                 if (data[i] == "True"){
                     data[i] = 1;
                 }
@@ -128,7 +123,7 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
 
 
             // if table is DAST
-            if (questionnaireNumber == 13 ){
+            if (questionnaireNumber == 16 ){
                 if (data[i] == "YES"){
                     data[i] = 1;
                 }
@@ -141,8 +136,7 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
     
 
             // if table is RLE
-
-            if (questionnaireNumber == 11){
+            if (questionnaireNumber == 14){
                 if (data[i] == "YES"){
                     data[i] = 1;
                 }
@@ -155,7 +149,7 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
 
 
             // if table is Drug history table.
-            if (questionnaireNumber == 7){
+            if (questionnaireNumber == 0){
                 if (data[i] == null) {
                     data[i] = "Null";
                 } else {
@@ -165,7 +159,7 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
             }
 
 
-
+            
             if (questionnaireNumber == 14){
                 if (data[i] == "not at all part of my life") {
                     
@@ -186,7 +180,6 @@ function queryZipper(questionnaireNumber : number, data : Array<any>) : string |
                 else if (data[i] == "very much"){
                     data[i] = 4;
                 }
-
             }
             
             

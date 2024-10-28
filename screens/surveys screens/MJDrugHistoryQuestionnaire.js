@@ -225,7 +225,7 @@ const MJDrugHistoryQuestionnaireScreen = ({navigation}) => {
                 ],
             ]} 
 
-            questionnaireNumber={7}
+            questionnaireNumber={0}
 
             desc={
                 <Text style={textstyles.desctext}>
@@ -233,7 +233,7 @@ const MJDrugHistoryQuestionnaireScreen = ({navigation}) => {
                 </Text>}
 
 
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('AdminScreen')}
 
             minidescs={[
                 "A) Lifetime History",

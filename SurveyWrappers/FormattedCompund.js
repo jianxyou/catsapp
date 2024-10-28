@@ -10,7 +10,9 @@ import returnDisplayName from '../helpers/returnDisplayName';
 
 const FormattedCompound = ({questionnaireNumber, qs, data, goHome, desc}) => {
 
-    const button = <SubmitButton data={data} goHome={goHome} />
+    // const button = <SubmitButton data={data} goHome={goHome} />
+// 
+    console.log("changdushi  rinigggggg",qs.length);
 
     const mydesc = (
         <View>
@@ -27,7 +29,7 @@ const FormattedCompound = ({questionnaireNumber, qs, data, goHome, desc}) => {
 
     );
 
-    return FinalWrapper(questionnaireNumber, [mydesc, qs], data, goHome, styles)
+    return FinalWrapper(questionnaireNumber, [mydesc, qs], data, goHome, styles,null)
 }
  
 export default FormattedCompound;

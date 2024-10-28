@@ -4,8 +4,10 @@ import FinalWrapper from '../partials/FinalWrapper';
 
 import returnDisplayName from '../helpers/returnDisplayName';
 
-const FormattedMCQ = ({listofqs, data, goHome, questionnaireNumber, desc, styles}) => {
+const FormattedMCQ = ({listofqs,data,dataForFlag,goHome, questionnaireNumber, desc, styles}) => {
 
+    console.log("rangwolaikanakn Q!!!!!!!!!",data);
+    // console.log("MCq de changdushi shenme ne ", listofqs.length);
     const mydesc = (
         <View>
         <View style={styles.titlecontainer}>
@@ -24,7 +26,13 @@ const FormattedMCQ = ({listofqs, data, goHome, questionnaireNumber, desc, styles
         </View>
     );
 
-    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles);
+    if(dataForFlag){
+        console.log("9899999999999999")
+        return FinalWrapper(questionnaireNumber, [mydesc, listofqs],data, goHome, styles, dataForFlag);
+    }
+
+    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles, null);
+    
 }
  
 export default FormattedMCQ;

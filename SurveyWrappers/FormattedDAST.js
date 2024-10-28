@@ -39,7 +39,7 @@ const FormattedDAST = ({questionnaireNumber, listofqs, data, goHome, desc}) => {
         </View>
     );
 
-    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles)
+    return FinalWrapper(questionnaireNumber, [mydesc, listofqs], data, goHome, styles,null)
 }
  
 export default FormattedDAST;

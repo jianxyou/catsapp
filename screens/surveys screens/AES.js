@@ -3,8 +3,8 @@ import AESQuestionList from "../../surveytypes/AESQuestionList";
 const AESScreen = ({navigation}) => {
     return (
         <AESQuestionList 
-            questionnaireNumber={6}
-            desc="For each statement, circle the answer that best describes the subject’s thoughts, feelings, and activity in the past 4 weeks"
+            questionnaireNumber={11}
+            desc="For each statement, check the answer that best describes the subject’s thoughts, feelings, and activity in the past 4 weeks"
             scale={[
                 "NOT AT ALL",
                 "SLIGHTLY",
@@ -17,12 +17,11 @@ const AESScreen = ({navigation}) => {
                 "SOMEWHAT",
                 "A LOT",
             ]}
-            goHome={() => navigation.navigate('Home')}
+            goHome={() => navigation.navigate('ParticipantScreen')}
 
             qs={[
                 "I am interested in things.",
-                "I get things done during the day.",
-                "Getting things started on my own is important to me.",
+                "I get things done during the day.",                "Getting things started on my own is important to me.",
                 "I am interested in having new experiences.",
                 "I am interested in learning new things",
                 "I put little effort into anything.",
@@ -41,6 +40,11 @@ const AESScreen = ({navigation}) => {
             ]}
         />
       );
+
+
+    
 }
  
 export default AESScreen;
+
+

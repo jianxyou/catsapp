@@ -86,7 +86,7 @@ const FormattedHasslesSurvey = ({questionnaireNumber, listofqs, data, goHome}) =
        
     );
 
-    return FinalWrapper(questionnaireNumber, [desc, listofqs], data, goHome, styles);
+    return FinalWrapper(questionnaireNumber, [desc, listofqs], data, goHome, styles,null);
 }
 
  

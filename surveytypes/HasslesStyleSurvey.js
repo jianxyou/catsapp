@@ -7,6 +7,8 @@ import FormattedHasslesSurvey from '../SurveyWrappers/FormattedHasslesSurvey';
 const HasslesStyleSurvey = ({questionnaireNumber, scales, values, qs, goHome}) => {
 
     const [data, changeData] = useState(allNull(qs.length*2));
+    console.log("我来看看兄弟的");
+    console.log(data);
 
     const respond1 = (num, value) => {
         let temp = data;

@@ -8,9 +8,10 @@ const styles = longanswerstyle;
 
 //like LongAnswerQuestion
 
-export default RealLongAnswerQuestion = ({q, num, callback}) => {
+export default RealLongAnswerQuestion = ({q, num, callback, callback_flag}) => {
 
     const [text, changeText] = useState(null);
+
 
     const question = (
 
@@ -39,9 +40,17 @@ export default RealLongAnswerQuestion = ({q, num, callback}) => {
         </View>
 
     );
+
     const modify = val => { 
         changeText(val);
         callback(num, val);
+        if (val){
+            callback_flag(num,"33");
+        }
+        else{
+            callback_flag(num,null);
+        }
+        
     }
     
     return ( 

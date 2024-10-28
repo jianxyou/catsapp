@@ -7,4 +7,6 @@ const totalLength = l => {
     return partialsum;
 }
 
-export default totalLength;
+export default totalLength; 
+
+

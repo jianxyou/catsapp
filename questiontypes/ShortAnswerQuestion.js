@@ -12,7 +12,7 @@ const styles = shortStyle;
 // @params num is the number of the question. be sure to pass in an integer, NOT a string
 // @params callback is a callback function that lets the survey and this question communicate
 
-export default ShortAnswerQuestion = ({q, num, callback}) => {
+export default ShortAnswerQuestion = ({index,q, num, callback}) => {
 
     const [text, changeText] = useState(null);
 
@@ -24,7 +24,7 @@ export default ShortAnswerQuestion = ({q, num, callback}) => {
 
     const modify = val => { 
         changeText(val);
-        callback(num, val);
+        callback(index, val);
     }
     
     return ( 

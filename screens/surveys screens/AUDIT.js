@@ -10,7 +10,7 @@ import textstyles from '../../styles/textstyles';
 const AuditScreen = ({navigation}) => {
     return ( 
         <AuditQuestionList
-        questionnaireNumber={15}
+        questionnaireNumber={19}
         scales={
             [
                 ["Never", "Monthly or less", "2 to 4 times a month", "2 to 3 time a week", "4 or more times a week"],
@@ -68,7 +68,7 @@ const AuditScreen = ({navigation}) => {
         desc={
             <View>
                 <Text style={textstyles.desctext}>
-                    PATIENT: Because alcohol use can affect your health and can interfere with certain medications and treatments, it is important that we ask some questions about your use of alcohol. Your answers will remain confidential, so please be honest. {"\n\n"}For each question in the chart below, place an X in one box that best describes your answer.
+                    PATIENT: Because alcohol use can affect your health and can interfere with certain medications and treatments, it is important that we ask some questions about your use of alcohol. Your answers will remain confidential, so please be honest. {"\n\n"}For each question in the chart below, check the box that best describes your answer.
                 </Text>
 
                 <View style={auditQuestionListStyle.imagewithtext}>
@@ -82,7 +82,7 @@ const AuditScreen = ({navigation}) => {
 
 
             }
-        goHome={() => navigation.navigate('Home')}
+        goHome={() => navigation.navigate('ParticipantScreen')}
         buttonstyles={auditRadioStyles} 
         questionstyles={auditStyle}
         liststyles={auditQuestionListStyle}
