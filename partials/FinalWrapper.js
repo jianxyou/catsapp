@@ -106,7 +106,7 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
 
      function getDayOfWeek(year, month, day) {
       const date = new Date(year, month - 1, day); // 月份减1，因为JavaScript中月份从0开始
-      const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      const daysOfWeek = ["Sun/Dim", "Mon/Lun", "Tue/Mar", "Wed/Mer", "Thu/Jeu", "Fri/Ven", "Sat/Sam"];
       return daysOfWeek[date.getDay()];
   }
    
@@ -132,7 +132,21 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
       '2024-01-01': 'New Year\'s Day',
     };
 
-    const monthNames = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const monthNames = [
+      "",
+      "January/Janvier",
+      "February/Février",
+      "March/Mars",
+      "April/Avril",
+      "May/Mai",
+      "June/Juin",
+      "July/Juillet",
+      "August/Août",
+      "September/Septembre",
+      "October/Octobre",
+      "November/Novembre",
+      "December/Décembre"
+    ];
 
      const renderCell = (month, day) => {
       const dayKey = `${month.year}-${month.month}-${day}`;
@@ -241,7 +255,10 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
       in the total number of "average" sized joints you used. Indicate quantity, if 
       known, through other routes of administration.{"\n"}
       - The smallest number of joints you can record is "1". So, if you shared a joint 
-      with someone you should write “1”{"\n"}
+      with someone you should write “1”{"\n"}{"\n"}{"\n"}
+
+
+
 
       <Text style={textstyles.makebold}>RÉTROSPECTIVE SUR LA LIGNE DU TEMPS</Text> {"\n"}{"\n"}
 
@@ -359,6 +376,7 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
     
     const today =  getCurrentDate();
     
+
 
         
 

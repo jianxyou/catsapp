@@ -15,10 +15,11 @@ const SHAPS_fr_Screen = ({navigation}) => {
     const desc = (
         <View style={styles.desc}>
             <Text style={styles.desctext}>
-            This questionnaire is designed to measure your ability to experience pleasure in the last few days. It is important to read each statement very <Text style={textstyles.makeitalic}>carefully</Text>. 
+            Ce questionnaire est conçu pour mesurer votre capacité à ressentir du plaisir au cours des derniers jours. Il est important de lire chaque affirmation très <Text style={textstyles.makeitalic}>attentivement</Text>.
             </Text>
         </View>
     );
+    
 
     return ( 
         <SIASQuestionList

@@ -557,7 +557,7 @@ const GAFScreen = ({navigation}) => {
 
                 </View>
             }
-            goHome={() => navigation.navigate('ParticipantScreen')}
+            goHome={() => navigation.goBack()}
         />
     );
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import MCQQuestion from '../questiontypes/MCQQuestion';
+import MCQQuestion_fr from '../questiontypes/MCQQuestion_fr';
 import allNull from '../helpers/allNull';
 import FormattedMCQ from '../SurveyWrappers/FormattedMCQ';
 
@@ -19,7 +19,7 @@ const MCQQuestionList = ({questionnaireNumber, scale, values, qs, goHome, desc, 
 
     let listofqs = qs.map(
         (val, index) => 
-        <MCQQuestion key={val + index} name={questionnaireNumber} q={val} scale={scale} num={index} values={values} callback={respond}/>
+        <MCQQuestion_fr key={val + index} name={questionnaireNumber} q={val} scale={scale} num={index} values={values} callback={respond}/>
     );
 
     return (

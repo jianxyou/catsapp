@@ -66,19 +66,18 @@ const Audit_fr_Screen = ({navigation}) => {
         ]}
 
         desc={
-            <View>
-                <Text style={textstyles.desctext}>
-                    PATIENT: Because alcohol use can affect your health and can interfere with certain medications and treatments, it is important that we ask some questions about your use of alcohol. Your answers will remain confidential, so please be honest. {"\n\n"}For each question in the chart below, place an X in one box that best describes your answer.
-                </Text>
+<View>
+    <Text style={textstyles.desctext}>
+        PATIENT : Comme la consommation d'alcool peut affecter votre santé et interférer avec certains médicaments et traitements, il est important que nous vous posions quelques questions sur votre consommation d'alcool. Vos réponses resteront confidentielles, alors soyez honnête. {"\n\n"}Pour chaque question du tableau ci-dessous, cochez la case qui décrit le mieux votre réponse.
+    </Text>
 
-                <View style={auditQuestionListStyle.imagewithtext}>
+    <View style={auditQuestionListStyle.imagewithtext}>
 
-                    <Text style={textstyles.desctext}>NOTE: In the U.S., a single drink serving contains about 14 grams of ethanol or "pure" alcohol. Although the drinks below are different sizes, each one contains the same amount of pure alcohol and counts as a single drink:</Text>
-                    
+        <Text style={textstyles.desctext}>REMARQUE : Aux États-Unis, une portion standard de boisson contient environ 14 grammes d'éthanol ou d'alcool « pur ». Bien que les boissons ci-dessous soient de tailles différentes, chacune contient la même quantité d'alcool pur et compte pour une seule boisson : 12oz de bière = 8oz de malt liquor = 5oz de vin de table = 1.5oz de spiritueux forts.</Text>
 
-                </View>
+    </View>
 
-            </View>
+</View>
 
 
             }

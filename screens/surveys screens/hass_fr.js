@@ -11,7 +11,7 @@ const Hass_fr_Screen = ({navigation}) => {
         <View style={banner_styles.stickyHeader}>
 
         <Text style = {banner_styles.textLarge}>
-        0= None or not applicable
+        {"\n1= pas du tout"}
         {"\n1= un peu"}
         {"\n2= pas mal"}
         {"\n3= beaucoup"}  

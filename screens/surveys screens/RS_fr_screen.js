@@ -43,7 +43,7 @@ const RS_fr_Screen = ({navigation}) => {
                 scale={["", "", "", ""]}
                 values={["Tout à fait en désaccord", "En désaccord", "D'accord", "Tout à fait d'accord"]}
                 labels={["Tout à fait en désaccord", "En désaccord", "D'accord", "Tout à fait d'accord"]}
-                goHome={() => navigation.navigate('ParticipantScreen')}
+                goHome={() => navigation.goBack()}
                 buttonstyles={rosenbergRadioStyles}
                 questionstyles={rosenbergStyle}
                 finalstyles={rosenbergQuestionListStyle}

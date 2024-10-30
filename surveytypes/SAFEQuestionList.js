@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import SAFEQuestion from '../questiontypes/SAFEQuestion';
+import SAFEQuestion_fr from '../questiontypes/SAFEQuestion_fr';
 import allNull from '../helpers/allNull';
 import FormattedMCQ from '../SurveyWrappers/FormattedMCQ';
 import questionListStyle from '../styles/question list styles/questionListStyle';
@@ -20,7 +21,7 @@ const SAFEQuestionList = ({questionnaireNumber, scale, values, qs, goHome, desc}
 
     let listofqs = qs.map(
         (val, index) => 
-        <SAFEQuestion key={val + index} name={questionnaireNumber} q={val} scale={scale} num={index} values={values} callback={respond}/>
+        <SAFEQuestion_fr key={val + index} name={questionnaireNumber} q={val} scale={scale} num={index} values={values} callback={respond}/>
     );
 
     return (

@@ -27,7 +27,6 @@ const FormattedMCQ = ({listofqs,data,dataForFlag,goHome, questionnaireNumber, de
     );
 
     if(dataForFlag){
-        console.log("9899999999999999")
         return FinalWrapper(questionnaireNumber, [mydesc, listofqs],data, goHome, styles, dataForFlag);
     }
 

@@ -107,6 +107,9 @@ import SAQ_fr_Screen from './screens/surveys screens/SAQ_fr';
 import FTND_fr_Screen from './screens/surveys screens/FTND_fr';
 import FollowUp_fr_Screen from './screens/special screens/Followup_fr';
 
+
+import TOBY_Screen from './screens/special screens/Toby';
+
 const Stack = createNativeStackNavigator();
 
 function App(): JSX.Element {
@@ -249,6 +252,8 @@ function App(): JSX.Element {
       <Stack.Screen name='SAQ_fr' component={SAQ_fr_Screen} />
       <Stack.Screen name='Followup_fr' component={FollowUp_fr_Screen} />
     
+
+      <Stack.Screen name='toby' component={TOBY_Screen} />
 
 
       </Stack.Navigator>

@@ -128,7 +128,7 @@ const FTND_fr_Screen = ({navigation}) => {
                 "A) Historique de vie",
                 "Pour les fumeurs actuels",
             ]}
-            goHome={() => navigation.navigate('FollowUp')}
+            goHome={() => navigation.goBack()} 
         />
     
     

@@ -22,3 +22,4 @@ The screens sends information to the question list (see surveytypes folder), whi
 
 
 Unfortunately, I had to make all input types from scratch. The buttons in a question are represented using an array of stateful objects which are then passed to wrapper functions and dynamically rendered based on their state. (the object state modifies if the button is on or off, its label, its shape and color etc). The exact implementation details can be seen by looking at 'inputs' and their corresponding wrapper in 'input wrappers'. Essentially, on press these buttons trigger a callback function which modifies the state of the question and the way that they are rendered. 
+

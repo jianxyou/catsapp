@@ -4,7 +4,7 @@ const AES_fr_Screen = ({navigation}) => {
     return (
         <AESQuestionList 
             questionnaireNumber={46}
-            desc="For each statement, circle the answer that best describes the subject’s thoughts, feelings, and activity in the past 4 weeks"
+            desc="Pour chaque affirmation, entourez la réponse qui décrit le mieux les pensées, les sentiments et les activités du sujet au cours des 4 dernières semaines"
             scale={[
                 "PAS DU TOUT",
                 "LÉGÈREMENT",

@@ -89,8 +89,8 @@ function Others_fr_Screen({ navigation }) {
 
   
   const newButtons = createLinks({
-    displayNames: [...displayNamesSelf.slice(44, 57),...displayNamesSelf.slice(40, 41), ...displayNamesSelf.slice(38,39),...displayNamesSelf.slice(44, 45)],
-    internalNames: [...internalNamesSelf.slice(44, 57),...internalNamesSelf.slice(40, 41),...internalNamesSelf.slice(38, 39),...internalNamesSelf.slice(44, 45)],
+    displayNames: [...displayNamesSelf.slice(44, 57),...displayNamesSelf.slice(40, 41), ...displayNamesSelf.slice(38,39),...displayNamesSelf.slice(39, 40)],
+    internalNames: [...internalNamesSelf.slice(44, 57),...internalNamesSelf.slice(40, 41),...internalNamesSelf.slice(38, 39),...internalNamesSelf.slice(39, 40)],
     navigation: navigation,
     filled: filled,
   });

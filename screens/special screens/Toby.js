@@ -89,8 +89,8 @@ function TOBY_Screen({ navigation }) {
 
   
   const newButtons = createLinks({
-    displayNames: [ ...displayNamesSelf.slice(38,44)],
-    internalNames: [...internalNamesSelf.slice(38,44)],
+    displayNames: [ ...displayNamesSelf.slice(12,14)],
+    internalNames: [...internalNamesSelf.slice(12,14)],
     navigation: navigation,
     filled: filled,
   });

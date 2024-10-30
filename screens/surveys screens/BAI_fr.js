@@ -45,9 +45,7 @@ export default Beck_fr_Screen = ({navigation, route}) => {
         ]}
          
         desc={
-            <Text style={textstyles.desctext}>Below is a list of common symptoms of anxiety. Please carefully read each item in the list. Indicate how much you have been 
-        bothered by that symptom during the past month, including today, by circling the number in the corresponding space in the 
-        column next to each symptom</Text>}
+            <Text style={textstyles.desctext}>Ci-dessous se trouve une liste de symptômes courants de l'anxiété. Veuillez lire attentivement chaque élément de la liste. Indiquez dans quelle mesure vous avez été gêné par ce symptôme au cours du mois dernier, y compris aujourd'hui, en entourant le chiffre correspondant dans l'espace de la colonne à côté de chaque symptôme.</Text>}
     />
 
     );
