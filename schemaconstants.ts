@@ -3,9 +3,6 @@ const tableNamesSelf : Array<string | Array<string> > = [
     "CSSRS", //不知道有没有这个表名
     "BSMSS",
     "HAMD",
-    
-
-    
     ["HUS_Hassles", "HUS_Uplifts" ],
     "MCQ_curbfeppa",
     "SAQ",
@@ -73,6 +70,10 @@ const tableNamesSelf : Array<string | Array<string> > = [
     'Hass_fr',
     'MCQ_fr',
     'SAQ_fr',
+
+    'Toby',
+    'SL25-baseline',
+    'SL25-PET',
 
 
 
@@ -155,6 +156,10 @@ const displayNamesSelf = [
     'Hass_fr',
     'MCQ_fr',
     'SAQ_fr',
+    'Toby',
+    'SL25-baseline',
+    'SL25-PET',
+
 
 ];
 
@@ -233,6 +238,10 @@ const internalNamesSelf : Array<string> = [
     'Hass_fr',
     'MCQ_fr',
     'SAQ_fr',
+    'Toby',
+    'SL25-baseline',
+    'SL25-PET',
+    
 ];
 
 

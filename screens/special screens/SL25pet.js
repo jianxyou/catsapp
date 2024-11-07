@@ -11,7 +11,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import createLinks from '../../helpers/createLinks';
 
-function TOBY_Screen({ navigation }) {
+function SL25_pet_Screen({ navigation }) {
 
 
   // const [submittedStatus, setSubmittedStatus] = useState({});
@@ -89,8 +89,8 @@ function TOBY_Screen({ navigation }) {
 
   
   const newButtons = createLinks({
-    displayNames: [ ...displayNamesSelf.slice(60,61)],
-    internalNames: [...internalNamesSelf.slice(60,61)],
+    displayNames: [...displayNamesSelf.slice(44, 57),...displayNamesSelf.slice(38, 41),],
+    internalNames: [...internalNamesSelf.slice(44, 57),...internalNamesSelf.slice(38, 41)],
     navigation: navigation,
     filled: filled,
   });
@@ -157,4 +157,4 @@ const styles = StyleSheet.create({
   }) 
 
 
-export default TOBY_Screen;
+export default SL25_pet_Screen;

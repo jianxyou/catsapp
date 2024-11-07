@@ -4,7 +4,7 @@ import FinalWrapper from '../partials/FinalWrapper';
 
 import returnDisplayName from '../helpers/returnDisplayName';
 
-const FormattedSIAS = ({questionnaireNumber, listofqs, data, goHome, desc, values, styles}) => {
+const  FormattedSIAS = ({questionnaireNumber, listofqs, data, goHome, desc, values, styles}) => {
 
     const generatelabels = scale => {
         return (
