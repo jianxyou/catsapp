@@ -90,7 +90,7 @@ function SL25_baseline_fr_Screen({ navigation }) {
   
   const newButtons = createLinks({
     displayNames: [...displayNamesSelf.slice(44, 55),...displayNamesSelf.slice(56,57),...displayNamesSelf.slice(38, 41)],
-    internalNames: [...internalNamesSelf.slice(44, 55),...internalNamesSelf.slice(56.57),...internalNamesSelf.slice(38, 41)],
+    internalNames: [...internalNamesSelf.slice(44, 55),...internalNamesSelf.slice(56,57),...internalNamesSelf.slice(38, 41)],
     navigation: navigation,
     filled: filled,
   });

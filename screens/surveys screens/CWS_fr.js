@@ -43,9 +43,9 @@ const CWS_fr_Screen = ({navigation}) => {
         <View style={styles.desc}>
             <Text style={textstyles.desctext}>
                 <Text style={textstyles.makebold}>Instructions</Text>
-                : This version of the CWS asks about symptoms experienced over the last 24 hours, and can be administered by an interviewer OR by self report.
+                : Cette version du CWS concerne les symptômes reessentis au cours des dernières 24 heures et peut être administrèe par un interviewer OU par auto-évaluation.
                 {"\n\n"}
-                The following statements describe how you have felt over the last <Text style={textstyles.underline}>24</Text> hours. Please <Text style={textstyles.makebold}>circle the number</Text> that most closely represents your personal experiences for each statement. For each statement, please rate its negative impact on normal daily activities on the same scale (0 = Not at all to 10 = Extremely), writing the number in the right hand column.
+                Les affirmations suivantes décrivent comment vous vous êtes senti au cours des <Text style={textstyles.underline}>24</Text> dernières heures. Veuillez <Text style={textstyles.makebold}>entourer le chiffre</Text> qui représente le mieux vos expériences personnelles pour chaque affirmation. Pour chaque affirmation, veuillez évaluer son impact négatif sur les activités quotidiennes normales sur la même échelle (0 = Pas du tout à 10 = Extrêmement), en écrivant le chiffre dans la colonne de droite.
             </Text>
         </View>
     );
@@ -65,25 +65,25 @@ const CWS_fr_Screen = ({navigation}) => {
             questionstyle={CWSStyle}
 
             qs={[
-                "The only thing I could think about was smoking some cannabis",
-                "I had a headache",
-                "I had no appetite",
-                "I felt nauseous (like vomiting)",
-                "I felt nervous",
-                "I had some angry outbursts",
-                "I had mood swings",
-                "I felt depressed",
-                "I was easily irritated",
-                "I had been imagining being stoned",
-                "I felt restless",
-                "I woke up early",
-                "I had a stomach ache",
-                "I had nightmares and/or strange dreams",
-                "Life seemed like an uphill struggle",
-                "I woke up sweating at night",
-                "I had trouble getting to sleep at night",
-                "I felt physically tense",
-                "I had hot flashes",
+                "La seule chose à laquelle je pouvais penser était de fumer du cannabis",
+                "J'avais mal à la tête",
+                "Je n'avais pas d'appeétit",
+                "Je me sentais nauséeux (comme si j'allais vomir)",
+                "Je me sentais nerveux",
+                "J'ai eu des accès dde colère",
+                "J'avais des sautes d'humeur",
+                "Je me sentais déprimé",
+                "J'étais facilement irrité",
+                "Je m'imaginais être défoncé",
+                "Je me sentais agité",
+                "Je me réveillais tôt",
+                "J'avais mal au ventre",
+                "J'avais des cauchemars et/ou des rêves étranges",
+                "La vie semblait être une lutte difficile",
+                "Je me suis réveillé en sueur la nuit",
+                "J'avais du mal à m'endormir la nuit",
+                "Je me sentais physiquement tendu",
+                "J'avais des bouffées de chaleur",
             ]}
 
         />

@@ -107,6 +107,11 @@ import SAQ_fr_Screen from './screens/surveys screens/SAQ_fr';
 import FTND_fr_Screen from './screens/surveys screens/FTND_fr';
 import FollowUp_fr_Screen from './screens/special screens/Followup_fr';
 
+import SL25_baseline_Screen from './screens/special screens/SL25baseline';
+import SL25_baseline_fr_Screen from './screens/special screens/SL25baseline_fr';
+import SL25_pet_Screen from './screens/special screens/SL25pet';
+import SL25_pet_fr_Screen from './screens/special screens/SL25pet_fr';
+
 const Stack = createNativeStackNavigator();
 
 function App(): JSX.Element {
@@ -248,6 +253,11 @@ function App(): JSX.Element {
       <Stack.Screen name='MCQ_fr' component={MCQ_fr_Screen} />
       <Stack.Screen name='SAQ_fr' component={SAQ_fr_Screen} />
       <Stack.Screen name='Followup_fr' component={FollowUp_fr_Screen} />
+      
+      <Stack.Screen name='SL25-baseline' component={SL25_baseline_Screen} />
+      <Stack.Screen name='SL25-baseline_fr' component={SL25_baseline_fr_Screen} />
+      <Stack.Screen name='SL25-pet' component={SL25_pet_Screen} />
+      <Stack.Screen name='SL25-pet_fr' component={SL25_pet_fr_Screen} />
     
 
 

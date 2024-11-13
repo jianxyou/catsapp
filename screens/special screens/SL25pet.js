@@ -89,8 +89,8 @@ function SL25_pet_Screen({ navigation }) {
 
   
   const newButtons = createLinks({
-    displayNames: [...displayNamesSelf.slice(44, 57),...displayNamesSelf.slice(38, 41),],
-    internalNames: [...internalNamesSelf.slice(44, 57),...internalNamesSelf.slice(38, 41)],
+    displayNames: [...displayNamesSelf.slice(4, 8),...displayNamesSelf.slice(22, 23),...displayNamesSelf.slice(24,25)],
+    internalNames: [...internalNamesSelf.slice(4, 8),...internalNamesSelf.slice(22, 23),...internalNamesSelf.slice(24, 25)],
     navigation: navigation,
     filled: filled,
   });

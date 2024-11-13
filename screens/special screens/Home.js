@@ -62,6 +62,10 @@ function HomeScreen({ navigation }) {
       <Button title="PET_fr" onPress={() => navigation.navigate('PET_fr')} />
       <Button title="FollowUp" onPress={() => navigation.navigate('FollowUp')} />
       <Button title="FollowUp_fr" onPress={() => navigation.navigate('Followup_fr')} />
+      <Button title="SL25-Baseline" onPress={() => navigation.navigate('SL25-baseline')} />
+      <Button title="SL25-Baseline_fr" onPress={() => navigation.navigate('SL25-baseline_fr')} />
+      <Button title="SL25-PET" onPress={() => navigation.navigate('SL25-pet')} />
+      <Button title="SL25-PET_fr" onPress={() => navigation.navigate('SL25-pet_fr')} />
       {/* <Button title="Mri" onPress={() => navigation.navigate('MriScreen')} /> */}
     </View>
   );
