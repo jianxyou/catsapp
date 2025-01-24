@@ -112,14 +112,14 @@ function FinalWrapper (questionnaireNumber, arr, data, goHome, styles,dataForFla
    
 
   const months = [
-    { year: 2024, month: 6, days:30},
-    { year: 2024, month: 7, days:31 },
-    { year: 2024, month: 8, days:31 },
-    { year: 2024, month: 9, days:30 },
-    { year: 2024, month: 10, days: 31 },
-    { year: 2024, month: 11, days: 30 }, // 注意：未考虑闰年
-    { year: 2024, month: 12, days: 31 },
+    { year: 2024, month: 9, days:30},
+    { year: 2024, month: 10, days:31 },
+    { year: 2024, month: 11, days:30 },
+    { year: 2024, month: 12, days:31 },
     { year: 2025, month: 1, days: 31 },
+    { year: 2025, month: 2, days: 28 }, // 注意：未考虑闰年
+    { year: 2025, month: 3, days: 31 },
+    { year: 2025, month: 4, days: 30 },
     // { name: '2May', days: 31 },
     // { name: 'June', days: 30 },
     // { name: 'July', days: 31 },x
